@@ -104,9 +104,23 @@ def write_srt(path: Path, cues: list[Cue]) -> None:
 def copy_asset(source: Optional[Path], destination: Path) -> bool:
     if not source or not source.exists():
         return False
+    if source.resolve() == destination.resolve():
+        return True
     destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(source, destination)
     return True
+
+
+def resolve_publish_asset(lesson_dir: Path, lesson_slug: str, filename: str) -> Optional[Path]:
+    course_asset = lesson_dir / "Assets" / filename
+    if course_asset.exists():
+        return course_asset
+
+    published_asset = ROOT / "docs" / "courses" / "claude-code-in-action" / "lessons" / lesson_slug / "assets" / filename
+    if published_asset.exists():
+        return published_asset
+
+    return None
 
 
 def find_matching_div_end(source: str, start_index: int) -> int:
@@ -347,10 +361,11 @@ def ensure_intro_ru_assets(course_dir: Path, lesson_dir: Path) -> None:
 def prepare_media_assets(course_dir: Path, lesson: dict, site_assets_dir: Path) -> tuple[list[str], dict]:
     lesson_dir = lesson["dir"]
     assets_dir = lesson_dir / "Assets"
+    lesson_slug = lesson["slug"]
     site_assets_dir.mkdir(parents=True, exist_ok=True)
 
-    copy_asset(assets_dir / "video_1080p.mp4", site_assets_dir / "video_1080p.mp4")
-    copy_asset(assets_dir / "poster_image.jpg", site_assets_dir / "poster_image.jpg")
+    copy_asset(resolve_publish_asset(lesson_dir, lesson_slug, "video_1080p.mp4"), site_assets_dir / "video_1080p.mp4")
+    copy_asset(resolve_publish_asset(lesson_dir, lesson_slug, "poster_image.jpg"), site_assets_dir / "poster_image.jpg")
 
     audio_sources = ["assets/video_1080p.mp4"]
     if lesson["slug"] == "001-introduction":
@@ -363,8 +378,8 @@ def prepare_media_assets(course_dir: Path, lesson: dict, site_assets_dir: Path) 
             copy_asset(intro_ru, site_assets_dir / "video_ru.mp4")
             audio_sources = ["assets/video_ru.mp4", "assets/video_1080p.mp4"]
     else:
-        ru_video = assets_dir / "video_ru.mp4"
-        if ru_video.exists():
+        ru_video = resolve_publish_asset(lesson_dir, lesson_slug, "video_ru.mp4")
+        if ru_video and ru_video.exists():
             copy_asset(ru_video, site_assets_dir / "video_ru.mp4")
             audio_sources = ["assets/video_ru.mp4", "assets/video_1080p.mp4"]
 

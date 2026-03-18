@@ -5320,12 +5320,313 @@ h6 {
                                 <div class="course-fixed-content-video">
     <div class="video-max">
         <div class="video-player flex-video widescreen">
-            <div class="media-player skilljar-local-player" data-player-root data-default-audio="original" data-default-subtitle="off">
+            <div class="media-player skilljar-local-player" data-player-root data-default-audio="ru" data-default-subtitle="off">
                 <video controls preload="metadata" playsinline poster="assets/poster_image.jpg">
+                    <source src="assets/video_ru.mp4" type="video/mp4" data-audio="ru">
                     <source src="assets/video_1080p.mp4" type="video/mp4" data-audio="original">
                 </video>
                 <script type="application/json" data-subtitles-json>
 {
+  "ru": {
+    "label": "Русские",
+    "cues": [
+      {
+        "start": 0.031,
+        "end": 2.734,
+        "text": "Когда мы только что смотрели на hook для ревью запросов,"
+      },
+      {
+        "start": 2.835,
+        "end": 5.918,
+        "text": "мы мельком увидели Claude Code SDK."
+      },
+      {
+        "start": 6.359,
+        "end": 9.163,
+        "text": "SDK позволяет использовать Claude Code программно."
+      },
+      {
+        "start": 9.663,
+        "end": 12.526,
+        "text": "Вы можете использовать SDK через CLI, библиотеку"
+      },
+      {
+        "start": 12.547,
+        "end": 15.350999999999999,
+        "text": "TypeScript или библиотеку Python. Это ровно тот же"
+      },
+      {
+        "start": 15.41,
+        "end": 18.314,
+        "text": "Claude Code, которым вы уже пользуетесь в терминале. У него"
+      },
+      {
+        "start": 18.333,
+        "end": 20.957,
+        "text": "есть все те же инструменты, и он будет использовать их для выполнения"
+      },
+      {
+        "start": 21.018,
+        "end": 23.562,
+        "text": "поставленной задачи. SDK особенно полезен"
+      },
+      {
+        "start": 23.701999999999998,
+        "end": 26.449,
+        "text": "как часть более крупного пайплайна или инструмента, как мы видели"
+      },
+      {
+        "start": 26.489,
+        "end": 29.335,
+        "text": "в том hook чуть раньше. Вы легко можете встроить"
+      },
+      {
+        "start": 29.394,
+        "end": 31.94,
+        "text": "Claude Code в более крупный процесс, чтобы добавить"
+      },
+      {
+        "start": 31.96,
+        "end": 35.167,
+        "text": "немного интеллекта в какой-то workflow. Я"
+      },
+      {
+        "start": 35.207,
+        "end": 37.813,
+        "text": "хочу быстро показать вам демонстрацию TypeScript"
+      },
+      {
+        "start": 37.993,
+        "end": 40.84,
+        "text": "SDK, добавив его в наш существующий"
+      },
+      {
+        "start": 40.92,
+        "end": 43.423,
+        "text": "проект. Вернувшись в редактор, я"
+      },
+      {
+        "start": 43.444,
+        "end": 46.289,
+        "text": "найду файл SDK.ts в корневой"
+      },
+      {
+        "start": 46.35,
+        "end": 48.994,
+        "text": "директории проекта. Здесь я подготовил"
+      },
+      {
+        "start": 49.054,
+        "end": 51.659,
+        "text": "немного кода, чтобы начать работу с SDK. Я"
+      },
+      {
+        "start": 51.679,
+        "end": 54.284,
+        "text": "обновлю prompt вверху и попрошу Claude"
+      },
+      {
+        "start": 54.325,
+        "end": 56.869,
+        "text": "поискать дублирующиеся запросы внутри директории SRC"
+      },
+      {
+        "start": 56.929,
+        "end": 59.594,
+        "text": "queries. Затем я сохраню этот файл и,"
+      },
+      {
+        "start": 59.634,
+        "end": 62.6,
+        "text": "чтобы его запустить, открою терминал и выполню NPMRun"
+      },
+      {
+        "start": 62.881,
+        "end": 65.605,
+        "text": "SDK. Это не встроенная"
+      },
+      {
+        "start": 65.646,
+        "end": 68.57,
+        "text": "команда или что-то подобное, просто чтобы вы знали, но под капотом она просто запускает"
+      },
+      {
+        "start": 68.671,
+        "end": 71.195,
+        "text": "этот файл как обычный TypeScript-файл. Я просто"
+      },
+      {
+        "start": 71.215,
+        "end": 73.739,
+        "text": "сделал этот небольшой шорткат, чтобы запускать TypeScript-файл"
+      },
+      {
+        "start": 73.76,
+        "end": 76.484,
+        "text": "было немного проще. Когда мы это запустим, то увидим «сырую»"
+      },
+      {
+        "start": 76.545,
+        "end": 79.129,
+        "text": "переписку между нашей локальной копией Claude Code и"
+      },
+      {
+        "start": 79.15,
+        "end": 82.194,
+        "text": "языковой моделью Claude, сообщение за сообщением. В итоге"
+      },
+      {
+        "start": 82.234,
+        "end": 84.9,
+        "text": "мы снова вернёмся в командную строку. Самое последнее сообщение,"
+      },
+      {
+        "start": 84.939,
+        "end": 88.105,
+        "text": "которое будет выведено, содержит финальный ответ Claude."
+      },
+      {
+        "start": 88.084,
+        "end": 90.748,
+        "text": "Но у SDK есть один нюанс."
+      },
+      {
+        "start": 90.93,
+        "end": 93.894,
+        "text": "По умолчанию у него есть только права на чтение."
+      },
+      {
+        "start": 94.314,
+        "end": 97.2,
+        "text": "Иными словами, он может только читать файлы, директории,"
+      },
+      {
+        "start": 97.6,
+        "end": 100.284,
+        "text": "выполнять grep-операции и так далее. Он не"
+      },
+      {
+        "start": 100.325,
+        "end": 102.93,
+        "text": "может писать, редактировать, создавать и вообще"
+      },
+      {
+        "start": 102.969,
+        "end": 105.554,
+        "text": "что-либо делать с файлами. Чтобы дать ему права на запись,"
+      },
+      {
+        "start": 105.713,
+        "end": 108.397,
+        "text": "можно либо вручную добавить разрешения на запись прямо в вызов"
+      },
+      {
+        "start": 108.436,
+        "end": 111.161,
+        "text": "query вот здесь, либо, как вариант, можно добавить"
+      },
+      {
+        "start": 111.24,
+        "end": 113.944,
+        "text": "настройки разрешений в файл настроек"
+      },
+      {
+        "start": 114.004,
+        "end": 116.507,
+        "text": "внутри вашей директории dot-Claude. Давайте я покажу,"
+      },
+      {
+        "start": 116.548,
+        "end": 119.072,
+        "text": "как разрешить SDK использовать инструмент edit"
+      },
+      {
+        "start": 119.152,
+        "end": 121.956,
+        "text": "внутри этого проекта. Я найду аргумент prompt"
+      },
+      {
+        "start": 121.995,
+        "end": 125.12,
+        "text": "вот здесь. Сразу после него добавлю options,"
+      },
+      {
+        "start": 125.18,
+        "end": 128.144,
+        "text": "передам объект, затем allowedTools, это"
+      },
+      {
+        "start": 128.163,
+        "end": 130.813,
+        "text": "будет массив, и я добавлю туда edit. Я"
+      },
+      {
+        "start": 130.894,
+        "end": 133.578,
+        "text": "обновлю prompt вверху и попрошу его"
+      },
+      {
+        "start": 133.899,
+        "end": 137.663,
+        "text": "добавить описание в файл package.json."
+      },
+      {
+        "start": 137.704,
+        "end": 140.587,
+        "text": "Теперь я сохраню файл и"
+      },
+      {
+        "start": 140.627,
+        "end": 143.431,
+        "text": "снова запущу npmrunsdk. И"
+      },
+      {
+        "start": 143.491,
+        "end": 146.056,
+        "text": "после завершения смогу открыть"
+      },
+      {
+        "start": 146.096,
+        "end": 148.8,
+        "text": "файл package.json и увижу, что он действительно"
+      },
+      {
+        "start": 148.96,
+        "end": 151.483,
+        "text": "добавил описание. Так что теперь у него точно есть возможность"
+      },
+      {
+        "start": 151.522,
+        "end": 154.334,
+        "text": "редактировать файлы. Как я упоминал ранее,"
+      },
+      {
+        "start": 154.373,
+        "end": 156.961,
+        "text": "Claude Code SDK наиболее полезен"
+      },
+      {
+        "start": 157.001,
+        "end": 159.688,
+        "text": "как часть других инструментов. Поэтому я бы посоветовал вам"
+      },
+      {
+        "start": 159.729,
+        "end": 162.477,
+        "text": "подумать, где его можно использовать в helper-командах, скриптах"
+      },
+      {
+        "start": 162.979,
+        "end": 165.526,
+        "text": "или, наверное, прежде всего, в hooks внутри ваших"
+      },
+      {
+        "start": 165.586,
+        "end": 166.489,
+        "text": "собственных проектов."
+      }
+    ]
+  },
   "en": {
     "label": "English",
     "cues": [
@@ -5634,12 +5935,14 @@ h6 {
             <div class="media-group">
                 <div class="media-menu">
                     <span class="media-label">Аудио</span>
+                      <button type="button" class="media-option" data-audio-option="ru">RU</button>
                       <button type="button" class="media-option" data-audio-option="original">EN</button>
                 </div>
             </div>
             <div class="media-group">
                 <div class="media-menu">
                     <span class="media-label">CC</span>
+                      <button type="button" class="media-option" data-subtitle="ru">RU</button>
                       <button type="button" class="media-option" data-subtitle="en">EN</button>
                       <button type="button" class="media-option" data-subtitle="off">Off</button>
                 </div>
@@ -5691,25 +5994,25 @@ h6 {
                             <h4 class="sj-text-details-pane-summary"><span>Конспект</span></h4>
 
                             <div class="lesson-description-content">
-                                <p>The Claude Code SDK lets you run Claude Code programmatically from within your own applications and scripts. It's available for TypeScript, Python, and via the CLI, giving you the same Claude Code functionality you use at the terminal but integrated into larger workflows.</p>
+<p>Claude Code SDK позволяет запускать Claude Code программно из ваших собственных приложений и скриптов. Он доступен для TypeScript, Python и через CLI, давая те же возможности Claude Code, которыми вы пользуетесь в терминале, но уже встроенными в более крупные workflow.</p>
 
 <img src="https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2Fa46l9irobhg0f5webscixp0bs%2Fpublic%2F1752618201%2F014_-_The_Claude_Code_SDK_00.1752618201045.png" />
 
-<p>The SDK runs the exact same Claude Code you're already familiar with. It has access to all the same tools and will use them to complete whatever task you give it. This makes it particularly powerful for automation and integration scenarios.</p>
+<p>SDK запускает ровно тот же Claude Code, с которым вы уже знакомы. У него есть доступ ко всем тем же инструментам, и он использует их для выполнения любой задачи, которую вы ему дадите. Это делает SDK особенно мощным для автоматизации и сценариев интеграции.</p>
 
-<h2>Key Features</h2>
+<h2>Ключевые возможности</h2>
 
 <ul>
-<li>Runs Claude Code programmatically</li>
-<li>Same Claude Code functionality as the terminal version</li>
-<li>Inherits all settings from Claude Code instances in the same directory</li>
-<li>Read-only permissions by default</li>
-<li>Most useful as part of larger pipelines or tools</li>
+<li>Программный запуск Claude Code</li>
+<li>Та же функциональность Claude Code, что и в терминале</li>
+<li>Наследует все настройки от экземпляров Claude Code в той же директории</li>
+<li>По умолчанию работает только с правами на чтение</li>
+<li>Наиболее полезен как часть более крупных пайплайнов и инструментов</li>
 </ul>
 
-<h2>Basic Usage</h2>
+<h2>Базовое использование</h2>
 
-<p>Here's a simple TypeScript example that asks Claude to analyze code for duplicate queries:</p>
+<p>Вот простой пример на TypeScript, который просит Claude проанализировать код и найти дублирующиеся запросы:</p>
 
 <pre><code>import { query } from "@anthropic-ai/claude-code";
 
@@ -5721,13 +6024,13 @@ for await (const message of query({
   console.log(JSON.stringify(message, null, 2));
 }</code></pre>
 
-<p>When you run this code, you'll see the raw conversation between your local Claude Code and the Claude language model, message by message. The final message contains Claude's complete response.</p>
+<p>Когда вы запускаете этот код, вы видите «сырую» переписку между вашим локальным Claude Code и языковой моделью Claude, сообщение за сообщением. Финальное сообщение содержит полный ответ Claude.</p>
 
-<h2>Permissions and Tools</h2>
+<h2>Разрешения и инструменты</h2>
 
-<p>By default, the SDK only has read-only permissions. It can read files, search directories, and perform grep operations, but it cannot write, edit, or create files.</p>
+<p>По умолчанию SDK имеет только права на чтение. Он может читать файлы, искать по директориям и выполнять grep, но не может писать, редактировать или создавать файлы.</p>
 
-<p>To enable write permissions, you can add the <code>allowedTools</code> option to your query:</p>
+<p>Чтобы разрешить запись, можно добавить в запрос опцию <code>allowedTools</code>:</p>
 
 <pre><code>for await (const message of query({
   prompt,
@@ -5738,21 +6041,21 @@ for await (const message of query({
   console.log(JSON.stringify(message, null, 2));
 }</code></pre>
 
-<p>Alternatively, you can configure permissions in your settings file within the <code>.claude</code> directory for project-wide access.</p>
+<p>Альтернативно можно настроить разрешения в файле настроек внутри директории <code>.claude</code> и тем самым выдать доступ на уровне всего проекта.</p>
 
-<h2>Practical Applications</h2>
+<h2>Практические применения</h2>
 
-<p>The Claude Code SDK shines when integrated into larger development workflows. Consider using it for:</p>
+<p>Claude Code SDK особенно хорош, когда его встраивают в более крупные инженерные workflow. Его можно использовать для:</p>
 
 <ul>
-<li>Git hooks that automatically review code changes</li>
-<li>Build scripts that analyze and optimize code</li>
-<li>Helper commands for code maintenance tasks</li>
-<li>Automated documentation generation</li>
-<li>Code quality checks in CI/CD pipelines</li>
+<li>Git hooks, которые автоматически проверяют изменения кода</li>
+<li>Скриптов сборки, анализирующих и оптимизирующих код</li>
+<li>Вспомогательных команд для задач сопровождения кода</li>
+<li>Автоматической генерации документации</li>
+<li>Проверок качества кода в CI/CD-пайплайнах</li>
 </ul>
 
-<p>The SDK essentially lets you add AI-powered intelligence to any part of your development process where programmatic access would be valuable.</p>
+<p>По сути, SDK позволяет добавить ИИ-интеллект в любую часть вашего процесса разработки, где программный доступ действительно полезен.</p>
                             </div>
                         </div>
                     

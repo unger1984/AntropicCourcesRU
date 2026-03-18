@@ -5304,12 +5304,113 @@ h6 {
                                 <div class="course-fixed-content-video">
     <div class="video-max">
         <div class="video-player flex-video widescreen">
-            <div class="media-player skilljar-local-player" data-player-root data-default-audio="original" data-default-subtitle="off">
+            <div class="media-player skilljar-local-player" data-player-root data-default-audio="ru" data-default-subtitle="off">
                 <video controls preload="metadata" playsinline poster="assets/poster_image.jpg">
+                    <source src="assets/video_ru.mp4" type="video/mp4" data-audio="ru">
                     <source src="assets/video_1080p.mp4" type="video/mp4" data-audio="original">
                 </video>
                 <script type="application/json" data-subtitles-json>
 {
+  "ru": {
+    "label": "Русские",
+    "cues": [
+      {
+        "start": 0.031,
+        "end": 2.556,
+        "text": "Надеюсь, вам понравился этот обзор Claude"
+      },
+      {
+        "start": 2.597,
+        "end": 5.203,
+        "text": "Code. Прежде чем закончить, хочу дать несколько советов о том,"
+      },
+      {
+        "start": 5.224,
+        "end": 7.73,
+        "text": "куда двигаться дальше. Во-первых, имейте в виду, что"
+      },
+      {
+        "start": 7.79,
+        "end": 10.475999999999999,
+        "text": "Claude Code постоянно меняется и активно"
+      },
+      {
+        "start": 10.496,
+        "end": 13.182,
+        "text": "развивается. Поэтому следите за главной страницей Claude"
+      },
+      {
+        "start": 13.223,
+        "end": 16.07,
+        "text": "Code. Её адрес показан прямо здесь. И следите за новыми функциями"
+      },
+      {
+        "start": 16.25,
+        "end": 19.056,
+        "text": "и новыми приёмами. Во-вторых, я очень рекомендую"
+      },
+      {
+        "start": 19.096,
+        "end": 21.92,
+        "text": "экспериментировать. Есть много способов настроить"
+      },
+      {
+        "start": 21.981,
+        "end": 24.545,
+        "text": "Claude Code и действительно адаптировать его под ваш конкретный сценарий."
+      },
+      {
+        "start": 25.187,
+        "end": 28.111,
+        "text": "Попробуйте написать собственные custom commands или добавить инструкции"
+      },
+      {
+        "start": 28.211,
+        "end": 30.937,
+        "text": "в ваш файл Claude MD. А ещё попробуйте пару"
+      },
+      {
+        "start": 30.977,
+        "end": 33.54,
+        "text": "других MCP-серверов помимо тех, что мы посмотрели в"
+      },
+      {
+        "start": 33.581,
+        "end": 36.365,
+        "text": "этом курсе. И наконец, автоматизируйте."
+      },
+      {
+        "start": 36.548,
+        "end": 39.155,
+        "text": "Посмотрите на интеграцию с GitHub и подумайте о"
+      },
+      {
+        "start": 39.195,
+        "end": 41.801,
+        "text": "типичных задачах, через которые вы проходите постоянно, и придумайте"
+      },
+      {
+        "start": 41.841,
+        "end": 44.649,
+        "text": "как можно делегировать их Claude автоматически в зависимости"
+      },
+      {
+        "start": 44.71,
+        "end": 47.438,
+        "text": "от событий, которые происходят в вашем GitHub-репозитории."
+      },
+      {
+        "start": 48.32,
+        "end": 50.926,
+        "text": "Что ж, ещё раз надеюсь, что вам понравился этот курс, и желаю"
+      },
+      {
+        "start": 50.947,
+        "end": 52.43,
+        "text": "приятной работы с Claude Code."
+      }
+    ]
+  },
   "en": {
     "label": "English",
     "cues": [
@@ -5418,12 +5519,14 @@ h6 {
             <div class="media-group">
                 <div class="media-menu">
                     <span class="media-label">Аудио</span>
+                      <button type="button" class="media-option" data-audio-option="ru">RU</button>
                       <button type="button" class="media-option" data-audio-option="original">EN</button>
                 </div>
             </div>
             <div class="media-group">
                 <div class="media-menu">
                     <span class="media-label">CC</span>
+                      <button type="button" class="media-option" data-subtitle="ru">RU</button>
                       <button type="button" class="media-option" data-subtitle="en">EN</button>
                       <button type="button" class="media-option" data-subtitle="off">Off</button>
                 </div>
