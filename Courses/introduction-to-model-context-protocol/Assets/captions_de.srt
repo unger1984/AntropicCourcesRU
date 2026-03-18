@@ -1,0 +1,91 @@
+1
+00:00:00,031 --> 00:00:02,674
+Willkommen zu diesem Kurs, der sich auf den Einstieg in
+
+2
+00:00:02,714 --> 00:00:05,258
+das Model Context Protocol konzentriert. Mein Name ist Stephen Grider
+
+3
+00:00:05,458 --> 00:00:08,643
+und ich werde Sie durch alles führen, was Sie über MCP wissen müssen.
+
+4
+00:00:09,323 --> 00:00:11,926
+Beginnen wir damit zu verstehen, was genau wir in
+
+5
+00:00:11,946 --> 00:00:14,490
+den kommenden Videos behandeln werden. Wir erhalten zuerst einen Überblick
+
+6
+00:00:14,509 --> 00:00:17,254
+über MCP und verstehen, welche Probleme damit gelöst werden sollen.
+
+7
+00:00:17,314 --> 00:00:19,836
+Anschließend beginnen wir mit den Grundlagen
+
+8
+00:00:19,937 --> 00:00:23,082
+der MCP-Architektur, indem wir die Verantwortlichkeiten
+
+9
+00:00:23,262 --> 00:00:25,961
+von MCP-Clients und -Servern behandeln. Dann
+
+10
+00:00:26,021 --> 00:00:28,727
+geht es weiter mit den drei Grundkomponenten eines MCP-
+
+11
+00:00:28,766 --> 00:00:31,591
+Servers. Zuerst betrachten wir Tools, die für
+
+12
+00:00:31,611 --> 00:00:34,295
+Sprachmodelle bestimmt sind. Danach
+
+13
+00:00:34,335 --> 00:00:36,939
+studieren wir Ressourcen, die es einem Server ermöglichen,
+
+14
+00:00:36,999 --> 00:00:39,743
+Daten mit Clients zu teilen. Und schließlich Prompts,
+
+15
+00:00:40,024 --> 00:00:42,588
+die Sprachmodellen gezielte Anweisungen geben.
+
+16
+00:00:42,648 --> 00:00:45,201
+Nun gibt es viel Inhalt für uns,
+
+17
+00:00:45,241 --> 00:00:47,828
+also gibt es ein paar Voraussetzungen auf Ihrer Seite.
+
+18
+00:00:47,868 --> 00:00:50,695
+Erstens benötigen Sie grundlegende Python-Kenntnisse.
+
+19
+00:00:50,735 --> 00:00:53,582
+Zweitens werden wir Code schreiben,
+
+20
+00:00:53,823 --> 00:00:57,031
+und dafür benötigen Sie eine lokale Python-Installation. Wir
+
+21
+00:00:57,072 --> 00:00:59,880
+werden unser Projekt mit dem UV CLI verwalten.
+
+22
+00:01:00,240 --> 00:01:02,987
+Und wenn Sie es noch nicht installiert haben, empfehle ich, es jetzt zu installieren. Ich
+
+23
+00:01:03,008 --> 00:01:04,311
+werde einen Link dazu auf dem Bildschirm einblenden.

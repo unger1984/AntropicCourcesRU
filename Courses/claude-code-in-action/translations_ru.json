@@ -1,0 +1,32 @@
+{
+  "course_title": "Claude Code в действии",
+  "sections": {
+    "What is Claude Code?": "Что такое Claude Code?",
+    "Getting hands on": "Практика",
+    "Hooks and the SDK": "Hooks и SDK",
+    "Wrapping up": "Завершение"
+  },
+  "lessons": {
+    "Introduction": "Введение",
+    "What is a coding assistant?": "Что такое ассистент для программирования?",
+    "Claude Code in action": "Claude Code в действии",
+    "Claude Code setup": "Настройка Claude Code",
+    "Project setup": "Настройка проекта",
+    "Adding context": "Добавление контекста",
+    "Making changes": "Внесение изменений",
+    "Course satisfaction survey": "Опрос по курсу",
+    "Controlling context": "Управление контекстом",
+    "Custom commands": "Пользовательские команды",
+    "MCP servers with Claude Code": "MCP-серверы в Claude Code",
+    "Github integration": "Интеграция с GitHub",
+    "Introducing hooks": "Введение в hooks",
+    "Defining hooks": "Определение hooks",
+    "Implementing a hook": "Реализация hook",
+    "Gotchas around hooks": "Подводные камни hooks",
+    "Useful hooks!": "Полезные hooks!",
+    "Another useful hook": "Ещё один полезный hook",
+    "The Claude Code SDK": "SDK Claude Code",
+    "Quiz on Claude Code": "Викторина по Claude Code",
+    "Summary and next steps": "Итоги и следующие шаги"
+  }
+}

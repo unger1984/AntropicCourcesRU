@@ -1,0 +1,307 @@
+1
+00:00:00,031 --> 00:00:02,734
+Neste vídeo, vamos dar uma olhada em hooks.
+
+2
+00:00:03,255 --> 00:00:06,000
+Eles permitem executar comandos antes ou depois que o Claude
+
+3
+00:00:06,121 --> 00:00:08,884
+tenta executar uma ferramenta. Hooks podem ser usados para implementar
+
+4
+00:00:08,925 --> 00:00:11,468
+funcionalidades realmente interessantes e muito úteis.
+
+5
+00:00:12,050 --> 00:00:14,874
+Por exemplo, após o Claude decidir escrever um arquivo,
+
+6
+00:00:15,214 --> 00:00:17,759
+você pode executar automaticamente um formatador de código no
+
+7
+00:00:17,798 --> 00:00:20,565
+arquivo criado, ou você pode executar testes após
+
+8
+00:00:20,585 --> 00:00:23,271
+um arquivo ser editado, ou você pode impedir que o Claude
+
+9
+00:00:23,332 --> 00:00:25,920
+leia arquivos específicos. As possibilidades
+
+10
+00:00:25,940 --> 00:00:28,507
+são realmente infinitas, e eu tenho alguns bons
+
+11
+00:00:28,547 --> 00:00:31,375
+exemplos planejados para mostrar algumas ideias de
+
+12
+00:00:31,434 --> 00:00:34,222
+como você pode usar hooks no seu projeto específico.
+
+13
+00:00:34,203 --> 00:00:36,887
+Primeiro, no entanto, deixe-me ajudá-lo a entender exatamente como
+
+14
+00:00:36,968 --> 00:00:39,531
+os hooks funcionam. Como um lembrete, quando você pede ao Claude
+
+15
+00:00:39,572 --> 00:00:42,195
+para codificar algo, sua consulta é enviada para o modelo Claude
+
+16
+00:00:42,356 --> 00:00:44,981
+juntamente com algumas definições de ferramentas. O modelo Claude
+
+17
+00:00:45,201 --> 00:00:48,045
+pode então decidir executar uma ferramenta fornecendo uma resposta cuidadosamente
+
+18
+00:00:48,106 --> 00:00:50,630
+formatada. E nesse ponto,
+
+19
+00:00:50,850 --> 00:00:53,895
+cabe ao Claude Code executar a ferramenta solicitada, talvez
+
+20
+00:00:53,935 --> 00:00:56,799
+neste caso para ler um arquivo, e então responder com o resultado
+
+21
+00:00:56,979 --> 00:00:59,564
+dessa chamada de ferramenta. Agora, hooks nos dão
+
+22
+00:00:59,625 --> 00:01:02,569
+a capacidade de executar código logo antes
+
+23
+00:01:02,609 --> 00:01:05,332
+ou logo após a execução da ferramenta.
+
+24
+00:01:05,813 --> 00:01:08,378
+Hooks que rodam antes de uma ferramenta são referidos como
+
+25
+00:01:08,418 --> 00:01:11,081
+hooks pre-tool use porque rodam antes
+
+26
+00:01:11,141 --> 00:01:14,146
+da ferramenta. E hooks que rodam após a ferramenta são
+
+27
+00:01:14,206 --> 00:01:17,271
+referidos como post-tool use pelo mesmo motivo.
+
+28
+00:01:17,251 --> 00:01:20,036
+Para definir hooks, adicionamos configuração ao arquivo
+
+29
+00:01:20,076 --> 00:01:22,701
+Claude Settings. Lembre-se de que existem vários arquivos
+
+30
+00:01:22,762 --> 00:01:25,287
+de configuração, um para uso global em todos os
+
+31
+00:01:25,326 --> 00:01:28,212
+projetos em sua máquina, um para seu projeto específico
+
+32
+00:01:28,313 --> 00:01:30,938
+que é compartilhado com outros engenheiros, e um apenas para você
+
+33
+00:01:31,177 --> 00:01:33,963
+em um projeto específico. Você pode adicionar hooks,
+
+34
+00:01:34,144 --> 00:01:36,671
+seja escrevendo-os manualmente, dentro
+
+35
+00:01:36,691 --> 00:01:39,337
+deste arquivo, ou usando o comando embutido slash hooks
+
+36
+00:01:39,376 --> 00:01:41,942
+dentro do próprio Claude Code. A
+
+37
+00:01:41,983 --> 00:01:44,549
+configuração em si se parece com o que você vê no
+
+38
+00:01:44,588 --> 00:01:47,194
+lado direito da tela. Deixe-me guiá-lo por este arquivo de exemplo
+
+39
+00:01:47,234 --> 00:01:49,781
+para lhe dar uma ideia melhor do que está
+
+40
+00:01:49,881 --> 00:01:52,426
+acontecendo. Então, primeiro, note que existem duas
+
+41
+00:01:52,486 --> 00:01:55,010
+seções distintas dentro deste arquivo. Uma
+
+42
+00:01:55,049 --> 00:01:58,194
+seção lista todos os comandos que devem ser executados antes
+
+43
+00:01:58,314 --> 00:02:01,600
+de um uso de ferramenta. Lembre-se, eles são referidos como pre-tool
+
+44
+00:02:01,680 --> 00:02:04,506
+use hooks. A outra seção lista todos os diferentes
+
+45
+00:02:04,525 --> 00:02:07,069
+comandos que devem ser executados após um uso de
+
+46
+00:02:07,150 --> 00:02:10,275
+ferramenta. E novamente, esses são post-tool use hooks.
+
+47
+00:02:10,676 --> 00:02:13,802
+Em cada uma dessas seções, fornecemos um matcher. Isso
+
+48
+00:02:13,862 --> 00:02:16,389
+indica quais tipos de uso de ferramenta estamos procurando.
+
+49
+00:02:16,930 --> 00:02:19,615
+Então, neste caso, quero encontrar usos da ferramenta de leitura
+
+50
+00:02:19,655 --> 00:02:22,540
+(read). Sempre que o Claude Code tentar ler
+
+51
+00:02:22,640 --> 00:02:25,486
+um arquivo, quero executar o comando que você vê listado
+
+52
+00:02:25,526 --> 00:02:28,230
+aí. Da mesma forma, dentro da seção de
+
+53
+00:02:28,290 --> 00:02:31,334
+uso pós-ferramenta, após um uso das ferramentas write, edit,
+
+54
+00:02:31,533 --> 00:02:34,197
+ou multi-edit, há um comando diferente
+
+55
+00:02:34,257 --> 00:02:36,900
+que quero executar. Agora, aqui está a parte importante.
+
+56
+00:02:37,020 --> 00:02:39,522
+Aqui é para que os hooks realmente se destinam. Aqueles
+
+57
+00:02:39,582 --> 00:02:42,346
+comandos que você viu receberão detalhes sobre a chamada da ferramenta
+
+58
+00:02:42,366 --> 00:02:44,907
+que o Claude quer executar. No caso de um
+
+59
+00:02:45,088 --> 00:02:47,790
+hook pre-tool use, você pode inspecionar o que
+
+60
+00:02:47,850 --> 00:02:50,373
+o Claude quer fazer. E se por qualquer motivo
+
+61
+00:02:50,454 --> 00:02:53,417
+você não quiser permitir, você pode bloquear a operação de uso da ferramenta
+
+62
+00:02:53,637 --> 00:02:56,199
+e enviar uma mensagem de erro de volta para o Claude. Em
+
+63
+00:02:56,240 --> 00:02:58,944
+o caso de um hook post-tool use, a chamada da ferramenta
+
+64
+00:02:58,985 --> 00:03:01,788
+já ocorreu, então é tarde demais para bloqueá-la. Mas
+
+65
+00:03:01,808 --> 00:03:04,372
+você pode fazer alguma operação de acompanhamento com base na chamada da ferramenta
+
+66
+00:03:04,413 --> 00:03:07,116
+, como talvez formatar um arquivo que acabou de ser editado.
+
+67
+00:03:07,638 --> 00:03:10,201
+Você também pode fornecer alguma mensagem de volta ao Claude sobre
+
+68
+00:03:10,222 --> 00:03:12,806
+esse uso de ferramenta. Por exemplo, você pode decidir
+
+69
+00:03:12,866 --> 00:03:15,730
+executar um programa separado para verificar a qualidade do código
+
+70
+00:03:15,790 --> 00:03:18,414
+da edição, ou talvez fazer uma verificação de tipo,
+
+71
+00:03:18,435 --> 00:03:21,194
+e então fornecer esse feedback de volta ao Claude. O Claude
+
+72
+00:03:21,235 --> 00:03:23,878
+pode então pegar esse feedback e fazer uma atualização
+
+73
+00:03:23,899 --> 00:03:26,502
+no arquivo que acabou de escrever. Se você ainda está
+
+74
+00:03:26,544 --> 00:03:29,307
+confuso sobre hooks ou para que eles se destinam, isso
+
+75
+00:03:29,348 --> 00:03:31,913
+está absolutamente bem. Entender hooks pode ser realmente desafiador.
+
+76
+00:03:31,973 --> 00:03:34,497
+Então, volte em um momento
+
+77
+00:03:34,676 --> 00:03:36,860
+e trabalharemos em um projeto de exemplo com hooks.

@@ -1,0 +1,55 @@
+1
+00:00:00,031 --> 00:00:02,593
+Hallo und herzlich willkommen. Mein Name ist Stephen Grider
+
+2
+00:00:02,774 --> 00:00:05,557
+und ich bin Mitglied des Technical Staff bei Anthropic. In
+
+3
+00:00:05,597 --> 00:00:08,460
+diesem Kurs bringen wir Ihnen Claude Code näher. Und
+
+4
+00:00:08,500 --> 00:00:11,083
+bevor wir zu technischen Details kommen, möchte ich Ihnen einen
+
+5
+00:00:11,163 --> 00:00:13,865
+kurzen Überblick geben, was wir lernen werden. Dieser
+
+6
+00:00:13,926 --> 00:00:16,428
+Kurs ist in vier Abschnitte unterteilt. Wir
+
+7
+00:00:16,449 --> 00:00:19,032
+werden zunächst einige Zeit darauf verwenden, genau zu verstehen, was
+
+8
+00:00:19,111 --> 00:00:21,835
+ein Coding-Assistent ist. Dann werden wir uns Claude
+
+9
+00:00:21,875 --> 00:00:24,678
+Code selbst ansehen und verstehen, was ihn von
+
+10
+00:00:24,797 --> 00:00:27,321
+all den verschiedenen Coding-Assistenten auf dem Markt abhebt.
+
+11
+00:00:27,402 --> 00:00:30,030
+Sobald wir das geklärt haben, werden wir die Verwendung von Claude Code
+
+12
+00:00:30,150 --> 00:00:32,780
+in einem typischen Projekt durchgehen und praktische Erfahrungen sammeln.
+
+13
+00:00:33,421 --> 00:00:36,030
+Abschließend werden wir die Dinge abrunden, indem wir sehen, wie Sie das Beste
+
+14
+00:00:36,110 --> 00:00:38,137
+aus Claude Code für Ihre eigenen Projekte herausholen können.

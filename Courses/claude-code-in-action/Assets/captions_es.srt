@@ -1,0 +1,55 @@
+1
+00:00:00,031 --> 00:00:02,593
+Hola y bienvenidos. Mi nombre es Stephen Grider
+
+2
+00:00:02,774 --> 00:00:05,557
+y soy miembro del Cuerpo Técnico en Anthropic. En
+
+3
+00:00:05,597 --> 00:00:08,460
+este curso, vamos a ponerte al día con Claude Code. Y
+
+4
+00:00:08,500 --> 00:00:11,083
+antes de entrar en algo demasiado técnico, quiero darte una
+
+5
+00:00:11,163 --> 00:00:13,865
+breve descripción general de lo que aprenderemos. Este
+
+6
+00:00:13,926 --> 00:00:16,428
+curso está organizado en cuatro secciones. Vamos
+
+7
+00:00:16,449 --> 00:00:19,032
+a dedicar primero algo de tiempo a entender exactamente qué
+
+8
+00:00:19,111 --> 00:00:21,835
+es un asistente de codificación. Luego echaremos un vistazo a Claude
+
+9
+00:00:21,875 --> 00:00:24,678
+Code en sí y entenderemos qué lo hace destacar entre
+
+10
+00:00:24,797 --> 00:00:27,321
+todos los diferentes asistentes de codificación del mercado.
+
+11
+00:00:27,402 --> 00:00:30,030
+Una vez que hayamos establecido eso, repasaremos el uso de Claude Code
+
+12
+00:00:30,150 --> 00:00:32,780
+en un proyecto típico y obtendremos algo de experiencia práctica.
+
+13
+00:00:33,421 --> 00:00:36,030
+Finalmente, concluiremos viendo cómo puedes sacar el máximo partido
+
+14
+00:00:36,110 --> 00:00:38,137
+de Claude Code en tus propios proyectos.

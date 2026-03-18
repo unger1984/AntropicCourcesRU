@@ -1,0 +1,715 @@
+1
+00:00:00,892 --> 00:00:03,496
+Há pouco tempo, fiz algumas afirmações bastante ousadas ao dizer que
+
+2
+00:00:03,536 --> 00:00:06,078
+Claude era um especialista em utilizar ferramentas. E
+
+3
+00:00:06,099 --> 00:00:08,843
+que o código Claude era facilmente extensível. Naturalmente,
+
+4
+00:00:08,923 --> 00:00:11,426
+você pode estar um pouco cético, então gostaria de lhe dar algumas
+
+5
+00:00:11,506 --> 00:00:14,029
+demonstrações rápidas. Nesta mesa estão as
+
+6
+00:00:14,150 --> 00:00:16,794
+ferramentas padrão disponíveis no código Claude. Ele
+
+7
+00:00:16,814 --> 00:00:19,397
+tem todas as capacidades que você esperaria, como ler arquivos,
+
+8
+00:00:19,557 --> 00:00:22,060
+escrever arquivos, executar comandos e assim por diante. Eu
+
+9
+00:00:22,080 --> 00:00:24,807
+vou lhe mostrar um par de tarefas concluídas usando
+
+10
+00:00:24,847 --> 00:00:27,373
+Claude Code. E em cada caso, ele usará
+
+11
+00:00:27,434 --> 00:00:30,282
+este conjunto de ferramentas de maneiras bastante inteligentes. E
+
+12
+00:00:30,361 --> 00:00:32,887
+em pelo menos uma tarefa, darei ao Claude até um
+
+13
+00:00:32,987 --> 00:00:35,774
+conjunto adicional de novas ferramentas para utilizar.
+
+14
+00:00:35,941 --> 00:00:38,627
+Este processo não só lhe dará uma boa ideia do que Claude
+
+15
+00:00:38,667 --> 00:00:41,313
+Code pode fazer logo de cara, mas espero
+
+16
+00:00:41,353 --> 00:00:44,039
+que você também veja como você pode facilmente estender Claude
+
+17
+00:00:44,079 --> 00:00:46,625
+Code com mais funcionalidades. Aqui está minha
+
+18
+00:00:46,704 --> 00:00:49,631
+primeira tarefa para Claude Code. Vou pedir para ele encontrar
+
+19
+00:00:49,771 --> 00:00:53,140
+e otimizar problemas de desempenho na biblioteca chalk.
+
+20
+00:00:53,119 --> 00:00:56,024
+Caso não esteja familiarizado com ela, chalk é um pacote JavaScript.
+
+21
+00:00:56,404 --> 00:00:59,148
+Aqui está a documentação para ele. Agora, esta é uma biblioteca muito
+
+22
+00:00:59,207 --> 00:01:01,871
+pequena que tem um propósito muito simples.
+
+23
+00:01:02,271 --> 00:01:05,036
+Tudo o que ela faz é imprimir texto em cores bem formatadas,
+
+24
+00:01:05,096 --> 00:01:07,978
+então como exatamente você vê nesta captura de tela de exemplo
+
+25
+00:01:07,998 --> 00:01:10,802
+bem aqui. Então você pode dar cores ao texto ou planos de fundo
+
+26
+00:01:10,882 --> 00:01:13,427
+e formatação, todo esse tipo de coisa. Agora, isso
+
+27
+00:01:13,486 --> 00:01:16,350
+pode parecer um pacote realmente simples e bobo,
+
+28
+00:01:16,430 --> 00:01:19,195
+mas eis a questão. Acontece que este é na verdade o quinto
+
+29
+00:01:19,635 --> 00:01:22,620
+pacote mais baixado em todo o ecossistema JavaScript.
+
+30
+00:01:23,061 --> 00:01:25,706
+Na semana passada em particular, teve 429
+
+31
+00:01:26,106 --> 00:01:28,631
+milhões de downloads. Então este pacote é usado
+
+32
+00:01:29,070 --> 00:01:31,594
+amplamente, para colocar de forma simples. Se
+
+33
+00:01:31,656 --> 00:01:34,200
+eu pudesse encontrar alguma forma de otimizar qualquer coisa dentro
+
+34
+00:01:34,240 --> 00:01:37,126
+deste pacote, bem, provavelmente valeria o esforço.
+
+35
+00:01:37,628 --> 00:01:40,534
+Então vou pedir ao Claude para executar os benchmarks, identificar
+
+36
+00:01:40,573 --> 00:01:43,319
+os casos de pior desempenho, usar algumas ferramentas de profiling
+
+37
+00:01:43,359 --> 00:01:45,965
+para descobrir por que esses casos estão rodando tão lentamente e então
+
+38
+00:01:46,025 --> 00:01:48,951
+corrigi-los. Veremos então que Claude usará uma variedade
+
+39
+00:01:48,992 --> 00:01:51,557
+de ferramentas diferentes para lidar inteligentemente com este problema.
+
+40
+00:01:52,037 --> 00:01:54,584
+Ele formará uma 2DList para acompanhar seu progresso,
+
+41
+00:01:55,105 --> 00:01:57,971
+executará comandos para rodar os benchmarks, escreverá um arquivo para melhor
+
+42
+00:01:58,152 --> 00:02:01,118
+dar zoom em um caso particular, usará um profiler de CPU
+
+43
+00:02:01,159 --> 00:02:03,844
+para entender por que esse caso está rodando tão lentamente, e então
+
+44
+00:02:04,204 --> 00:02:06,915
+implementará algumas melhorias. Ao final,
+
+45
+00:02:07,015 --> 00:02:09,897
+teremos uma melhoria de 3,9 vezes na taxa de transferência
+
+46
+00:02:10,038 --> 00:02:13,100
+em uma operação particular em torno desta biblioteca. Aqui está
+
+47
+00:02:13,181 --> 00:02:15,864
+outro exemplo de quão bem Claude consegue encadear diferentes
+
+48
+00:02:15,883 --> 00:02:18,627
+chamadas de ferramentas para completar uma tarefa bastante complexa. Eu
+
+49
+00:02:18,646 --> 00:02:21,550
+vou lhe dar um conjunto de dados dentro de um arquivo CSV. Todos
+
+50
+00:02:21,569 --> 00:02:24,192
+os dados aqui contêm informações sobre diferentes usuários
+
+51
+00:02:24,292 --> 00:02:26,854
+de uma plataforma de streaming de vídeo. E vou pedir para ele
+
+52
+00:02:26,895 --> 00:02:29,677
+fazer apenas uma análise geral, talvez identificar algumas causas
+
+53
+00:02:29,818 --> 00:02:32,540
+de churn na plataforma. E quero que toda essa análise
+
+54
+00:02:32,580 --> 00:02:35,811
+seja feita dentro de um notebook Jupyter. Aqui está
+
+55
+00:02:35,850 --> 00:02:38,514
+meu conjunto de dados. Vou pedir ao Claude para rodar
+
+56
+00:02:38,534 --> 00:02:41,139
+a análise e vamos ver como ele se sai. Este é
+
+57
+00:02:41,158 --> 00:02:43,782
+um ótimo exemplo de onde o uso eficaz de ferramentas é realmente
+
+58
+00:02:43,883 --> 00:02:46,447
+importante. Veja, não é realmente suficiente que
+
+59
+00:02:46,507 --> 00:02:49,031
+Claude apenas escreva código em um notebook. Claude pode
+
+60
+00:02:49,091 --> 00:02:52,034
+também executar código em diferentes células e visualizar os resultados
+
+61
+00:02:52,215 --> 00:02:54,979
+dessas execuções. Isso significa que Claude
+
+62
+00:02:55,099 --> 00:02:57,682
+pode dar uma olhada inicial nos dados no notebook e
+
+63
+00:02:57,703 --> 00:03:00,447
+então personalizar cada célula sucessiva para refinar
+
+64
+00:03:00,486 --> 00:03:03,675
+em alguns detalhes específicos. Em seguida,
+
+65
+00:03:03,776 --> 00:03:06,600
+gostaria de lhe mostrar um exemplo de uma tarefa onde eu estendo as capacidades
+
+66
+00:03:06,640 --> 00:03:09,185
+do Claude Code dando-lhe acesso a um novo conjunto
+
+67
+00:03:09,264 --> 00:03:11,849
+de ferramentas. Eu construí um pequeno aplicativo que
+
+68
+00:03:11,889 --> 00:03:14,794
+gerará componentes de UI com base em alguma descrição inserida
+
+69
+00:03:14,914 --> 00:03:17,620
+no lado esquerdo da tela. O componente gerado
+
+70
+00:03:17,740 --> 00:03:20,324
+é então exibido no lado direito. Agora, o aplicativo pode
+
+71
+00:03:20,344 --> 00:03:22,849
+gerar componentes bonitos com bastante facilidade, mas
+
+72
+00:03:22,870 --> 00:03:25,394
+a interface de chat à esquerda e o cabeçalho no topo
+
+73
+00:03:25,574 --> 00:03:28,479
+não estão com uma aparência tão boa. Então
+
+74
+00:03:28,519 --> 00:03:31,062
+vou usar o Claude Code para melhorar a estilização. Se
+
+75
+00:03:31,103 --> 00:03:33,605
+eu simplesmente pedisse para ele corrigir a estilização na interface de chat e no
+
+76
+00:03:33,626 --> 00:03:36,169
+cabeçalho, ele provavelmente faria um bom trabalho. Mas lembre-se,
+
+77
+00:03:36,330 --> 00:03:38,953
+meu objetivo aqui é mostrar como é fácil
+
+78
+00:03:39,032 --> 00:03:41,637
+adicionar funcionalidade adicional ao Claude Code. Então, junto
+
+79
+00:03:41,676 --> 00:03:44,360
+com esta tarefa de estilização, também darei ao Claude Code
+
+80
+00:03:44,401 --> 00:03:47,003
+acesso a um novo conjunto de ferramentas fornecidas por
+
+81
+00:03:47,044 --> 00:03:49,728
+algo chamado servidor Playwright MCP, que
+
+82
+00:03:49,747 --> 00:03:52,532
+falarei mais adiante. Essas ferramentas permitem
+
+83
+00:03:52,611 --> 00:03:55,895
+que Claude abra e controle diretamente um navegador.
+
+84
+00:03:56,078 --> 00:03:58,600
+Então, aqui está como esse processo se parece em ação. Eu
+
+85
+00:03:58,621 --> 00:04:01,324
+vou pedir ao Claude para melhorar a estilização do meu aplicativo e fazer
+
+86
+00:04:01,383 --> 00:04:03,986
+uso de um navegador para isso. Ele então abrirá
+
+87
+00:04:04,007 --> 00:04:06,509
+um navegador no lado direito da tela. Navegará para meu
+
+88
+00:04:06,629 --> 00:04:09,312
+aplicativo, tirará uma captura de tela para ver a estilização atual,
+
+89
+00:04:09,674 --> 00:04:12,236
+e então atualizará a estilização. Poderíamos até pedir
+
+90
+00:04:12,317 --> 00:04:14,939
+ao Claude para tirar outra captura de tela da página quando
+
+91
+00:04:14,979 --> 00:04:17,663
+estivesse completa e iterar no design algumas vezes
+
+92
+00:04:18,024 --> 00:04:21,627
+para realmente obter um bom design que se destaque. E
+
+93
+00:04:21,687 --> 00:04:25,291
+em pouco tempo, temos algo que parece bastante razoável.
+
+94
+00:04:25,389 --> 00:04:28,353
+Há um último conjunto de demonstrações que gostaria de lhe dar. Lembre-se
+
+95
+00:04:28,413 --> 00:04:30,918
+do que mencionei há pouco. A capacidade de Claude de
+
+96
+00:04:30,978 --> 00:04:33,620
+utilizar ferramentas tão bem é o que permitirá que Claude Code
+
+97
+00:04:33,641 --> 00:04:36,464
+cresça com você e sua equipe no futuro. Deixe-me
+
+98
+00:04:36,485 --> 00:04:39,168
+mostrar um exemplo disso imediatamente. Claude tem
+
+99
+00:04:39,209 --> 00:04:41,973
+uma integração muito próxima com o GitHub. Você pode configurar o Claude
+
+100
+00:04:42,012 --> 00:04:44,636
+Code para rodar dentro de uma ação do GitHub,
+
+101
+00:04:44,656 --> 00:04:47,480
+onde ele será executado automaticamente com base em certos
+
+102
+00:04:47,579 --> 00:04:50,103
+eventos, como a criação de um pull request ou
+
+103
+00:04:50,163 --> 00:04:52,826
+quando mencionado diretamente em um issue. Quando
+
+104
+00:04:52,887 --> 00:04:55,413
+o Claude Code roda no GitHub, ele não só pode
+
+105
+00:04:55,432 --> 00:04:57,939
+visualizar e executar seu código, mas também
+
+106
+00:04:57,978 --> 00:05:00,766
+acessa um novo conjunto de ferramentas para interagir
+
+107
+00:05:00,805 --> 00:05:03,492
+com o GitHub, como a capacidade de criar comentários
+
+108
+00:05:03,692 --> 00:05:06,619
+ou criar commits ou pull requests e assim por diante. Você
+
+109
+00:05:06,658 --> 00:05:09,425
+pode usar essa integração para revisar automaticamente pull
+
+110
+00:05:09,446 --> 00:05:12,050
+requests. Deixe-me mostrar um exemplo. Deixe-me primeiro
+
+111
+00:05:12,091 --> 00:05:14,634
+configurar um pequeno cenário para você. Imaginemos que estamos
+
+112
+00:05:14,653 --> 00:05:17,257
+construindo infraestrutura na AWS, e toda
+
+113
+00:05:17,278 --> 00:05:20,100
+a nossa infraestrutura está definida em um conjunto de arquivos terraform,
+
+114
+00:05:20,141 --> 00:05:23,225
+que são commitados e armazenados no GitHub.
+
+115
+00:05:23,245 --> 00:05:26,048
+Como toda a nossa infraestrutura está definida em arquivos terraform,
+
+116
+00:05:26,088 --> 00:05:28,752
+o Claude Code tem uma boa ideia de como
+
+117
+00:05:28,853 --> 00:05:31,797
+a informação flui através da nossa infraestrutura.
+
+118
+00:05:31,776 --> 00:05:34,620
+E vamos imaginar que na aplicação, eu tenho uma tabela DynamoDB.
+
+119
+00:05:34,740 --> 00:05:37,444
+Caso não esteja familiarizado com isso, é tipo um banco de dados normal
+
+120
+00:05:37,464 --> 00:05:40,348
+tabela. Dentro dela, estou armazenando algumas informações diferentes
+
+121
+00:05:40,389 --> 00:05:43,153
+sobre usuários, incluindo talvez planos visualizados e
+
+122
+00:05:43,173 --> 00:05:45,898
+uma data de registro. E por algum motivo,
+
+123
+00:05:45,937 --> 00:05:48,622
+queremos compartilhar apenas essas informações de planos visualizados e
+
+124
+00:05:48,742 --> 00:05:51,425
+data de registro com uma equipe de
+
+125
+00:05:51,466 --> 00:05:54,189
+marketing interna, mas também com uma equipe de
+
+126
+00:05:54,350 --> 00:05:56,973
+marketing externa também. Então, outra empresa tem
+
+127
+00:05:57,014 --> 00:05:59,978
+acesso aos dados que estamos escrevendo neste bucket.
+
+128
+00:05:59,958 --> 00:06:02,901
+Portanto, é muito importante que estejamos sempre cientes de quais informações
+
+129
+00:06:02,940 --> 00:06:06,423
+estão sendo escritas nesse bucket ao longo do tempo. Diariamente,
+
+130
+00:06:06,704 --> 00:06:09,387
+podemos ter uma função Lambda, que extrai todos os diferentes usuários
+
+131
+00:06:09,427 --> 00:06:12,228
+que foram adicionados a essa tabela, e então extrai apenas
+
+132
+00:06:12,428 --> 00:06:14,971
+os planos visualizados e a data de registro, e armazena
+
+133
+00:06:15,012 --> 00:06:17,793
+isso no bucket S3 para que essas duas equipes de marketing
+
+134
+00:06:18,014 --> 00:06:20,596
+possam acessar essas informações. Agora, vamos
+
+135
+00:06:20,637 --> 00:06:23,358
+imaginar que meses depois, a equipe de
+
+136
+00:06:23,418 --> 00:06:26,262
+marketing interna nos pede para também armazenar o e-mail
+
+137
+00:06:26,401 --> 00:06:28,985
+dentro deste bucket S3 também. Então, podemos
+
+138
+00:06:29,004 --> 00:06:31,689
+ir à função Lambda e adicionar apenas uma única linha
+
+139
+00:06:31,730 --> 00:06:34,494
+de código que pega o e-mail do usuário e o armazena
+
+140
+00:06:34,514 --> 00:06:37,038
+no bucket. E como isso é meses depois,
+
+141
+00:06:37,399 --> 00:06:40,043
+podemos ter esquecido completamente que este bucket S3
+
+142
+00:06:40,064 --> 00:06:42,649
+é compartilhado com um parceiro de marketing externo. Então,
+
+143
+00:06:42,668 --> 00:06:45,494
+neste momento, estamos colocando informações pessoalmente identificáveis
+
+144
+00:06:45,574 --> 00:06:48,379
+neste bucket, que é acessível
+
+145
+00:06:48,559 --> 00:06:51,384
+por uma empresa separada. Isso é um grande "não-não". Definitivamente
+
+146
+00:06:51,403 --> 00:06:54,209
+algo que não gostaríamos de fazer. Mas ao mesmo tempo, este
+
+147
+00:06:54,329 --> 00:06:56,913
+é um erro que ocorre, e é meio
+
+148
+00:06:56,934 --> 00:06:59,478
+difícil de detectar se não tivermos uma boa ideia do que exatamente
+
+149
+00:06:59,517 --> 00:07:02,161
+está acontecendo com este bucket S3. Bem,
+
+150
+00:07:02,182 --> 00:07:04,927
+acontece que o Claude Code pode detectar este tipo
+
+151
+00:07:04,966 --> 00:07:07,612
+de cenário dentro de um pull request com bastante facilidade,
+
+152
+00:07:07,932 --> 00:07:10,817
+especificamente porque toda a nossa infraestrutura está definida
+
+153
+00:07:10,836 --> 00:07:13,641
+dentro desses arquivos terraform. Então, aqui está um exemplo rápido.
+
+154
+00:07:14,302 --> 00:07:17,348
+Eu construí aquele projeto que mostrei naquele diagrama. Eu
+
+155
+00:07:17,389 --> 00:07:19,954
+criei um pull request para adicionar o
+
+156
+00:07:20,053 --> 00:07:22,639
+e-mail do usuário dentro da função Lambda. Então, a única
+
+157
+00:07:22,678 --> 00:07:25,244
+linha de código que mudei foi aquela ali. Eu estou dizendo que
+
+158
+00:07:25,264 --> 00:07:27,928
+para cada usuário, eu quero pegar o e-mail dele e adicionar isso
+
+159
+00:07:27,949 --> 00:07:30,526
+no bucket também. Agora, Claude
+
+160
+00:07:30,565 --> 00:07:33,451
+tem uma excelente ideia da minha infraestrutura. Então,
+
+161
+00:07:33,511 --> 00:07:36,055
+ele conseguiu, dentro de uma revisão automatizada, isso
+
+162
+00:07:36,096 --> 00:07:38,761
+que estamos vendo aqui, dar uma olhada em todas as mudanças que fiz
+
+163
+00:07:38,802 --> 00:07:41,786
+neste pull request. Ele conseguiu descobrir exatamente
+
+164
+00:07:41,846 --> 00:07:44,552
+como funciona minha infraestrutura, e ele conseguiu identificar
+
+165
+00:07:44,593 --> 00:07:47,197
+que estou expondo alguns PII para
+
+166
+00:07:47,257 --> 00:07:49,942
+um parceiro. Então, ele listou o fluxo de dados
+
+167
+00:07:50,122 --> 00:07:53,048
+bem aqui, os passos exatos que ocorrem. e entra
+
+168
+00:07:53,088 --> 00:07:55,692
+em grande detalhe sobre como este bucket é compartilhado com um
+
+169
+00:07:55,812 --> 00:07:58,358
+parceiro externo. Detectar problemas como este
+
+170
+00:07:58,398 --> 00:08:00,901
+durante o desenvolvimento, em vez de depois que implantarmos essa
+
+171
+00:08:00,961 --> 00:08:03,726
+mudança é um benefício incrível de usar a
+
+172
+00:08:03,807 --> 00:08:06,331
+integração do Claude Code no GitHub. Vou entrar
+
+173
+00:08:06,370 --> 00:08:09,016
+em muitos detalhes mais tarde e mostrar exatamente como configurar
+
+174
+00:08:09,175 --> 00:08:11,759
+um fluxo exatamente como este. Acho
+
+175
+00:08:11,778 --> 00:08:14,648
+que agora temos uma boa ideia do que Claude Code pode fazer, graças
+
+176
+00:08:14,687 --> 00:08:17,697
+à sua excelente capacidade de utilizar ferramentas. Lembre-se,
+
+177
+00:08:17,817 --> 00:08:20,485
+você realmente quer pensar no Claude Code como um assistente flexível
+
+178
+00:08:20,747 --> 00:08:23,516
+que pode ser customizado, crescer e mudar ao longo do tempo para
+
+179
+00:08:23,555 --> 00:08:24,899
+atender às necessidades da sua equipe.

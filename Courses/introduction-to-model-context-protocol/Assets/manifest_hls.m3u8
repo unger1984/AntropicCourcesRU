@@ -1,0 +1,13 @@
+#EXTM3U
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=150000,RESOLUTION=480x270,CODECS="mp4a.40.2,avc1.42c015",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69ba0017_254ff56ad0e3d9bedd6181422e90b1084e4ba45b/sites/Lc4Rn1s0/media/yddVFhdH/versions/yddVFhdH/manifest.ism/manifest-audio_0_qFaRsYAS_pc5vTZne=112024-video_0_qFaRsYAS_1NsSn3An=21968.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=250000,RESOLUTION=1920x1080,CODECS="mp4a.40.2,avc1.640028",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69ba0017_254ff56ad0e3d9bedd6181422e90b1084e4ba45b/sites/Lc4Rn1s0/media/yddVFhdH/versions/yddVFhdH/manifest.ism/manifest-audio_0_qFaRsYAS_pc5vTZne=112024-video_0_qFaRsYAS_1NsSn3An=120531.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=200000,RESOLUTION=1280x720,CODECS="mp4a.40.2,avc1.4d401f",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69ba0017_254ff56ad0e3d9bedd6181422e90b1084e4ba45b/sites/Lc4Rn1s0/media/yddVFhdH/versions/yddVFhdH/manifest.ism/manifest-audio_0_qFaRsYAS_pc5vTZne=112024-video_0_qFaRsYAS_1NsSn3An=73060.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=160000,RESOLUTION=720x406,CODECS="mp4a.40.2,avc1.4d401e",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69ba0017_254ff56ad0e3d9bedd6181422e90b1084e4ba45b/sites/Lc4Rn1s0/media/yddVFhdH/versions/yddVFhdH/manifest.ism/manifest-audio_0_qFaRsYAS_pc5vTZne=112024-video_0_qFaRsYAS_1NsSn3An=36246.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=140000,RESOLUTION=320x180,CODECS="mp4a.40.2,avc1.42c00d",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69ba0017_254ff56ad0e3d9bedd6181422e90b1084e4ba45b/sites/Lc4Rn1s0/media/yddVFhdH/versions/yddVFhdH/manifest.ism/manifest-audio_0_qFaRsYAS_pc5vTZne=112024-video_0_qFaRsYAS_1NsSn3An=12592.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=120000,CODECS="mp4a.40.2"
+https://videos-cloudfront-usp.jwpsrv.com/69ba0017_254ff56ad0e3d9bedd6181422e90b1084e4ba45b/sites/Lc4Rn1s0/media/yddVFhdH/versions/yddVFhdH/manifest.ism/manifest-audio_0_qFaRsYAS_pc5vTZne=112024.m3u8

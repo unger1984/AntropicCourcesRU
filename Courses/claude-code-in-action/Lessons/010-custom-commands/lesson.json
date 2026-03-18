@@ -1,0 +1,209 @@
+{
+  "title": "Custom commands",
+  "url": "https://anthropic.skilljar.com/claude-code-in-action/303234",
+  "nav_lessons": [
+    {
+      "title": "Lessons",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303234"
+    },
+    {
+      "title": "Introduction",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303233"
+    },
+    {
+      "title": "What is a coding assistant?",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303235"
+    },
+    {
+      "title": "Claude Code in action",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303242"
+    },
+    {
+      "title": "Claude Code setup",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/301614"
+    },
+    {
+      "title": "Project setup",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/301615"
+    },
+    {
+      "title": "Adding context",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303241"
+    },
+    {
+      "title": "Making changes",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303236"
+    },
+    {
+      "title": "Course satisfaction survey",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303701"
+    },
+    {
+      "title": "Controlling context",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303237"
+    },
+    {
+      "title": "MCP servers with Claude Code",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303239"
+    },
+    {
+      "title": "Github integration",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303240"
+    },
+    {
+      "title": "Introducing hooks",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312000"
+    },
+    {
+      "title": "Defining hooks",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312002"
+    },
+    {
+      "title": "Implementing a hook",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312003"
+    },
+    {
+      "title": "Gotchas around hooks",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312423"
+    },
+    {
+      "title": "Useful hooks!",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312004"
+    },
+    {
+      "title": "Another useful hook",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312427"
+    },
+    {
+      "title": "The Claude Code SDK",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312001"
+    },
+    {
+      "title": "Quiz on Claude Code",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/308391"
+    },
+    {
+      "title": "Summary and next steps",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303238"
+    }
+  ],
+  "notes_key": "claudecode",
+  "notes_length": 18666,
+  "source_html_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Source/lesson-page.html",
+  "source_dir": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Source",
+  "assets": {
+    "jwplayer_script": {
+      "url": "https://content.jwplatform.com/players/ChNLn8eT-Akyo8gQO.js",
+      "status": "downloaded",
+      "kind": "player_script",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Assets/jwplayer_script.js"
+    },
+    "playback_json": {
+      "url": "https://cdn.jwplayer.com/v2/sites/Lc4Rn1s0/media/ChNLn8eT/playback.json?recommendations_playlist_id=Xk7xK52v&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNvbW1lbmRhdGlvbnNfcGxheWxpc3RfaWQiOiJYazd4SzUydiIsInJlc291cmNlIjoiL3YyL3NpdGVzL0xjNFJuMXMwL21lZGlhL0NoTkxuOGVUL3BsYXliYWNrLmpzb24iLCJleHAiOjE3NzM4MzU0NDB9.w_8cRUJSYGPY39NK_ikHJL-suVKN51_P1mtyH1HuHuY",
+      "status": "downloaded",
+      "kind": "metadata",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Assets/playback_json.json"
+    },
+    "manifest_hls": {
+      "url": "https://cdn.jwplayer.com/manifests/ChNLn8eT.m3u8?exp=1773835440&sig=faae91cc80f08054c02fdea78ccf816b",
+      "status": "downloaded",
+      "kind": "video_manifest",
+      "label": "application/vnd.apple.mpegurl",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Assets/manifest_hls.m3u8"
+    },
+    "video_180p": {
+      "url": "https://cdn.jwplayer.com/videos/ChNLn8eT-B9NwIVRu.mp4?exp=1773835440&sig=48fa2fdfbcde2f1ed941b4365bda812a",
+      "status": "discovered",
+      "kind": "video",
+      "label": "180p"
+    },
+    "video_270p": {
+      "url": "https://cdn.jwplayer.com/videos/ChNLn8eT-muagBOKI.mp4?exp=1773835440&sig=a15b6e7c9b2324710fcaf6286ef912c1",
+      "status": "discovered",
+      "kind": "video",
+      "label": "270p"
+    },
+    "video_406p": {
+      "url": "https://cdn.jwplayer.com/videos/ChNLn8eT-4Xe8IV8X.mp4?exp=1773835440&sig=1f3c428f8cd5a32418d59427c45a039f",
+      "status": "discovered",
+      "kind": "video",
+      "label": "406p"
+    },
+    "video_720p": {
+      "url": "https://cdn.jwplayer.com/videos/ChNLn8eT-m7ew0xq8.mp4?exp=1773835440&sig=63793162eaecfc56c031fe42897e9765",
+      "status": "discovered",
+      "kind": "video",
+      "label": "720p"
+    },
+    "audio_audio": {
+      "url": "https://cdn.jwplayer.com/videos/ChNLn8eT-eNgUZBQ2.m4a?exp=1773835440&sig=38d3babdf7897b5922a9992ad258ff39",
+      "status": "downloaded",
+      "kind": "audio",
+      "label": "Audio",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Assets/audio_audio.m4a"
+    },
+    "video_1080p": {
+      "url": "https://cdn.jwplayer.com/videos/ChNLn8eT-hFUVmOoC.mp4?exp=1773835440&sig=0c71bd4814b14ca68bb267aae8ca68c7",
+      "status": "downloaded",
+      "kind": "video",
+      "label": "1080p",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Assets/video_1080p.mp4"
+    },
+    "captions_en": {
+      "url": "https://cdn.jwplayer.com/tracks/64rB0f65.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Assets/captions_en.srt"
+    },
+    "captions_fr": {
+      "url": "https://cdn.jwplayer.com/tracks/ov6TPd8j.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Assets/captions_fr.srt"
+    },
+    "captions_de": {
+      "url": "https://cdn.jwplayer.com/tracks/5krj9lRn.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Assets/captions_de.srt"
+    },
+    "captions_ja": {
+      "url": "https://cdn.jwplayer.com/tracks/AX9FSnQO.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Assets/captions_ja.srt"
+    },
+    "captions_ko": {
+      "url": "https://cdn.jwplayer.com/tracks/dnvMG7al.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Assets/captions_ko.srt"
+    },
+    "captions_pt": {
+      "url": "https://cdn.jwplayer.com/tracks/I0Ela7kn.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Assets/captions_pt.srt"
+    },
+    "captions_es": {
+      "url": "https://cdn.jwplayer.com/tracks/GcGyLK3f.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Assets/captions_es.srt"
+    },
+    "thumbnails_vtt": {
+      "url": "https://cdn.jwplayer.com/strips/ChNLn8eT-120.vtt",
+      "status": "downloaded",
+      "kind": "thumbnails",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Assets/thumbnails_vtt.vtt"
+    },
+    "poster_image": {
+      "url": "https://cdn.jwplayer.com/v2/media/ChNLn8eT/poster.jpg?width=720",
+      "status": "downloaded",
+      "kind": "image",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Assets/poster_image.jpg"
+    }
+  },
+  "status": "downloaded",
+  "notes_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/010-custom-commands/Source/notes.xml"
+}

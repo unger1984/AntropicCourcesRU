@@ -1,0 +1,351 @@
+1
+00:00:00,031 --> 00:00:02,714
+Essayons de faire quelques modifications à ce projet.
+
+2
+00:00:03,134 --> 00:00:05,658
+En cours de route, je vais vous montrer quelques fonctionnalités utiles de Claude Code.
+
+3
+00:00:06,118 --> 00:00:08,782
+La première chose que j'aimerais faire est de déplacer ce texte d'espacement ici
+
+4
+00:00:08,823 --> 00:00:11,647
+sur le côté gauche, vers le centre de ce panneau.
+
+5
+00:00:12,166 --> 00:00:14,791
+Pour aider Claude à comprendre exactement quel contenu je veux
+
+6
+00:00:14,851 --> 00:00:17,594
+déplacer, je vais prendre une capture d'écran de
+
+7
+00:00:17,614 --> 00:00:20,138
+cette zone, puis je vais la coller
+
+8
+00:00:20,198 --> 00:00:23,102
+dans Claude Code en utilisant Ctrl V.
+
+9
+00:00:23,420 --> 00:00:26,045
+Notez que c'est Control-V et non Command-V
+
+10
+00:00:26,085 --> 00:00:28,649
+auquel vous êtes peut-être habitué sur Mac OS. Control-V est
+
+11
+00:00:28,750 --> 00:00:31,394
+utilisé spécifiquement pour coller une capture d'écran. Je
+
+12
+00:00:31,434 --> 00:00:34,201
+peux alors demander à Claude de centrer cet espace réservé. Après
+
+13
+00:00:34,261 --> 00:00:36,886
+un peu de recherche, Claude parvient à effectuer la mise à jour du style.
+
+14
+00:00:37,146 --> 00:00:39,651
+Et puis, de retour dans le navigateur, oui, ça rend bien. Laissez-moi
+
+15
+00:00:39,670 --> 00:00:42,256
+vous montrer la prochaine chose que j'aimerais changer dans cette application. Je vais demander
+
+16
+00:00:42,276 --> 00:00:45,462
+un composant de carte qui affiche un titre et une description.
+
+17
+00:00:45,442 --> 00:00:48,246
+La carte est générée sans problème, mais il y a une
+
+18
+00:00:48,286 --> 00:00:51,009
+chose étrange. Sur le côté gauche de l'interface de chat,
+
+19
+00:00:51,191 --> 00:00:53,774
+il y a l'éditeur de remplacement de chaînes. Ce petit panneau
+
+20
+00:00:53,795 --> 00:00:56,357
+là-bas est destiné à indiquer à l'utilisateur qu'un fichier est en cours de
+
+21
+00:00:56,417 --> 00:00:59,061
+création. Mais pour l'instant, il utilise un terme très technique,
+
+22
+00:00:59,402 --> 00:01:02,186
+"éditeur de remplacement de chaînes" pour l'outil utilisé en arrière-plan.
+
+23
+00:01:02,707 --> 00:01:05,451
+J'aimerais montrer à l'utilisateur un texte un peu plus convivial ici et
+
+24
+00:01:05,471 --> 00:01:08,036
+dire simplement à l'utilisateur qu'un fichier est en cours de création et le nom du
+
+25
+00:01:08,055 --> 00:01:10,760
+fichier. Et bien sûr, nous devrions également gérer les cas où
+
+26
+00:01:10,939 --> 00:01:13,463
+ce chatbot édite un fichier ou supprime
+
+27
+00:01:13,483 --> 00:01:16,147
+un fichier, etc. Pour aider à guider l'attention de Claude,
+
+28
+00:01:16,207 --> 00:01:19,192
+je vais une fois de plus prendre une capture d'écran de ceci afin qu'il
+
+29
+00:01:19,233 --> 00:01:21,856
+comprenne exactement de quoi je parle. Ensuite, de retour
+
+30
+00:01:21,917 --> 00:01:24,540
+ici, je vais coller cette image et demander à Claude de
+
+31
+00:01:24,600 --> 00:01:27,364
+remplacer ce texte particulier par un message plus
+
+32
+00:01:27,605 --> 00:01:30,469
+convivial. Maintenant, c'est une tâche un peu
+
+33
+00:01:30,510 --> 00:01:33,013
+délicate qui demandera à Claude de faire
+
+34
+00:01:33,054 --> 00:01:35,918
+une quantité de recherche décente dans ce projet pour être complétée.
+
+35
+00:01:35,897 --> 00:01:38,522
+Chaque fois que vous confiez une tâche plus difficile à Claude, il y a deux
+
+36
+00:01:38,581 --> 00:01:41,406
+façons d'augmenter facilement l'intelligence de Claude. La
+
+37
+00:01:41,447 --> 00:01:43,989
+première façon est d'activer le mode Plan. Le mode Plan
+
+38
+00:01:44,010 --> 00:01:46,974
+est activé en appuyant deux fois sur Shift-Tab, ou
+
+39
+00:01:47,075 --> 00:01:49,819
+une seule fois si vous acceptez automatiquement les modifications de fichiers.
+
+40
+00:01:50,500 --> 00:01:53,063
+En mode Plan, Claude effectuera beaucoup plus de recherches
+
+41
+00:01:53,123 --> 00:01:55,668
+sur le contenu de votre projet, en lisant plus de fichiers
+
+42
+00:01:55,808 --> 00:01:58,393
+et en élaborant un plan détaillé sur la façon de réaliser votre
+
+43
+00:01:58,453 --> 00:02:01,055
+tâche. Après avoir terminé le plan, Claude vous
+
+44
+00:02:01,075 --> 00:02:03,759
+dira exactement ce qu'il veut faire pour accomplir votre tâche.
+
+45
+00:02:04,280 --> 00:02:06,882
+À ce stade, vous pouvez soit accepter ce plan, et Claude le
+
+46
+00:02:06,942 --> 00:02:09,485
+mettra en œuvre, soit vous pouvez rediriger Claude d'une manière ou
+
+47
+00:02:09,526 --> 00:02:12,028
+d'une autre, peut-être qu'il a manqué un fichier, ou qu'il n'a pas pris en compte
+
+48
+00:02:12,088 --> 00:02:14,711
+un scénario. La deuxième façon d'améliorer
+
+49
+00:02:14,731 --> 00:02:17,414
+l'intelligence de Claude est d'activer la réflexion. Cela
+
+50
+00:02:17,455 --> 00:02:20,579
+active la fonction de réflexion étendue de Claude, lui permettant
+
+51
+00:02:20,598 --> 00:02:23,141
+de raisonner davantage sur une tâche particulière. Pour
+
+52
+00:02:23,181 --> 00:02:26,526
+activer la réflexion, il existe une poignée de phrases déclencheuses différentes.
+
+53
+00:02:26,506 --> 00:02:29,110
+Chacune donne à Claude un budget de jetons progressivement plus grand
+
+54
+00:02:29,151 --> 00:02:31,975
+pour réfléchir. Compte tenu de la complexité de cette tâche,
+
+55
+00:02:32,217 --> 00:02:34,942
+je pourrais demander à Claude d'ultra-réfléchir sur la meilleure façon de l'implémenter.
+
+56
+00:02:35,021 --> 00:02:37,586
+La dernière chose à comprendre est que la planification
+
+57
+00:02:37,606 --> 00:02:40,211
+et la réflexion peuvent être utilisées ensemble. Donc, en plus de
+
+58
+00:02:40,252 --> 00:02:42,757
+cet ultra-réflexion, j'activerai également le mode Plan
+
+59
+00:02:42,796 --> 00:02:45,341
+également. Et maintenant, je vais exécuter cela et nous verrons si Claude
+
+60
+00:02:45,442 --> 00:02:47,985
+parvient à bien implémenter cette fonctionnalité. Maintenant, vous vous demandez
+
+61
+00:02:48,006 --> 00:02:50,530
+peut-être quand utiliser la planification et quand utiliser
+
+62
+00:02:50,590 --> 00:02:53,093
+la réflexion. Pensez à ces deux-là comme gérant
+
+63
+00:02:53,193 --> 00:02:55,818
+la largeur d'abord et la profondeur. Le mode planification est utile
+
+64
+00:02:55,858 --> 00:02:58,401
+lorsque vous avez une tâche qui nécessite une compréhension large
+
+65
+00:02:58,442 --> 00:03:01,105
+de votre base de code et qui nécessite de regarder différentes zones.
+
+66
+00:03:01,667 --> 00:03:04,270
+C'est également utile lorsque vous travaillez sur une tâche qui nécessite plusieurs
+
+67
+00:03:04,330 --> 00:03:07,135
+étapes pour être complétée. La réflexion, d'autre part, est
+
+68
+00:03:07,235 --> 00:03:09,780
+utile lorsque vous vous concentrez sur un élément logique particulier et délicat
+
+69
+00:03:09,840 --> 00:03:12,444
+ou que vous dépanner un bug difficile.
+
+70
+00:03:12,504 --> 00:03:15,049
+La deuxième question que vous pourriez avoir est de savoir si
+
+71
+00:03:15,068 --> 00:03:17,593
+vous devriez simplement activer la réflexion et la planification tout le temps.
+
+72
+00:03:18,134 --> 00:03:20,818
+Eh bien, vous le pouvez certainement, gardez juste à l'esprit que la planification
+
+73
+00:03:20,878 --> 00:03:23,443
+et la réflexion consomment des jetons supplémentaires, donc il y a
+
+74
+00:03:23,484 --> 00:03:26,087
+un coût associé à leur utilisation. Après
+
+75
+00:03:26,127 --> 00:03:28,893
+quelques minutes de travail, il semble que la fonctionnalité soit terminée. Donc,
+
+76
+00:03:28,913 --> 00:03:31,736
+je vais retourner dans mon éditeur et tester ceci. Donc,
+
+77
+00:03:31,776 --> 00:03:34,360
+immédiatement, nous pouvons voir que nous obtenons de meilleures informations d'état ici
+
+78
+00:03:34,420 --> 00:03:37,084
+par rapport à ce que nous avions auparavant. Les utilisateurs sont maintenant informés qu'un fichier
+
+79
+00:03:37,104 --> 00:03:39,848
+est en cours de création. Et si j'envoie une demande de suivi,
+
+80
+00:03:40,088 --> 00:03:42,632
+peut-être pour changer le titre. Espérons
+
+81
+00:03:42,693 --> 00:03:45,395
+maintenant, dans le suivi, nous verrons quelque chose concernant la modification de ce fichier.
+
+82
+00:03:45,937 --> 00:03:48,681
+Voilà. Donc, maintenant nous modifions le fichier app.jsx.
+
+83
+00:03:49,102 --> 00:03:51,625
+Eh bien, je dirais que Claude a certainement réussi à implémenter
+
+84
+00:03:51,645 --> 00:03:54,197
+cette fonctionnalité. Maintenant que nous avons apporté quelques modifications à ce
+
+85
+00:03:54,257 --> 00:03:57,390
+projet, nous devrions probablement valider nos modifications. Claude
+
+86
+00:03:57,411 --> 00:04:00,081
+Code est un assistant Git solide. Nous pouvons lui demander de
+
+87
+00:04:00,122 --> 00:04:02,674
+mettre en staging et de commiter nos modifications, et il écrira un
+
+88
+00:04:02,734 --> 00:04:04,401
+message de commit descriptif pour nous.

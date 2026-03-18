@@ -1,0 +1,247 @@
+1
+00:00:00,436 --> 00:00:03,100
+Sie können Claude Code neue Tools und Funktionen hinzufügen
+
+2
+00:00:03,181 --> 00:00:05,746
+durch die Verwendung von MCP-Servern. Diese
+
+3
+00:00:05,785 --> 00:00:08,490
+MCP-Server laufen entweder remote oder lokal
+
+4
+00:00:08,611 --> 00:00:11,195
+auf Ihrem Rechner. Ein sehr beliebter MCP-
+
+5
+00:00:11,236 --> 00:00:13,760
+Server namens Playwright gibt Claude Code die
+
+6
+00:00:13,801 --> 00:00:16,326
+Möglichkeit, einen Browser zu steuern. Ich zeige Ihnen, wie Sie
+
+7
+00:00:16,405 --> 00:00:18,951
+ihn zu Claude Code hinzufügen, und dann werden wir ihn nutzen, um unsere
+
+8
+00:00:19,030 --> 00:00:21,797
+App etwas weiter zu entwickeln. Um den Server in
+
+9
+00:00:21,836 --> 00:00:24,422
+Ihrem Terminal zu installieren, nicht innerhalb von Claude Code, führen wir
+
+10
+00:00:24,461 --> 00:00:27,108
+Claude MCP Add aus. Und dann einen Namen
+
+11
+00:00:27,147 --> 00:00:30,053
+für diesen MCP-Server, ich werde ihn Playwright nennen. Und
+
+12
+00:00:30,074 --> 00:00:32,740
+nach dem Namen fügen wir einen Befehl hinzu, der
+
+13
+00:00:32,780 --> 00:00:35,426
+den Server lokal auf Ihrem Rechner startet. Wir können dann
+
+14
+00:00:35,485 --> 00:00:38,171
+Claude Code starten und ihn bitten, einen Browser zu öffnen und zu
+
+15
+00:00:38,192 --> 00:00:41,158
+unserer Anwendung unter localhost 3000 zu navigieren.
+
+16
+00:00:41,137 --> 00:00:43,762
+Bevor der Browser geöffnet wird, stellen Sie vielleicht fest, dass Sie eine
+
+17
+00:00:43,822 --> 00:00:46,426
+Berechtigung für die Ausführung dieses Tools erteilen müssen. Wenn Sie müde
+
+18
+00:00:46,506 --> 00:00:49,551
+von all diesen Berechtigungs-Pop-ups sind, können Sie das Claude-
+
+19
+00:00:49,850 --> 00:00:52,594
+Verzeichnis in den settings.local.json öffnen.
+
+20
+00:00:53,076 --> 00:00:55,719
+Und dann innerhalb des allow-Arrays können Sie einen
+
+21
+00:00:55,780 --> 00:00:58,363
+String von MCP_ _ _ einfügen.
+
+22
+00:00:58,484 --> 00:01:01,148
+Beachten Sie, dass es hier zwei Unterstriche gibt: Playwright. Dies
+
+23
+00:01:01,207 --> 00:01:03,811
+ermöglicht Claude Code die Nutzung dieses MCP-Servers und
+
+24
+00:01:03,851 --> 00:01:06,355
+der darin enthaltenen Tools in jeder gewünschten Weise, ohne dass Sie
+
+25
+00:01:06,376 --> 00:01:09,359
+jedes Mal eine Berechtigung erteilen müssen. Wenn ich
+
+26
+00:01:09,420 --> 00:01:11,923
+Claude Code neu starte und ihn dann erneut bitte, einen Browser zu öffnen,
+
+27
+00:01:12,243 --> 00:01:15,007
+wird er dies tun, ohne dass ich eine Berechtigung erteilen muss. Es gibt
+
+28
+00:01:15,066 --> 00:01:17,849
+eine unglaubliche Anzahl von Möglichkeiten, wie Sie den Playwright MCP-
+
+29
+00:01:17,890 --> 00:01:20,453
+Server nutzen können. Ich zeige Ihnen eine, die für das
+
+30
+00:01:20,472 --> 00:01:22,975
+Projekt, an dem wir gerade arbeiten, sehr relevant wäre. Zurück in
+
+31
+00:01:23,016 --> 00:01:26,140
+meinem Editor suche ich die Datei SRC, Lib, prompts,
+
+32
+00:01:26,521 --> 00:01:29,263
+generation.tsx. Dies ist der Prompt,
+
+33
+00:01:29,304 --> 00:01:31,906
+der verwendet wird, um die Komponenten zu generieren, die Sie
+
+34
+00:01:31,947 --> 00:01:34,450
+in unserer App anfordern. Ich möchte also, dass
+
+35
+00:01:34,490 --> 00:01:37,316
+Claude Code den Browser nutzen kann, selbstständig
+
+36
+00:01:37,415 --> 00:01:39,980
+eine Komponente generiert und dann diesen Prompt
+
+37
+00:01:40,061 --> 00:01:42,906
+basierend auf der generierten Komponente selbst anpasst. Und
+
+38
+00:01:42,945 --> 00:01:45,471
+hoffentlich erhalten wir dann einige besser aussehende Komponenten,
+
+39
+00:01:45,510 --> 00:01:48,034
+die von unserer App generiert werden. Ich zeige Ihnen also, wie
+
+40
+00:01:48,055 --> 00:01:50,680
+wir das machen. Zurück in Claude Code bitte ich
+
+41
+00:01:50,739 --> 00:01:53,265
+ihn, zu localhost 3000 zu navigieren.
+
+42
+00:01:53,245 --> 00:01:55,772
+versuchen, eine Komponente zu generieren, den
+
+43
+00:01:55,831 --> 00:01:58,478
+generierten Quellcode anzusehen und die Gestaltung zu bewerten und dann
+
+44
+00:01:58,498 --> 00:02:01,307
+unseren Prompt in dieser generation.tsx-Datei
+
+45
+00:02:01,346 --> 00:02:03,974
+anzupassen, und hoffentlich erhalten wir am Ende
+
+46
+00:02:04,013 --> 00:02:07,001
+des Tages eine bessere Gestaltung unserer generierten Komponenten.
+
+47
+00:02:08,348 --> 00:02:10,951
+Mal sehen, wie es funktioniert. Claude wird zuerst den
+
+48
+00:02:10,991 --> 00:02:13,575
+Browser öffnen. Es wird versuchen, eine Komponente zu generieren.
+
+49
+00:02:14,336 --> 00:02:16,881
+Wenn ich mir hier einige der Kommentare von Claude ansehe, sieht es so aus, als ob
+
+50
+00:02:16,941 --> 00:02:19,625
+es nicht ganz so glücklich ist. Sie bemerken vielleicht sogar, dass
+
+51
+00:02:19,645 --> 00:02:22,247
+es sich über einen sehr gängigen Stil beschwert, der in
+
+52
+00:02:22,268 --> 00:02:24,931
+Anwendungen wie dieser verwendet wird, ein lila bis blauer
+
+53
+00:02:24,951 --> 00:02:27,475
+Farbverlauf. Claude wird dann unseren Prompt
+
+54
+00:02:27,536 --> 00:02:30,120
+aktualisieren und dann versuchen, eine neue Komponente zu generieren.
+
+55
+00:02:30,622 --> 00:02:33,308
+Und ich muss ehrlich sein, das hat tatsächlich ein
+
+56
+00:02:33,329 --> 00:02:36,096
+viel besseres Ergebnis erzielt, als ich je erwartet hatte. Diese
+
+57
+00:02:36,417 --> 00:02:39,645
+Testimonial-Karte sieht wirklich, wirklich großartig aus. Basierend
+
+58
+00:02:39,705 --> 00:02:42,390
+allein auf diesen Ergebnissen können Sie sofort erkennen, dass
+
+59
+00:02:42,550 --> 00:02:45,519
+MCP-Server wirklich die Tür zu vielen interessanten
+
+60
+00:02:45,598 --> 00:02:48,245
+Anwendungsfällen öffnen. Und ich empfehle Ihnen dringend, sich einige
+
+61
+00:02:48,405 --> 00:02:50,991
+MCP-Server anzusehen, die Claude bei der Entwicklung
+
+62
+00:02:51,032 --> 00:02:53,677
+jedes Projekts, an dem Sie persönlich arbeiten, unterstützen könnten.

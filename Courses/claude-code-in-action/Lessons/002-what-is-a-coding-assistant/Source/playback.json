@@ -1,0 +1,151 @@
+{
+  "playlist": [
+    {
+      "image": "https://cdn.jwplayer.com/v2/media/WQnSCLF3/poster.jpg?width=720",
+      "images": [
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/WQnSCLF3/poster.jpg?width=320",
+          "width": 320,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/WQnSCLF3/poster.jpg?width=480",
+          "width": 480,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/WQnSCLF3/poster.jpg?width=640",
+          "width": 640,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/WQnSCLF3/poster.jpg?width=720",
+          "width": 720,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/WQnSCLF3/poster.jpg?width=1280",
+          "width": 1280,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/WQnSCLF3/poster.jpg?width=1920",
+          "width": 1920,
+          "type": "image/jpeg"
+        }
+      ],
+      "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=WQnSCLF3&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWxhdGVkX21lZGlhX2lkIjoiV1FuU0NMRjMiLCJyZXNvdXJjZSI6Ii92Mi9wbGF5bGlzdHMvWGs3eEs1MnYiLCJleHAiOjE3NzM4MzUyMDB9.rab-wzvGnwA6JEHgeZxcmqvl3cUbeZGqH2wu60vjdZA",
+      "title": "002 - What is a Coding Assistant?.mp4",
+      "mediaid": "WQnSCLF3",
+      "link": null,
+      "duration": 353.687,
+      "pubdate": 1750965670,
+      "description": null,
+      "tags": "",
+      "sources": [
+        {
+          "file": "https://cdn.jwplayer.com/manifests/WQnSCLF3.m3u8?exp=1773835200&sig=16785b3ae2253185977bed1d1116ea5c",
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/WQnSCLF3-B9NwIVRu.mp4?exp=1773835200&sig=e7a3bdbb1cf1645836a7d537e4da5437",
+          "type": "video/mp4",
+          "width": 320,
+          "height": 180,
+          "label": "180p",
+          "bitrate": 134729,
+          "framerate": 30,
+          "filesize": 5944926
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/WQnSCLF3-muagBOKI.mp4?exp=1773835200&sig=0bfe4a14cfaab696ad89680507577665",
+          "type": "video/mp4",
+          "width": 480,
+          "height": 270,
+          "label": "270p",
+          "bitrate": 146622,
+          "framerate": 30,
+          "filesize": 6469725
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/WQnSCLF3-4Xe8IV8X.mp4?exp=1773835200&sig=3985677b1f8c312e1fc23ae7889405fd",
+          "type": "video/mp4",
+          "width": 720,
+          "height": 406,
+          "label": "406p",
+          "bitrate": 167838,
+          "framerate": 30,
+          "filesize": 7405858
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/WQnSCLF3-m7ew0xq8.mp4?exp=1773835200&sig=4a7be653955e34eecf0e5169199c5e4a",
+          "type": "video/mp4",
+          "width": 1280,
+          "height": 720,
+          "label": "720p",
+          "bitrate": 216303,
+          "framerate": 30,
+          "filesize": 9544380
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/WQnSCLF3-eNgUZBQ2.m4a?exp=1773835200&sig=c6126572bffbdb78cbe5f2623d118fb2",
+          "type": "audio/mp4",
+          "label": "Audio",
+          "bitrate": 113637,
+          "filesize": 5014265
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/WQnSCLF3-hFUVmOoC.mp4?exp=1773835200&sig=9061cb3ae3e7487394e066f97aecb98e",
+          "type": "video/mp4",
+          "width": 1920,
+          "height": 1080,
+          "label": "1080p",
+          "bitrate": 283318,
+          "framerate": 30,
+          "filesize": 12501409
+        }
+      ],
+      "tracks": [
+        {
+          "file": "https://cdn.jwplayer.com/tracks/ABDAYvNK.srt",
+          "kind": "captions",
+          "label": "English"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/JqpqWgKL.srt",
+          "kind": "captions",
+          "label": "French"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/5NEMuBDk.srt",
+          "kind": "captions",
+          "label": "German"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/UgbE86MH.srt",
+          "kind": "captions",
+          "label": "Japanese"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/p6UnVBac.srt",
+          "kind": "captions",
+          "label": "Korean"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/o7m2cspZ.srt",
+          "kind": "captions",
+          "label": "Portuguese"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/4nIloFMC.srt",
+          "kind": "captions",
+          "label": "Spanish"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/strips/WQnSCLF3-120.vtt",
+          "kind": "thumbnails"
+        }
+      ]
+    }
+  ]
+}

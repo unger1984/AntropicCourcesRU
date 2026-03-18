@@ -1,0 +1,315 @@
+1
+00:00:00,031 --> 00:00:02,754
+Claude code has an official GitHub integration that
+
+2
+00:00:02,794 --> 00:00:05,437
+allows Claude code to run inside of a GitHub action.
+
+3
+00:00:05,958 --> 00:00:08,821
+You can set up this integration by running slash install
+
+4
+00:00:08,961 --> 00:00:11,726
+GitHub app. This will walk you through a couple of steps.
+
+5
+00:00:12,346 --> 00:00:14,990
+First, you'll need to install the Claude code app on GitHub.
+
+6
+00:00:15,650 --> 00:00:18,193
+Next, you'll need to add in an API key. And then
+
+7
+00:00:18,254 --> 00:00:21,178
+after this, a pull request will be automatically generated.
+
+8
+00:00:21,859 --> 00:00:25,362
+This pull request adds in two different GitHub actions.
+
+9
+00:00:25,343 --> 00:00:27,888
+The first action adds in mentioning support. So
+
+10
+00:00:27,928 --> 00:00:30,554
+from an issue or a pull request, you can mention Claude
+
+11
+00:00:30,594 --> 00:00:33,201
+with @Claude and give Claude some kind of task
+
+12
+00:00:33,381 --> 00:00:35,908
+to run. The second action adds in support
+
+13
+00:00:35,968 --> 00:00:38,654
+for reviewing pull requests. So whenever you create a pull request,
+
+14
+00:00:38,774 --> 00:00:41,381
+Claude code will automatically run and review the proposed
+
+15
+00:00:41,420 --> 00:00:44,383
+changes. Both of these actions can be customized,
+
+16
+00:00:44,563 --> 00:00:47,087
+and you can also add in additional actions to trigger based
+
+17
+00:00:47,207 --> 00:00:49,811
+on other types of events. Let me show you how you
+
+18
+00:00:49,831 --> 00:00:52,515
+can customize the mentioning feature. First, we
+
+19
+00:00:52,554 --> 00:00:55,079
+just merged in those two action config files to
+
+20
+00:00:55,118 --> 00:00:57,722
+our repository on GitHub. So I need to pull
+
+21
+00:00:57,884 --> 00:01:00,567
+those changes down to my local machine. Then inside
+
+22
+00:01:00,588 --> 00:01:03,231
+of the newly created GitHub workflows directory, I'll
+
+23
+00:01:03,271 --> 00:01:06,016
+see these two action config files. One adds
+
+24
+00:01:06,096 --> 00:01:08,620
+in support for the pull request review, and the other adds
+
+25
+00:01:08,659 --> 00:01:11,243
+in support for handling mentions. Now, here's how
+
+26
+00:01:11,304 --> 00:01:14,167
+I want to customize the mention functionality. Whenever
+
+27
+00:01:14,206 --> 00:01:16,810
+I mention Claude inside of an issue or a pull request,
+
+28
+00:01:17,250 --> 00:01:19,813
+I wanted to be able to run the project and use the Playwright
+
+29
+00:01:19,953 --> 00:01:22,516
+MCP server to access the app inside
+
+30
+00:01:22,575 --> 00:01:25,239
+of a web browser, all inside of a GitHub action.
+
+31
+00:01:25,759 --> 00:01:28,302
+To make this work, I'll first add in a step before
+
+32
+00:01:28,421 --> 00:01:30,963
+Claude code runs in this workflow. I'll run
+
+33
+00:01:30,984 --> 00:01:34,347
+the setup command and then start the development server up.
+
+34
+00:01:34,328 --> 00:01:37,433
+Then I'm going to update the Claude code configuration. I'll
+
+35
+00:01:37,474 --> 00:01:39,998
+add in some custom instructions. These are passed directly
+
+36
+00:01:40,019 --> 00:01:42,602
+to Claude and they allow us to provide some additional
+
+37
+00:01:42,664 --> 00:01:45,268
+directions or context. In this case, I'll
+
+38
+00:01:45,287 --> 00:01:48,093
+tell Claude that the development server is already running and
+
+39
+00:01:48,114 --> 00:01:50,899
+that I can use the Playwright MCP server to access
+
+40
+00:01:50,938 --> 00:01:53,472
+the app in the browser if needed. Then I
+
+41
+00:01:53,632 --> 00:01:56,298
+will add in some configuration to set up the Playwright MCP
+
+42
+00:01:56,317 --> 00:01:59,004
+server itself. There is one other thing to be aware
+
+43
+00:01:59,063 --> 00:02:01,808
+of here. When you're running Claude Code inside of an action,
+
+44
+00:02:02,069 --> 00:02:04,674
+we have to specifically list out all the permissions that
+
+45
+00:02:04,715 --> 00:02:07,480
+we want to grant Claude Code. And there's one tricky
+
+46
+00:02:07,561 --> 00:02:10,264
+aspect to this. If you're using an MCP
+
+47
+00:02:10,284 --> 00:02:12,829
+server, you have to individually list out each
+
+48
+00:02:12,908 --> 00:02:15,491
+tool from each MCP server that you want
+
+49
+00:02:15,512 --> 00:02:18,036
+to allow. There is no shortcut for permissions
+
+50
+00:02:18,216 --> 00:02:21,120
+like we saw previously. Unfortunately, the Playwright
+
+51
+00:02:21,199 --> 00:02:23,943
+MCP server has many different tools, so they each
+
+52
+00:02:23,963 --> 00:02:26,487
+need to be listed out. Once I've finished with
+
+53
+00:02:26,527 --> 00:02:29,271
+this configuration update, I'll be sure to commit these changes and
+
+54
+00:02:29,331 --> 00:02:32,223
+push them. Now it's time to test out this updated
+
+55
+00:02:32,283 --> 00:02:35,106
+workflow. I'm going to give Claude a little task.
+
+56
+00:02:35,127 --> 00:02:37,909
+In our actual app, see these two buttons up here. Right
+
+57
+00:02:37,950 --> 00:02:40,513
+now they work fine. I can toggle between the preview and the code
+
+58
+00:02:40,532 --> 00:02:43,135
+panels without issue. But I'm going to pretend as though
+
+59
+00:02:43,156 --> 00:02:45,739
+they weren't working as intended. I'm going to take a
+
+60
+00:02:45,799 --> 00:02:48,342
+screenshot with that button right there. I'm going to make an
+
+61
+00:02:48,462 --> 00:02:51,025
+issue. I'm going to paste in the screenshots. And I'm
+
+62
+00:02:51,045 --> 00:02:53,587
+going to mention Claude with @Claude and ask it
+
+63
+00:02:53,627 --> 00:02:56,731
+to verify that the two buttons are working as intended.
+
+64
+00:02:56,711 --> 00:02:59,456
+I'll then create the issue and wait. Now, it is
+
+65
+00:02:59,477 --> 00:03:02,081
+going to take a minute or two for the action to actually start up
+
+66
+00:03:02,241 --> 00:03:04,746
+and for Claude's response. Remember, as we just saw in
+
+67
+00:03:04,765 --> 00:03:07,411
+the action, we are now setting up the entire app and
+
+68
+00:03:07,450 --> 00:03:10,075
+starting it running before Claude Code even starts to
+
+69
+00:03:10,116 --> 00:03:12,782
+run at all. But eventually, Claude
+
+70
+00:03:12,823 --> 00:03:15,425
+will respond. It will very often create a checklist
+
+71
+00:03:15,466 --> 00:03:18,189
+of steps to accomplish the given task. In this case,
+
+72
+00:03:18,310 --> 00:03:20,832
+it is going to attempt to visit the app, manually test out
+
+73
+00:03:20,872 --> 00:03:23,776
+the button, and fix any issues that it finds. Claude
+
+74
+00:03:23,795 --> 00:03:26,500
+will notice that the buttons actually are working just fine, and
+
+75
+00:03:26,520 --> 00:03:29,223
+so it's going to terminate early with the message documenting
+
+76
+00:03:29,302 --> 00:03:31,925
+its findings. Now, this is just a small
+
+77
+00:03:31,985 --> 00:03:34,649
+example of how you can use Claude Code's GitHub integration.
+
+78
+00:03:35,270 --> 00:03:37,853
+I recommend you spend some time to think about how you can custom
+
+79
+00:03:37,893 --> 00:03:40,235
+tailor it for your own particular project.

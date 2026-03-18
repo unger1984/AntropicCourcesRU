@@ -1,0 +1,307 @@
+1
+00:00:00,031 --> 00:00:02,734
+In this video, we're going to take a look at hooks.
+
+2
+00:00:03,255 --> 00:00:06,000
+These allow you to run commands before or after Claude
+
+3
+00:00:06,121 --> 00:00:08,884
+attempts to run a tool. Hooks can be used to implement
+
+4
+00:00:08,925 --> 00:00:11,468
+really interesting and very useful functionality.
+
+5
+00:00:12,050 --> 00:00:14,874
+For example, after Claude decides to write a file,
+
+6
+00:00:15,214 --> 00:00:17,759
+you can automatically run a code formatter on
+
+7
+00:00:17,798 --> 00:00:20,565
+the created file, or you can run tests after
+
+8
+00:00:20,585 --> 00:00:23,271
+a file is edited, or you can block Claude
+
+9
+00:00:23,332 --> 00:00:25,920
+from reading particular files. The possibilities
+
+10
+00:00:25,940 --> 00:00:28,507
+are really endless, and I've got a couple of good
+
+11
+00:00:28,547 --> 00:00:31,375
+examples lined up to show you some ideas of
+
+12
+00:00:31,434 --> 00:00:34,222
+how you might use hooks on your particular project.
+
+13
+00:00:34,203 --> 00:00:36,887
+First, however, let me help you understand exactly how
+
+14
+00:00:36,968 --> 00:00:39,531
+hooks work. As a reminder, when you ask Claude
+
+15
+00:00:39,572 --> 00:00:42,195
+code something, your query is sent off to the Claude model
+
+16
+00:00:42,356 --> 00:00:44,981
+along with some tool definitions. The Claude model
+
+17
+00:00:45,201 --> 00:00:48,045
+might then decide to run a tool by providing a carefully
+
+18
+00:00:48,106 --> 00:00:50,630
+formatted response. And at that point,
+
+19
+00:00:50,850 --> 00:00:53,895
+it is up to Claude code to run the requested tool, maybe
+
+20
+00:00:53,935 --> 00:00:56,799
+in this case to read a file, and then respond with the result
+
+21
+00:00:56,979 --> 00:00:59,564
+of that tool call. Now hooks give
+
+22
+00:00:59,625 --> 00:01:02,569
+us the ability to execute code just before
+
+23
+00:01:02,609 --> 00:01:05,332
+or just after the tool execution.
+
+24
+00:01:05,813 --> 00:01:08,378
+Hooks that run before a tool are referred to as
+
+25
+00:01:08,418 --> 00:01:11,081
+pre-tool use hooks because they run before
+
+26
+00:01:11,141 --> 00:01:14,146
+the tool. And hooks that run after the tool are
+
+27
+00:01:14,206 --> 00:01:17,271
+referred to as post-tool use for the same reason.
+
+28
+00:01:17,251 --> 00:01:20,036
+To define hooks, we add configuration to the Claude
+
+29
+00:01:20,076 --> 00:01:22,701
+Settings file. Remember that there are several different
+
+30
+00:01:22,762 --> 00:01:25,287
+settings files, one for global use across all
+
+31
+00:01:25,326 --> 00:01:28,212
+projects on your machine, one for your particular project
+
+32
+00:01:28,313 --> 00:01:30,938
+that gets shared with other engineers, and one for just you
+
+33
+00:01:31,177 --> 00:01:33,963
+on a particular project. You can add hooks,
+
+34
+00:01:34,144 --> 00:01:36,671
+either by writing them out by hand, inside
+
+35
+00:01:36,691 --> 00:01:39,337
+this file, or by using the built-in slash hooks
+
+36
+00:01:39,376 --> 00:01:41,942
+command inside of Claude Code itself. The
+
+37
+00:01:41,983 --> 00:01:44,549
+configuration itself looks like what you see on
+
+38
+00:01:44,588 --> 00:01:47,194
+the right-hand side of the screen. Let me walk you through this example
+
+39
+00:01:47,234 --> 00:01:49,781
+file just to give you a better idea of what's going
+
+40
+00:01:49,881 --> 00:01:52,426
+on. So first, notice that there are two
+
+41
+00:01:52,486 --> 00:01:55,010
+distinct sections inside of this file. One
+
+42
+00:01:55,049 --> 00:01:58,194
+section lists out all the commands that should be executed before
+
+43
+00:01:58,314 --> 00:02:01,600
+a tool use. Remember, those are referred to as pre-tool
+
+44
+00:02:01,680 --> 00:02:04,506
+use hooks. The other section lists out all the different
+
+45
+00:02:04,525 --> 00:02:07,069
+commands that should be executed after a tool
+
+46
+00:02:07,150 --> 00:02:10,275
+use. And again, those are post-tool use hooks.
+
+47
+00:02:10,676 --> 00:02:13,802
+In each of these sections, we provide a matcher. This
+
+48
+00:02:13,862 --> 00:02:16,389
+indicates which tool use types we are looking for.
+
+49
+00:02:16,930 --> 00:02:19,615
+So in this case, I want to find uses of the read
+
+50
+00:02:19,655 --> 00:02:22,540
+tool. Whenever Claude Code attempts to read
+
+51
+00:02:22,640 --> 00:02:25,486
+a file, I want to run the command you see listed
+
+52
+00:02:25,526 --> 00:02:28,230
+there. Likewise, inside the post tool
+
+53
+00:02:28,290 --> 00:02:31,334
+use section, after a use of the write, edit,
+
+54
+00:02:31,533 --> 00:02:34,197
+or multi-edit tools, there's a different command
+
+55
+00:02:34,257 --> 00:02:36,900
+that I want to run. Now, here's the important part.
+
+56
+00:02:37,020 --> 00:02:39,522
+Here's what hooks are really intended to do. Those
+
+57
+00:02:39,582 --> 00:02:42,346
+commands you saw will be given details about the tool call
+
+58
+00:02:42,366 --> 00:02:44,907
+that Claude wants to run. In the case of a
+
+59
+00:02:45,088 --> 00:02:47,790
+pre-tool use hook, you can inspect what
+
+60
+00:02:47,850 --> 00:02:50,373
+Claude wants to do. And if for any reason
+
+61
+00:02:50,454 --> 00:02:53,417
+you don't want to allow it, you can block the tool use operation
+
+62
+00:02:53,637 --> 00:02:56,199
+and send an error message back to Claude. In
+
+63
+00:02:56,240 --> 00:02:58,944
+the case of a post tool use hook, the tool call
+
+64
+00:02:58,985 --> 00:03:01,788
+has already occurred, so it's too late to block it. But
+
+65
+00:03:01,808 --> 00:03:04,372
+you can do some follow-up operation based upon the tool
+
+66
+00:03:04,413 --> 00:03:07,116
+call, like maybe format a file that was just edited.
+
+67
+00:03:07,638 --> 00:03:10,201
+You can also provide some message back to Claude about
+
+68
+00:03:10,222 --> 00:03:12,806
+that tool use. For example, you might decide to
+
+69
+00:03:12,866 --> 00:03:15,730
+run a separate program to check the code quality
+
+70
+00:03:15,790 --> 00:03:18,414
+of the edit, or maybe do a type check,
+
+71
+00:03:18,435 --> 00:03:21,194
+and then provide that feedback back to Claude. Claude
+
+72
+00:03:21,235 --> 00:03:23,878
+might then take that feedback and make an update
+
+73
+00:03:23,899 --> 00:03:26,502
+to the file that it just wrote to. If you're still
+
+74
+00:03:26,544 --> 00:03:29,307
+confused about hooks or what they are intended to do, that
+
+75
+00:03:29,348 --> 00:03:31,913
+is absolutely okay. Wrapping your head around hooks
+
+76
+00:03:31,973 --> 00:03:34,497
+can be really challenging. So let's come back in a moment
+
+77
+00:03:34,676 --> 00:03:36,860
+and work on a sample project with hooks.

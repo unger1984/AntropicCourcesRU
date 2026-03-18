@@ -1,0 +1,303 @@
+1
+00:00:00,841 --> 00:00:03,345
+In diesem Video möchte ich Ihnen ein paar verschiedene Techniken zeigen,
+
+2
+00:00:03,444 --> 00:00:06,669
+um den Gesprächsfluss zu steuern und zu lenken. Hier ist
+
+3
+00:00:06,710 --> 00:00:09,333
+gleich ein einfaches Beispiel. Ich werde Claude bitten,
+
+4
+00:00:09,353 --> 00:00:12,557
+Tests für einige Funktionen in einer Authentifizierungsdatei
+
+5
+00:00:12,618 --> 00:00:15,563
+zu schreiben. Claude kommt schnell mit einem Plan für die Erstellung
+
+6
+00:00:15,602 --> 00:00:18,387
+mehrerer verschiedener Tests. Ich weiß jedoch, dass das Testen
+
+7
+00:00:18,466 --> 00:00:21,150
+dieser Datei etwas schwierig ist, und ich möchte, dass Claude
+
+8
+00:00:21,210 --> 00:00:23,855
+nur eine Sache nach der anderen testet. Um Claude
+
+9
+00:00:23,894 --> 00:00:26,638
+zu unterbrechen, kann ich Escape drücken. Dies stoppt Claude
+
+10
+00:00:26,719 --> 00:00:30,004
+sofort und ermöglicht es mir, einen anderen Weg vorzuschlagen.
+
+11
+00:00:29,984 --> 00:00:32,527
+Die Kombination von Escape mit Erinnerungen ist eine wirklich
+
+12
+00:00:32,587 --> 00:00:35,811
+leistungsstarke Methode, um Fehler zu beheben, die Claude wiederholt macht. Hier ist
+
+13
+00:00:35,831 --> 00:00:38,334
+ein Beispiel. Ich werde Claude bitten, erneut Tests für
+
+14
+00:00:38,374 --> 00:00:40,896
+dieselbe Datei zu schreiben. Diesmal wird es versuchen,
+
+15
+00:00:40,957 --> 00:00:43,640
+eine Testkonfigurationsdatei zu lesen, die tatsächlich
+
+16
+00:00:43,659 --> 00:00:46,302
+nicht existiert. Dies ist ein Fehler, den ich
+
+17
+00:00:46,383 --> 00:00:48,886
+schon einmal von Claude bei diesem Projekt gesehen habe. Um
+
+18
+00:00:48,947 --> 00:00:51,570
+diesen Fehler zu vermeiden, drücke ich sehr schnell Escape.
+
+19
+00:00:51,609 --> 00:00:54,133
+Ich verwende dann die Pfad-Verknüpfung, um eine
+
+20
+00:00:54,192 --> 00:00:56,996
+Erinnerung an den korrekten Namen dieser Testkonfigurationsdatei
+
+21
+00:00:57,076 --> 00:00:59,799
+hinzuzufügen. Und jetzt muss ich diesen Fehler wahrscheinlich
+
+22
+00:00:59,920 --> 00:01:02,524
+nicht mehr sehen. Einige dieser Gesprächs-
+
+23
+00:01:02,564 --> 00:01:05,368
+steuerungs-Verknüpfungen scheinen nur der Bequemlichkeit zu dienen.
+
+24
+00:01:05,388 --> 00:01:07,912
+Aber richtig eingesetzt, können sie die Fähigkeit von Claude,
+
+25
+00:01:07,933 --> 00:01:10,516
+effektiv zu arbeiten und bei der Sache zu bleiben, erheblich verbessern. Also,
+
+26
+00:01:10,537 --> 00:01:13,120
+lassen Sie mich Ihnen ein praktischeres Beispiel zeigen. In
+
+27
+00:01:13,180 --> 00:01:16,025
+der Datei auth.ts gibt es vier verschiedene Funktionen.
+
+28
+00:01:16,046 --> 00:01:18,569
+Und ich möchte, dass Claude Tests für jede davon einzeln
+
+29
+00:01:18,670 --> 00:01:21,493
+schreibt, beginnend mit einer Funktion namens create
+
+30
+00:01:21,534 --> 00:01:24,177
+session. Claude wird definitiv versuchen, die Tests zu schreiben,
+
+31
+00:01:24,578 --> 00:01:27,100
+aber während er sie ausführt, stößt er auf einen Fehler und
+
+32
+00:01:27,141 --> 00:01:29,703
+verbringt einige Zeit mit der Fehlersuche. Es stellt sich heraus,
+
+33
+00:01:29,722 --> 00:01:32,727
+dass es ein Paket gab, das ich vergessen hatte zu installieren. Schließlich
+
+34
+00:01:32,746 --> 00:01:35,269
+sind die Tests abgeschlossen und funktionieren, und es ist Zeit,
+
+35
+00:01:35,308 --> 00:01:38,251
+mit der Arbeit an den nächsten Tests zu beginnen. Aber
+
+36
+00:01:38,472 --> 00:01:41,194
+hier ist das Ding. In meiner Gesprächshistorie gibt es
+
+37
+00:01:41,254 --> 00:01:43,977
+jetzt viel Hin und Her wegen dieses fehlerhaften Pakets.
+
+38
+00:01:44,618 --> 00:01:47,242
+Das ist jetzt ein Haufen Kontext, der überhaupt nicht
+
+39
+00:01:47,382 --> 00:01:50,564
+relevant für das Schreiben der nächsten Tests ist.
+
+40
+00:01:50,814 --> 00:01:53,457
+Idealerweise könnten wir in der Zeit zurückspringen und
+
+41
+00:01:53,518 --> 00:01:56,040
+zur vorherigen Nachricht zurückkehren, die wir gesendet haben, und sie einfach aktualisieren,
+
+42
+00:01:56,061 --> 00:01:58,763
+um zu sagen: Schreibe Test für eine Git-Session. Nun,
+
+43
+00:01:58,784 --> 00:02:01,647
+der Vorteil hier ist, dass wir den Kontext beibehalten, in dem Claude
+
+44
+00:02:01,686 --> 00:02:04,388
+bereits die Inhalte der auth.ts-Datei geprüft hat.
+
+45
+00:02:04,670 --> 00:02:07,852
+Und es weiß bereits, worüber wir sprechen, wenn wir uns auf Git-Session
+
+46
+00:02:08,554 --> 00:02:11,556
+beziehen. Und da wir all diese zusätzlichen Nachrichten, die nur der Fehlersuche
+
+47
+00:02:11,957 --> 00:02:14,659
+dienten, aussortiert haben, werden wir hier nicht so viel Ablenkung haben. Also
+
+48
+00:02:14,721 --> 00:02:18,003
+kann sich Claude wieder wirklich auf die Aufgabe konzentrieren.
+
+49
+00:02:18,270 --> 00:02:21,093
+Um in der Gesprächshistorie zurückzugehen, drücken Sie zweimal Escape.
+
+50
+00:02:21,574 --> 00:02:24,098
+Dies zeigt Ihnen alle verschiedenen Nachrichten, die Sie gesendet haben, damit Sie
+
+51
+00:02:24,138 --> 00:02:26,781
+zu einem früheren Zeitpunkt zurückspulen und einige
+
+52
+00:02:26,860 --> 00:02:29,644
+zwischenzeitliche Gespräche überspringen können. Claude
+
+53
+00:02:29,704 --> 00:02:32,606
+wird nun mit den nächsten Tests beginnen. Dieses Mal
+
+54
+00:02:32,646 --> 00:02:35,289
+bleibt Claude hochkonzentriert, stößt aber leider
+
+55
+00:02:35,310 --> 00:02:37,872
+auf eine Reihe von Problemen. Es löst sie schließlich
+
+56
+00:02:37,913 --> 00:02:40,515
+und die Tests werden bestanden. Nun hat Claude
+
+57
+00:02:40,575 --> 00:02:43,318
+seit mehreren Minuten alleine gearbeitet und hat eine wirklich gute Vorstellung
+
+58
+00:02:43,359 --> 00:02:46,522
+davon, wie man Tests für diese Datei schreibt.
+
+59
+00:02:46,502 --> 00:02:49,508
+Gleichzeitig haben wir wieder eine Menge Kontext
+
+60
+00:02:49,668 --> 00:02:52,231
+in dieser Gesprächshistorie. Wenn es Zeit ist,
+
+61
+00:02:52,252 --> 00:02:54,756
+Tests für die nächste Funktion zu schreiben, möchte ich
+
+62
+00:02:54,776 --> 00:02:57,461
+einen Befehl namens compact verwenden. Der Befehl compact
+
+63
+00:02:57,501 --> 00:03:00,004
+nimmt alle Nachrichten der aktuellen Konversation
+
+64
+00:03:00,366 --> 00:03:03,050
+und fasst sie zusammen. Compact ist wirklich nützlich,
+
+65
+00:03:03,090 --> 00:03:05,593
+wenn Claude viel über die aktuelle Aufgabe gelernt hat
+
+66
+00:03:05,854 --> 00:03:08,679
+und Sie dieses Wissen beibehalten möchten, wenn es in die nächste
+
+67
+00:03:08,718 --> 00:03:11,300
+Aufgabe übergeht. Der letzte kontextbezogene
+
+68
+00:03:11,360 --> 00:03:14,022
+Befehl, den Sie kennen sollten, ist der Clear-Befehl. Clear
+
+69
+00:03:14,144 --> 00:03:16,747
+löscht die gesamte Gesprächshistorie und ermöglicht es Ihnen, von
+
+70
+00:03:16,826 --> 00:03:19,591
+Grund auf neu zu beginnen. Clear ist am nützlichsten, wenn
+
+71
+00:03:19,610 --> 00:03:22,474
+Sie eine völlig andere Aufgabe beginnen, die nichts mit der aktuellen zu tun hat.
+
+72
+00:03:22,536 --> 00:03:25,360
+Ich empfehle, diese Tastenkombinationen häufig zu verwenden,
+
+73
+00:03:25,460 --> 00:03:28,243
+insbesondere wenn Sie zwischen Aufgaben wechseln oder
+
+74
+00:03:28,544 --> 00:03:31,247
+wenn Sie eine langlaufende Konversation mit Claude führen.
+
+75
+00:03:31,808 --> 00:03:34,472
+Im Rest dieses Kurses werden wir sie mehrmals verwenden, um
+
+76
+00:03:34,513 --> 00:03:36,996
+sicherzustellen, dass Claude bei der Sache und konzentriert bleibt.

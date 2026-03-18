@@ -1,0 +1,13 @@
+#EXTM3U
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=140000,RESOLUTION=480x270,CODECS="mp4a.40.2,avc1.42c015",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69b9fff1_a8849a8a7081760568745051d1008be788e7f014/sites/Lc4Rn1s0/media/o4BlDHzD/versions/o4BlDHzD/manifest.ism/manifest-audio_0_oXFhOSHc_4S8ntfHr=112000-video_0_oXFhOSHc_5moJPKsa=20670.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=240000,RESOLUTION=1920x1080,CODECS="mp4a.40.2,avc1.640028",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69b9fff1_a8849a8a7081760568745051d1008be788e7f014/sites/Lc4Rn1s0/media/o4BlDHzD/versions/o4BlDHzD/manifest.ism/manifest-audio_0_oXFhOSHc_4S8ntfHr=112000-video_0_oXFhOSHc_5moJPKsa=117260.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=200000,RESOLUTION=1280x720,CODECS="mp4a.40.2,avc1.4d401f",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69b9fff1_a8849a8a7081760568745051d1008be788e7f014/sites/Lc4Rn1s0/media/o4BlDHzD/versions/o4BlDHzD/manifest.ism/manifest-audio_0_oXFhOSHc_4S8ntfHr=112000-video_0_oXFhOSHc_5moJPKsa=71639.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=160000,RESOLUTION=720x406,CODECS="mp4a.40.2,avc1.4d401e",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69b9fff1_a8849a8a7081760568745051d1008be788e7f014/sites/Lc4Rn1s0/media/o4BlDHzD/versions/o4BlDHzD/manifest.ism/manifest-audio_0_oXFhOSHc_4S8ntfHr=112000-video_0_oXFhOSHc_5moJPKsa=35199.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=140000,RESOLUTION=320x180,CODECS="mp4a.40.2,avc1.42c00d",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69b9fff1_a8849a8a7081760568745051d1008be788e7f014/sites/Lc4Rn1s0/media/o4BlDHzD/versions/o4BlDHzD/manifest.ism/manifest-audio_0_oXFhOSHc_4S8ntfHr=112000-video_0_oXFhOSHc_5moJPKsa=12321.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=120000,CODECS="mp4a.40.2"
+https://videos-cloudfront-usp.jwpsrv.com/69b9fff1_a8849a8a7081760568745051d1008be788e7f014/sites/Lc4Rn1s0/media/o4BlDHzD/versions/o4BlDHzD/manifest.ism/manifest-audio_0_oXFhOSHc_4S8ntfHr=112000.m3u8

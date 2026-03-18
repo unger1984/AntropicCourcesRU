@@ -1,0 +1,163 @@
+.video-player .skilljar-local-player {
+  position: relative;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.course-fixed-content-video .video-player.flex-video,
+.course-fixed-content-video .video-player.flex-video.widescreen {
+  position: relative;
+  padding-top: 0 !important;
+  padding-bottom: 56.25% !important;
+  height: 0 !important;
+  overflow: hidden;
+}
+
+.video-player .skilljar-local-player video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  object-fit: contain;
+}
+
+.course-fixed-content-video {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+.video-max > .media-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.video-max > .media-toolbar .media-group {
+  position: relative;
+}
+
+.video-max > .media-toolbar .media-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 6px 5px 12px;
+  border-radius: 999px;
+  background: rgba(20, 20, 19, 0.88);
+  color: #fff;
+}
+
+.video-max > .media-toolbar .media-label {
+  display: inline !important;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 26px;
+  vertical-align: middle;
+}
+
+.video-max > .media-toolbar .media-option {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 999px;
+  min-width: 36px;
+  height: 26px;
+  padding: 0 10px;
+  margin: 0 !important;
+  font-family: inherit;
+  font-size: 0.84rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.video-max > .media-toolbar .media-option.is-active {
+  background: #fff;
+  color: #141413;
+  border-color: #fff;
+}
+
+#header {
+  display: none !important;
+}
+
+#header .header-logo-link {
+  display: none !important;
+}
+
+#lp-wrapper {
+  padding-top: 0 !important;
+}
+
+#lp-left-nav {
+  top: 0 !important;
+  margin-top: 0 !important;
+}
+
+#details-pane #details-pane-summary-content .lesson-description-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#lp-left-nav a.lesson .lesson-row,
+#lp-left-nav .lesson-row {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 5px;
+  height: auto !important;
+  min-height: 40px;
+}
+
+#lp-left-nav a.lesson .lesson-row > .bullet,
+#lp-left-nav .lesson-row > .bullet,
+#lp-left-nav a.lesson .lesson-row > .type-icon,
+#lp-left-nav .lesson-row > .type-icon {
+  flex: 0 0 auto;
+}
+
+#lp-left-nav a.lesson .lesson-row .title,
+#lp-left-nav .lesson-row .title {
+  display: block !important;
+  flex: 1 1 auto;
+  width: auto !important;
+  min-width: 0;
+  max-width: none !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1.35 !important;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 900px) {
+  .video-max > .media-toolbar {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .video-max > .media-toolbar .media-menu {
+    padding: 5px 8px;
+  }
+
+  .video-max > .media-toolbar .media-option {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,151 @@
+1
+00:00:00,031 --> 00:00:02,613
+Lorsque vous exécutez Claude Code, vous pouvez saisir une barre
+
+2
+00:00:02,633 --> 00:00:05,235
+oblique et voir une série de commandes intégrées dans Claude Code
+
+3
+00:00:05,277 --> 00:00:07,799
+par défaut. En plus de ces commandes par défaut,
+
+4
+00:00:08,079 --> 00:00:11,323
+vous pouvez facilement ajouter vos propres commandes personnalisées. Les commandes
+
+5
+00:00:11,362 --> 00:00:14,185
+personnalisées sont utiles pour automatiser les tâches répétitives que
+
+6
+00:00:14,205 --> 00:00:16,708
+vous trouvez souvent exécutées. Laissez-moi vous montrer un exemple de
+
+7
+00:00:16,728 --> 00:00:19,350
+comment en créer une. Dans le répertoire de mon projet,
+
+8
+00:00:19,431 --> 00:00:22,053
+je vais trouver le dossier .Claude. À l'intérieur, je vais
+
+9
+00:00:22,074 --> 00:00:24,577
+créer un nouveau répertoire appelé commands. Et ensuite
+
+10
+00:00:24,617 --> 00:00:27,539
+à l'intérieur, je vais créer un nouveau fichier appelé audit.md.
+
+11
+00:00:28,263 --> 00:00:30,850
+Le nom du fichier que nous créons, dans ce cas audit,
+
+12
+00:00:30,870 --> 00:00:33,398
+sera le nom de la commande que nous exécuterons finalement. L'objectif
+
+13
+00:00:33,438 --> 00:00:36,445
+de cette commande sera d'auditer toutes les différentes dépendances
+
+14
+00:00:36,466 --> 00:00:38,973
+qui ont été installées dans ce projet, de les mettre à jour
+
+15
+00:00:39,033 --> 00:00:41,740
+s'il existe des vulnérabilités, puis d'exécuter des
+
+16
+00:00:41,801 --> 00:00:44,767
+tests pour s'assurer que rien n'a été cassé. Une fois
+
+17
+00:00:44,786 --> 00:00:47,491
+que vous avez créé le fichier de commande, vous redémarrerez Claude
+
+18
+00:00:47,551 --> 00:00:50,356
+Code. N'oubliez pas de le redémarrer. Lorsque vous rouvrez
+
+19
+00:00:50,396 --> 00:00:52,920
+Claude Code, tapez slash audit. Cela
+
+20
+00:00:52,960 --> 00:00:55,505
+affichera la commande que vous venez de créer. Vous pouvez alors
+
+21
+00:00:55,564 --> 00:00:58,249
+l'exécuter, et dans ce cas, elle fera exactement ce que nous avons demandé à Claude
+
+22
+00:00:58,289 --> 00:01:01,054
+de faire. Elle exécutera une commande, vérifiera s'il y a des paquets vulnérables,
+
+23
+00:01:01,094 --> 00:01:03,758
+les corrigera si nécessaire, puis exécutera des
+
+24
+00:01:03,817 --> 00:01:06,683
+tests. Les commandes peuvent également recevoir des arguments. Laissez-moi
+
+25
+00:01:06,703 --> 00:01:09,447
+vous montrer un exemple. Je vais créer une autre commande appelée write
+
+26
+00:01:09,608 --> 00:01:12,334
+test. Chaque fois que j'exécute cette commande, je veux que certains
+
+27
+00:01:12,373 --> 00:01:14,998
+tests soient créés pour un fichier très particulier
+
+28
+00:01:15,018 --> 00:01:17,623
+dans mon projet. Dans le texte de la commande, je vais
+
+29
+00:01:17,643 --> 00:01:20,948
+placer un espace réservé dollars arguments. Chaque fois
+
+30
+00:01:20,968 --> 00:01:23,694
+que j'exécuterai la commande, si je passe un chemin vers un fichier, ce
+
+31
+00:01:23,793 --> 00:01:26,939
+chemin sera inséré à dollars arguments.
+
+32
+00:01:27,088 --> 00:01:29,593
+Je peux donc redémarrer Claude Code à nouveau et ensuite exécuter
+
+33
+00:01:29,632 --> 00:01:32,137
+la commande write test. Maintenant, pour être clair,
+
+34
+00:01:32,277 --> 00:01:34,840
+les arguments que nous passons n'ont pas besoin d'être un chemin
+
+35
+00:01:34,861 --> 00:01:37,745
+de fichier. Il peut s'agir de toute chaîne de caractères que nous voulons passer. Donc
+
+36
+00:01:37,825 --> 00:01:40,689
+je pourrais demander à la légère des tests pour un fichier dans un dossier particulier,
+
+37
+00:01:40,730 --> 00:01:43,254
+donnant à Claude un peu de direction sur
+
+38
+00:01:43,313 --> 00:01:44,034
+où chercher.

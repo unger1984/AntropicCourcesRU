@@ -1,0 +1,116 @@
+{
+  "playlist": [
+    {
+      "image": "https://cdn.jwplayer.com/v2/media/o4BlDHzD/poster.jpg?width=720",
+      "images": [
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/o4BlDHzD/poster.jpg?width=320",
+          "width": 320,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/o4BlDHzD/poster.jpg?width=480",
+          "width": 480,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/o4BlDHzD/poster.jpg?width=640",
+          "width": 640,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/o4BlDHzD/poster.jpg?width=720",
+          "width": 720,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/o4BlDHzD/poster.jpg?width=1280",
+          "width": 1280,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/o4BlDHzD/poster.jpg?width=1920",
+          "width": 1920,
+          "type": "image/jpeg"
+        }
+      ],
+      "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=o4BlDHzD&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWxhdGVkX21lZGlhX2lkIjoibzRCbERIekQiLCJyZXNvdXJjZSI6Ii92Mi9wbGF5bGlzdHMvWGs3eEs1MnYiLCJleHAiOjE3NzM3NjUxMjB9.wV_MM8Q2J2QrLJcpLhc92CPvAGc3RUFN-TwGlElVo5U",
+      "title": "01 - 001 - Anthropic-API.mp4",
+      "mediaid": "o4BlDHzD",
+      "link": null,
+      "duration": 134.134,
+      "pubdate": 1749670721,
+      "description": null,
+      "tags": "",
+      "sources": [
+        {
+          "file": "https://cdn.jwplayer.com/manifests/o4BlDHzD.m3u8?exp=1773765120&sig=449f58ea96aa70473e26b975fca1c91f",
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/o4BlDHzD-B9NwIVRu.mp4?exp=1773765120&sig=78684b630a344c13f41177cec94eae0b",
+          "type": "video/mp4",
+          "width": 320,
+          "height": 180,
+          "label": "180p",
+          "bitrate": 131298,
+          "framerate": 30,
+          "filesize": 2199253
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/o4BlDHzD-muagBOKI.mp4?exp=1773765120&sig=fd6b5136bd00fb81a9d9aafa608cdc97",
+          "type": "video/mp4",
+          "width": 480,
+          "height": 270,
+          "label": "270p",
+          "bitrate": 139655,
+          "framerate": 30,
+          "filesize": 2339229
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/o4BlDHzD-4Xe8IV8X.mp4?exp=1773765120&sig=5dac5fc8da945bcfd5aca1cf4657e699",
+          "type": "video/mp4",
+          "width": 720,
+          "height": 406,
+          "label": "406p",
+          "bitrate": 156106,
+          "framerate": 30,
+          "filesize": 2614788
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/o4BlDHzD-m7ew0xq8.mp4?exp=1773765120&sig=f19f2533edaf801b7539a9555f7a71d7",
+          "type": "video/mp4",
+          "width": 1280,
+          "height": 720,
+          "label": "720p",
+          "bitrate": 192582,
+          "framerate": 30,
+          "filesize": 3225759
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/o4BlDHzD-eNgUZBQ2.m4a?exp=1773765120&sig=9de5048ce8a66b5ddffc80280c801a23",
+          "type": "audio/mp4",
+          "label": "Audio",
+          "bitrate": 113527,
+          "filesize": 1901585
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/o4BlDHzD-hFUVmOoC.mp4?exp=1773765120&sig=fcd2d41acbf7a3eb8941cdf7c98d1be5",
+          "type": "video/mp4",
+          "width": 1920,
+          "height": 1080,
+          "label": "1080p",
+          "bitrate": 238249,
+          "framerate": 30,
+          "filesize": 3990683
+        }
+      ],
+      "tracks": [
+        {
+          "file": "https://cdn.jwplayer.com/strips/o4BlDHzD-120.vtt",
+          "kind": "thumbnails"
+        }
+      ]
+    }
+  ]
+}

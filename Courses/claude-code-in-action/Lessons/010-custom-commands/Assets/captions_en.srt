@@ -1,0 +1,151 @@
+1
+00:00:00,031 --> 00:00:02,613
+When you run Claude Code, you can enter in a forward
+
+2
+00:00:02,633 --> 00:00:05,235
+slash and see a bunch of commands that are built into Claude Code
+
+3
+00:00:05,277 --> 00:00:07,799
+by default. In addition to these default commands,
+
+4
+00:00:08,079 --> 00:00:11,323
+you can easily add your own custom commands as well. Custom
+
+5
+00:00:11,362 --> 00:00:14,185
+commands are useful for automating repetitive tasks that
+
+6
+00:00:14,205 --> 00:00:16,708
+you find yourself running frequently. Let me show you an example of how
+
+7
+00:00:16,728 --> 00:00:19,350
+to make one. Inside of my project directory,
+
+8
+00:00:19,431 --> 00:00:22,053
+I'm going to find the .Claude folder. Inside there, I'll
+
+9
+00:00:22,074 --> 00:00:24,577
+make a new directory called commands. And then inside
+
+10
+00:00:24,617 --> 00:00:27,539
+that, I'll make a new file called audit.md.
+
+11
+00:00:28,263 --> 00:00:30,850
+The name of the file that we create, in this case audit,
+
+12
+00:00:30,870 --> 00:00:33,398
+is going to be the name of the command we eventually run. The
+
+13
+00:00:33,438 --> 00:00:36,445
+goal of this command is going to be to audit all the different dependencies
+
+14
+00:00:36,466 --> 00:00:38,973
+that have been installed into this project, update them
+
+15
+00:00:39,033 --> 00:00:41,740
+if there are any vulnerabilities, and then run
+
+16
+00:00:41,801 --> 00:00:44,767
+tests to make sure that nothing actually broke. Once
+
+17
+00:00:44,786 --> 00:00:47,491
+you have created the command file, you'll then restart Claude
+
+18
+00:00:47,551 --> 00:00:50,356
+Code. Don't forget to restart it. When you reopen
+
+19
+00:00:50,396 --> 00:00:52,920
+Claude Code, put in slash audit. This
+
+20
+00:00:52,960 --> 00:00:55,505
+will then display the command that you just created. You can then
+
+21
+00:00:55,564 --> 00:00:58,249
+run this, and in this case, it will do exactly what we ask Claude
+
+22
+00:00:58,289 --> 00:01:01,054
+to do. It'll run a command, see if there are any vulnerable
+
+23
+00:01:01,094 --> 00:01:03,758
+packages, fix them if necessary, and then run
+
+24
+00:01:03,817 --> 00:01:06,683
+tests. Commands can also receive arguments. Let
+
+25
+00:01:06,703 --> 00:01:09,447
+me show you an example. I'm going to make another command called write
+
+26
+00:01:09,608 --> 00:01:12,334
+test. Whenever I run this command, I want to have
+
+27
+00:01:12,373 --> 00:01:14,998
+some tests created for a very particular file inside
+
+28
+00:01:15,018 --> 00:01:17,623
+my project. Inside of the command text, I'm going
+
+29
+00:01:17,643 --> 00:01:20,948
+to put in a placeholder of dollar sign arguments. Whenever
+
+30
+00:01:20,968 --> 00:01:23,694
+I run the command, if I pass in a path to a file, that
+
+31
+00:01:23,793 --> 00:01:26,939
+path will be inserted at dollar sign arguments.
+
+32
+00:01:27,088 --> 00:01:29,593
+So now I can restart Claude Code again and then execute
+
+33
+00:01:29,632 --> 00:01:32,137
+the write test command. Now, to be clear,
+
+34
+00:01:32,277 --> 00:01:34,840
+the arguments we pass in don't have to be a file
+
+35
+00:01:34,861 --> 00:01:37,745
+path. It can be any string we want to pass in. So
+
+36
+00:01:37,825 --> 00:01:40,689
+I might casually ask for tests for a file in some particular
+
+37
+00:01:40,730 --> 00:01:43,254
+folder, giving Claude just a little bit of direction on
+
+38
+00:01:43,313 --> 00:01:44,034
+where to look.

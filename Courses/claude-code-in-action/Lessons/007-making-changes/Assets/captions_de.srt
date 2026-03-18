@@ -1,0 +1,315 @@
+1
+00:00:00,031 --> 00:00:02,714
+Versuchen wir, ein paar Änderungen an diesem Projekt vorzunehmen.
+
+2
+00:00:03,134 --> 00:00:05,658
+Dabei zeige ich Ihnen einige nützliche Funktionen rund um Claude Code.
+
+3
+00:00:06,118 --> 00:00:08,782
+Als Erstes möchte ich diesen Platzhaltertext verschieben
+
+4
+00:00:08,823 --> 00:00:11,647
+hier auf der linken Seite nach in die Mitte dieser Leiste.
+
+5
+00:00:12,166 --> 00:00:14,791
+Damit Claude genau versteht, welchen Inhalt ich
+
+6
+00:00:14,851 --> 00:00:17,594
+verschieben möchte, mache ich einen Screenshot von
+
+7
+00:00:17,614 --> 00:00:20,138
+diesem Bereich dort, und dann füge ich ihn
+
+8
+00:00:20,198 --> 00:00:23,102
+mit Strg+V in Claude Code ein.
+
+9
+00:00:23,420 --> 00:00:26,045
+Beachten Sie, dass es sich um Strg+V handelt und nicht um Cmd+V,
+
+10
+00:00:26,085 --> 00:00:28,649
+an das Sie vielleicht unter macOS gewöhnt sind. Strg+V wird
+
+11
+00:00:28,750 --> 00:00:31,394
+speziell zum Einfügen eines Screenshots verwendet. Ich
+
+12
+00:00:31,434 --> 00:00:34,201
+kann Claude dann bitten, diesen Platzhalter zu zentrieren. Nach
+
+13
+00:00:34,261 --> 00:00:36,886
+ein wenig Suche ist Claude in der Lage, die Stiländerung vorzunehmen.
+
+14
+00:00:37,146 --> 00:00:39,651
+Und zurück im Browser, ja, sieht gut aus. Lassen
+
+15
+00:00:39,670 --> 00:00:42,256
+Sie mich Ihnen das Nächste zeigen, das ich in dieser App ändern möchte. Ich werde
+
+16
+00:00:42,276 --> 00:00:45,462
+nach einer Kartenkomponente fragen, die einen Titel und eine Beschreibung anzeigt.
+
+17
+00:00:45,442 --> 00:00:48,246
+Die Karte wird ohne Probleme generiert, aber es gibt eine
+
+18
+00:00:48,286 --> 00:00:51,009
+unangenehme Sache. Auf der linken Seite in der Chat-Oberfläche
+
+19
+00:00:51,191 --> 00:00:53,774
+befindet sich der String Replace Editor. Dieses kleine Fenster
+
+20
+00:00:53,795 --> 00:00:56,357
+dort soll dem Benutzer anzeigen, dass eine Datei erstellt wird.
+
+21
+00:00:56,417 --> 00:00:59,061
+Aber im Moment wird ein sehr technischer Begriff
+
+22
+00:00:59,402 --> 00:01:02,186
+verwendet: String Replace Editor für das Tool, das im Hintergrund läuft.
+
+23
+00:01:02,707 --> 00:01:05,451
+Ich möchte dem Benutzer hier einen etwas freundlicheren Text anzeigen und
+
+24
+00:01:05,471 --> 00:01:08,036
+dem Benutzer mitteilen, dass eine Datei erstellt wird und wie sie heißt.
+
+25
+00:01:08,055 --> 00:01:10,760
+Und natürlich sollten wir auch Fälle behandeln, in denen
+
+26
+00:01:10,939 --> 00:01:13,463
+dieser Chatbot eine Datei bearbeitet oder löscht
+
+27
+00:01:13,483 --> 00:01:16,147
+oder ähnliches. Um Claudes Aufmerksamkeit zu lenken,
+
+28
+00:01:16,207 --> 00:01:19,192
+mache ich wieder einen Screenshot, damit es genau versteht,
+
+29
+00:01:19,233 --> 00:01:21,856
+worum es geht. Dann füge ich hier wieder dieses Bild ein und bitte Claude,
+
+30
+00:01:21,917 --> 00:01:24,540
+diesen speziellen Text durch eine benutzerfreundlichere Nachricht
+
+31
+00:01:24,600 --> 00:01:27,364
+zu ersetzen. Nun ist dies eine etwas knifflige Aufgabe, die
+
+32
+00:01:27,605 --> 00:01:30,469
+erfordert, dass Claude in diesem Projekt einiges an Recherche betreibt,
+
+33
+00:01:30,510 --> 00:01:33,013
+um sie abzuschließen.
+
+34
+00:01:33,054 --> 00:01:35,918
+Wenn Sie Claude eine schwierigere Aufgabe geben, gibt es zwei Möglichkeiten,
+
+35
+00:01:35,897 --> 00:01:38,522
+Claudes Intelligenz leicht zu steigern.
+
+36
+00:01:38,581 --> 00:01:41,406
+Die erste Möglichkeit ist, den Plan-Modus zu aktivieren. Der Plan-Modus
+
+37
+00:01:41,447 --> 00:01:43,989
+wird durch zweimaliges Drücken von Umschalt+Tab aktiviert, oder
+
+38
+00:01:44,010 --> 00:01:46,974
+einmal, wenn Sie bereits automatisch Dateiänderungen akzeptieren.
+
+39
+00:01:47,075 --> 00:01:49,819
+Im Plan-Modus recherchiert Claude viel mehr
+
+40
+00:01:50,500 --> 00:01:53,063
+in Ihrem Projekt, liest mehr Dateien und entwickelt einen detaillierten Plan,
+
+41
+00:01:53,123 --> 00:01:55,668
+wie Ihre Aufgabe zu erledigen ist. Nach Abschluss des Plans
+
+42
+00:01:55,808 --> 00:01:58,393
+wird Claude Ihnen genau mitteilen, was es tun möchte,
+
+43
+00:01:58,453 --> 00:02:01,055
+um Ihre Aufgabe abzuschließen. Zu diesem Zeitpunkt können Sie diesen Plan entweder
+
+44
+00:02:01,075 --> 00:02:03,759
+akzeptieren, und Claude wird ihn umsetzen, oder Sie können Claude
+
+45
+00:02:03,819 --> 00:02:06,882
+auf irgendeine Weise umleiten, vielleicht hat es eine Datei übersehen oder
+
+46
+00:02:06,942 --> 00:02:09,485
+ein Szenario nicht berücksichtigt.
+
+47
+00:02:09,526 --> 00:02:12,028
+Die zweite Möglichkeit, wie wir Claudes Intelligenz steigern können, ist die Aktivierung des Denkens.
+
+48
+00:02:12,088 --> 00:02:14,711
+Dadurch wird die erweiterte Denkfunktion von Claude aktiviert, die es ihr ermöglicht,
+
+49
+00:02:14,731 --> 00:02:17,414
+mehr über eine bestimmte Aufgabe nachzudenken. Um
+
+50
+00:02:17,455 --> 00:02:20,579
+das Denken zu aktivieren, gibt es eine Reihe von verschiedenen Auslöserphrasen.
+
+51
+00:02:20,598 --> 00:02:23,141
+Jede gibt Claude ein zunehmend größeres Token-Budget zum Nachdenken.
+
+52
+00:02:23,181 --> 00:02:26,526
+Da dies eine kniffligere Aufgabe ist, könnte ich Claude bitten, über die beste Implementierung nachzudenken.
+
+53
+00:02:26,506 --> 00:02:29,110
+Das Letzte, was Sie verstehen sollten, ist, dass Planen
+
+54
+00:02:29,151 --> 00:02:31,975
+und Denken zusammen verwendet werden können. Zusätzlich
+
+55
+00:02:32,217 --> 00:02:34,942
+zu diesem Ultra-Denken werde ich auch den Plan-Modus aktivieren.
+
+56
+00:02:35,021 --> 00:02:37,586
+Und jetzt lasse ich das laufen und wir werden sehen, wie gut Claude diese Funktion implementieren kann.
+
+57
+00:02:37,606 --> 00:02:40,211
+Nun fragen Sie sich vielleicht, wann Sie Planen und wann Sie Denken verwenden sollten.
+
+58
+00:02:40,252 --> 00:02:42,757
+Stellen Sie sich diese beiden als die Behandlung von Breitensuche und Tiefensuche vor.
+
+59
+00:02:42,796 --> 00:02:45,341
+Der Plan-Modus ist nützlich, wenn Sie eine Aufgabe haben, die ein breites Verständnis
+
+60
+00:02:45,442 --> 00:02:47,985
+Ihres Codebestands erfordert und die Betrachtung verschiedener Bereiche.
+
+61
+00:02:48,006 --> 00:02:50,530
+Er ist auch nützlich, wenn Sie an einer Aufgabe arbeiten, die mehrere Schritte erfordert.
+
+62
+00:02:50,590 --> 00:02:53,093
+Das Denken hingegen ist nützlich, wenn Sie sich auf ein bestimmtes kniffliges
+
+63
+00:02:53,193 --> 00:02:55,818
+Logikstück konzentrieren oder einen schwierigen Fehler beheben.
+
+64
+00:02:55,858 --> 00:02:58,401
+Die zweite Frage, die Sie sich vielleicht stellen, ist, ob
+
+65
+00:02:58,442 --> 00:03:01,105
+Sie nicht einfach immer Denken und Planen aktivieren sollten.
+
+66
+00:03:01,667 --> 00:03:04,270
+Nun, Sie können es sicherlich tun, aber denken Sie daran, dass Planen
+
+67
+00:03:04,330 --> 00:03:07,135
+und Denken zusätzliche Tokens verbrauchen, sodass damit Kosten verbunden sind.
+
+68
+00:03:07,235 --> 00:03:09,780
+Nach ein paar Minuten Arbeit sieht es so aus, als wäre die Funktion fertig.
+
+69
+00:03:09,840 --> 00:03:12,444
+Ich gehe also zurück zu meinem Editor und teste das aus.
+
+70
+00:03:12,504 --> 00:03:15,049
+Sofort sehen wir hier eine bessere Statusinformation als zuvor.
+
+71
+00:03:15,068 --> 00:03:17,593
+Den Benutzern wird jetzt mitgeteilt, dass eine Datei erstellt wird.
+
+72
+00:03:17,613 --> 00:03:19,848
+Und wenn ich eine Folgeanfrage sende, vielleicht um den Titel zu ändern,
+
+73
+00:03:20,088 --> 00:03:22,632
+hoffentlich sehen wir dann bei der Folgeanfrage etwas über die Bearbeitung dieser Datei.
+
+74
+00:03:22,908 --> 00:03:25,451
+Da haben wir es. Jetzt bearbeiten wir die Datei app.jsx.
+
+75
+00:03:25,872 --> 00:03:28,574
+Ich würde sagen, Claude hat diese Funktion definitiv erfolgreich implementiert.
+
+76
+00:03:28,634 --> 00:03:31,587
+Nachdem wir einige Änderungen an diesem Projekt vorgenommen haben, sollten wir unsere Änderungen wahrscheinlich committen.
+
+77
+00:03:31,607 --> 00:03:34,271
+Claude Code ist ein solider Git-Assistent. Wir können es bitten,
+
+78
+00:03:34,312 --> 00:03:36,855
+unsere Änderungen zu stagen und zu committen, und es wird eine
+
+79
+00:03:36,915 --> 00:03:38,581
+beschreibende Commit-Nachricht für uns schreiben.

@@ -1,0 +1,926 @@
+{
+  "courses": {
+    "ai-fluency-for-educators": {
+      "assets": {
+        "attachment_about_this_course_pdf": {
+          "kind": "attachment",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/ai-fluency-for-educators/Assets/attachment_about_this_course_pdf.pdf",
+          "status": "downloaded",
+          "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/254a6304b42f3fb4dc52ab36b1c3e06f06819a44.pdf"
+        },
+        "attachment_how_we_used_ai_in_building_the_course_pdf": {
+          "kind": "attachment",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/ai-fluency-for-educators/Assets/attachment_how_we_used_ai_in_building_the_course_pdf.pdf",
+          "status": "downloaded",
+          "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/a6b3eb802a87e5516a302a9db3ebb357313f08e9.pdf"
+        },
+        "attachment_meet_your_instructors_pdf": {
+          "kind": "attachment",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/ai-fluency-for-educators/Assets/attachment_meet_your_instructors_pdf.pdf",
+          "status": "downloaded",
+          "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/9b6a92af33b00bf2538bd02273dace9e06220dc2.pdf"
+        }
+      },
+      "derived_files": {
+        "course_description_en_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/ai-fluency-for-educators/course-description.en.md",
+          "status": "downloaded"
+        }
+      },
+      "description_en": "Already registered?\n          \n        \n        \n          Sign In rate limit Code not recognized.",
+      "details_fetched_at": "2026-03-17T13:27:01+00:00",
+      "lesson_urls": [],
+      "slug": "ai-fluency-for-educators",
+      "status": "downloaded",
+      "subtitle": "Already registered?\n          \n        \n        \n          Sign In rate limit Code not recognized.",
+      "title": "AI Fluency for educators This course empowers faculty, instructional designers, and educational leaders to apply AI Fluency into their own teaching practice and institutional strategy.",
+      "url": "https://anthropic.skilljar.com/ai-fluency-for-educators"
+    },
+    "ai-fluency-for-nonprofits": {
+      "assets": {},
+      "derived_files": {
+        "course_description_en_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/ai-fluency-for-nonprofits/course-description.en.md",
+          "status": "downloaded"
+        }
+      },
+      "description_en": "Already registered?\n          \n        \n        \n          Sign In rate limit Code not recognized.",
+      "details_fetched_at": "2026-03-17T13:27:03+00:00",
+      "lesson_urls": [],
+      "slug": "ai-fluency-for-nonprofits",
+      "status": "downloaded",
+      "subtitle": "Already registered?\n          \n        \n        \n          Sign In rate limit Code not recognized.",
+      "title": "AI Fluency for nonprofits This course empowers nonprofit professionals to develop AI fluency in order to increase organizational impact and efficiency while staying true to their mission and values.",
+      "url": "https://anthropic.skilljar.com/ai-fluency-for-nonprofits"
+    },
+    "ai-fluency-for-students": {
+      "assets": {
+        "attachment_about_this_course_pdf": {
+          "kind": "attachment",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/ai-fluency-for-students/Assets/attachment_about_this_course_pdf.pdf",
+          "status": "downloaded",
+          "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/26e67716effd45ddba5a3905493b8cf0d840d94a.pdf"
+        },
+        "attachment_how_we_used_ai_in_building_the_course_pdf": {
+          "kind": "attachment",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/ai-fluency-for-students/Assets/attachment_how_we_used_ai_in_building_the_course_pdf.pdf",
+          "status": "downloaded",
+          "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/e1aff41187ac863a6ed4e48602965613d38749e2.pdf"
+        },
+        "attachment_meet_your_instructors_pdf": {
+          "kind": "attachment",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/ai-fluency-for-students/Assets/attachment_meet_your_instructors_pdf.pdf",
+          "status": "downloaded",
+          "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/9ea9e1e39a9cddf7a79b164a0ae5341ae4006f01.pdf"
+        }
+      },
+      "derived_files": {
+        "course_description_en_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/ai-fluency-for-students/course-description.en.md",
+          "status": "downloaded"
+        }
+      },
+      "description_en": "Already registered?\n          \n        \n        \n          Sign In rate limit Code not recognized.",
+      "details_fetched_at": "2026-03-17T13:27:07+00:00",
+      "lesson_urls": [],
+      "slug": "ai-fluency-for-students",
+      "status": "downloaded",
+      "subtitle": "Already registered?\n          \n        \n        \n          Sign In rate limit Code not recognized.",
+      "title": "AI Fluency for students This course empowers students to develop AI Fluency skills that enhance learning, career planning, and academic success through responsible AI collaboration.",
+      "url": "https://anthropic.skilljar.com/ai-fluency-for-students"
+    },
+    "ai-fluency-framework-foundations": {
+      "assets": {
+        "attachment_about_this_course_pdf": {
+          "kind": "attachment",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/ai-fluency-framework-foundations/Assets/attachment_about_this_course_pdf.pdf",
+          "status": "downloaded",
+          "url": "https://www-cdn.anthropic.com/7e9692bba414a91a562af2a64b7e99d7946de590.pdf"
+        },
+        "attachment_how_we_used_ai_in_building_the_course_pdf": {
+          "kind": "attachment",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/ai-fluency-framework-foundations/Assets/attachment_how_we_used_ai_in_building_the_course_pdf.pdf",
+          "status": "downloaded",
+          "url": "https://www-cdn.anthropic.com/0e37fa9da01fab7a5478a2194d352027794c1b89.pdf"
+        },
+        "attachment_meet_your_instructors_pdf": {
+          "kind": "attachment",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/ai-fluency-framework-foundations/Assets/attachment_meet_your_instructors_pdf.pdf",
+          "status": "downloaded",
+          "url": "https://www-cdn.anthropic.com/e5f2470543977625bf82bbf74cd7898f47da4ae1.pdf"
+        }
+      },
+      "derived_files": {
+        "course_description_en_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/ai-fluency-framework-foundations/course-description.en.md",
+          "status": "downloaded"
+        }
+      },
+      "description_en": "Already registered?\n          \n        \n        \n          Sign In rate limit Code not recognized.",
+      "details_fetched_at": "2026-03-17T13:27:10+00:00",
+      "lesson_urls": [],
+      "slug": "ai-fluency-framework-foundations",
+      "status": "downloaded",
+      "subtitle": "Already registered?\n          \n        \n        \n          Sign In rate limit Code not recognized.",
+      "title": "AI Fluency: Framework & Foundations Learn to collaborate with AI systems effectively, efficiently, ethically, and safely",
+      "url": "https://anthropic.skilljar.com/ai-fluency-framework-foundations"
+    },
+    "claude-101": {
+      "assets": {},
+      "derived_files": {
+        "course_description_en_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-101/course-description.en.md",
+          "status": "downloaded"
+        }
+      },
+      "description_en": "Already registered?\n          \n        \n        \n          Sign In rate limit Code not recognized.",
+      "details_fetched_at": "2026-03-17T13:27:13+00:00",
+      "lesson_urls": [],
+      "slug": "claude-101",
+      "status": "downloaded",
+      "subtitle": "Already registered?\n          \n        \n        \n          Sign In rate limit Code not recognized.",
+      "title": "Claude 101 Learn how to use Claude for everyday work tasks, understand core features, and explore resources for more advanced learning on other topics.",
+      "url": "https://anthropic.skilljar.com/claude-101"
+    },
+    "claude-code-in-action": {
+      "assets": {
+        "audio_audio": {
+          "kind": "audio",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/audio_audio.m4a",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/rLVnV1aS-eNgUZBQ2.m4a?exp=1773764880&sig=8cf1e7a088686740852d4fffc2c74f30"
+        },
+        "captions_de": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/captions_de.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/RMEkRS1P.srt"
+        },
+        "captions_en": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/captions_en.srt",
+          "status": "translated",
+          "url": "https://cdn.jwplayer.com/tracks/4ygwy6zQ.srt"
+        },
+        "captions_es": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/captions_es.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/49TFJSUQ.srt"
+        },
+        "captions_fr": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/captions_fr.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/H2nSABY6.srt"
+        },
+        "captions_ja": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/captions_ja.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/OnQ5wZmd.srt"
+        },
+        "captions_ko": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/captions_ko.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/xT1hGSRf.srt"
+        },
+        "captions_pt": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/captions_pt.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/W3yaeLiN.srt"
+        },
+        "jwplayer_script": {
+          "kind": "player_script",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/jwplayer_script.js",
+          "status": "downloaded",
+          "url": "https://content.jwplatform.com/players/rLVnV1aS-Akyo8gQO.js"
+        },
+        "manifest_hls": {
+          "kind": "video_manifest",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/manifest_hls.m3u8",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/manifests/rLVnV1aS.m3u8?exp=1773764880&sig=7a9edbd65b561c290d193d9c4e05ad18"
+        },
+        "playback_json": {
+          "kind": "metadata",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/playback_json.json",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/v2/sites/Lc4Rn1s0/media/rLVnV1aS/playback.json?recommendations_playlist_id=Xk7xK52v&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNvbW1lbmRhdGlvbnNfcGxheWxpc3RfaWQiOiJYazd4SzUydiIsInJlc291cmNlIjoiL3YyL3NpdGVzL0xjNFJuMXMwL21lZGlhL3JMVm5WMWFTL3BsYXliYWNrLmpzb24iLCJleHAiOjE3NzM3NjQ4ODB9.NIfAhJ2bYQtU1EsgOCLAWlG53GhKJ5DrERnYAv2o15U"
+        },
+        "poster_image": {
+          "kind": "image",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/poster_image.jpg",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/v2/media/rLVnV1aS/poster.jpg?width=720"
+        },
+        "thumbnails_vtt": {
+          "kind": "thumbnails",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/thumbnails_vtt.vtt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/strips/rLVnV1aS-120.vtt"
+        },
+        "video_1080p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/video_1080p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/rLVnV1aS-hFUVmOoC.mp4?exp=1773764880&sig=e08db0b2131fb214424fa3bf2302e821"
+        },
+        "video_180p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/video_180p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/rLVnV1aS-B9NwIVRu.mp4?exp=1773764880&sig=269da9823a2051e1b7dd2799eaab9a0d"
+        },
+        "video_270p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/video_270p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/rLVnV1aS-muagBOKI.mp4?exp=1773764880&sig=975f9ed1a9fca684531885c52870a52c"
+        },
+        "video_406p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/video_406p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/rLVnV1aS-4Xe8IV8X.mp4?exp=1773764880&sig=6dad90089bf607d5243b1bd85c8df57d"
+        },
+        "video_720p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/video_720p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/rLVnV1aS-m7ew0xq8.mp4?exp=1773764880&sig=47c2dfa4b02c34af65254bcdd2c1da45"
+        }
+      },
+      "derived_files": {
+        "captions_ru_srt": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Assets/captions_ru.srt",
+          "status": "translated"
+        },
+        "course_description_en_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/course-description.en.md",
+          "status": "downloaded"
+        },
+        "course_description_ru_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/course-description.ru.md",
+          "status": "translated"
+        },
+        "playback_json": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/playback.json",
+          "status": "downloaded"
+        }
+      },
+      "description_en": "This course covers Claude Code, a command-line AI assistant that uses language models to perform development tasks. You'll learn how Claude Code reads files, executes commands, and modifies code through its tool system, along with techniques for managing context, creating custom workflows, extending Claude Code with hooks, and integrating with external services.",
+      "details_fetched_at": "2026-03-17T13:27:14+00:00",
+      "lesson_urls": [
+        "https://anthropic.skilljar.com/claude-code-in-action/303233",
+        "https://anthropic.skilljar.com/claude-code-in-action/303235",
+        "https://anthropic.skilljar.com/claude-code-in-action/303242",
+        "https://anthropic.skilljar.com/claude-code-in-action/301614",
+        "https://anthropic.skilljar.com/claude-code-in-action/301615",
+        "https://anthropic.skilljar.com/claude-code-in-action/303241",
+        "https://anthropic.skilljar.com/claude-code-in-action/303236",
+        "https://anthropic.skilljar.com/claude-code-in-action/303701",
+        "https://anthropic.skilljar.com/claude-code-in-action/303237",
+        "https://anthropic.skilljar.com/claude-code-in-action/303234",
+        "https://anthropic.skilljar.com/claude-code-in-action/303239",
+        "https://anthropic.skilljar.com/claude-code-in-action/303240",
+        "https://anthropic.skilljar.com/claude-code-in-action/312000",
+        "https://anthropic.skilljar.com/claude-code-in-action/312002",
+        "https://anthropic.skilljar.com/claude-code-in-action/312003",
+        "https://anthropic.skilljar.com/claude-code-in-action/312423",
+        "https://anthropic.skilljar.com/claude-code-in-action/312004",
+        "https://anthropic.skilljar.com/claude-code-in-action/312427",
+        "https://anthropic.skilljar.com/claude-code-in-action/312001",
+        "https://anthropic.skilljar.com/claude-code-in-action/308391",
+        "https://anthropic.skilljar.com/claude-code-in-action/303238",
+        "https://anthropic.skilljar.com/claude-code-in-action/resume"
+      ],
+      "slug": "claude-code-in-action",
+      "status": "failed",
+      "subtitle": "Practical walkthrough of using Claude Code to accelerate your development workflow",
+      "title": "Claude Code in Action",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action"
+    },
+    "claude-in-amazon-bedrock": {
+      "assets": {
+        "audio_audio": {
+          "kind": "audio",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-in-amazon-bedrock/Assets/audio_audio.m4a",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/s9631LWd-eNgUZBQ2.m4a?exp=1773764880&sig=b07599ea032dc8c8e1ac196d432fb401"
+        },
+        "jwplayer_script": {
+          "kind": "player_script",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-in-amazon-bedrock/Assets/jwplayer_script.js",
+          "status": "downloaded",
+          "url": "https://content.jwplatform.com/players/s9631LWd-Akyo8gQO.js"
+        },
+        "manifest_hls": {
+          "kind": "video_manifest",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-in-amazon-bedrock/Assets/manifest_hls.m3u8",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/manifests/s9631LWd.m3u8?exp=1773764880&sig=eeb1df8992db3c346983033d00547de4"
+        },
+        "playback_json": {
+          "kind": "metadata",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-in-amazon-bedrock/Assets/playback_json.json",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/v2/sites/Lc4Rn1s0/media/s9631LWd/playback.json?recommendations_playlist_id=Xk7xK52v&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNvbW1lbmRhdGlvbnNfcGxheWxpc3RfaWQiOiJYazd4SzUydiIsInJlc291cmNlIjoiL3YyL3NpdGVzL0xjNFJuMXMwL21lZGlhL3M5NjMxTFdkL3BsYXliYWNrLmpzb24iLCJleHAiOjE3NzM3NjQ4ODB9.8LICxiuyXhPTAwgYzOODX6WCpsvyRf0ZhO0p231WcS0"
+        },
+        "poster_image": {
+          "kind": "image",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-in-amazon-bedrock/Assets/poster_image.jpg",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/v2/media/s9631LWd/poster.jpg?width=720"
+        },
+        "thumbnails_vtt": {
+          "kind": "thumbnails",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-in-amazon-bedrock/Assets/thumbnails_vtt.vtt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/strips/s9631LWd-120.vtt"
+        },
+        "video_1080p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-in-amazon-bedrock/Assets/video_1080p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/s9631LWd-hFUVmOoC.mp4?exp=1773764880&sig=6ee84e35fa4a4169a7391090b950fc7e"
+        },
+        "video_180p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-in-amazon-bedrock/Assets/video_180p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/s9631LWd-B9NwIVRu.mp4?exp=1773764880&sig=06694a8b4c80cb77271079c7d6fe691b"
+        },
+        "video_270p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-in-amazon-bedrock/Assets/video_270p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/s9631LWd-muagBOKI.mp4?exp=1773764880&sig=996147c2bd8ce4aaf5e0bca39d5c453f"
+        },
+        "video_406p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-in-amazon-bedrock/Assets/video_406p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/s9631LWd-4Xe8IV8X.mp4?exp=1773764880&sig=3da3cf777a9a0cbe91066455ca942955"
+        },
+        "video_720p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-in-amazon-bedrock/Assets/video_720p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/s9631LWd-m7ew0xq8.mp4?exp=1773764880&sig=6a84e5cf70877912c9014bbba8361fae"
+        }
+      },
+      "derived_files": {
+        "course_description_en_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-in-amazon-bedrock/course-description.en.md",
+          "status": "downloaded"
+        },
+        "course_description_ru_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-in-amazon-bedrock/course-description.ru.md",
+          "status": "translated"
+        },
+        "playback_json": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-in-amazon-bedrock/playback.json",
+          "status": "downloaded"
+        }
+      },
+      "description_en": "This video is still being processed. Please check back later and refresh the page. Uh oh! Something went wrong, please try again. Already registered?\n          \n        \n        \n          Sign In",
+      "details_fetched_at": "2026-03-17T13:27:51+00:00",
+      "lesson_urls": [],
+      "slug": "claude-in-amazon-bedrock",
+      "status": "translated",
+      "subtitle": "This video is still being processed. Please check back later and refresh the page. Uh oh! Something went wrong, please try again. Already registered?\n          \n        \n        \n          Sign In",
+      "title": "Claude with Amazon Bedrock As part of an accreditation program created for AWS, Anthropic launched a first-of-its-kind training for AWS employees. Here's the full course so you can follow along.",
+      "url": "https://anthropic.skilljar.com/claude-in-amazon-bedrock"
+    },
+    "claude-with-google-vertex": {
+      "assets": {
+        "audio_audio": {
+          "kind": "audio",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-google-vertex/Assets/audio_audio.m4a",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/72e6ljEw-eNgUZBQ2.m4a?exp=1773765120&sig=7648e8952c9ac092a58f71824d13ce76"
+        },
+        "jwplayer_script": {
+          "kind": "player_script",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-google-vertex/Assets/jwplayer_script.js",
+          "status": "downloaded",
+          "url": "https://content.jwplatform.com/players/72e6ljEw-Akyo8gQO.js"
+        },
+        "manifest_hls": {
+          "kind": "video_manifest",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-google-vertex/Assets/manifest_hls.m3u8",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/manifests/72e6ljEw.m3u8?exp=1773765120&sig=ce23adcacd788c1266d5fe7a7e33193e"
+        },
+        "playback_json": {
+          "kind": "metadata",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-google-vertex/Assets/playback_json.json",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/v2/sites/Lc4Rn1s0/media/72e6ljEw/playback.json?recommendations_playlist_id=Xk7xK52v&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNvbW1lbmRhdGlvbnNfcGxheWxpc3RfaWQiOiJYazd4SzUydiIsInJlc291cmNlIjoiL3YyL3NpdGVzL0xjNFJuMXMwL21lZGlhLzcyZTZsakV3L3BsYXliYWNrLmpzb24iLCJleHAiOjE3NzM3NjUxMjB9.dwBJikdXgWe8TG-XNT00E_TLgetoAs005niCKfy7Puo"
+        },
+        "poster_image": {
+          "kind": "image",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-google-vertex/Assets/poster_image.jpg",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/v2/media/72e6ljEw/poster.jpg?width=720"
+        },
+        "thumbnails_vtt": {
+          "kind": "thumbnails",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-google-vertex/Assets/thumbnails_vtt.vtt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/strips/72e6ljEw-120.vtt"
+        },
+        "video_1080p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-google-vertex/Assets/video_1080p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/72e6ljEw-hFUVmOoC.mp4?exp=1773765120&sig=aecf402f5ea5042944f55b9e4aa9c4b8"
+        },
+        "video_180p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-google-vertex/Assets/video_180p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/72e6ljEw-B9NwIVRu.mp4?exp=1773765120&sig=3d9751eb18eae1428baf5f7a8e7254c0"
+        },
+        "video_270p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-google-vertex/Assets/video_270p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/72e6ljEw-muagBOKI.mp4?exp=1773765120&sig=e05fd0aeac84a6033e63538c19fd9e96"
+        },
+        "video_406p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-google-vertex/Assets/video_406p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/72e6ljEw-4Xe8IV8X.mp4?exp=1773765120&sig=dcc4a596b068e90bbf16c81576f2158e"
+        },
+        "video_720p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-google-vertex/Assets/video_720p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/72e6ljEw-m7ew0xq8.mp4?exp=1773765120&sig=0fc27186109904ca1d8e420a269946a7"
+        }
+      },
+      "derived_files": {
+        "course_description_en_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-google-vertex/course-description.en.md",
+          "status": "downloaded"
+        },
+        "course_description_ru_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-google-vertex/course-description.ru.md",
+          "status": "translated"
+        },
+        "playback_json": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-google-vertex/playback.json",
+          "status": "downloaded"
+        }
+      },
+      "description_en": "This video is still being processed. Please check back later and refresh the page. Uh oh! Something went wrong, please try again. Already registered?\n          \n        \n        \n          Sign In",
+      "details_fetched_at": "2026-03-17T13:28:36+00:00",
+      "lesson_urls": [],
+      "slug": "claude-with-google-vertex",
+      "status": "translated",
+      "subtitle": "This video is still being processed. Please check back later and refresh the page. Uh oh! Something went wrong, please try again. Already registered?\n          \n        \n        \n          Sign In",
+      "title": "Claude with Google Cloud's Vertex AI This comprehensive course covers the full spectrum of working with Anthropic models through Google Cloud's Vertex AI.",
+      "url": "https://anthropic.skilljar.com/claude-with-google-vertex"
+    },
+    "claude-with-the-anthropic-api": {
+      "assets": {
+        "audio_audio": {
+          "kind": "audio",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-the-anthropic-api/Assets/audio_audio.m4a",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/o4BlDHzD-eNgUZBQ2.m4a?exp=1773765120&sig=9de5048ce8a66b5ddffc80280c801a23"
+        },
+        "jwplayer_script": {
+          "kind": "player_script",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-the-anthropic-api/Assets/jwplayer_script.js",
+          "status": "downloaded",
+          "url": "https://content.jwplatform.com/players/o4BlDHzD-Akyo8gQO.js"
+        },
+        "manifest_hls": {
+          "kind": "video_manifest",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-the-anthropic-api/Assets/manifest_hls.m3u8",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/manifests/o4BlDHzD.m3u8?exp=1773765120&sig=449f58ea96aa70473e26b975fca1c91f"
+        },
+        "playback_json": {
+          "kind": "metadata",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-the-anthropic-api/Assets/playback_json.json",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/v2/sites/Lc4Rn1s0/media/o4BlDHzD/playback.json?recommendations_playlist_id=Xk7xK52v&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNvbW1lbmRhdGlvbnNfcGxheWxpc3RfaWQiOiJYazd4SzUydiIsInJlc291cmNlIjoiL3YyL3NpdGVzL0xjNFJuMXMwL21lZGlhL280QmxESHpEL3BsYXliYWNrLmpzb24iLCJleHAiOjE3NzM3NjUxMjB9.MXGf5axa6qdBi1Rhr_30ApmejkP-zizJw7w1QRL4kOs"
+        },
+        "poster_image": {
+          "kind": "image",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-the-anthropic-api/Assets/poster_image.jpg",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/v2/media/o4BlDHzD/poster.jpg?width=720"
+        },
+        "thumbnails_vtt": {
+          "kind": "thumbnails",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-the-anthropic-api/Assets/thumbnails_vtt.vtt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/strips/o4BlDHzD-120.vtt"
+        },
+        "video_1080p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-the-anthropic-api/Assets/video_1080p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/o4BlDHzD-hFUVmOoC.mp4?exp=1773765120&sig=fcd2d41acbf7a3eb8941cdf7c98d1be5"
+        },
+        "video_180p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-the-anthropic-api/Assets/video_180p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/o4BlDHzD-B9NwIVRu.mp4?exp=1773765120&sig=78684b630a344c13f41177cec94eae0b"
+        },
+        "video_270p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-the-anthropic-api/Assets/video_270p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/o4BlDHzD-muagBOKI.mp4?exp=1773765120&sig=fd6b5136bd00fb81a9d9aafa608cdc97"
+        },
+        "video_406p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-the-anthropic-api/Assets/video_406p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/o4BlDHzD-4Xe8IV8X.mp4?exp=1773765120&sig=5dac5fc8da945bcfd5aca1cf4657e699"
+        },
+        "video_720p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-the-anthropic-api/Assets/video_720p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/o4BlDHzD-m7ew0xq8.mp4?exp=1773765120&sig=f19f2533edaf801b7539a9555f7a71d7"
+        }
+      },
+      "derived_files": {
+        "course_description_en_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-the-anthropic-api/course-description.en.md",
+          "status": "downloaded"
+        },
+        "course_description_ru_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-the-anthropic-api/course-description.ru.md",
+          "status": "translated"
+        },
+        "playback_json": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-with-the-anthropic-api/playback.json",
+          "status": "downloaded"
+        }
+      },
+      "description_en": "This video is still being processed. Please check back later and refresh the page. Uh oh! Something went wrong, please try again. Already registered?\n          \n        \n        \n          Sign In",
+      "details_fetched_at": "2026-03-17T13:29:17+00:00",
+      "lesson_urls": [],
+      "slug": "claude-with-the-anthropic-api",
+      "status": "translated",
+      "subtitle": "This video is still being processed. Please check back later and refresh the page. Uh oh! Something went wrong, please try again. Already registered?\n          \n        \n        \n          Sign In",
+      "title": "Building with the Claude API This comprehensive course covers the full spectrum of working with Anthropic models using the Claude API",
+      "url": "https://anthropic.skilljar.com/claude-with-the-anthropic-api"
+    },
+    "introduction-to-agent-skills": {
+      "assets": {},
+      "derived_files": {
+        "course_description_en_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-agent-skills/course-description.en.md",
+          "status": "downloaded"
+        }
+      },
+      "description_en": "Already registered?\n          \n        \n        \n          Sign In rate limit Code not recognized.",
+      "details_fetched_at": "2026-03-17T13:29:53+00:00",
+      "lesson_urls": [],
+      "slug": "introduction-to-agent-skills",
+      "status": "downloaded",
+      "subtitle": "Already registered?\n          \n        \n        \n          Sign In rate limit Code not recognized.",
+      "title": "Introduction to agent skills Learn how to build, configure, and share Skills in Claude Code — reusable markdown instructions that Claude automatically applies to the right tasks at the right time. This course takes you from creating your first Skill to distributing them across teams and troubleshooting common issues.",
+      "url": "https://anthropic.skilljar.com/introduction-to-agent-skills"
+    },
+    "introduction-to-model-context-protocol": {
+      "assets": {
+        "audio_audio": {
+          "kind": "audio",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/audio_audio.m4a",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/yddVFhdH-eNgUZBQ2.m4a?exp=1773765120&sig=af62c58286c1068ebb6c56faedb2141e"
+        },
+        "captions_de": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/captions_de.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/NfNVaT6h.srt"
+        },
+        "captions_en": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/captions_en.srt",
+          "status": "translated",
+          "url": "https://cdn.jwplayer.com/tracks/U1XBzDrb.srt"
+        },
+        "captions_es": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/captions_es.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/M1X4KZa4.srt"
+        },
+        "captions_fr": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/captions_fr.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/ErP2WDEv.srt"
+        },
+        "captions_ja": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/captions_ja.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/NBA0SUfv.srt"
+        },
+        "captions_ko": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/captions_ko.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/IMcWy8Ec.srt"
+        },
+        "captions_pt": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/captions_pt.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/tmAFrP1J.srt"
+        },
+        "jwplayer_script": {
+          "kind": "player_script",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/jwplayer_script.js",
+          "status": "downloaded",
+          "url": "https://content.jwplatform.com/players/yddVFhdH-Akyo8gQO.js"
+        },
+        "manifest_hls": {
+          "kind": "video_manifest",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/manifest_hls.m3u8",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/manifests/yddVFhdH.m3u8?exp=1773765120&sig=d42bb000539925cb985fe3047a004c9d"
+        },
+        "playback_json": {
+          "kind": "metadata",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/playback_json.json",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/v2/sites/Lc4Rn1s0/media/yddVFhdH/playback.json?recommendations_playlist_id=Xk7xK52v&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNvbW1lbmRhdGlvbnNfcGxheWxpc3RfaWQiOiJYazd4SzUydiIsInJlc291cmNlIjoiL3YyL3NpdGVzL0xjNFJuMXMwL21lZGlhL3lkZFZGaGRIL3BsYXliYWNrLmpzb24iLCJleHAiOjE3NzM3NjUxMjB9.84wQJ9qxiREBoGOGhmW0efNg1NGrZqDh4Fr9_GHXHU0"
+        },
+        "poster_image": {
+          "kind": "image",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/poster_image.jpg",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/v2/media/yddVFhdH/poster.jpg?width=720"
+        },
+        "thumbnails_vtt": {
+          "kind": "thumbnails",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/thumbnails_vtt.vtt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/strips/yddVFhdH-120.vtt"
+        },
+        "video_1080p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/video_1080p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/yddVFhdH-hFUVmOoC.mp4?exp=1773765120&sig=b62af9b5002d79ffb863247991f4f046"
+        },
+        "video_180p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/video_180p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/yddVFhdH-B9NwIVRu.mp4?exp=1773765120&sig=58387f68ddae5c0e7b851678bf5daf69"
+        },
+        "video_270p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/video_270p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/yddVFhdH-muagBOKI.mp4?exp=1773765120&sig=dc807e3fa740750bacb954f9fcb5abfe"
+        },
+        "video_406p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/video_406p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/yddVFhdH-4Xe8IV8X.mp4?exp=1773765120&sig=8998f886b2d9b525571d062b10425adc"
+        },
+        "video_720p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/video_720p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/yddVFhdH-m7ew0xq8.mp4?exp=1773765120&sig=59693b369a8986a83f7ebdb6e26c80d2"
+        }
+      },
+      "derived_files": {
+        "captions_ru_srt": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/Assets/captions_ru.srt",
+          "status": "translated"
+        },
+        "course_description_en_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/course-description.en.md",
+          "status": "downloaded"
+        },
+        "course_description_ru_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/course-description.ru.md",
+          "status": "translated"
+        },
+        "playback_json": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/introduction-to-model-context-protocol/playback.json",
+          "status": "downloaded"
+        }
+      },
+      "description_en": "This video is still being processed. Please check back later and refresh the page. Uh oh! Something went wrong, please try again. Already registered?\n          \n        \n        \n          Sign In",
+      "details_fetched_at": "2026-03-17T13:29:55+00:00",
+      "lesson_urls": [],
+      "slug": "introduction-to-model-context-protocol",
+      "status": "translated",
+      "subtitle": "This video is still being processed. Please check back later and refresh the page. Uh oh! Something went wrong, please try again. Already registered?\n          \n        \n        \n          Sign In",
+      "title": "Introduction to Model Context Protocol Learn to build Model Context Protocol servers and clients from scratch using Python. Master MCP's three core primitives—tools, resources, and prompts—to connect Claude with external services",
+      "url": "https://anthropic.skilljar.com/introduction-to-model-context-protocol"
+    },
+    "model-context-protocol-advanced-topics": {
+      "assets": {
+        "audio_audio": {
+          "kind": "audio",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/audio_audio.m4a",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/FMtGfCmX-eNgUZBQ2.m4a?exp=1773765120&sig=4ff9d97a3034cfef24cd3ed56279f298"
+        },
+        "captions_de": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/captions_de.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/xADwGk7W.srt"
+        },
+        "captions_en": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/captions_en.srt",
+          "status": "translated",
+          "url": "https://cdn.jwplayer.com/tracks/3kN644eX.srt"
+        },
+        "captions_es": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/captions_es.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/gdfqlgYR.srt"
+        },
+        "captions_fr": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/captions_fr.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/IlOsoVaR.srt"
+        },
+        "captions_ja": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/captions_ja.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/szRBsDyW.srt"
+        },
+        "captions_ko": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/captions_ko.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/LmVVrzjO.srt"
+        },
+        "captions_pt": {
+          "kind": "captions",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/captions_pt.srt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/tracks/vjLODxos.srt"
+        },
+        "jwplayer_script": {
+          "kind": "player_script",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/jwplayer_script.js",
+          "status": "downloaded",
+          "url": "https://content.jwplatform.com/players/FMtGfCmX-Akyo8gQO.js"
+        },
+        "manifest_hls": {
+          "kind": "video_manifest",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/manifest_hls.m3u8",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/manifests/FMtGfCmX.m3u8?exp=1773765120&sig=f3dc71a8dca0169a1420f84f48d287e5"
+        },
+        "playback_json": {
+          "kind": "metadata",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/playback_json.json",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/v2/sites/Lc4Rn1s0/media/FMtGfCmX/playback.json?recommendations_playlist_id=Xk7xK52v&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNvbW1lbmRhdGlvbnNfcGxheWxpc3RfaWQiOiJYazd4SzUydiIsInJlc291cmNlIjoiL3YyL3NpdGVzL0xjNFJuMXMwL21lZGlhL0ZNdEdmQ21YL3BsYXliYWNrLmpzb24iLCJleHAiOjE3NzM3NjUxMjB9.I4ORX06W3ltTS7CCxBXtGS4R14XH2RbjRn2O8tTFGKc"
+        },
+        "poster_image": {
+          "kind": "image",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/poster_image.jpg",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/v2/media/FMtGfCmX/poster.jpg?width=720"
+        },
+        "thumbnails_vtt": {
+          "kind": "thumbnails",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/thumbnails_vtt.vtt",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/strips/FMtGfCmX-120.vtt"
+        },
+        "video_1080p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/video_1080p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/FMtGfCmX-hFUVmOoC.mp4?exp=1773765120&sig=f4ea35634fd801c49f756a6ba8d22d5f"
+        },
+        "video_180p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/video_180p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/FMtGfCmX-B9NwIVRu.mp4?exp=1773765120&sig=cbef60582d1da6fbf8165d3206bee75a"
+        },
+        "video_270p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/video_270p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/FMtGfCmX-muagBOKI.mp4?exp=1773765120&sig=0e86ba607fb49888a73a37713096d572"
+        },
+        "video_406p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/video_406p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/FMtGfCmX-4Xe8IV8X.mp4?exp=1773765120&sig=3d278f9ac225e304f0a96ea0a055a168"
+        },
+        "video_720p": {
+          "kind": "video",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/video_720p.mp4",
+          "status": "downloaded",
+          "url": "https://cdn.jwplayer.com/videos/FMtGfCmX-m7ew0xq8.mp4?exp=1773765120&sig=01dc290b59586c49806b3a73d63c3e6e"
+        }
+      },
+      "derived_files": {
+        "captions_ru_srt": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/Assets/captions_ru.srt",
+          "status": "translated"
+        },
+        "course_description_en_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/course-description.en.md",
+          "status": "downloaded"
+        },
+        "course_description_ru_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/course-description.ru.md",
+          "status": "translated"
+        },
+        "playback_json": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/model-context-protocol-advanced-topics/playback.json",
+          "status": "downloaded"
+        }
+      },
+      "description_en": "This video is still being processed. Please check back later and refresh the page. Uh oh! Something went wrong, please try again. Already registered?\n          \n        \n        \n          Sign In",
+      "details_fetched_at": "2026-03-17T13:30:40+00:00",
+      "lesson_urls": [],
+      "slug": "model-context-protocol-advanced-topics",
+      "status": "translated",
+      "subtitle": "This video is still being processed. Please check back later and refresh the page. Uh oh! Something went wrong, please try again. Already registered?\n          \n        \n        \n          Sign In",
+      "title": "Model Context Protocol: Advanced Topics Discover advanced Model Context Protocol implementation patterns including sampling, notifications, file system access, and transport mechanisms for production MCP server development.",
+      "url": "https://anthropic.skilljar.com/model-context-protocol-advanced-topics"
+    },
+    "teaching-ai-fluency": {
+      "assets": {
+        "attachment_about_this_course_pdf": {
+          "kind": "attachment",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/teaching-ai-fluency/Assets/attachment_about_this_course_pdf.pdf",
+          "status": "downloaded",
+          "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/a11d9019e4a6b4ce2fa2cbf4317093726b68267c.pdf"
+        },
+        "attachment_how_we_used_ai_in_building_the_course_pdf": {
+          "kind": "attachment",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/teaching-ai-fluency/Assets/attachment_how_we_used_ai_in_building_the_course_pdf.pdf",
+          "status": "downloaded",
+          "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/e1b94a544768df563bfe03fc6955f82a2d3a901e.pdf"
+        },
+        "attachment_meet_your_instructors_pdf": {
+          "kind": "attachment",
+          "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/teaching-ai-fluency/Assets/attachment_meet_your_instructors_pdf.pdf",
+          "status": "downloaded",
+          "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/9b6a92af33b00bf2538bd02273dace9e06220dc2.pdf"
+        }
+      },
+      "derived_files": {
+        "course_description_en_md": {
+          "path": "/Users/cobalt/dev/ws/AntropicCource/Courses/teaching-ai-fluency/course-description.en.md",
+          "status": "downloaded"
+        }
+      },
+      "description_en": "Already registered?\n          \n        \n        \n          Sign In rate limit Code not recognized.",
+      "details_fetched_at": "2026-03-17T13:33:14+00:00",
+      "lesson_urls": [],
+      "slug": "teaching-ai-fluency",
+      "status": "downloaded",
+      "subtitle": "Already registered?\n          \n        \n        \n          Sign In rate limit Code not recognized.",
+      "title": "Teaching AI Fluency This course empowers academic faculty, instructional designers, and others to teach and assess AI Fluency in instructor-led settings.",
+      "url": "https://anthropic.skilljar.com/teaching-ai-fluency"
+    }
+  },
+  "errors": [
+    {
+      "at": "2026-03-17T13:21:44+00:00",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "url": "https://anthropic.skilljar.com/"
+    },
+    {
+      "at": "2026-03-17T13:39:31+00:00",
+      "error": "The read operation timed out",
+      "url": "https://anthropic.skilljar.com/claude-in-amazon-bedrock"
+    }
+  ],
+  "schema_version": 1,
+  "updated_at": "2026-03-17T15:37:08+00:00"
+}

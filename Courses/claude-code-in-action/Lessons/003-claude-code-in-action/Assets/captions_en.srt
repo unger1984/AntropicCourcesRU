@@ -1,0 +1,715 @@
+1
+00:00:00,892 --> 00:00:03,496
+Just a moment ago, I made some pretty big claims by saying that
+
+2
+00:00:03,536 --> 00:00:06,078
+Claude was an expert at making use of tools. And
+
+3
+00:00:06,099 --> 00:00:08,843
+that Claude code was easily extensible. Naturally,
+
+4
+00:00:08,923 --> 00:00:11,426
+you might be a little skeptical, so I'd like to give you a few
+
+5
+00:00:11,506 --> 00:00:14,029
+quick demonstrations. On this table are the
+
+6
+00:00:14,150 --> 00:00:16,794
+default tools that are available in Claude code. It
+
+7
+00:00:16,814 --> 00:00:19,397
+has all the abilities you would expect, like reading files,
+
+8
+00:00:19,557 --> 00:00:22,060
+writing files, running commands, and so on. I'm
+
+9
+00:00:22,080 --> 00:00:24,807
+going to show you a couple of tasks completed using
+
+10
+00:00:24,847 --> 00:00:27,373
+Claude Code. And in each case, it will use
+
+11
+00:00:27,434 --> 00:00:30,282
+this set of tools in rather intelligent ways. And
+
+12
+00:00:30,361 --> 00:00:32,887
+in at least one task, I'll even give Claude an
+
+13
+00:00:32,987 --> 00:00:35,774
+additional new set of tools to make use of.
+
+14
+00:00:35,941 --> 00:00:38,627
+Not only will this process give you a good idea of what Claude
+
+15
+00:00:38,667 --> 00:00:41,313
+code can do right out of the box, but hopefully
+
+16
+00:00:41,353 --> 00:00:44,039
+you will also see how easily you can extend Claude
+
+17
+00:00:44,079 --> 00:00:46,625
+code with more functionality. Here's my
+
+18
+00:00:46,704 --> 00:00:49,631
+first task for Claude code. I'm going to ask it to find
+
+19
+00:00:49,771 --> 00:00:53,140
+and optimize performance issues in the chalk library.
+
+20
+00:00:53,119 --> 00:00:56,024
+In case you're not familiar with it, chalk is a JavaScript package.
+
+21
+00:00:56,404 --> 00:00:59,148
+Here's the documentation for it. Now this is a very
+
+22
+00:00:59,207 --> 00:01:01,871
+small library that has one very simple purpose.
+
+23
+00:01:02,271 --> 00:01:05,036
+All it does is print out text in nicely formatted
+
+24
+00:01:05,096 --> 00:01:07,978
+colors, so like exactly as you see in this example screenshot
+
+25
+00:01:07,998 --> 00:01:10,802
+right here. So you can give the text colors or backgrounds
+
+26
+00:01:10,882 --> 00:01:13,427
+and formatting, all that kind of stuff. Now, this
+
+27
+00:01:13,486 --> 00:01:16,350
+might sound like a really simple and silly package,
+
+28
+00:01:16,430 --> 00:01:19,195
+but here's the thing. It turns out this is actually the fifth
+
+29
+00:01:19,635 --> 00:01:22,620
+most downloaded package in the entire JavaScript ecosystem.
+
+30
+00:01:23,061 --> 00:01:25,706
+Last week in particular, it had 429
+
+31
+00:01:26,106 --> 00:01:28,631
+million downloads. So this package is used
+
+32
+00:01:29,070 --> 00:01:31,594
+far and wide to put it simply. If
+
+33
+00:01:31,656 --> 00:01:34,200
+I could find any way to optimize anything inside
+
+34
+00:01:34,240 --> 00:01:37,126
+this package, well, it would probably be worth the effort.
+
+35
+00:01:37,628 --> 00:01:40,534
+So I'm going to ask Claude to run the benchmarks, identify
+
+36
+00:01:40,573 --> 00:01:43,319
+the worst performing cases, use some profiling tools
+
+37
+00:01:43,359 --> 00:01:45,965
+to figure out why those cases are running so slowly, and then
+
+38
+00:01:46,025 --> 00:01:48,951
+fix them. We'll then see that Claude is going to use a wide
+
+39
+00:01:48,992 --> 00:01:51,557
+variety of different tools to intelligently tackle this problem.
+
+40
+00:01:52,037 --> 00:01:54,584
+It'll form up a 2DList to track its progress,
+
+41
+00:01:55,105 --> 00:01:57,971
+execute commands to run the benchmarks, write a file to better
+
+42
+00:01:58,152 --> 00:02:01,118
+zoom in on one particular case, use a CPU
+
+43
+00:02:01,159 --> 00:02:03,844
+profiler to understand why that case is running so slowly,
+
+44
+00:02:04,204 --> 00:02:06,915
+and then implement some improvements. By the end,
+
+45
+00:02:07,015 --> 00:02:09,897
+we'll get a 3.9 times improvement in throughput
+
+46
+00:02:10,038 --> 00:02:13,100
+in one particular operation around this library. Here's
+
+47
+00:02:13,181 --> 00:02:15,864
+another example of how well Claude can string together different
+
+48
+00:02:15,883 --> 00:02:18,627
+tool calls to complete a rather complex task. I'm
+
+49
+00:02:18,646 --> 00:02:21,550
+going to give it a data set inside the CSV file. All
+
+50
+00:02:21,569 --> 00:02:24,192
+the data inside of here contains information about different users
+
+51
+00:02:24,292 --> 00:02:26,854
+of a video streaming platform. And I'm going to ask it to
+
+52
+00:02:26,895 --> 00:02:29,677
+just do a general analysis, maybe identify some causes
+
+53
+00:02:29,818 --> 00:02:32,540
+of churn on the platform. And I want all this analysis
+
+54
+00:02:32,580 --> 00:02:35,811
+to be done inside of a Jupyter notebook. Here's
+
+55
+00:02:35,850 --> 00:02:38,514
+my data set. I'm then going to ask Claude to run
+
+56
+00:02:38,534 --> 00:02:41,139
+the analysis and let's see how it does. This is
+
+57
+00:02:41,158 --> 00:02:43,782
+a great example of where effective tool use is really
+
+58
+00:02:43,883 --> 00:02:46,447
+important. You see, it's not really enough that
+
+59
+00:02:46,507 --> 00:02:49,031
+Claude just writes code into a notebook. Claude can
+
+60
+00:02:49,091 --> 00:02:52,034
+also execute code in different cells and view the results
+
+61
+00:02:52,215 --> 00:02:54,979
+of those executions. That means that Claude
+
+62
+00:02:55,099 --> 00:02:57,682
+can take some initial look at the data in the notebook and
+
+63
+00:02:57,703 --> 00:03:00,447
+then customize each successive cell to hone
+
+64
+00:03:00,486 --> 00:03:03,675
+in on some particular details. Next
+
+65
+00:03:03,776 --> 00:03:06,600
+up, I'd like to show you an example of a task where I extend Claude
+
+66
+00:03:06,640 --> 00:03:09,185
+Code's capabilities by giving it access to a new set
+
+67
+00:03:09,264 --> 00:03:11,849
+of tools. I built a small app that will
+
+68
+00:03:11,889 --> 00:03:14,794
+generate UI components based upon some description entered
+
+69
+00:03:14,914 --> 00:03:17,620
+on the left side of the screen. The generated component
+
+70
+00:03:17,740 --> 00:03:20,324
+is then displayed on the right side. Now, the app can
+
+71
+00:03:20,344 --> 00:03:22,849
+generate good looking components quite easily, but
+
+72
+00:03:22,870 --> 00:03:25,394
+the chat interface on the left and the header at the top
+
+73
+00:03:25,574 --> 00:03:28,479
+are not looking so nice. So
+
+74
+00:03:28,519 --> 00:03:31,062
+I'm going to use Claude Code to improve the styling. If
+
+75
+00:03:31,103 --> 00:03:33,605
+I just asked it to fix the styling and the chat interface in the
+
+76
+00:03:33,626 --> 00:03:36,169
+header, it would likely do a fine job. But remember,
+
+77
+00:03:36,330 --> 00:03:38,953
+my goal here is to show you how easy it is to
+
+78
+00:03:39,032 --> 00:03:41,637
+add additional functionality to Claude Code. So along
+
+79
+00:03:41,676 --> 00:03:44,360
+with this styling task, I'm going to also give Claude Code
+
+80
+00:03:44,401 --> 00:03:47,003
+access to a new set of tools provided by
+
+81
+00:03:47,044 --> 00:03:49,728
+something called the Playwright MCP server, which
+
+82
+00:03:49,747 --> 00:03:52,532
+I'll tell you more about later on. These tools allow
+
+83
+00:03:52,611 --> 00:03:55,895
+Claude to directly open and control a browser.
+
+84
+00:03:56,078 --> 00:03:58,600
+So here's what that process looks like in action. I'm
+
+85
+00:03:58,621 --> 00:04:01,324
+going to ask Claude to improve the styling of my app and make
+
+86
+00:04:01,383 --> 00:04:03,986
+use of a browser to do so. It'll then open
+
+87
+00:04:04,007 --> 00:04:06,509
+a browser on the right-hand side of the screen. Navigate to my
+
+88
+00:04:06,629 --> 00:04:09,312
+app, it'll take a screenshot to view the current styling,
+
+89
+00:04:09,674 --> 00:04:12,236
+and then update the styling. We could even ask
+
+90
+00:04:12,317 --> 00:04:14,939
+Claude to take another screenshot of the page when
+
+91
+00:04:14,979 --> 00:04:17,663
+it was complete and iterate on the design a couple of times
+
+92
+00:04:18,024 --> 00:04:21,627
+to really get a nice design that really pops. And
+
+93
+00:04:21,687 --> 00:04:25,291
+before long, we've got something that actually looks pretty reasonable.
+
+94
+00:04:25,389 --> 00:04:28,353
+There's one last set of demonstrations that I like to give you. Remember
+
+95
+00:04:28,413 --> 00:04:30,918
+what I mentioned a moment ago. Claude's ability to
+
+96
+00:04:30,978 --> 00:04:33,620
+utilize tools so well is what will allow Claude code
+
+97
+00:04:33,641 --> 00:04:36,464
+to grow with you and your team in the future. Let
+
+98
+00:04:36,485 --> 00:04:39,168
+me show you an example of that right away. Claude has
+
+99
+00:04:39,209 --> 00:04:41,973
+a very close integration with GitHub. You can set up Claude
+
+100
+00:04:42,012 --> 00:04:44,636
+code to run inside of a GitHub action,
+
+101
+00:04:44,656 --> 00:04:47,480
+where it will be executed automatically based upon certain
+
+102
+00:04:47,579 --> 00:04:50,103
+events, like creating a pull request or
+
+103
+00:04:50,163 --> 00:04:52,826
+when directly mentioned inside an issue. When
+
+104
+00:04:52,887 --> 00:04:55,413
+Claude Code runs on GitHub, it not only gets
+
+105
+00:04:55,432 --> 00:04:57,939
+to view and run your code, but it also
+
+106
+00:04:57,978 --> 00:05:00,766
+gets to access a new set of tools for interacting
+
+107
+00:05:00,805 --> 00:05:03,492
+with GitHub, like the ability to create comments
+
+108
+00:05:03,692 --> 00:05:06,619
+or create commits or pull requests and so on. You
+
+109
+00:05:06,658 --> 00:05:09,425
+can use this integration to automatically review pull
+
+110
+00:05:09,446 --> 00:05:12,050
+requests. Let me show you an example. Let me first
+
+111
+00:05:12,091 --> 00:05:14,634
+set up a little scenario for you. Let's imagine that we are
+
+112
+00:05:14,653 --> 00:05:17,257
+building out some infrastructure on AWS, and all
+
+113
+00:05:17,278 --> 00:05:20,100
+of our infrastructure is to find inside of a set of terraform
+
+114
+00:05:20,141 --> 00:05:23,225
+files, which are committed and stored on GitHub.
+
+115
+00:05:23,245 --> 00:05:26,048
+Because all of our infrastructure is to find inside of terraform
+
+116
+00:05:26,088 --> 00:05:28,752
+files, Claude Code has a really good idea of how
+
+117
+00:05:28,853 --> 00:05:31,797
+information is flowing through our infrastructure.
+
+118
+00:05:31,776 --> 00:05:34,620
+And let's imagine that in the SAP, I have a DynamoDB
+
+119
+00:05:34,740 --> 00:05:37,444
+table. If you're not familiar with those, it's kind of like a normal database
+
+120
+00:05:37,464 --> 00:05:40,348
+table. Inside there, I'm storing some different information
+
+121
+00:05:40,389 --> 00:05:43,153
+about users, including maybe plans viewed and
+
+122
+00:05:43,173 --> 00:05:45,898
+a registration date. And for maybe some
+
+123
+00:05:45,937 --> 00:05:48,622
+reason, we want to share just that plans viewed and
+
+124
+00:05:48,742 --> 00:05:51,425
+registration date information with some internal
+
+125
+00:05:51,466 --> 00:05:54,189
+marketing team, but also some external
+
+126
+00:05:54,350 --> 00:05:56,973
+marketing team as well. So some other company has
+
+127
+00:05:57,014 --> 00:05:59,978
+access to the data that we are writing in this bucket.
+
+128
+00:05:59,958 --> 00:06:02,901
+So it's really important for us to always be aware of what information
+
+129
+00:06:02,940 --> 00:06:06,423
+is being written into that bucket over time. Nightly,
+
+130
+00:06:06,704 --> 00:06:09,387
+we might have a Lambda function, pull out all the different users
+
+131
+00:06:09,427 --> 00:06:12,228
+that have been added into that table, and then extract just
+
+132
+00:06:12,428 --> 00:06:14,971
+plans for you and the registration date, and store
+
+133
+00:06:15,012 --> 00:06:17,793
+that in the S3 bucket so these two marketing teams
+
+134
+00:06:18,014 --> 00:06:20,596
+can access that information. Now let's
+
+135
+00:06:20,637 --> 00:06:23,358
+imagine that months later on, the internal
+
+136
+00:06:23,418 --> 00:06:26,262
+marketing team asks us to also store the email
+
+137
+00:06:26,401 --> 00:06:28,985
+inside of this S3 bucket as well. So we might
+
+138
+00:06:29,004 --> 00:06:31,689
+go into the Lambda function and add in just one single line
+
+139
+00:06:31,730 --> 00:06:34,494
+of code that takes the user's email and stores it inside
+
+140
+00:06:34,514 --> 00:06:37,038
+the bucket. And because this is months later on,
+
+141
+00:06:37,399 --> 00:06:40,043
+we might have completely forgotten that this S3 bucket
+
+142
+00:06:40,064 --> 00:06:42,649
+is shared with a external marketing partner. So
+
+143
+00:06:42,668 --> 00:06:45,494
+now at this point in time, we are putting personally identifiable
+
+144
+00:06:45,574 --> 00:06:48,379
+information into this bucket, which is accessible
+
+145
+00:06:48,559 --> 00:06:51,384
+by a separate company. This is a big no-no. Definitely
+
+146
+00:06:51,403 --> 00:06:54,209
+something we would not want to do. But at the same time, this
+
+147
+00:06:54,329 --> 00:06:56,913
+is an error that does occur, and it's kind
+
+148
+00:06:56,934 --> 00:06:59,478
+of hard to catch if we don't have a good idea of exactly
+
+149
+00:06:59,517 --> 00:07:02,161
+what's going on with this S3 bucket. Well,
+
+150
+00:07:02,182 --> 00:07:04,927
+it turns out that Claude Code can catch this kind
+
+151
+00:07:04,966 --> 00:07:07,612
+of scenario inside of a pull request quite easily,
+
+152
+00:07:07,932 --> 00:07:10,817
+specifically because all of our infrastructure is defined inside
+
+153
+00:07:10,836 --> 00:07:13,641
+of those terraform files. So here's a quick example.
+
+154
+00:07:14,302 --> 00:07:17,348
+I built that project that I just showed you in that diagram. I
+
+155
+00:07:17,389 --> 00:07:19,954
+created a pull request to add in the
+
+156
+00:07:20,053 --> 00:07:22,639
+user's email inside of the Lambda function. So the only
+
+157
+00:07:22,678 --> 00:07:25,244
+line of code that I changed was that right there. I'm saying that
+
+158
+00:07:25,264 --> 00:07:27,928
+for every user, I want to get their email and add that into
+
+159
+00:07:27,949 --> 00:07:30,526
+the bucket as well. Now, Claude
+
+160
+00:07:30,565 --> 00:07:33,451
+has an excellent idea of my infrastructure. So
+
+161
+00:07:33,511 --> 00:07:36,055
+it was able, inside of a automated review, this
+
+162
+00:07:36,096 --> 00:07:38,761
+we're seeing right here, to take a look at all the changes I made
+
+163
+00:07:38,802 --> 00:07:41,786
+inside this pull request. It was able to figure out exactly
+
+164
+00:07:41,846 --> 00:07:44,552
+how my infrastructure works, and it was able to identify
+
+165
+00:07:44,593 --> 00:07:47,197
+that I am exposing some PII to
+
+166
+00:07:47,257 --> 00:07:49,942
+a partner. So it has listed out the data flow
+
+167
+00:07:50,122 --> 00:07:53,048
+right here, the exact steps that occur. and goes
+
+168
+00:07:53,088 --> 00:07:55,692
+into great detail on how this bucket is shared with a
+
+169
+00:07:55,812 --> 00:07:58,358
+external partner. Catching issues like this
+
+170
+00:07:58,398 --> 00:08:00,901
+during development instead of after we deploy this
+
+171
+00:08:00,961 --> 00:08:03,726
+change is an amazing benefit to using Claude
+
+172
+00:08:03,807 --> 00:08:06,331
+Code's integration on GitHub. I'm going to go into
+
+173
+00:08:06,370 --> 00:08:09,016
+a lot of detail later on and show you exactly how to set
+
+174
+00:08:09,175 --> 00:08:11,759
+up a flow exactly like this. I think
+
+175
+00:08:11,778 --> 00:08:14,648
+that we've now got a good idea of what Claude Code can do thanks
+
+176
+00:08:14,687 --> 00:08:17,697
+to its excellent ability to make use of tools. Remember,
+
+177
+00:08:17,817 --> 00:08:20,485
+you really want to think of Claude Code as a flexible assistant
+
+178
+00:08:20,747 --> 00:08:23,516
+that can be customized, grow, and change over time to
+
+179
+00:08:23,555 --> 00:08:24,899
+meet the needs of your team.

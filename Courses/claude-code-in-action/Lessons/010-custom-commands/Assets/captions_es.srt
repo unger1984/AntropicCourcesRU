@@ -1,0 +1,151 @@
+1
+00:00:00,031 --> 00:00:02,613
+Cuando ejecutas Claude Code, puedes ingresar una barra
+
+2
+00:00:02,633 --> 00:00:05,235
+diagonal y ver un montón de comandos que están integrados en Claude Code
+
+3
+00:00:05,277 --> 00:00:07,799
+por defecto. Además de estos comandos por defecto,
+
+4
+00:00:08,079 --> 00:00:11,323
+puedes añadir fácilmente tus propios comandos personalizados. Los comandos
+
+5
+00:00:11,362 --> 00:00:14,185
+personalizados son útiles para automatizar tareas repetitivas que
+
+6
+00:00:14,205 --> 00:00:16,708
+encuentras que ejecutas con frecuencia. Permíteme mostrarte un ejemplo de cómo
+
+7
+00:00:16,728 --> 00:00:19,350
+crear uno. Dentro del directorio de mi proyecto,
+
+8
+00:00:19,431 --> 00:00:22,053
+voy a encontrar la carpeta .Claude. Dentro de ella,
+
+9
+00:00:22,074 --> 00:00:24,577
+crearé un nuevo directorio llamado commands. Y luego dentro
+
+10
+00:00:24,617 --> 00:00:27,539
+de él, crearé un nuevo archivo llamado audit.md.
+
+11
+00:00:28,263 --> 00:00:30,850
+El nombre del archivo que creemos, en este caso audit,
+
+12
+00:00:30,870 --> 00:00:33,398
+será el nombre del comando que finalmente ejecutemos. El
+
+13
+00:00:33,438 --> 00:00:36,445
+objetivo de este comando será auditar todas las diferentes dependencias
+
+14
+00:00:36,466 --> 00:00:38,973
+que se han instalado en este proyecto, actualizarlas
+
+15
+00:00:39,033 --> 00:00:41,740
+si hay alguna vulnerabilidad, y luego ejecutar
+
+16
+00:00:41,801 --> 00:00:44,767
+pruebas para asegurarnos de que nada se haya roto. Una vez
+
+17
+00:00:44,786 --> 00:00:47,491
+que hayas creado el archivo de comando, deberás reiniciar Claude
+
+18
+00:00:47,551 --> 00:00:50,356
+Code. No olvides reiniciarlo. Cuando vuelvas a abrir
+
+19
+00:00:50,396 --> 00:00:52,920
+Claude Code, escribe barra audit. Esto
+
+20
+00:00:52,960 --> 00:00:55,505
+mostrará el comando que acabas de crear. Puedes entonces
+
+21
+00:00:55,564 --> 00:00:58,249
+ejecutarlo y, en este caso, hará exactamente lo que le pedimos a Claude
+
+22
+00:00:58,289 --> 00:01:01,054
+que haga. Ejecutará un comando, verá si hay paquetes vulnerables,
+
+23
+00:01:01,094 --> 00:01:03,758
+los corregirá si es necesario, y luego ejecutará
+
+24
+00:01:03,817 --> 00:01:06,683
+pruebas. Los comandos también pueden recibir argumentos. Déjame
+
+25
+00:01:06,703 --> 00:01:09,447
+mostrarte un ejemplo. Voy a crear otro comando llamado write
+
+26
+00:01:09,608 --> 00:01:12,334
+test. Cada vez que ejecute este comando, quiero que se
+
+27
+00:01:12,373 --> 00:01:14,998
+creen algunas pruebas para un archivo muy específico dentro
+
+28
+00:01:15,018 --> 00:01:17,623
+de mi proyecto. Dentro del texto del comando, pondré
+
+29
+00:01:17,643 --> 00:01:20,948
+un marcador de posición de dólar arguments. Cada vez
+
+30
+00:01:20,968 --> 00:01:23,694
+que ejecute el comando, si paso una ruta de archivo, esa
+
+31
+00:01:23,793 --> 00:01:26,939
+ruta se insertará en dólar arguments.
+
+32
+00:01:27,088 --> 00:01:29,593
+Así que ahora puedo reiniciar Claude Code de nuevo y luego ejecutar
+
+33
+00:01:29,632 --> 00:01:32,137
+el comando write test. Ahora, para ser claro,
+
+34
+00:01:32,277 --> 00:01:34,840
+los argumentos que pasamos no tienen que ser una ruta
+
+35
+00:01:34,861 --> 00:01:37,745
+de archivo. Puede ser cualquier cadena que queramos pasar. Así
+
+36
+00:01:37,825 --> 00:01:40,689
+que casualmente podría pedir pruebas para un archivo en alguna carpeta
+
+37
+00:01:40,730 --> 00:01:43,254
+particular, dando a Claude solo un poco de dirección sobre
+
+38
+00:01:43,313 --> 00:01:44,034
+dónde buscar.

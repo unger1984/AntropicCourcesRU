@@ -1,0 +1,151 @@
+{
+  "playlist": [
+    {
+      "image": "https://cdn.jwplayer.com/v2/media/3IQrknws/poster.jpg?width=720",
+      "images": [
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/3IQrknws/poster.jpg?width=320",
+          "width": 320,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/3IQrknws/poster.jpg?width=480",
+          "width": 480,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/3IQrknws/poster.jpg?width=640",
+          "width": 640,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/3IQrknws/poster.jpg?width=720",
+          "width": 720,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/3IQrknws/poster.jpg?width=1280",
+          "width": 1280,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/3IQrknws/poster.jpg?width=1920",
+          "width": 1920,
+          "type": "image/jpeg"
+        }
+      ],
+      "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=3IQrknws&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWxhdGVkX21lZGlhX2lkIjoiM0lRcmtud3MiLCJyZXNvdXJjZSI6Ii92Mi9wbGF5bGlzdHMvWGs3eEs1MnYiLCJleHAiOjE3NzM4MzUyMDB9.9oF7VxIeWVThnV9BN6_bSFKEkIh-bTZ0IggH368JgWI",
+      "title": "003 - Claude Code in Action.mp4",
+      "mediaid": "3IQrknws",
+      "link": null,
+      "duration": 505.522,
+      "pubdate": 1750965675,
+      "description": null,
+      "tags": "",
+      "sources": [
+        {
+          "file": "https://cdn.jwplayer.com/manifests/3IQrknws.m3u8?exp=1773835200&sig=828769983fc34f02df5347657c88e095",
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/3IQrknws-B9NwIVRu.mp4?exp=1773835200&sig=ebeb9e949f7ab25d60a518dff1b32396",
+          "type": "video/mp4",
+          "width": 320,
+          "height": 180,
+          "label": "180p",
+          "bitrate": 150762,
+          "framerate": 30,
+          "filesize": 9516914
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/3IQrknws-muagBOKI.mp4?exp=1773835200&sig=ccc5ac4ede694f6e1b7e54d8c672f9e7",
+          "type": "video/mp4",
+          "width": 480,
+          "height": 270,
+          "label": "270p",
+          "bitrate": 178634,
+          "framerate": 30,
+          "filesize": 11276325
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/3IQrknws-4Xe8IV8X.mp4?exp=1773835200&sig=7d0d19fc73a807a0a07fd43e21e00134",
+          "type": "video/mp4",
+          "width": 720,
+          "height": 406,
+          "label": "406p",
+          "bitrate": 218735,
+          "framerate": 30,
+          "filesize": 13807677
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/3IQrknws-m7ew0xq8.mp4?exp=1773835200&sig=b7137ecc23c661459c41368f76fa737d",
+          "type": "video/mp4",
+          "width": 1280,
+          "height": 720,
+          "label": "720p",
+          "bitrate": 334309,
+          "framerate": 30,
+          "filesize": 21103270
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/3IQrknws-eNgUZBQ2.m4a?exp=1773835200&sig=2d4b4f9096281485737c249ed9598fe9",
+          "type": "audio/mp4",
+          "label": "Audio",
+          "bitrate": 113521,
+          "filesize": 7166051
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/3IQrknws-hFUVmOoC.mp4?exp=1773835200&sig=a8473570a5fc54b6b984672e36641636",
+          "type": "video/mp4",
+          "width": 1920,
+          "height": 1080,
+          "label": "1080p",
+          "bitrate": 476442,
+          "framerate": 30,
+          "filesize": 30075418
+        }
+      ],
+      "tracks": [
+        {
+          "file": "https://cdn.jwplayer.com/tracks/JSh2pPhi.srt",
+          "kind": "captions",
+          "label": "English"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/ZFvIQzlv.srt",
+          "kind": "captions",
+          "label": "French"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/esUtE90H.srt",
+          "kind": "captions",
+          "label": "German"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/5yQV7VfZ.srt",
+          "kind": "captions",
+          "label": "Japanese"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/7irwPKti.srt",
+          "kind": "captions",
+          "label": "Korean"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/46qEeAhB.srt",
+          "kind": "captions",
+          "label": "Portuguese"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/nPjuchUn.srt",
+          "kind": "captions",
+          "label": "Spanish"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/strips/3IQrknws-120.vtt",
+          "kind": "thumbnails"
+        }
+      ]
+    }
+  ]
+}

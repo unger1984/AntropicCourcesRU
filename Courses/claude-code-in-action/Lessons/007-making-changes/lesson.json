@@ -1,0 +1,209 @@
+{
+  "title": "Making changes",
+  "url": "https://anthropic.skilljar.com/claude-code-in-action/303236",
+  "nav_lessons": [
+    {
+      "title": "Lessons",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303236"
+    },
+    {
+      "title": "Introduction",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303233"
+    },
+    {
+      "title": "What is a coding assistant?",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303235"
+    },
+    {
+      "title": "Claude Code in action",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303242"
+    },
+    {
+      "title": "Claude Code setup",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/301614"
+    },
+    {
+      "title": "Project setup",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/301615"
+    },
+    {
+      "title": "Adding context",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303241"
+    },
+    {
+      "title": "Course satisfaction survey",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303701"
+    },
+    {
+      "title": "Controlling context",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303237"
+    },
+    {
+      "title": "Custom commands",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303234"
+    },
+    {
+      "title": "MCP servers with Claude Code",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303239"
+    },
+    {
+      "title": "Github integration",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303240"
+    },
+    {
+      "title": "Introducing hooks",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312000"
+    },
+    {
+      "title": "Defining hooks",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312002"
+    },
+    {
+      "title": "Implementing a hook",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312003"
+    },
+    {
+      "title": "Gotchas around hooks",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312423"
+    },
+    {
+      "title": "Useful hooks!",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312004"
+    },
+    {
+      "title": "Another useful hook",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312427"
+    },
+    {
+      "title": "The Claude Code SDK",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312001"
+    },
+    {
+      "title": "Quiz on Claude Code",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/308391"
+    },
+    {
+      "title": "Summary and next steps",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303238"
+    }
+  ],
+  "notes_key": "claudecode",
+  "notes_length": 18666,
+  "source_html_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Source/lesson-page.html",
+  "source_dir": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Source",
+  "assets": {
+    "jwplayer_script": {
+      "url": "https://content.jwplatform.com/players/v2XzmjpP-Akyo8gQO.js",
+      "status": "downloaded",
+      "kind": "player_script",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Assets/jwplayer_script.js"
+    },
+    "playback_json": {
+      "url": "https://cdn.jwplayer.com/v2/sites/Lc4Rn1s0/media/v2XzmjpP/playback.json?recommendations_playlist_id=Xk7xK52v&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNvbW1lbmRhdGlvbnNfcGxheWxpc3RfaWQiOiJYazd4SzUydiIsInJlc291cmNlIjoiL3YyL3NpdGVzL0xjNFJuMXMwL21lZGlhL3YyWHptanBQL3BsYXliYWNrLmpzb24iLCJleHAiOjE3NzM4MzU0NDB9.OGBzIOtE0IDjCQyHOY29gh6U2pcZvNoJ7exqYqKs0CU",
+      "status": "downloaded",
+      "kind": "metadata",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Assets/playback_json.json"
+    },
+    "manifest_hls": {
+      "url": "https://cdn.jwplayer.com/manifests/v2XzmjpP.m3u8?exp=1773835440&sig=05056b638b00a2a87cf9ed64f16bb040",
+      "status": "downloaded",
+      "kind": "video_manifest",
+      "label": "application/vnd.apple.mpegurl",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Assets/manifest_hls.m3u8"
+    },
+    "video_180p": {
+      "url": "https://cdn.jwplayer.com/videos/v2XzmjpP-B9NwIVRu.mp4?exp=1773835440&sig=7190f4d105353e54efc66b5d2b57a6b6",
+      "status": "discovered",
+      "kind": "video",
+      "label": "180p"
+    },
+    "video_270p": {
+      "url": "https://cdn.jwplayer.com/videos/v2XzmjpP-muagBOKI.mp4?exp=1773835440&sig=340c3a593eae55f6341be4a4342a3c61",
+      "status": "discovered",
+      "kind": "video",
+      "label": "270p"
+    },
+    "video_406p": {
+      "url": "https://cdn.jwplayer.com/videos/v2XzmjpP-4Xe8IV8X.mp4?exp=1773835440&sig=ac8cc2a35cfd5ba76b60b7cfa8c7af9f",
+      "status": "discovered",
+      "kind": "video",
+      "label": "406p"
+    },
+    "video_720p": {
+      "url": "https://cdn.jwplayer.com/videos/v2XzmjpP-m7ew0xq8.mp4?exp=1773835440&sig=d10ae7027a40f7bc2664a96cdb4e164b",
+      "status": "discovered",
+      "kind": "video",
+      "label": "720p"
+    },
+    "audio_audio": {
+      "url": "https://cdn.jwplayer.com/videos/v2XzmjpP-eNgUZBQ2.m4a?exp=1773835440&sig=2718d867cc70444e867918386839a776",
+      "status": "downloaded",
+      "kind": "audio",
+      "label": "Audio",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Assets/audio_audio.m4a"
+    },
+    "video_1080p": {
+      "url": "https://cdn.jwplayer.com/videos/v2XzmjpP-hFUVmOoC.mp4?exp=1773835440&sig=aa5737544ab23d9b189721a2b14f4c5e",
+      "status": "downloaded",
+      "kind": "video",
+      "label": "1080p",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Assets/video_1080p.mp4"
+    },
+    "captions_en": {
+      "url": "https://cdn.jwplayer.com/tracks/7cRn9dUm.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Assets/captions_en.srt"
+    },
+    "captions_fr": {
+      "url": "https://cdn.jwplayer.com/tracks/cn16hy4T.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Assets/captions_fr.srt"
+    },
+    "captions_de": {
+      "url": "https://cdn.jwplayer.com/tracks/r1laKFhT.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Assets/captions_de.srt"
+    },
+    "captions_ja": {
+      "url": "https://cdn.jwplayer.com/tracks/n3J4xmNA.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Assets/captions_ja.srt"
+    },
+    "captions_ko": {
+      "url": "https://cdn.jwplayer.com/tracks/i9aKLJhP.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Assets/captions_ko.srt"
+    },
+    "captions_pt": {
+      "url": "https://cdn.jwplayer.com/tracks/0GRWegm3.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Assets/captions_pt.srt"
+    },
+    "captions_es": {
+      "url": "https://cdn.jwplayer.com/tracks/1zr4I7Yc.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Assets/captions_es.srt"
+    },
+    "thumbnails_vtt": {
+      "url": "https://cdn.jwplayer.com/strips/v2XzmjpP-120.vtt",
+      "status": "downloaded",
+      "kind": "thumbnails",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Assets/thumbnails_vtt.vtt"
+    },
+    "poster_image": {
+      "url": "https://cdn.jwplayer.com/v2/media/v2XzmjpP/poster.jpg?width=720",
+      "status": "downloaded",
+      "kind": "image",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Assets/poster_image.jpg"
+    }
+  },
+  "status": "downloaded",
+  "notes_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/007-making-changes/Source/notes.xml"
+}

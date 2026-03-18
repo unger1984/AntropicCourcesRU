@@ -1,0 +1,303 @@
+1
+00:00:00,841 --> 00:00:03,345
+Dans cette vidéo, j'aimerais vous montrer quelques techniques
+
+2
+00:00:03,444 --> 00:00:06,669
+pour contrôler et diriger le flux de conversation. Voici
+
+3
+00:00:06,710 --> 00:00:09,333
+un exemple basique tout de suite. Je vais demander à Claude
+
+4
+00:00:09,353 --> 00:00:12,557
+d'écrire des tests pour certaines fonctions écrites dans un fichier d'authentification.
+
+5
+00:00:12,618 --> 00:00:15,563
+Claude propose rapidement un plan pour la création
+
+6
+00:00:15,602 --> 00:00:18,387
+de plusieurs tests différents. Cependant, je sais que tester
+
+7
+00:00:18,466 --> 00:00:21,150
+ce fichier est un peu difficile, et j'aimerais que Claude
+
+8
+00:00:21,210 --> 00:00:23,855
+ne teste qu'une chose à la fois. Pour interrompre
+
+9
+00:00:23,894 --> 00:00:26,638
+Claude, je peux appuyer sur Échap. Cela arrêtera Claude
+
+10
+00:00:26,719 --> 00:00:30,004
+dans son élan, me permettant de suggérer une voie différente.
+
+11
+00:00:29,984 --> 00:00:32,527
+Combiner Échap, ainsi que les mémoires, est une façon
+
+12
+00:00:32,587 --> 00:00:35,811
+vraiment puissante de corriger les erreurs que Claude fait de manière répétée. Voici
+
+13
+00:00:35,831 --> 00:00:38,334
+un exemple. Je vais demander à Claude d'écrire des tests pour le
+
+14
+00:00:38,374 --> 00:00:40,896
+même fichier à nouveau. Cette fois-ci, il tentera de
+
+15
+00:00:40,957 --> 00:00:43,640
+lire un fichier de configuration de test qui n'existe pas
+
+16
+00:00:43,659 --> 00:00:46,302
+réellement. Or, c'est une erreur que j'ai déjà vue
+
+17
+00:00:46,383 --> 00:00:48,886
+Claude faire auparavant sur ce projet. Donc pour
+
+18
+00:00:48,947 --> 00:00:51,570
+éviter que cette erreur ne se répète, j'appuierai très rapidement sur
+
+19
+00:00:51,609 --> 00:00:54,133
+Échap. J'utiliserai ensuite le raccourci dièse pour ajouter
+
+20
+00:00:54,192 --> 00:00:56,996
+une mémoire concernant le nom correct de ce fichier de configuration de test.
+
+21
+00:00:57,076 --> 00:00:59,799
+Et maintenant, je n'aurai probablement plus à voir cette erreur
+
+22
+00:00:59,920 --> 00:01:02,524
+se reproduire. Certaines de ces commandes de
+
+23
+00:01:02,564 --> 00:01:05,368
+contrôle de conversation semblent être là uniquement pour la commodité.
+
+24
+00:01:05,388 --> 00:01:07,912
+Mais utilisées correctement, elles peuvent vraiment améliorer la capacité
+
+25
+00:01:07,933 --> 00:01:10,516
+de Claude à travailler efficacement et à rester concentré. Donc
+
+26
+00:01:10,537 --> 00:01:13,120
+laissons-moi vous montrer un exemple plus pratique. Dans
+
+27
+00:01:13,180 --> 00:01:16,025
+le fichier auth.ts, il y a quatre fonctions différentes.
+
+28
+00:01:16,046 --> 00:01:18,569
+Et j'aimerais que Claude écrive des tests pour chacune d'entre elles,
+
+29
+00:01:18,670 --> 00:01:21,493
+une par une, en commençant par la fonction appelée create
+
+30
+00:01:21,534 --> 00:01:24,177
+session. Claude tentera certainement d'écrire les tests,
+
+31
+00:01:24,578 --> 00:01:27,100
+mais au fur et à mesure qu'il les exécute, il rencontre une erreur et
+
+32
+00:01:27,141 --> 00:01:29,703
+passe un peu de temps à la déboguer. Il s'avère
+
+33
+00:01:29,722 --> 00:01:32,727
+qu'il y avait un package que j'avais oublié d'installer. Finalement,
+
+34
+00:01:32,746 --> 00:01:35,269
+les tests sont terminés et fonctionnent, et il est temps
+
+35
+00:01:35,308 --> 00:01:38,251
+de commencer à travailler sur le prochain ensemble de tests. Mais
+
+36
+00:01:38,472 --> 00:01:41,194
+voici le truc. Dans mon historique de conversation, il y a
+
+37
+00:01:41,254 --> 00:01:43,977
+maintenant beaucoup d'échanges concernant ce package défectueux.
+
+38
+00:01:44,618 --> 00:01:47,242
+Or, c'est une quantité de contexte qui n'est pas du
+
+39
+00:01:47,382 --> 00:01:50,564
+tout pertinente pour écrire le prochain ensemble de tests.
+
+40
+00:01:50,814 --> 00:01:53,457
+Idéalement, nous pourrions remonter le temps et
+
+41
+00:01:53,518 --> 00:01:56,040
+revenir au message précédent que nous avons envoyé et simplement le mettre à jour
+
+42
+00:01:56,061 --> 00:01:58,763
+pour dire, écrire des tests pour une session git. Maintenant,
+
+43
+00:01:58,784 --> 00:02:01,647
+l'avantage ici, c'est que nous maintenons le contexte où Claude
+
+44
+00:02:01,686 --> 00:02:04,388
+a déjà examiné le contenu du fichier auth.ts.
+
+45
+00:02:04,670 --> 00:02:07,852
+Et il sait déjà de quoi nous parlons lorsque nous faisons référence à git session.
+
+46
+00:02:08,554 --> 00:02:11,556
+Et parce que nous avons éliminé tous ces messages supplémentaires qui concernaient simplement le débogage,
+
+47
+00:02:11,957 --> 00:02:14,659
+nous n'aurons pas autant de distractions. Donc
+
+48
+00:02:14,721 --> 00:02:18,003
+encore une fois, Claude peut vraiment rester concentré sur la tâche.
+
+49
+00:02:18,270 --> 00:02:21,093
+Pour remonter dans l'historique de conversation, appuyez deux fois sur Échap.
+
+50
+00:02:21,574 --> 00:02:24,098
+Cela vous montrera tous les messages que vous avez envoyés, afin que vous
+
+51
+00:02:24,138 --> 00:02:26,781
+puissiez revenir à un point antérieur dans le temps et sauter
+
+52
+00:02:26,860 --> 00:02:29,644
+certaines conversations intermédiaires. Claude
+
+53
+00:02:29,704 --> 00:02:32,606
+va maintenant commencer à travailler sur le prochain ensemble de tests. Cette
+
+54
+00:02:32,646 --> 00:02:35,289
+fois-ci, Claude reste très concentré, mais malheureusement,
+
+55
+00:02:35,310 --> 00:02:37,872
+il rencontre un certain nombre de problèmes. Il finit par les résoudre
+
+56
+00:02:37,913 --> 00:02:40,515
+et les tests réussissent. À ce
+
+57
+00:02:40,575 --> 00:02:43,318
+stade, Claude travaille seul depuis plusieurs minutes et
+
+58
+00:02:43,359 --> 00:02:46,522
+a une très bonne idée de la façon d'écrire des tests pour ce fichier.
+
+59
+00:02:46,502 --> 00:02:49,508
+Dans le même temps, une fois de plus, nous avons beaucoup de contexte
+
+60
+00:02:49,668 --> 00:02:52,231
+dans cet historique de conversation. Lorsque le moment
+
+61
+00:02:52,252 --> 00:02:54,756
+viendra d'écrire des tests pour la prochaine fonction, j'utiliserai
+
+62
+00:02:54,776 --> 00:02:57,461
+une commande appelée compact. La commande compact
+
+63
+00:02:57,501 --> 00:03:00,004
+prendra tous les messages de la conversation actuelle
+
+64
+00:03:00,366 --> 00:03:03,050
+et les résumera. Compact est vraiment utile
+
+65
+00:03:03,090 --> 00:03:05,593
+lorsque Claude a beaucoup appris sur la tâche actuelle
+
+66
+00:03:05,854 --> 00:03:08,679
+et que vous souhaitez conserver ces connaissances pour la tâche suivante.
+
+67
+00:03:08,718 --> 00:03:11,300
+La dernière commande liée au contexte
+
+68
+00:03:11,360 --> 00:03:14,022
+à connaître est la commande Clear. Clear
+
+69
+00:03:14,144 --> 00:03:16,747
+supprimera tout l'historique de conversation, vous permettant de commencer
+
+70
+00:03:16,826 --> 00:03:19,591
+à zéro. Clear est surtout utile chaque fois
+
+71
+00:03:19,610 --> 00:03:22,474
+que vous êtes sur le point de commencer une tâche complètement différente, sans rapport
+
+72
+00:03:22,536 --> 00:03:25,360
+avec celle en cours. Je recommande d'utiliser ces raccourcis
+
+73
+00:03:25,460 --> 00:03:28,243
+assez souvent, en particulier lorsque vous changez de tâche
+
+74
+00:03:28,544 --> 00:03:31,247
+ou chaque fois que vous avez une conversation de longue durée avec Claude.
+
+75
+00:03:31,808 --> 00:03:34,472
+Dans le reste de ce cours, nous les utiliserons plusieurs fois pour
+
+76
+00:03:34,513 --> 00:03:36,996
+nous assurer que Claude reste concentré sur la tâche.

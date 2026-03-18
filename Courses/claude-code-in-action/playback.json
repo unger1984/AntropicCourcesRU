@@ -1,0 +1,156 @@
+{
+  "playlist": [
+    {
+      "image": "https://cdn.jwplayer.com/v2/media/rLVnV1aS/poster.jpg?width=720",
+      "images": [
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/rLVnV1aS/poster.jpg?width=320",
+          "width": 320,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/rLVnV1aS/poster.jpg?width=480",
+          "width": 480,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/rLVnV1aS/poster.jpg?width=640",
+          "width": 640,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/rLVnV1aS/poster.jpg?width=720",
+          "width": 720,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/rLVnV1aS/poster.jpg?width=1280",
+          "width": 1280,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/rLVnV1aS/poster.jpg?width=1920",
+          "width": 1920,
+          "type": "image/jpeg"
+        }
+      ],
+      "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=rLVnV1aS&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWxhdGVkX21lZGlhX2lkIjoickxWblYxYVMiLCJyZXNvdXJjZSI6Ii92Mi9wbGF5bGlzdHMvWGs3eEs1MnYiLCJleHAiOjE3NzM3NjQ4ODB9.2nDMn_nzucyeWGiM5uZjn_3extJoh5OMsMqp2REUtuk",
+      "title": "001 - Introduction.mp4",
+      "mediaid": "rLVnV1aS",
+      "link": null,
+      "duration": 38.667,
+      "pubdate": 1750965667,
+      "description": null,
+      "tags": "",
+      "sources": [
+        {
+          "file": "https://cdn.jwplayer.com/manifests/rLVnV1aS.m3u8?exp=1773764880&sig=7a9edbd65b561c290d193d9c4e05ad18",
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/rLVnV1aS-B9NwIVRu.mp4?exp=1773764880&sig=269da9823a2051e1b7dd2799eaab9a0d",
+          "type": "video/mp4",
+          "width": 320,
+          "height": 180,
+          "label": "180p",
+          "bitrate": 130546,
+          "framerate": 30,
+          "filesize": 620096
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/rLVnV1aS-muagBOKI.mp4?exp=1773764880&sig=975f9ed1a9fca684531885c52870a52c",
+          "type": "video/mp4",
+          "width": 480,
+          "height": 270,
+          "label": "270p",
+          "bitrate": 135630,
+          "framerate": 30,
+          "filesize": 644246
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/rLVnV1aS-4Xe8IV8X.mp4?exp=1773764880&sig=6dad90089bf607d5243b1bd85c8df57d",
+          "type": "video/mp4",
+          "width": 720,
+          "height": 406,
+          "label": "406p",
+          "bitrate": 146521,
+          "framerate": 30,
+          "filesize": 695976
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/rLVnV1aS-m7ew0xq8.mp4?exp=1773764880&sig=47c2dfa4b02c34af65254bcdd2c1da45",
+          "type": "video/mp4",
+          "width": 1280,
+          "height": 720,
+          "label": "720p",
+          "bitrate": 168333,
+          "framerate": 30,
+          "filesize": 799585
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/rLVnV1aS-eNgUZBQ2.m4a?exp=1773764880&sig=8cf1e7a088686740852d4fffc2c74f30",
+          "type": "audio/mp4",
+          "label": "Audio",
+          "bitrate": 115620,
+          "filesize": 549199
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/rLVnV1aS-hFUVmOoC.mp4?exp=1773764880&sig=e08db0b2131fb214424fa3bf2302e821",
+          "type": "video/mp4",
+          "width": 1920,
+          "height": 1080,
+          "label": "1080p",
+          "bitrate": 197418,
+          "framerate": 30,
+          "filesize": 937737
+        }
+      ],
+      "tracks": [
+        {
+          "file": "https://cdn.jwplayer.com/tracks/2WoI1d71.srt",
+          "kind": "captions",
+          "label": "English"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/4ygwy6zQ.srt",
+          "kind": "captions",
+          "label": "English"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/H2nSABY6.srt",
+          "kind": "captions",
+          "label": "French"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/RMEkRS1P.srt",
+          "kind": "captions",
+          "label": "German"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/OnQ5wZmd.srt",
+          "kind": "captions",
+          "label": "Japanese"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/xT1hGSRf.srt",
+          "kind": "captions",
+          "label": "Korean"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/W3yaeLiN.srt",
+          "kind": "captions",
+          "label": "Portuguese"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/tracks/49TFJSUQ.srt",
+          "kind": "captions",
+          "label": "Spanish"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/strips/rLVnV1aS-120.vtt",
+          "kind": "thumbnails"
+        }
+      ]
+    }
+  ]
+}

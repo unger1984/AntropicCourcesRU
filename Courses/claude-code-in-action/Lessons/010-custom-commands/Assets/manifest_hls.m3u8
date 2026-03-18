@@ -1,0 +1,13 @@
+#EXTM3U
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=180000,RESOLUTION=480x270,CODECS="mp4a.40.2,avc1.42c015",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69bb12a7_20e3f951abc75863447bd6c93c24bb1017a0067b/sites/Lc4Rn1s0/media/ChNLn8eT/versions/ChNLn8eT/manifest.ism/manifest-audio_0_aoK4Uvxh_p93Zy5QT=112008-video_0_aoK4Uvxh_ZQk1kaOh=51436.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=400000,RESOLUTION=1920x1080,CODECS="mp4a.40.2,avc1.640028",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69bb12a7_20e3f951abc75863447bd6c93c24bb1017a0067b/sites/Lc4Rn1s0/media/ChNLn8eT/versions/ChNLn8eT/manifest.ism/manifest-audio_0_aoK4Uvxh_p93Zy5QT=112008-video_0_aoK4Uvxh_ZQk1kaOh=268573.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=290000,RESOLUTION=1280x720,CODECS="mp4a.40.2,avc1.4d401f",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69bb12a7_20e3f951abc75863447bd6c93c24bb1017a0067b/sites/Lc4Rn1s0/media/ChNLn8eT/versions/ChNLn8eT/manifest.ism/manifest-audio_0_aoK4Uvxh_p93Zy5QT=112008-video_0_aoK4Uvxh_ZQk1kaOh=161482.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=210000,RESOLUTION=720x406,CODECS="mp4a.40.2,avc1.4d401e",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69bb12a7_20e3f951abc75863447bd6c93c24bb1017a0067b/sites/Lc4Rn1s0/media/ChNLn8eT/versions/ChNLn8eT/manifest.ism/manifest-audio_0_aoK4Uvxh_p93Zy5QT=112008-video_0_aoK4Uvxh_ZQk1kaOh=79380.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=150000,RESOLUTION=320x180,CODECS="mp4a.40.2,avc1.42c00d",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69bb12a7_20e3f951abc75863447bd6c93c24bb1017a0067b/sites/Lc4Rn1s0/media/ChNLn8eT/versions/ChNLn8eT/manifest.ism/manifest-audio_0_aoK4Uvxh_p93Zy5QT=112008-video_0_aoK4Uvxh_ZQk1kaOh=29171.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=120000,CODECS="mp4a.40.2"
+https://videos-cloudfront-usp.jwpsrv.com/69bb12a7_20e3f951abc75863447bd6c93c24bb1017a0067b/sites/Lc4Rn1s0/media/ChNLn8eT/versions/ChNLn8eT/manifest.ism/manifest-audio_0_aoK4Uvxh_p93Zy5QT=112008.m3u8

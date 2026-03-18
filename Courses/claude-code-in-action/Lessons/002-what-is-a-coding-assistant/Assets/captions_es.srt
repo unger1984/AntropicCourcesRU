@@ -1,0 +1,499 @@
+1
+00:00:00,031 --> 00:00:02,694
+En este video, vamos a entender mejor
+
+2
+00:00:02,734 --> 00:00:05,256
+qué es un asistente de codificación. Sí,
+
+3
+00:00:05,538 --> 00:00:08,180
+un asistente de codificación es una herramienta que escribe código, pero quiero
+
+4
+00:00:08,201 --> 00:00:11,025
+darles una comprensión más profunda de lo que sucede tras bambalinas.
+
+5
+00:00:11,705 --> 00:00:14,269
+Verán, al entender lo que un asistente de codificación realmente
+
+6
+00:00:14,308 --> 00:00:17,371
+hace y cómo funciona, tendrán una mayor apreciación
+
+7
+00:00:17,713 --> 00:00:20,216
+de lo que hace a un asistente verdaderamente asombroso para
+
+8
+00:00:20,275 --> 00:00:22,838
+complementar a su equipo. Aquí hay una forma en que
+
+9
+00:00:22,859 --> 00:00:25,763
+pueden visualizar lo que hace un asistente de codificación. Un asistente
+
+10
+00:00:25,864 --> 00:00:28,588
+recibe primero una tarea. En este caso, quizás el asistente
+
+11
+00:00:28,667 --> 00:00:31,411
+necesita corregir un error basándose en algún tipo de mensaje de error.
+
+12
+00:00:32,112 --> 00:00:35,017
+Esta tarea se pasa internamente a un modelo de lenguaje, que
+
+13
+00:00:35,057 --> 00:00:37,661
+necesita averiguar cómo resolver el problema. Ahora, diferentes
+
+14
+00:00:37,701 --> 00:00:40,526
+modelos de lenguaje resuelven problemas en estilos muy diferentes dependiendo
+
+15
+00:00:40,545 --> 00:00:43,369
+de la complejidad de la tarea. Pero en muchos casos, funcionan
+
+16
+00:00:43,429 --> 00:00:46,088
+muy parecido a como trabajaría un humano.
+
+17
+00:00:46,148 --> 00:00:48,712
+Primero podría necesitar recopilar contexto entendiendo a qué
+
+18
+00:00:48,731 --> 00:00:51,335
+se refiere el error, qué área de la base de código está generando el error,
+
+19
+00:00:51,496 --> 00:00:54,179
+y qué archivos parecen ser relevantes. Una vez
+
+20
+00:00:54,200 --> 00:00:56,783
+que ha recopilado esa información, necesita formular un
+
+21
+00:00:56,843 --> 00:00:59,987
+plan sobre cómo llevará a cabo la tarea.
+
+22
+00:01:00,008 --> 00:01:02,712
+En este caso, podría decidir cambiar algún código y luego ejecutar
+
+23
+00:01:02,911 --> 00:01:05,435
+o escribir una prueba para verificar que el problema realmente
+
+24
+00:01:05,515 --> 00:01:08,159
+está solucionado. Finalmente, llevará a cabo una acción. En
+
+25
+00:01:08,179 --> 00:01:10,683
+este caso, eso podría ser actualizar un archivo y ejecutar
+
+26
+00:01:10,722 --> 00:01:13,769
+la prueba. Ahora, quiero darles más información
+
+27
+00:01:13,909 --> 00:01:16,414
+sobre todo este proceso. En particular, me
+
+28
+00:01:16,453 --> 00:01:18,957
+gustaría que notaran que el primer y último paso aquí
+
+29
+00:01:19,317 --> 00:01:21,962
+requieren que el asistente de codificación haga algo.
+
+30
+00:01:22,343 --> 00:01:25,007
+En otras palabras, que recopile información del mundo exterior
+
+31
+00:01:25,447 --> 00:01:28,191
+o afecte al mundo exterior de alguna manera. Por
+
+32
+00:01:28,251 --> 00:01:30,896
+ejemplo, para recopilar contexto, el asistente necesita quizás
+
+33
+00:01:30,936 --> 00:01:34,281
+leer un archivo o buscar documentación en línea.
+
+34
+00:01:34,260 --> 00:01:37,087
+Y para realizar una acción, el asistente podría necesitar realmente
+
+35
+00:01:37,126 --> 00:01:40,093
+ejecutar un comando o editar un archivo. Ahora,
+
+36
+00:01:40,153 --> 00:01:42,757
+hacer que un modelo de lenguaje realice estas cosas
+
+37
+00:01:42,778 --> 00:01:45,283
+es un poco más complicado de lo que realmente suena.
+
+38
+00:01:45,983 --> 00:01:48,810
+Déjenme ayudarles a entender por qué es así. Imaginemos
+
+39
+00:01:48,849 --> 00:01:51,575
+que estamos interactuando directamente con un modelo de lenguaje,
+
+40
+00:01:51,915 --> 00:01:54,662
+así que no se ejecuta dentro de ningún asistente de codificación ni nada
+
+41
+00:01:54,861 --> 00:01:57,385
+similar. Imaginemos entonces que le preguntamos directamente a este
+
+42
+00:01:57,447 --> 00:02:00,311
+modelo de lenguaje qué código está escrito dentro
+
+43
+00:02:00,350 --> 00:02:03,135
+del archivo main.go. Los modelos
+
+44
+00:02:03,176 --> 00:02:05,780
+de lenguaje que se ejecutan fuera del contexto de cualquier
+
+45
+00:02:05,879 --> 00:02:08,524
+asistente de codificación o herramienta similar no tienen
+
+46
+00:02:08,645 --> 00:02:11,329
+inherentemente la capacidad de, digamos, leer un archivo o escribir
+
+47
+00:02:11,348 --> 00:02:13,893
+un comando ni nada parecido. Los modelos
+
+48
+00:02:13,932 --> 00:02:16,837
+de lenguaje toman contenido como texto y devuelven
+
+49
+00:02:16,877 --> 00:02:19,382
+texto. Eso es todo. Esa es la totalidad
+
+50
+00:02:19,521 --> 00:02:22,145
+de sus capacidades. Y esto es cierto para todos los modelos
+
+51
+00:02:22,186 --> 00:02:24,810
+de lenguaje. Así que si enviaran algún texto
+
+52
+00:02:24,931 --> 00:02:27,534
+a un modelo de lenguaje plano pidiendo que lea un archivo,
+
+53
+00:02:27,895 --> 00:02:30,479
+lo más probable es que respondiera diciendo que no tiene
+
+54
+00:02:30,519 --> 00:02:33,103
+la capacidad de leer archivos. Así que permítanme mostrarles
+
+55
+00:02:33,143 --> 00:02:35,747
+lo que los asistentes de codificación y muchas, muchas otras herramientas
+
+56
+00:02:35,806 --> 00:02:38,371
+ahí fuera hacen para permitir que un modelo de lenguaje,
+
+57
+00:02:39,171 --> 00:02:42,537
+entre comillas, lea un archivo. Así que esto es lo que sucede. Cada vez
+
+58
+00:02:42,576 --> 00:02:45,140
+que envían una solicitud a su asistente de codificación, el asistente
+
+59
+00:02:45,161 --> 00:02:47,925
+de codificación, tras bambalinas, va a añadir automáticamente
+
+60
+00:02:48,145 --> 00:02:50,808
+mucho texto a su solicitud.
+
+61
+00:02:50,788 --> 00:02:53,573
+En este caso particular, podemos imaginar que el asistente de codificación
+
+62
+00:02:53,652 --> 00:02:56,377
+añadirá un texto que diga algo como, si usted,
+
+63
+00:02:56,637 --> 00:02:59,221
+modelo de lenguaje, quiere leer un archivo, responda con
+
+64
+00:02:59,260 --> 00:03:02,084
+este mensaje muy cuidadosamente formateado. Por
+
+65
+00:03:02,145 --> 00:03:04,707
+ejemplo, quizás algo como, leer archivo, dos puntos,
+
+66
+00:03:04,888 --> 00:03:07,491
+y luego el nombre del archivo a leer. Así que en este
+
+67
+00:03:07,532 --> 00:03:10,256
+caso, el modelo de lenguaje esperaría darse cuenta de que para
+
+68
+00:03:10,295 --> 00:03:13,019
+responder a nuestra pregunta, necesita responder
+
+69
+00:03:13,080 --> 00:03:15,663
+leyendo ese archivo. Así que podría responder con, leer
+
+70
+00:03:15,682 --> 00:03:18,326
+archivo: main.go. Ahora, el asistente
+
+71
+00:03:18,366 --> 00:03:21,210
+de codificación sería el encargado de recibir este mensaje muy
+
+72
+00:03:21,289 --> 00:03:24,234
+cuidadosamente formateado y darse cuenta de que el modelo de lenguaje quiere
+
+73
+00:03:24,274 --> 00:03:27,257
+realizar alguna acción leyendo un archivo. Así que
+
+74
+00:03:27,296 --> 00:03:30,121
+el asistente de codificación sería entonces responsable de leer
+
+75
+00:03:30,161 --> 00:03:32,743
+realmente el archivo y enviar el contenido de ese archivo
+
+76
+00:03:33,044 --> 00:03:35,727
+de nuevo al modelo de lenguaje. Ahora que el modelo
+
+77
+00:03:35,766 --> 00:03:38,510
+de lenguaje ha recibido el contenido real de ese archivo, puede
+
+78
+00:03:38,531 --> 00:03:41,433
+escribir una respuesta final que se nos envía de vuelta,
+
+79
+00:03:41,616 --> 00:03:44,141
+en la que podría decir, bueno, leí este archivo y contiene
+
+80
+00:03:44,162 --> 00:03:46,725
+una cierta cantidad de código, cualquier otra cosa, lo que sea que haya dentro
+
+81
+00:03:46,765 --> 00:03:49,431
+de ese archivo. Todo este sistema de darle
+
+82
+00:03:49,450 --> 00:03:52,036
+al modelo de lenguaje estas instrucciones adicionales
+
+83
+00:03:52,256 --> 00:03:54,961
+pidiéndole que responda de una manera muy bien formateada o cuidadosamente
+
+84
+00:03:55,001 --> 00:03:57,786
+formateada se conoce como uso de herramientas.
+
+85
+00:03:57,765 --> 00:04:00,674
+Así que las herramientas se utilizan para dar a los modelos capacidades adicionales.
+
+86
+00:04:01,235 --> 00:04:03,882
+El modelo es responsable de responder de una manera muy particular,
+
+87
+00:04:03,921 --> 00:04:06,789
+y luego algo como nuestro asistente de codificación sería responsable
+
+88
+00:04:06,830 --> 00:04:09,657
+de realizar realmente lo que se prometió. Así que
+
+89
+00:04:09,737 --> 00:04:12,585
+leer un archivo, escribir un archivo, o lo que sea.
+
+90
+00:04:12,868 --> 00:04:15,513
+De nuevo, así es como funciona cada modelo de lenguaje
+
+91
+00:04:15,554 --> 00:04:18,158
+ahí fuera. Todos funcionan con esta idea de uso de herramientas.
+
+92
+00:04:18,999 --> 00:04:21,764
+Ahora, esta es la parte crucial para entender. La serie Claude
+
+93
+00:04:21,803 --> 00:04:24,307
+de modelos, así que Opus, Sonnet y Haiku,
+
+94
+00:04:24,689 --> 00:04:27,374
+son particularmente fuertes en entender qué
+
+95
+00:04:27,434 --> 00:04:30,117
+hacen las herramientas, cuándo se llaman y realmente utilizarlas
+
+96
+00:04:30,158 --> 00:04:32,802
+para completar tareas de manera efectiva y utilizarlas
+
+97
+00:04:32,983 --> 00:04:35,668
+en combinaciones realmente interesantes para completar
+
+98
+00:04:35,708 --> 00:04:38,252
+tareas más avanzadas o complejas.
+
+99
+00:04:38,232 --> 00:04:40,916
+El fuerte uso de herramientas de Claude es la fortaleza central absoluta
+
+100
+00:04:41,057 --> 00:04:43,603
+de Claude Code como asistente de codificación. He aquí por qué.
+
+101
+00:04:43,642 --> 00:04:46,367
+Primero, como acabo de mencionar, con un mejor uso de herramientas,
+
+102
+00:04:46,528 --> 00:04:49,293
+Claude puede manejar tareas más complejas.
+
+103
+00:04:49,314 --> 00:04:52,139
+Segundo, Claude Code en sí es extensible, por lo que
+
+104
+00:04:52,180 --> 00:04:55,225
+es muy fácil añadir nuevas herramientas a Claude. Y
+
+105
+00:04:55,326 --> 00:04:58,232
+Claude las utilizará felizmente.
+
+106
+00:04:58,211 --> 00:05:00,877
+Esto es especialmente importante para la relevancia continua,
+
+107
+00:05:01,257 --> 00:05:04,101
+dado los rápidos cambios que estamos viendo en el mundo del desarrollo.
+
+108
+00:05:04,622 --> 00:05:07,166
+En otras palabras, Claude Code es un asistente que
+
+109
+00:05:07,187 --> 00:05:09,851
+cambiará contigo en los próximos años. Y
+
+110
+00:05:09,891 --> 00:05:12,557
+finalmente, con un mejor uso de herramientas, a menudo se obtiene una mejor
+
+111
+00:05:12,637 --> 00:05:15,201
+seguridad porque Claude puede buscar eficazmente
+
+112
+00:05:15,221 --> 00:05:17,766
+su base de código para encontrar código relevante sin depender
+
+113
+00:05:17,886 --> 00:05:20,610
+de la indexación, que a menudo depende de enviar
+
+114
+00:05:20,629 --> 00:05:23,274
+toda su base de código a servidores externos.
+
+115
+00:05:23,254 --> 00:05:25,757
+Hagamos un rápido repaso de lo que aprendimos en este video
+
+116
+00:05:25,877 --> 00:05:28,562
+sobre lo que realmente es un asistente de codificación. Así que recuerden,
+
+117
+00:05:28,661 --> 00:05:31,365
+los asistentes de codificación utilizan modelos de lenguaje internamente para completar
+
+118
+00:05:31,425 --> 00:05:34,108
+diferentes tareas. Estos modelos de lenguaje necesitan
+
+119
+00:05:34,129 --> 00:05:36,672
+saber cómo usar herramientas para trabajar en la
+
+120
+00:05:36,812 --> 00:05:39,896
+gran mayoría de las tareas que se les asignan. Las herramientas se utilizan para leer
+
+121
+00:05:39,956 --> 00:05:42,920
+archivos, escribir archivos, ejecutar comandos y esencialmente todo
+
+122
+00:05:43,060 --> 00:05:45,903
+lo demás que no solo implica generar algún texto.
+
+123
+00:05:45,884 --> 00:05:48,406
+No todos los modelos de lenguaje utilizan herramientas al
+
+124
+00:05:48,466 --> 00:05:51,009
+mismo nivel, y esto tiene un gran impacto en la
+
+125
+00:05:51,151 --> 00:05:53,733
+eficiencia general de un asistente de codificación.

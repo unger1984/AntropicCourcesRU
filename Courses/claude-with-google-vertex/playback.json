@@ -1,0 +1,116 @@
+{
+  "playlist": [
+    {
+      "image": "https://cdn.jwplayer.com/v2/media/72e6ljEw/poster.jpg?width=720",
+      "images": [
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/72e6ljEw/poster.jpg?width=320",
+          "width": 320,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/72e6ljEw/poster.jpg?width=480",
+          "width": 480,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/72e6ljEw/poster.jpg?width=640",
+          "width": 640,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/72e6ljEw/poster.jpg?width=720",
+          "width": 720,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/72e6ljEw/poster.jpg?width=1280",
+          "width": 1280,
+          "type": "image/jpeg"
+        },
+        {
+          "src": "https://cdn.jwplayer.com/v2/media/72e6ljEw/poster.jpg?width=1920",
+          "width": 1920,
+          "type": "image/jpeg"
+        }
+      ],
+      "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=72e6ljEw&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWxhdGVkX21lZGlhX2lkIjoiNzJlNmxqRXciLCJyZXNvdXJjZSI6Ii92Mi9wbGF5bGlzdHMvWGs3eEs1MnYiLCJleHAiOjE3NzM3NjUxMjB9.IIiR_74QiN_BVz2oDHV1fUmAXU4kCMEl2f0n-X-fbek",
+      "title": "01 - 001 - Welcome to the Course.mp4",
+      "mediaid": "72e6ljEw",
+      "link": null,
+      "duration": 128.244,
+      "pubdate": 1751138178,
+      "description": null,
+      "tags": "",
+      "sources": [
+        {
+          "file": "https://cdn.jwplayer.com/manifests/72e6ljEw.m3u8?exp=1773765120&sig=ce23adcacd788c1266d5fe7a7e33193e",
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/72e6ljEw-B9NwIVRu.mp4?exp=1773765120&sig=3d9751eb18eae1428baf5f7a8e7254c0",
+          "type": "video/mp4",
+          "width": 320,
+          "height": 180,
+          "label": "180p",
+          "bitrate": 131537,
+          "framerate": 30,
+          "filesize": 2104593
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/72e6ljEw-muagBOKI.mp4?exp=1773765120&sig=e05fd0aeac84a6033e63538c19fd9e96",
+          "type": "video/mp4",
+          "width": 480,
+          "height": 270,
+          "label": "270p",
+          "bitrate": 139933,
+          "framerate": 30,
+          "filesize": 2238932
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/72e6ljEw-4Xe8IV8X.mp4?exp=1773765120&sig=dcc4a596b068e90bbf16c81576f2158e",
+          "type": "video/mp4",
+          "width": 720,
+          "height": 406,
+          "label": "406p",
+          "bitrate": 156573,
+          "framerate": 30,
+          "filesize": 2505173
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/72e6ljEw-m7ew0xq8.mp4?exp=1773765120&sig=0fc27186109904ca1d8e420a269946a7",
+          "type": "video/mp4",
+          "width": 1280,
+          "height": 720,
+          "label": "720p",
+          "bitrate": 193114,
+          "framerate": 30,
+          "filesize": 3089835
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/72e6ljEw-eNgUZBQ2.m4a?exp=1773765120&sig=7648e8952c9ac092a58f71824d13ce76",
+          "type": "audio/mp4",
+          "label": "Audio",
+          "bitrate": 113686,
+          "filesize": 1818985
+        },
+        {
+          "file": "https://cdn.jwplayer.com/videos/72e6ljEw-hFUVmOoC.mp4?exp=1773765120&sig=aecf402f5ea5042944f55b9e4aa9c4b8",
+          "type": "video/mp4",
+          "width": 1920,
+          "height": 1080,
+          "label": "1080p",
+          "bitrate": 239606,
+          "framerate": 30,
+          "filesize": 3833711
+        }
+      ],
+      "tracks": [
+        {
+          "file": "https://cdn.jwplayer.com/strips/72e6ljEw-120.vtt",
+          "kind": "thumbnails"
+        }
+      ]
+    }
+  ]
+}

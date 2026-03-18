@@ -1,0 +1,351 @@
+1
+00:00:00,031 --> 00:00:02,714
+Vamos tentar fazer algumas alterações neste projeto.
+
+2
+00:00:03,134 --> 00:00:05,658
+Ao longo do caminho, mostrarei alguns recursos úteis do Claude Code.
+
+3
+00:00:06,118 --> 00:00:08,782
+A primeira coisa que gostaria de fazer é mover este texto de espaço reservado
+
+4
+00:00:08,823 --> 00:00:11,647
+aqui no lado esquerdo para o centro deste painel.
+
+5
+00:00:12,166 --> 00:00:14,791
+Para ajudar o Claude a entender exatamente qual conteúdo eu quero
+
+6
+00:00:14,851 --> 00:00:17,594
+mover, vou tirar uma captura de tela de
+
+7
+00:00:17,614 --> 00:00:20,138
+essa área bem ali, e então vou colar
+
+8
+00:00:20,198 --> 00:00:23,102
+isso no Claude Code usando Ctrl V.
+
+9
+00:00:23,420 --> 00:00:26,045
+Note que é Control-V e não Command-V
+
+10
+00:00:26,085 --> 00:00:28,649
+que você pode estar acostumado no Mac OS. Control-V é
+
+11
+00:00:28,750 --> 00:00:31,394
+usado especificamente para colar uma captura de tela. Eu
+
+12
+00:00:31,434 --> 00:00:34,201
+posso então pedir ao Claude para centralizar esse espaço reservado. Depois
+
+13
+00:00:34,261 --> 00:00:36,886
+de um pouco de pesquisa, o Claude é capaz de fazer a atualização do estilo.
+
+14
+00:00:37,146 --> 00:00:39,651
+E então de volta no navegador, sim, parece ótimo. Deixe
+
+15
+00:00:39,670 --> 00:00:42,256
+que eu mostre a próxima coisa que eu gostaria de mudar neste aplicativo. Vou pedir
+
+16
+00:00:42,276 --> 00:00:45,462
+um componente de cartão que exiba um título e uma descrição.
+
+17
+00:00:45,442 --> 00:00:48,246
+O cartão é gerado sem problemas, mas há uma
+
+18
+00:00:48,286 --> 00:00:51,009
+coisa estranha. No lado esquerdo da interface do chat,
+
+19
+00:00:51,191 --> 00:00:53,774
+há o Editor de Substituição de String. Esse pequeno painel
+
+20
+00:00:53,795 --> 00:00:56,357
+bem ali serve para indicar ao usuário que um arquivo está sendo
+
+21
+00:00:56,417 --> 00:00:59,061
+criado. Mas no momento, ele está usando um termo muito técnico,
+
+22
+00:00:59,402 --> 00:01:02,186
+Editor de Substituição de String, para a ferramenta que está sendo usada nos bastidores.
+
+23
+00:01:02,707 --> 00:01:05,451
+Eu gostaria de mostrar ao usuário um texto um pouco mais amigável aqui e
+
+24
+00:01:05,471 --> 00:01:08,036
+apenas dizer ao usuário que um arquivo está sendo criado e o nome do
+
+25
+00:01:08,055 --> 00:01:10,760
+arquivo. E, claro, também devemos lidar com casos em que
+
+26
+00:01:10,939 --> 00:01:13,463
+talvez este chatbot esteja editando um arquivo ou excluindo
+
+27
+00:01:13,483 --> 00:01:16,147
+um arquivo e outras coisas do tipo. Para ajudar a guiar a atenção
+
+28
+00:01:16,207 --> 00:01:19,192
+do Claude, vou mais uma vez tirar uma captura de tela disso para
+
+29
+00:01:19,233 --> 00:01:21,856
+que ele entenda exatamente do que estou falando. Em seguida, de volta
+
+30
+00:01:21,917 --> 00:01:24,540
+aqui, vou colar essa imagem e pedir ao Claude
+
+31
+00:01:24,600 --> 00:01:27,364
+para substituir esse texto específico por uma mensagem mais
+
+32
+00:01:27,605 --> 00:01:30,469
+amigável ao usuário. Agora, esta é uma tarefa um pouco
+
+33
+00:01:30,510 --> 00:01:33,013
+difícil que exigirá que o Claude faça uma quantidade razoável
+
+34
+00:01:33,054 --> 00:01:35,918
+de pesquisa neste projeto para ser concluída.
+
+35
+00:01:35,897 --> 00:01:38,522
+Sempre que você der uma tarefa mais difícil ao Claude, existem duas
+
+36
+00:01:38,581 --> 00:01:41,406
+maneiras de aumentar facilmente a inteligência do Claude. A
+
+37
+00:01:41,447 --> 00:01:43,989
+primeira maneira é ativar o modo de plano. O modo de plano
+
+38
+00:01:44,010 --> 00:01:46,974
+é ativado pressionando Shift-Tab duas vezes, ou
+
+39
+00:01:47,075 --> 00:01:49,819
+apenas uma vez se você já estiver aceitando automaticamente as edições de arquivo.
+
+40
+00:01:50,500 --> 00:01:53,063
+No modo de plano, o Claude fará muito mais pesquisa
+
+41
+00:01:53,123 --> 00:01:55,668
+sobre o conteúdo do seu projeto, lendo mais arquivos
+
+42
+00:01:55,808 --> 00:01:58,393
+e elaborando um plano detalhado sobre como concluir sua
+
+43
+00:01:58,453 --> 00:02:01,055
+tarefa. Após concluir o plano, o Claude dirá
+
+44
+00:02:01,075 --> 00:02:03,759
+exatamente o que ele quer fazer para completar sua tarefa.
+
+45
+00:02:04,280 --> 00:02:06,882
+Nesse ponto, você pode aceitar este plano, e o Claude o
+
+46
+00:02:06,942 --> 00:02:09,485
+implementará, ou você pode redirecionar o Claude de alguma
+
+47
+00:02:09,526 --> 00:02:12,028
+forma, talvez ele tenha perdido algum arquivo ou não tenha considerado
+
+48
+00:02:12,088 --> 00:02:14,711
+algum cenário. A segunda maneira pela qual podemos aumentar
+
+49
+00:02:14,731 --> 00:02:17,414
+a inteligência do Claude é ativando o pensamento. Isso
+
+50
+00:02:17,455 --> 00:02:20,579
+ativa o recurso de pensamento estendido do Claude, permitindo
+
+51
+00:02:20,598 --> 00:02:23,141
+que ele raciocine mais sobre uma tarefa específica. Para
+
+52
+00:02:23,181 --> 00:02:26,526
+ativar o pensamento, existem várias frases de gatilho.
+
+53
+00:02:26,506 --> 00:02:29,110
+Cada uma dá ao Claude um orçamento de token progressivamente maior
+
+54
+00:02:29,151 --> 00:02:31,975
+para pensar. Dado que esta é uma tarefa mais complicada,
+
+55
+00:02:32,217 --> 00:02:34,942
+eu posso pedir ao Claude para pensar ao máximo sobre a melhor maneira de implementar
+
+56
+00:02:35,021 --> 00:02:37,586
+isso. A última coisa a entender é que o planejamento
+
+57
+00:02:37,606 --> 00:02:40,211
+e o pensamento podem ser usados juntos. Então, além
+
+58
+00:02:40,252 --> 00:02:42,757
+deste ultra-pensamento, também ativarei o modo de plano
+
+59
+00:02:42,796 --> 00:02:45,341
+também. E agora vou executar isso e veremos o quão bem
+
+60
+00:02:45,442 --> 00:02:47,985
+o Claude pode implementar este recurso. Agora, você pode
+
+61
+00:02:48,006 --> 00:02:50,530
+estar se perguntando quando usar o planejamento e quando usar
+
+62
+00:02:50,590 --> 00:02:53,093
+o pensamento. Pense nesses dois como lidando
+
+63
+00:02:53,193 --> 00:02:55,818
+com largura em profundidade. O modo de planejamento é útil
+
+64
+00:02:55,858 --> 00:02:58,401
+quando você tem uma tarefa que requer um amplo entendimento
+
+65
+00:02:58,442 --> 00:03:01,105
+da sua base de código e requer a análise de diferentes áreas.
+
+66
+00:03:01,667 --> 00:03:04,270
+Também é útil ao trabalhar em uma tarefa que requer várias
+
+67
+00:03:04,330 --> 00:03:07,135
+etapas para ser concluída. O pensamento, por outro lado, é
+
+68
+00:03:07,235 --> 00:03:09,780
+útil quando você está focado em um ponto específico e complicado
+
+69
+00:03:09,840 --> 00:03:12,444
+de lógica ou solucionando um bug difícil.
+
+70
+00:03:12,504 --> 00:03:15,049
+A segunda pergunta que você pode ter é se
+
+71
+00:03:15,068 --> 00:03:17,593
+você deve simplesmente ativar o pensamento e o planejamento o tempo todo.
+
+72
+00:03:18,134 --> 00:03:20,818
+Bem, você certamente pode, apenas tenha em mente que o planejamento
+
+73
+00:03:20,878 --> 00:03:23,443
+e o pensamento consomem tokens adicionais, então há
+
+74
+00:03:23,484 --> 00:03:26,087
+um custo associado ao uso deles. Após
+
+75
+00:03:26,127 --> 00:03:28,893
+alguns minutos de trabalho, parece que o recurso está completo. Então
+
+76
+00:03:28,913 --> 00:03:31,736
+vou voltar ao meu editor e testar isso. Então,
+
+77
+00:03:31,776 --> 00:03:34,360
+imediatamente, podemos ver que temos melhores informações de status aqui
+
+78
+00:03:34,420 --> 00:03:37,084
+do que tínhamos antes. Os usuários estão agora sendo informados que um arquivo
+
+79
+00:03:37,104 --> 00:03:39,848
+está sendo criado. E se eu enviar uma solicitação de acompanhamento,
+
+80
+00:03:40,088 --> 00:03:42,632
+talvez para mudar o título. Esperançosamente
+
+81
+00:03:42,693 --> 00:03:45,395
+agora, no acompanhamento, veremos algo sobre a edição desse arquivo.
+
+82
+00:03:45,937 --> 00:03:48,681
+Aí está. Então agora estamos editando o arquivo app.jsx.
+
+83
+00:03:49,102 --> 00:03:51,625
+Bem, eu diria que o Claude definitivamente teve sucesso em implementar
+
+84
+00:03:51,645 --> 00:03:54,197
+este recurso. Agora que fizemos algumas alterações neste
+
+85
+00:03:54,257 --> 00:03:57,390
+projeto, devemos provavelmente fazer commit das nossas alterações. O Claude
+
+86
+00:03:57,411 --> 00:04:00,081
+Code é um assistente Git sólido. Podemos pedir a ele para
+
+87
+00:04:00,122 --> 00:04:02,674
+preparar e fazer commit das nossas alterações e ele escreverá uma
+
+88
+00:04:02,734 --> 00:04:04,401
+mensagem de commit descritiva para nós.

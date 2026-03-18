@@ -1,0 +1,209 @@
+{
+  "title": "What is a coding assistant?",
+  "url": "https://anthropic.skilljar.com/claude-code-in-action/303235",
+  "nav_lessons": [
+    {
+      "title": "Lessons",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303235"
+    },
+    {
+      "title": "Introduction",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303233"
+    },
+    {
+      "title": "Claude Code in action",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303242"
+    },
+    {
+      "title": "Claude Code setup",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/301614"
+    },
+    {
+      "title": "Project setup",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/301615"
+    },
+    {
+      "title": "Adding context",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303241"
+    },
+    {
+      "title": "Making changes",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303236"
+    },
+    {
+      "title": "Course satisfaction survey",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303701"
+    },
+    {
+      "title": "Controlling context",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303237"
+    },
+    {
+      "title": "Custom commands",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303234"
+    },
+    {
+      "title": "MCP servers with Claude Code",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303239"
+    },
+    {
+      "title": "Github integration",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303240"
+    },
+    {
+      "title": "Introducing hooks",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312000"
+    },
+    {
+      "title": "Defining hooks",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312002"
+    },
+    {
+      "title": "Implementing a hook",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312003"
+    },
+    {
+      "title": "Gotchas around hooks",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312423"
+    },
+    {
+      "title": "Useful hooks!",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312004"
+    },
+    {
+      "title": "Another useful hook",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312427"
+    },
+    {
+      "title": "The Claude Code SDK",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312001"
+    },
+    {
+      "title": "Quiz on Claude Code",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/308391"
+    },
+    {
+      "title": "Summary and next steps",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303238"
+    }
+  ],
+  "notes_key": "claudecode",
+  "notes_length": 18666,
+  "source_html_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Source/lesson-page.html",
+  "source_dir": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Source",
+  "assets": {
+    "jwplayer_script": {
+      "url": "https://content.jwplatform.com/players/WQnSCLF3-Akyo8gQO.js",
+      "status": "downloaded",
+      "kind": "player_script",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Assets/jwplayer_script.js"
+    },
+    "playback_json": {
+      "url": "https://cdn.jwplayer.com/v2/sites/Lc4Rn1s0/media/WQnSCLF3/playback.json?recommendations_playlist_id=Xk7xK52v&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNvbW1lbmRhdGlvbnNfcGxheWxpc3RfaWQiOiJYazd4SzUydiIsInJlc291cmNlIjoiL3YyL3NpdGVzL0xjNFJuMXMwL21lZGlhL1dRblNDTEYzL3BsYXliYWNrLmpzb24iLCJleHAiOjE3NzM4MzUyMDB9.tMMamywrb_ns1bjL1n9fFHyW1qYyw3qzfb1Gy0sXy-M",
+      "status": "downloaded",
+      "kind": "metadata",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Assets/playback_json.json"
+    },
+    "manifest_hls": {
+      "url": "https://cdn.jwplayer.com/manifests/WQnSCLF3.m3u8?exp=1773835200&sig=16785b3ae2253185977bed1d1116ea5c",
+      "status": "downloaded",
+      "kind": "video_manifest",
+      "label": "application/vnd.apple.mpegurl",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Assets/manifest_hls.m3u8"
+    },
+    "video_180p": {
+      "url": "https://cdn.jwplayer.com/videos/WQnSCLF3-B9NwIVRu.mp4?exp=1773835200&sig=e7a3bdbb1cf1645836a7d537e4da5437",
+      "status": "discovered",
+      "kind": "video",
+      "label": "180p"
+    },
+    "video_270p": {
+      "url": "https://cdn.jwplayer.com/videos/WQnSCLF3-muagBOKI.mp4?exp=1773835200&sig=0bfe4a14cfaab696ad89680507577665",
+      "status": "discovered",
+      "kind": "video",
+      "label": "270p"
+    },
+    "video_406p": {
+      "url": "https://cdn.jwplayer.com/videos/WQnSCLF3-4Xe8IV8X.mp4?exp=1773835200&sig=3985677b1f8c312e1fc23ae7889405fd",
+      "status": "discovered",
+      "kind": "video",
+      "label": "406p"
+    },
+    "video_720p": {
+      "url": "https://cdn.jwplayer.com/videos/WQnSCLF3-m7ew0xq8.mp4?exp=1773835200&sig=4a7be653955e34eecf0e5169199c5e4a",
+      "status": "discovered",
+      "kind": "video",
+      "label": "720p"
+    },
+    "audio_audio": {
+      "url": "https://cdn.jwplayer.com/videos/WQnSCLF3-eNgUZBQ2.m4a?exp=1773835200&sig=c6126572bffbdb78cbe5f2623d118fb2",
+      "status": "downloaded",
+      "kind": "audio",
+      "label": "Audio",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Assets/audio_audio.m4a"
+    },
+    "video_1080p": {
+      "url": "https://cdn.jwplayer.com/videos/WQnSCLF3-hFUVmOoC.mp4?exp=1773835200&sig=9061cb3ae3e7487394e066f97aecb98e",
+      "status": "downloaded",
+      "kind": "video",
+      "label": "1080p",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Assets/video_1080p.mp4"
+    },
+    "captions_en": {
+      "url": "https://cdn.jwplayer.com/tracks/ABDAYvNK.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Assets/captions_en.srt"
+    },
+    "captions_fr": {
+      "url": "https://cdn.jwplayer.com/tracks/JqpqWgKL.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Assets/captions_fr.srt"
+    },
+    "captions_de": {
+      "url": "https://cdn.jwplayer.com/tracks/5NEMuBDk.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Assets/captions_de.srt"
+    },
+    "captions_ja": {
+      "url": "https://cdn.jwplayer.com/tracks/UgbE86MH.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Assets/captions_ja.srt"
+    },
+    "captions_ko": {
+      "url": "https://cdn.jwplayer.com/tracks/p6UnVBac.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Assets/captions_ko.srt"
+    },
+    "captions_pt": {
+      "url": "https://cdn.jwplayer.com/tracks/o7m2cspZ.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Assets/captions_pt.srt"
+    },
+    "captions_es": {
+      "url": "https://cdn.jwplayer.com/tracks/4nIloFMC.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Assets/captions_es.srt"
+    },
+    "thumbnails_vtt": {
+      "url": "https://cdn.jwplayer.com/strips/WQnSCLF3-120.vtt",
+      "status": "downloaded",
+      "kind": "thumbnails",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Assets/thumbnails_vtt.vtt"
+    },
+    "poster_image": {
+      "url": "https://cdn.jwplayer.com/v2/media/WQnSCLF3/poster.jpg?width=720",
+      "status": "downloaded",
+      "kind": "image",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Assets/poster_image.jpg"
+    }
+  },
+  "status": "downloaded",
+  "notes_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/002-what-is-a-coding-assistant/Source/notes.xml"
+}

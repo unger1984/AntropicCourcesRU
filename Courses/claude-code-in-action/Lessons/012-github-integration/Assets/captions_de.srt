@@ -1,0 +1,311 @@
+1
+00:00:00,031 --> 00:00:02,754
+Claude Code verfügt über eine offizielle GitHub-Integration, die
+
+2
+00:00:02,794 --> 00:00:05,437
+es Claude Code ermöglicht, innerhalb einer GitHub Action ausgeführt zu werden.
+
+3
+00:00:05,958 --> 00:00:08,821
+Sie können diese Integration einrichten, indem Sie /install ausführen
+
+4
+00:00:08,961 --> 00:00:11,726
+GitHub App. Dies führt Sie durch einige Schritte.
+
+5
+00:00:12,346 --> 00:00:14,990
+Zuerst müssen Sie die Claude Code App auf GitHub installieren.
+
+6
+00:00:15,650 --> 00:00:18,193
+Als Nächstes müssen Sie einen API-Schlüssel hinzufügen. Und dann
+
+7
+00:00:18,254 --> 00:00:21,178
+danach wird automatisch ein Pull Request generiert.
+
+8
+00:00:21,859 --> 00:00:25,362
+Dieser Pull Request fügt zwei verschiedene GitHub Actions hinzu.
+
+9
+00:00:25,343 --> 00:00:27,888
+Die erste Action fügt die Erwähnungsunterstützung hinzu. Also
+
+10
+00:00:27,928 --> 00:00:30,554
+von einem Issue oder einem Pull Request aus können Sie Claude erwähnen
+
+11
+00:00:30,594 --> 00:00:33,201
+mit @Claude und Claude eine Aufgabe geben, die
+
+12
+00:00:33,381 --> 00:00:35,908
+ausgeführt werden soll. Die zweite Action fügt Unterstützung
+
+13
+00:00:35,968 --> 00:00:38,654
+für das Überprüfen von Pull Requests hinzu. Immer wenn Sie einen Pull Request erstellen,
+
+14
+00:00:38,774 --> 00:00:41,381
+wird Claude Code automatisch ausgeführt und die vorgeschlagenen
+
+15
+00:00:41,420 --> 00:00:44,383
+Änderungen überprüft. Beide diese Actions können angepasst werden,
+
+16
+00:00:44,563 --> 00:00:47,087
+und Sie können auch zusätzliche Actions hinzufügen, die ausgelöst werden, basierend auf
+
+17
+00:00:47,207 --> 00:00:49,811
+anderen Ereignistypen. Lassen Sie mich Ihnen zeigen, wie Sie
+
+18
+00:00:49,831 --> 00:00:52,515
+die Erwähnungsfunktion anpassen können. Zuerst haben wir
+
+19
+00:00:52,554 --> 00:00:55,079
+gerade die beiden Konfigurationsdateien für die Actions in
+
+20
+00:00:55,118 --> 00:00:57,722
+unser Repository auf GitHub zusammengeführt. Daher muss ich diese
+
+21
+00:00:57,884 --> 00:01:00,567
+Änderungen auf meine lokale Maschine ziehen. Dann innerhalb
+
+22
+00:01:00,588 --> 00:01:03,231
+des neu erstellten Verzeichnisses für GitHub-Workflows werde ich
+
+23
+00:01:03,271 --> 00:01:06,016
+diese beiden Konfigurationsdateien für Actions sehen. Eine fügt
+
+24
+00:01:06,096 --> 00:01:08,620
+Unterstützung für die Überprüfung von Pull Requests hinzu, und die andere fügt
+
+25
+00:01:08,659 --> 00:01:11,243
+Unterstützung für die Verarbeitung von Erwähnungen hinzu. Nun, hier ist, wie
+
+26
+00:01:11,304 --> 00:01:14,167
+ich die Erwähnungsfunktionalität anpassen möchte. Immer wenn
+
+27
+00:01:14,206 --> 00:01:16,810
+ich Claude in einem Issue oder einem Pull Request erwähne,
+
+28
+00:01:17,250 --> 00:01:19,813
+soll es in der Lage sein, das Projekt auszuführen und den Playwright
+
+29
+00:01:19,953 --> 00:01:22,516
+MCP Server zu verwenden, um auf die App zuzugreifen
+
+30
+00:01:22,575 --> 00:01:25,239
+in einem Webbrowser, alles innerhalb einer GitHub Action.
+
+31
+00:01:25,759 --> 00:01:28,302
+Um dies zu ermöglichen, füge ich zuerst einen Schritt hinzu, bevor
+
+32
+00:01:28,421 --> 00:01:30,963
+Claude Code in diesem Workflow ausgeführt wird. Ich führe
+
+33
+00:01:30,984 --> 00:01:34,347
+den Setup-Befehl aus und starte dann den Entwicklungsserver.
+
+34
+00:01:34,328 --> 00:01:37,433
+Dann werde ich die Claude Code-Konfiguration aktualisieren. Ich
+
+35
+00:01:37,474 --> 00:01:39,998
+füge einige benutzerdefinierte Anweisungen hinzu. Diese werden direkt
+
+36
+00:01:40,019 --> 00:01:42,602
+an Claude übergeben und ermöglichen es uns, zusätzliche
+
+37
+00:01:42,664 --> 00:01:45,268
+Anweisungen oder Kontext bereitzustellen. In diesem Fall werde ich
+
+38
+00:01:45,287 --> 00:01:48,093
+Claude mitteilen, dass der Entwicklungsserver bereits läuft und
+
+39
+00:01:48,114 --> 00:01:50,899
+dass ich den Playwright MCP Server verwenden kann, um auf
+
+40
+00:01:50,938 --> 00:01:53,472
+die App im Browser zuzugreifen, falls erforderlich. Dann
+
+41
+00:01:53,632 --> 00:01:56,298
+füge ich einige Konfigurationen hinzu, um den Playwright MCP
+
+42
+00:01:56,317 --> 00:01:59,004
+Server selbst einzurichten. Es gibt noch eine weitere Sache, die man beachten muss
+
+43
+00:01:59,063 --> 00:02:01,808
+hier. Wenn Sie Claude Code in einer Action ausführen,
+
+44
+00:02:02,069 --> 00:02:04,674
+müssen wir spezifisch alle Berechtigungen auflisten, die
+
+45
+00:02:04,715 --> 00:02:07,480
+wir Claude Code gewähren wollen. Und es gibt einen kniffligen
+
+46
+00:02:07,561 --> 00:02:10,264
+Aspekt dabei. Wenn Sie einen MCP-Server verwenden,
+
+47
+00:02:10,284 --> 00:02:12,829
+müssen Sie jedes Tool von jedem MCP-Server einzeln auflisten, das Sie
+
+48
+00:02:12,908 --> 00:02:15,491
+zulassen möchten. Es gibt keine Abkürzung für Berechtigungen,
+
+49
+00:02:15,512 --> 00:02:18,036
+wie wir zuvor gesehen haben. Leider hat der Playwright
+
+50
+00:02:18,216 --> 00:02:21,120
+MCP Server viele verschiedene Tools, daher müssen sie alle
+
+51
+00:02:21,199 --> 00:02:23,943
+aufgelistet werden. Sobald ich mit dieser
+
+52
+00:02:23,963 --> 00:02:26,487
+Konfigurationsaktualisierung fertig bin, werde ich diese Änderungen sicher committen und
+
+53
+00:02:26,527 --> 00:02:29,271
+pushen. Jetzt ist es an der Zeit, diesen aktualisierten
+
+54
+00:02:29,331 --> 00:02:32,223
+Workflow zu testen. Ich werde Claude eine kleine Aufgabe geben.
+
+55
+00:02:32,283 --> 00:02:35,106
+In unserer tatsächlichen App, sehen Sie diese beiden Buttons hier. Momentan
+
+56
+00:02:35,127 --> 00:02:37,909
+funktionieren sie einwandfrei. Ich kann zwischen der Vorschau und den Code-
+
+57
+00:02:37,950 --> 00:02:40,513
+Panels ohne Probleme wechseln. Aber ich werde so tun, als ob
+
+58
+00:02:40,532 --> 00:02:43,135
+sie nicht wie beabsichtigt funktionieren würden. Ich werde einen
+
+59
+00:02:43,156 --> 00:02:45,739
+Screenshot mit diesem Button machen. Ich werde ein
+
+60
+00:02:45,799 --> 00:02:48,342
+Issue erstellen. Ich werde die Screenshots einfügen. Und ich werde
+
+61
+00:02:48,462 --> 00:02:51,025
+Claude mit @Claude erwähnen und es bitten,
+
+62
+00:02:51,045 --> 00:02:53,587
+zu überprüfen, ob die beiden Buttons wie beabsichtigt funktionieren.
+
+63
+00:02:53,627 --> 00:02:56,731
+Ich werde dann das Issue erstellen und warten. Nun, es wird
+
+64
+00:02:56,711 --> 00:02:59,456
+ein oder zwei Minuten dauern, bis die Action tatsächlich startet
+
+65
+00:02:59,477 --> 00:03:02,081
+und bis zu Claudes Antwort. Denken Sie daran, wie wir gerade in
+
+66
+00:03:02,241 --> 00:03:04,746
+der Action gesehen haben, richten wir jetzt die gesamte App ein und
+
+67
+00:03:04,765 --> 00:03:07,411
+starten sie, bevor Claude Code überhaupt beginnt zu
+
+68
+00:03:07,450 --> 00:03:10,075
+laufen. Aber schließlich wird Claude
+
+69
+00:03:10,116 --> 00:03:12,782
+antworten. Sie wird sehr oft eine Checkliste mit
+
+70
+00:03:12,823 --> 00:03:15,425
+Schritten erstellen, um die gegebene Aufgabe zu erfüllen. In diesem Fall
+
+71
+00:03:15,466 --> 00:03:18,189
+wird sie versuchen, die App zu besuchen, den Button manuell zu testen
+
+72
+00:03:18,310 --> 00:03:20,832
+und alle gefundenen Probleme zu beheben. Claude
+
+73
+00:03:20,872 --> 00:03:23,776
+wird feststellen, dass die Buttons tatsächlich einwandfrei funktionieren, und
+
+74
+00:03:23,795 --> 00:03:26,500
+wird daher frühzeitig mit einer Nachricht beendet, die
+
+75
+00:03:26,520 --> 00:03:29,223
+ihre Ergebnisse dokumentiert. Dies ist nur ein kleines
+
+76
+00:03:29,302 --> 00:03:31,925
+Beispiel dafür, wie Sie die GitHub-Integration von Claude Code nutzen können.
+
+77
+00:03:31,985 --> 00:03:34,649
+Ich empfehle Ihnen, sich etwas Zeit zu nehmen, um darüber nachzudenken, wie Sie
+
+78
+00:03:34,709 --> 00:03:37,853
+sie für Ihr eigenes Projekt anpassen können.

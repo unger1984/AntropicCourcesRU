@@ -1,0 +1,447 @@
+1
+00:00:00,031 --> 00:00:02,754
+Tenho o meu editor de código aberto dentro desse pequeno projeto,
+
+2
+00:00:02,975 --> 00:00:05,557
+e vou iniciar o servidor de desenvolvimento com um `npm run`
+
+3
+00:00:05,758 --> 00:00:08,381
+`dev`. E quando eu executar isso, poderei
+
+4
+00:00:08,441 --> 00:00:11,105
+acessar o localhost 3000 no meu navegador
+
+5
+00:00:11,484 --> 00:00:14,388
+e ver a aplicação em execução. Então, aqui está. Nós
+
+6
+00:00:14,409 --> 00:00:16,992
+vamos usar o Claude para fazer um pequeno trabalho neste projeto.
+
+7
+00:00:17,211 --> 00:00:19,896
+Mas primeiro, há algo muito crítico que quero que você entenda sobre
+
+8
+00:00:19,955 --> 00:00:22,599
+o uso do Claude. Especificamente, quero que você saia
+
+9
+00:00:22,618 --> 00:00:25,521
+deste curso com uma forte compreensão do gerenciamento de contexto.
+
+10
+00:00:26,103 --> 00:00:28,745
+Veja, dentro do seu projeto típico, pode haver dezenas ou
+
+11
+00:00:28,765 --> 00:00:31,268
+centenas de arquivos, cada um com uma quantidade tremenda
+
+12
+00:00:31,327 --> 00:00:33,930
+de informação. Sempre que fazemos uma pergunta ao Claude
+
+13
+00:00:33,951 --> 00:00:36,493
+ou damos uma tarefa, há uma quantidade ideal de
+
+14
+00:00:36,514 --> 00:00:39,216
+informação que o Claude precisa. Apenas o suficiente
+
+15
+00:00:39,237 --> 00:00:42,259
+para ajudar a entender como responder à sua pergunta ou completar sua tarefa.
+
+16
+00:00:42,280 --> 00:00:44,982
+Assim que começarmos a adicionar informações adicionais que
+
+17
+00:00:45,023 --> 00:00:47,585
+não são relevantes, a eficácia do Claude começará
+
+18
+00:00:47,606 --> 00:00:50,229
+a diminuir. Portanto, é realmente importante para nós
+
+19
+00:00:50,270 --> 00:00:52,774
+ajudar a direcionar o Claude para arquivos ou
+
+20
+00:00:52,834 --> 00:00:55,438
+documentação relevantes dentro do nosso projeto. O Claude Code pode
+
+21
+00:00:55,478 --> 00:00:58,241
+certamente funcionar sem nenhuma orientação, mas você obterá os melhores
+
+22
+00:00:58,301 --> 00:01:00,905
+resultados se fornecer um pouco de orientação.
+
+23
+00:01:01,868 --> 00:01:04,492
+Então, para o restante deste vídeo, vou dar várias dicas
+
+24
+00:01:04,652 --> 00:01:07,677
+de como fornecer o melhor contexto possível ao Claude. Para
+
+25
+00:01:07,716 --> 00:01:10,340
+começar, dentro do meu editor, abri meu terminal, e
+
+26
+00:01:10,381 --> 00:01:13,045
+vou iniciar o Claude Code executando o comando `Claude`.
+
+27
+00:01:13,084 --> 00:01:15,756
+Sempre que você executar o Claude Code
+
+28
+00:01:15,835 --> 00:01:18,680
+em um projeto pela primeira vez, recomendo fortemente executar
+
+29
+00:01:18,719 --> 00:01:21,343
+o comando `slash init`. Isso faz com que
+
+30
+00:01:21,384 --> 00:01:24,328
+o Claude analise profundamente toda a sua base de código. Ele
+
+31
+00:01:24,349 --> 00:01:26,992
+descobrirá o propósito do projeto, a arquitetura geral,
+
+32
+00:01:27,153 --> 00:01:30,096
+comandos relevantes, arquivos críticos e assim por diante. Após
+
+33
+00:01:30,137 --> 00:01:32,760
+essa análise, ele resumirá suas descobertas e as colocará
+
+34
+00:01:32,820 --> 00:01:35,444
+em um arquivo chamado `Claude.md`.
+
+35
+00:01:35,712 --> 00:01:38,397
+Quando o Claude tentar criar este arquivo, ele solicitará permissão.
+
+36
+00:01:38,858 --> 00:01:41,364
+Você pode pressionar Enter para aceitar ou, se você não
+
+37
+00:01:41,405 --> 00:01:44,171
+quiser ter que conceder permissão a cada solicitação de escrita de arquivo,
+
+38
+00:01:44,492 --> 00:01:46,996
+você também pode pressionar Shift + Tab, o que permitirá
+
+39
+00:01:47,078 --> 00:01:49,924
+que o Claude Code escreva livremente arquivos em seu projeto.
+
+40
+00:01:50,528 --> 00:01:53,311
+Eu o encorajaria a abrir o arquivo `Claude.md` que foi gerado
+
+41
+00:01:53,350 --> 00:01:55,855
+e dar uma olhada em seu conteúdo. Como mencionei, o
+
+42
+00:01:55,894 --> 00:01:58,498
+conteúdo deste arquivo é incluído em cada solicitação que fazemos ao
+
+43
+00:01:58,518 --> 00:02:01,100
+Claude. Este arquivo realmente tem dois propósitos diferentes.
+
+44
+00:02:01,621 --> 00:02:04,224
+Primeiro, ele ajuda o Claude a entender melhor sua base de código para que
+
+45
+00:02:04,245 --> 00:02:06,847
+ele possa encontrar código relevante mais rapidamente. E segundo, ele
+
+46
+00:02:06,908 --> 00:02:09,771
+serve como um local onde você pode dar ao Claude algumas orientações gerais.
+
+47
+00:02:09,812 --> 00:02:12,319
+Apenas para que você saiba, existem múltiplos
+
+48
+00:02:12,439 --> 00:02:15,224
+arquivos `Claude.md` que o Claude Code utilizará. Existe
+
+49
+00:02:15,264 --> 00:02:17,929
+um nível de projeto, um nível local e um nível de máquina.
+
+50
+00:02:17,989 --> 00:02:20,593
+O nível de projeto é o que acabamos de gerar
+
+51
+00:02:20,693 --> 00:02:23,318
+executando o comando `slash init`. Geralmente vamos
+
+52
+00:02:23,337 --> 00:02:26,163
+fazer o commit deste arquivo no controle de versão, como o Git. Vamos
+
+53
+00:02:26,182 --> 00:02:29,007
+compartilhar este arquivo com outros engenheiros e ter algumas diretrizes específicas
+
+54
+00:02:29,026 --> 00:02:32,116
+do projeto que queremos passar ao Claude. Opcionalmente,
+
+55
+00:02:32,236 --> 00:02:34,943
+também podemos criar um arquivo `Claude local.md`.
+
+56
+00:02:35,463 --> 00:02:38,008
+Este arquivo não será enviado para o commit e você geralmente não o compartilhará
+
+57
+00:02:38,028 --> 00:02:40,593
+com outros engenheiros. Dentro deste arquivo,
+
+58
+00:02:40,674 --> 00:02:43,300
+você pode colocar algumas instruções pessoais que deseja
+
+59
+00:02:43,379 --> 00:02:46,478
+que o Claude siga, apenas para você. Finalmente,
+
+60
+00:02:46,658 --> 00:02:49,521
+você pode ter um arquivo `Claude.md` global na sua máquina.
+
+61
+00:02:50,242 --> 00:02:52,945
+Este arquivo conterá instruções ou será aplicado a todos os
+
+62
+00:02:53,006 --> 00:02:55,628
+projetos que você executar localmente. Agora,
+
+63
+00:02:55,649 --> 00:02:58,472
+eu continuo mencionando dar instruções especiais ou personalizadas ao Claude.
+
+64
+00:02:58,932 --> 00:03:01,496
+Então, deixe-me mostrar um exemplo disso. Vamos imaginar que
+
+65
+00:03:01,536 --> 00:03:04,318
+o Claude está usando comentários com muita frequência no código que escreve.
+
+66
+00:03:04,919 --> 00:03:07,603
+Podemos resolver isso atualizando nosso arquivo `Claude.md`.
+
+67
+00:03:08,084 --> 00:03:10,847
+Podemos modificar manualmente o arquivo ou, um pequeno
+
+68
+00:03:10,866 --> 00:03:13,370
+atalho é que, dentro do Claude Code, podemos
+
+69
+00:03:13,409 --> 00:03:16,013
+digitar um sinal de cerquilha (`#`). Isso nos coloca no
+
+70
+00:03:16,092 --> 00:03:18,657
+modo de memória. Isso nos permite editar um dos nossos
+
+71
+00:03:18,717 --> 00:03:21,360
+arquivos `Claude.md` de forma inteligente. Então, podemos colocar
+
+72
+00:03:21,420 --> 00:03:24,224
+uma solicitação como, não escreva comentários com tanta frequência. Eu
+
+73
+00:03:24,245 --> 00:03:26,968
+então especificarei que quero adicionar esta instrução ao `Claude.md` do projeto,
+
+74
+00:03:27,068 --> 00:03:29,752
+e o Claude então mesclará
+
+75
+00:03:29,793 --> 00:03:32,837
+esta instrução nesse arquivo de forma inteligente. Se
+
+76
+00:03:32,877 --> 00:03:35,481
+eu então abrir o arquivo e fizer uma busca, verei que, de fato,
+
+77
+00:03:35,521 --> 00:03:38,346
+sim, ele adicionou essa nova instrução.
+
+78
+00:03:38,629 --> 00:03:41,173
+Agora que criamos nosso arquivo `Claude.md`, quero dar a você
+
+79
+00:03:41,252 --> 00:03:43,816
+uma melhor compreensão de como puxar contexto específico
+
+80
+00:03:43,936 --> 00:03:46,519
+para uma conversa. Vamos imaginar que queremos entender melhor
+
+81
+00:03:46,579 --> 00:03:49,262
+como o sistema de autenticação neste projeto funciona.
+
+82
+00:03:49,802 --> 00:03:52,406
+Poderíamos simplesmente pedir ao Claude para nos contar sobre isso, caso em que, buscaríamos
+
+83
+00:03:52,466 --> 00:03:55,109
+em nossa base de código e encontraríamos arquivos relevantes
+
+84
+00:03:55,128 --> 00:03:57,651
+para o sistema de autenticação. Isso definitivamente funcionaria, mas
+
+85
+00:03:57,671 --> 00:04:00,254
+levaria apenas algum tempo. Alternativamente,
+
+86
+00:04:00,455 --> 00:04:03,117
+se já soubermos alguns arquivos que são relevantes para
+
+87
+00:04:03,138 --> 00:04:06,020
+o sistema de autenticação, poderíamos mencioná-los usando
+
+88
+00:04:06,061 --> 00:04:08,725
+o caractere `@`. Quando mencionamos um arquivo,
+
+89
+00:04:08,846 --> 00:04:11,391
+ele será incluído automaticamente em nossa solicitação ao
+
+90
+00:04:11,431 --> 00:04:13,997
+Claude. Esta é uma técnica excelente para
+
+91
+00:04:14,117 --> 00:04:16,684
+direcionar o Claude para uma direção específica. Você
+
+92
+00:04:16,723 --> 00:04:19,451
+pode usar a mesma sintaxe para também mencionar arquivos
+
+93
+00:04:19,550 --> 00:04:22,076
+dentro do `Claude.md`. Deixe-me mostrar um exemplo de
+
+94
+00:04:22,156 --> 00:04:25,023
+por que isso é muito útil. Dentro da pasta `Prisma`
+
+95
+00:04:25,062 --> 00:04:28,226
+deste projeto, há um arquivo chamado `schema.prisma`.
+
+96
+00:04:28,687 --> 00:04:31,411
+Este arquivo contém uma definição completa de todas as diferentes
+
+97
+00:04:31,471 --> 00:04:34,435
+tabelas e tipos de registros que existem dentro do banco de dados SQLite
+
+98
+00:04:34,475 --> 00:04:37,380
+que é usado para armazenar informações neste projeto.
+
+99
+00:04:38,002 --> 00:04:40,524
+Como essa informação é tão importante e relevante
+
+100
+00:04:40,564 --> 00:04:43,269
+para tantos aspectos deste projeto, eu posso decidir
+
+101
+00:04:43,309 --> 00:04:45,872
+mencionar este arquivo dentro do meu `Claude.md`
+
+102
+00:04:45,892 --> 00:04:48,416
+arquivo. Deixe-me mostrar como faço isso. Primeiro,
+
+103
+00:04:48,497 --> 00:04:51,040
+entrarei com um sinal de cerquilha para entrar no modo de memória. Eu então
+
+104
+00:04:51,100 --> 00:04:53,867
+mencionarei esse arquivo de schema, e especificamente, direi ao Claude
+
+105
+00:04:53,908 --> 00:04:56,675
+para referenciar esse arquivo sempre que precisar entender melhor
+
+106
+00:04:56,716 --> 00:04:59,442
+a estrutura dos dados dentro do banco de dados. Uma vez
+
+107
+00:04:59,483 --> 00:05:02,209
+que a atualização esteja completa, vou dar uma olhada no arquivo `Claude.md`
+
+108
+00:05:02,310 --> 00:05:04,836
+e apenas verificar se a nota foi adicionada. Quando você menciona
+
+109
+00:05:04,896 --> 00:05:07,523
+um arquivo como este, seu conteúdo é automaticamente incluído
+
+110
+00:05:07,543 --> 00:05:10,411
+dentro da sua solicitação. Então, se eu perguntar quais atributos
+
+111
+00:05:10,451 --> 00:05:13,218
+o usuário tem, o Claude pode responder imediatamente sem
+
+112
+00:05:13,317 --> 00:05:14,701
+ler o arquivo de schema.

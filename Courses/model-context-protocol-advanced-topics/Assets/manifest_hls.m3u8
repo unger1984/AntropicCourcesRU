@@ -1,0 +1,13 @@
+#EXTM3U
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=150000,RESOLUTION=480x270,CODECS="mp4a.40.2,avc1.42c015",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69ba0046_7015b0440e74fe3fd892998ef65e3e6360331307/sites/Lc4Rn1s0/media/FMtGfCmX/versions/FMtGfCmX/manifest.ism/manifest-audio_0_W2gUNuSN_7sCCWnea=112015-video_0_W2gUNuSN_SOHjHdvO=23194.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=260000,RESOLUTION=1920x1080,CODECS="mp4a.40.2,avc1.640028",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69ba0046_7015b0440e74fe3fd892998ef65e3e6360331307/sites/Lc4Rn1s0/media/FMtGfCmX/versions/FMtGfCmX/manifest.ism/manifest-audio_0_W2gUNuSN_7sCCWnea=112015-video_0_W2gUNuSN_SOHjHdvO=130553.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=200000,RESOLUTION=1280x720,CODECS="mp4a.40.2,avc1.4d401f",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69ba0046_7015b0440e74fe3fd892998ef65e3e6360331307/sites/Lc4Rn1s0/media/FMtGfCmX/versions/FMtGfCmX/manifest.ism/manifest-audio_0_W2gUNuSN_7sCCWnea=112015-video_0_W2gUNuSN_SOHjHdvO=76758.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=170000,RESOLUTION=720x406,CODECS="mp4a.40.2,avc1.4d401e",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69ba0046_7015b0440e74fe3fd892998ef65e3e6360331307/sites/Lc4Rn1s0/media/FMtGfCmX/versions/FMtGfCmX/manifest.ism/manifest-audio_0_W2gUNuSN_7sCCWnea=112015-video_0_W2gUNuSN_SOHjHdvO=38870.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=140000,RESOLUTION=320x180,CODECS="mp4a.40.2,avc1.42c00d",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69ba0046_7015b0440e74fe3fd892998ef65e3e6360331307/sites/Lc4Rn1s0/media/FMtGfCmX/versions/FMtGfCmX/manifest.ism/manifest-audio_0_W2gUNuSN_7sCCWnea=112015-video_0_W2gUNuSN_SOHjHdvO=14060.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=120000,CODECS="mp4a.40.2"
+https://videos-cloudfront-usp.jwpsrv.com/69ba0046_7015b0440e74fe3fd892998ef65e3e6360331307/sites/Lc4Rn1s0/media/FMtGfCmX/versions/FMtGfCmX/manifest.ism/manifest-audio_0_W2gUNuSN_7sCCWnea=112015.m3u8

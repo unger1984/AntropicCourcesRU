@@ -1,0 +1,247 @@
+1
+00:00:00,436 --> 00:00:03,100
+You can add new tools and capabilities to Claude Code
+
+2
+00:00:03,181 --> 00:00:05,746
+through the use of MCP servers. These
+
+3
+00:00:05,785 --> 00:00:08,490
+MCP servers either run remotely or locally
+
+4
+00:00:08,611 --> 00:00:11,195
+on your machine. A very popular MCP
+
+5
+00:00:11,236 --> 00:00:13,760
+server named Playwright gives Claude Code the
+
+6
+00:00:13,801 --> 00:00:16,326
+ability to control a browser. Let me show you how to
+
+7
+00:00:16,405 --> 00:00:18,951
+add it to Claude Code, and then we'll use it to develop
+
+8
+00:00:19,030 --> 00:00:21,797
+our app a little bit more. To install the server at
+
+9
+00:00:21,836 --> 00:00:24,422
+your terminal, not inside of Claude Code, we'll execute
+
+10
+00:00:24,461 --> 00:00:27,108
+Claude MCP Add. And then a name
+
+11
+00:00:27,147 --> 00:00:30,053
+for this MCP server, I'm going to name it playwright. And
+
+12
+00:00:30,074 --> 00:00:32,740
+then after the name, we'll add in a command that will start up
+
+13
+00:00:32,780 --> 00:00:35,426
+the server locally on your machine. We can then start
+
+14
+00:00:35,485 --> 00:00:38,171
+Claude Code and ask it to open a browser and navigate
+
+15
+00:00:38,192 --> 00:00:41,158
+to our application at localhost 3000.
+
+16
+00:00:41,137 --> 00:00:43,762
+Before the browser opens, you might notice that you are required to give
+
+17
+00:00:43,822 --> 00:00:46,426
+permission for that tool to run. If you get tired
+
+18
+00:00:46,506 --> 00:00:49,551
+of all those permission pop-ups, you can open up the Claude
+
+19
+00:00:49,850 --> 00:00:52,594
+directory inside their settings.local.json.
+
+20
+00:00:53,076 --> 00:00:55,719
+And then inside of the allow array, you can add in a
+
+21
+00:00:55,780 --> 00:00:58,363
+string of MCP underscore underscore,
+
+22
+00:00:58,484 --> 00:01:01,148
+notice there are two underscores there, playwright. This
+
+23
+00:01:01,207 --> 00:01:03,811
+allows Claude Code to make use of this MCP server and
+
+24
+00:01:03,851 --> 00:01:06,355
+the tools inside of it in any way it wants without requiring
+
+25
+00:01:06,376 --> 00:01:09,359
+you to provide permission every time. If I restart
+
+26
+00:01:09,420 --> 00:01:11,923
+Claude Code and then ask it to open a browser again,
+
+27
+00:01:12,243 --> 00:01:15,007
+it will do so without requiring me to give permission. There
+
+28
+00:01:15,066 --> 00:01:17,849
+are incredible number of ways that you can use the Playwright MCP
+
+29
+00:01:17,890 --> 00:01:20,453
+server. Let me show you one that would be really applicable to the
+
+30
+00:01:20,472 --> 00:01:22,975
+project we are working on right now. Back inside
+
+31
+00:01:23,016 --> 00:01:26,140
+my editor, I'm going to find the SRC, Lib, prompts,
+
+32
+00:01:26,521 --> 00:01:29,263
+generation.tsx file. This is the prompt
+
+33
+00:01:29,304 --> 00:01:31,906
+that is used to actually generate the components that you ask
+
+34
+00:01:31,947 --> 00:01:34,450
+for inside of our app. So I want to allow
+
+35
+00:01:34,490 --> 00:01:37,316
+Claude Code to make use of the browser, generate
+
+36
+00:01:37,415 --> 00:01:39,980
+a component on its own, and then tweak this prompt
+
+37
+00:01:40,061 --> 00:01:42,906
+on its own based upon the generated component. And
+
+38
+00:01:42,945 --> 00:01:45,471
+hopefully, we'll end up with some better looking components
+
+39
+00:01:45,510 --> 00:01:48,034
+being generated out of our app. So let me show you how
+
+40
+00:01:48,055 --> 00:01:50,680
+we would do that. Back inside of Claude Code, I'm going to ask
+
+41
+00:01:50,739 --> 00:01:53,265
+it to navigate to localos3000.
+
+42
+00:01:53,245 --> 00:01:55,772
+attempt to generate a component, take a look at the
+
+43
+00:01:55,831 --> 00:01:58,478
+generated source code and evaluate the styling, and
+
+44
+00:01:58,498 --> 00:02:01,307
+then update our prompt inside that generation.tsx
+
+45
+00:02:01,346 --> 00:02:03,974
+file, and hopefully we'll end up with some at
+
+46
+00:02:04,013 --> 00:02:07,001
+the end of the day better styling on our generated components.
+
+47
+00:02:08,348 --> 00:02:10,951
+So let's see how it does. Claude is going to first open
+
+48
+00:02:10,991 --> 00:02:13,575
+up the browser. It's going to attempt to generate a component.
+
+49
+00:02:14,336 --> 00:02:16,881
+And looking at some of the commentary from Claude here, it looks like
+
+50
+00:02:16,941 --> 00:02:19,625
+it's not quite so happy. You might actually notice
+
+51
+00:02:19,645 --> 00:02:22,247
+that it complains about a very common style that's used in
+
+52
+00:02:22,268 --> 00:02:24,931
+applications like this, a purple to blue kind
+
+53
+00:02:24,951 --> 00:02:27,475
+of gradient. Claude is then going to update
+
+54
+00:02:27,536 --> 00:02:30,120
+our prompt and then try to generate a new component.
+
+55
+00:02:30,622 --> 00:02:33,308
+And I'll be honest with you, this actually gave
+
+56
+00:02:33,329 --> 00:02:36,096
+a much better result than I ever expected. This
+
+57
+00:02:36,417 --> 00:02:39,645
+testimonial card actually looks really, really great. Based
+
+58
+00:02:39,705 --> 00:02:42,390
+on these results alone, you can immediately get a sense that
+
+59
+00:02:42,550 --> 00:02:45,519
+MCP servers really open the door to a lot of interesting
+
+60
+00:02:45,598 --> 00:02:48,245
+use cases. And I highly recommend you look into some
+
+61
+00:02:48,405 --> 00:02:50,991
+MCP servers that might aid Claude in developing
+
+62
+00:02:51,032 --> 00:02:53,677
+whatever kind of project you personally are working on.

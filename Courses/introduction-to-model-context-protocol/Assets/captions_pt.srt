@@ -1,0 +1,91 @@
+1
+00:00:00,031 --> 00:00:02,674
+Bem-vindo a este curso focado em começar a usar o
+
+2
+00:00:02,714 --> 00:00:05,258
+protocolo de contexto de modelo. Meu nome é Stephen Grider
+
+3
+00:00:05,458 --> 00:00:08,643
+e eu vou guiá-lo por tudo o que você precisa saber sobre MCP.
+
+4
+00:00:09,323 --> 00:00:11,926
+Vamos começar por entender exatamente o que abordaremos nos
+
+5
+00:00:11,946 --> 00:00:14,490
+próximos vídeos. Primeiro, faremos uma visão geral
+
+6
+00:00:14,509 --> 00:00:17,254
+do MCP e entenderemos quais problemas ele se destina a
+
+7
+00:00:17,314 --> 00:00:19,836
+resolver. Em seguida, começaremos a analisar os fundamentos
+
+8
+00:00:19,937 --> 00:00:23,082
+da arquitetura MCP, cobrindo as responsabilidades
+
+9
+00:00:23,262 --> 00:00:25,961
+dos clientes e servidores MCP. Em seguida,
+
+10
+00:00:26,021 --> 00:00:28,727
+abordaremos os três componentes básicos de um servidor
+
+11
+00:00:28,766 --> 00:00:31,591
+MCP. Primeiro, veremos as ferramentas, que se destinam
+
+12
+00:00:31,611 --> 00:00:34,295
+a ser consumidas por modelos de linguagem. Após
+
+13
+00:00:34,335 --> 00:00:36,939
+isso, estudaremos recursos, que permitem que um servidor
+
+14
+00:00:36,999 --> 00:00:39,743
+compartilhe dados com clientes. E, finalmente, prompts,
+
+15
+00:00:40,024 --> 00:00:42,588
+que fornecerão instruções ajustadas para modelos
+
+16
+00:00:42,648 --> 00:00:45,201
+de linguagem. Agora, há muito conteúdo para
+
+17
+00:00:45,241 --> 00:00:47,828
+nós abordarmos, então há alguns requisitos do
+
+18
+00:00:47,868 --> 00:00:50,695
+seu lado. Primeiro, você precisa ter algum conhecimento básico de Python.
+
+19
+00:00:50,735 --> 00:00:53,582
+Segundo, nós escreveremos algum código,
+
+20
+00:00:53,823 --> 00:00:57,031
+e isso exigirá uma instalação local de Python. Nós
+
+21
+00:00:57,072 --> 00:00:59,880
+gerenciaremos nosso projeto com o UV CLI.
+
+22
+00:01:00,240 --> 00:01:02,987
+E se você não o tiver instalado, recomendo adquiri-lo agora.
+
+23
+00:01:03,008 --> 00:01:04,311
+Colocarei um link para ele na tela.

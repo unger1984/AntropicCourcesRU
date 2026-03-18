@@ -1,0 +1,351 @@
+1
+00:00:00,031 --> 00:00:02,714
+Let's try making a couple of changes to this project.
+
+2
+00:00:03,134 --> 00:00:05,658
+Along the way, I'll show you some useful features around Claude Code.
+
+3
+00:00:06,118 --> 00:00:08,782
+The first thing I'd like to do is move this placeholder text over
+
+4
+00:00:08,823 --> 00:00:11,647
+here on the left-hand side down to the center of this panel.
+
+5
+00:00:12,166 --> 00:00:14,791
+To help Claude understand exactly what content I want
+
+6
+00:00:14,851 --> 00:00:17,594
+moved, I'm going to take a screenshot of
+
+7
+00:00:17,614 --> 00:00:20,138
+that area right there, and then I'm going to paste
+
+8
+00:00:20,198 --> 00:00:23,102
+it into Claude Code using Ctrl V.
+
+9
+00:00:23,420 --> 00:00:26,045
+Note that it's Control-V and not Command-V
+
+10
+00:00:26,085 --> 00:00:28,649
+that you might be used to on Mac OS. Control-V is
+
+11
+00:00:28,750 --> 00:00:31,394
+used specifically to paste in a screenshot. I
+
+12
+00:00:31,434 --> 00:00:34,201
+can then ask Claude to center that placeholder. After
+
+13
+00:00:34,261 --> 00:00:36,886
+a little bit of searching, Claude is able to make the styling update.
+
+14
+00:00:37,146 --> 00:00:39,651
+And then back inside the browser, yeah, looks great. Let
+
+15
+00:00:39,670 --> 00:00:42,256
+me show you the next thing I would like to change in this app. I'm going to ask
+
+16
+00:00:42,276 --> 00:00:45,462
+for a card component that displays a title and some description.
+
+17
+00:00:45,442 --> 00:00:48,246
+The card is generated without any issue, but there is one
+
+18
+00:00:48,286 --> 00:00:51,009
+awkward thing. On left hand side in the chat interface,
+
+19
+00:00:51,191 --> 00:00:53,774
+there's String Replace Editor. That little panel
+
+20
+00:00:53,795 --> 00:00:56,357
+right there is meant to indicate to the user that a file is being
+
+21
+00:00:56,417 --> 00:00:59,061
+created. But right now it's using a very technical term
+
+22
+00:00:59,402 --> 00:01:02,186
+String Replace Editor for the tool that is being used behind the scenes.
+
+23
+00:01:02,707 --> 00:01:05,451
+I would like to show a user a little more friendly text here and
+
+24
+00:01:05,471 --> 00:01:08,036
+just tell the user that a file is being created and the name of
+
+25
+00:01:08,055 --> 00:01:10,760
+the file. And of course, we should also handle cases where
+
+26
+00:01:10,939 --> 00:01:13,463
+maybe this chatbot is editing a file or deleting
+
+27
+00:01:13,483 --> 00:01:16,147
+a file and other stuff like that. To help guide Claude's
+
+28
+00:01:16,207 --> 00:01:19,192
+attention, I'm going to once again take a screenshot of this so
+
+29
+00:01:19,233 --> 00:01:21,856
+it understands exactly what I'm talking about. Then, back
+
+30
+00:01:21,917 --> 00:01:24,540
+over here, I'm going to paste that image in and ask Claude
+
+31
+00:01:24,600 --> 00:01:27,364
+to replace that particular text with some more
+
+32
+00:01:27,605 --> 00:01:30,469
+user-friendly message. Now, this is a little
+
+33
+00:01:30,510 --> 00:01:33,013
+bit of a tricky task that will require Claude to do
+
+34
+00:01:33,054 --> 00:01:35,918
+a decent amount of research in this project to complete.
+
+35
+00:01:35,897 --> 00:01:38,522
+Whenever you give Claude a harder task, there are two
+
+36
+00:01:38,581 --> 00:01:41,406
+ways that you can easily boost Claude's intelligence. The
+
+37
+00:01:41,447 --> 00:01:43,989
+first way is to enable Plan mode. Plan mode
+
+38
+00:01:44,010 --> 00:01:46,974
+is enabled by pressing Shift-Tab twice, or
+
+39
+00:01:47,075 --> 00:01:49,819
+just once if you are already auto-accepting file edits.
+
+40
+00:01:50,500 --> 00:01:53,063
+In Plan mode, Claude will do much more research
+
+41
+00:01:53,123 --> 00:01:55,668
+over the contents of your project, reading more files
+
+42
+00:01:55,808 --> 00:01:58,393
+and coming up with a detailed plan on how to complete your
+
+43
+00:01:58,453 --> 00:02:01,055
+task. After completing the plan, Claude will
+
+44
+00:02:01,075 --> 00:02:03,759
+tell you exactly what it wants to do to complete your task.
+
+45
+00:02:04,280 --> 00:02:06,882
+At that point, you can either accept this plan, and Claude will
+
+46
+00:02:06,942 --> 00:02:09,485
+implement it, or you can redirect Claude in some
+
+47
+00:02:09,526 --> 00:02:12,028
+way, maybe it missed some file, or didn't consider
+
+48
+00:02:12,088 --> 00:02:14,711
+some scenario. The second way in which we can boost
+
+49
+00:02:14,731 --> 00:02:17,414
+Claude's intelligence is by enabling thinking. This
+
+50
+00:02:17,455 --> 00:02:20,579
+turns on Claude's extended thinking feature, allowing
+
+51
+00:02:20,598 --> 00:02:23,141
+it to reason more about a particular task. To
+
+52
+00:02:23,181 --> 00:02:26,526
+enable thinking, there are a handful of different trigger phrases.
+
+53
+00:02:26,506 --> 00:02:29,110
+Each one gives Claude a progressively larger token
+
+54
+00:02:29,151 --> 00:02:31,975
+budget to think with. Given that this is a trickier task,
+
+55
+00:02:32,217 --> 00:02:34,942
+I might ask Claude to ultra-think about the best way to implement
+
+56
+00:02:35,021 --> 00:02:37,586
+it. The last thing to understand is that planning
+
+57
+00:02:37,606 --> 00:02:40,211
+and thinking can be used together. So in addition to
+
+58
+00:02:40,252 --> 00:02:42,757
+this ultra-think, I'm going to also turn on Plan mode
+
+59
+00:02:42,796 --> 00:02:45,341
+as well. And now I'm going to run this and we'll see how well
+
+60
+00:02:45,442 --> 00:02:47,985
+Claude can implement this feature. Now, you might
+
+61
+00:02:48,006 --> 00:02:50,530
+be wondering when you should use planning and when you should use
+
+62
+00:02:50,590 --> 00:02:53,093
+thinking. Think of these two as handling
+
+63
+00:02:53,193 --> 00:02:55,818
+breadth-first depth. Planning mode is useful
+
+64
+00:02:55,858 --> 00:02:58,401
+when you have a task that requires a wide understanding
+
+65
+00:02:58,442 --> 00:03:01,105
+of your codebase and requires looking at different areas.
+
+66
+00:03:01,667 --> 00:03:04,270
+It's also useful when working on a task that requires several
+
+67
+00:03:04,330 --> 00:03:07,135
+steps to complete. Thinking, on either hand, is
+
+68
+00:03:07,235 --> 00:03:09,780
+useful when you are focusing on a particular tricky
+
+69
+00:03:09,840 --> 00:03:12,444
+bit of logic or troubleshooting a difficult
+
+70
+00:03:12,504 --> 00:03:15,049
+bug. The second question you might have is whether
+
+71
+00:03:15,068 --> 00:03:17,593
+you should just enable thinking and planning all the time.
+
+72
+00:03:18,134 --> 00:03:20,818
+Well, you certainly can, just keep in mind that planning
+
+73
+00:03:20,878 --> 00:03:23,443
+and thinking consume additional tokens, so there
+
+74
+00:03:23,484 --> 00:03:26,087
+is a cost associated with using them. After
+
+75
+00:03:26,127 --> 00:03:28,893
+a couple of minutes of work, it looks like the feature is complete. So
+
+76
+00:03:28,913 --> 00:03:31,736
+I'm going to go back over to my editor and test this out. So
+
+77
+00:03:31,776 --> 00:03:34,360
+right away, we can see that we get some better status information here
+
+78
+00:03:34,420 --> 00:03:37,084
+than what we have before. Users are now being told that a file
+
+79
+00:03:37,104 --> 00:03:39,848
+is being created. And if I send in a followed request,
+
+80
+00:03:40,088 --> 00:03:42,632
+maybe to change the title. Hopefully
+
+81
+00:03:42,693 --> 00:03:45,395
+now on the follow-up, we'll see something about editing that file.
+
+82
+00:03:45,937 --> 00:03:48,681
+So there we go. So now we're editing the app.jsx file.
+
+83
+00:03:49,102 --> 00:03:51,625
+Well, I would say Claude definitely succeeded in implementing
+
+84
+00:03:51,645 --> 00:03:54,197
+this feature. Now that we have made some changes to this
+
+85
+00:03:54,257 --> 00:03:57,390
+project, we should probably commit our changes. Claude
+
+86
+00:03:57,411 --> 00:04:00,081
+Code is a solid Git Assistant. We can ask it to
+
+87
+00:04:00,122 --> 00:04:02,674
+stage and commit our changes and it will write a
+
+88
+00:04:02,734 --> 00:04:04,401
+descriptive commit message for us.

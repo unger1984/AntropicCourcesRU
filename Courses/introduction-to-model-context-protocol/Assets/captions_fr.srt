@@ -1,0 +1,91 @@
+1
+00:00:00,031 --> 00:00:02,674
+Bienvenue dans ce cours axé sur les débuts avec
+
+2
+00:00:02,714 --> 00:00:05,258
+le modèle de contexte protocole. Je m'appelle Stephen Grider
+
+3
+00:00:05,458 --> 00:00:08,643
+et je vais vous guider à travers tout ce que vous devez savoir sur MCP.
+
+4
+00:00:09,323 --> 00:00:11,926
+Commençons d'abord par comprendre exactement ce que nous allons couvrir dans
+
+5
+00:00:11,946 --> 00:00:14,490
+les prochaines vidéos. Nous commencerons par un aperçu
+
+6
+00:00:14,509 --> 00:00:17,254
+de MCP et comprendrons quels problèmes il est destiné
+
+7
+00:00:17,314 --> 00:00:19,836
+à résoudre. Nous commencerons ensuite à examiner les bases
+
+8
+00:00:19,937 --> 00:00:23,082
+de l'architecture MCP en couvrant les responsabilités
+
+9
+00:00:23,262 --> 00:00:25,961
+des clients et des serveurs MCP. Ensuite
+
+10
+00:00:26,021 --> 00:00:28,727
+nous passerons aux trois composants de base d'un serveur MCP.
+
+11
+00:00:28,766 --> 00:00:31,591
+Premièrement, nous examinerons les outils, qui sont destinés
+
+12
+00:00:31,611 --> 00:00:34,295
+à être consommés par les modèles de langage. Après
+
+13
+00:00:34,335 --> 00:00:36,939
+cela, nous étudierons les ressources, qui permettent à un serveur de
+
+14
+00:00:36,999 --> 00:00:39,743
+partager des données avec les clients. Et enfin, les invites,
+
+15
+00:00:40,024 --> 00:00:42,588
+qui fourniront des instructions précises aux modèles
+
+16
+00:00:42,648 --> 00:00:45,201
+de langage. Il y a beaucoup de contenu à aborder,
+
+17
+00:00:45,241 --> 00:00:47,828
+il y a donc quelques prérequis de votre côté.
+
+18
+00:00:47,868 --> 00:00:50,695
+Premièrement, vous devez avoir quelques connaissances de base en Python.
+
+19
+00:00:50,735 --> 00:00:53,582
+Deuxièmement, nous allons écrire du code,
+
+20
+00:00:53,823 --> 00:00:57,031
+et cela nécessitera une installation locale de Python. Nous
+
+21
+00:00:57,072 --> 00:00:59,880
+gérerons notre projet avec le CLI UV.
+
+22
+00:01:00,240 --> 00:01:02,987
+Et si vous ne l'avez pas installé, je vous recommande de le télécharger maintenant. Je
+
+23
+00:01:03,008 --> 00:01:04,311
+afficherai un lien à l'écran.

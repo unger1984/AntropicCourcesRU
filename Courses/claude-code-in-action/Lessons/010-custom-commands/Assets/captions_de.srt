@@ -1,0 +1,151 @@
+1
+00:00:00,031 --> 00:00:02,613
+Wenn Sie Claude Code ausführen, können Sie einen Schrägstrich eingeben
+
+2
+00:00:02,633 --> 00:00:05,235
+und sehen eine Reihe von Befehlen, die in Claude Code integriert sind
+
+3
+00:00:05,277 --> 00:00:07,799
+standardmäßig. Zusätzlich zu diesen Standardbefehlen
+
+4
+00:00:08,079 --> 00:00:11,323
+können Sie auch ganz einfach Ihre eigenen benutzerdefinierten Befehle hinzufügen. Benutzerdefinierte
+
+5
+00:00:11,362 --> 00:00:14,185
+Befehle sind nützlich, um sich wiederholende Aufgaben zu automatisieren, die
+
+6
+00:00:14,205 --> 00:00:16,708
+Sie häufig ausführen. Ich zeige Ihnen ein Beispiel dafür, wie
+
+7
+00:00:16,728 --> 00:00:19,350
+man einen erstellt. Innerhalb meines Projektverzeichnisses
+
+8
+00:00:19,431 --> 00:00:22,053
+finde ich den Ordner .Claude. Dort darin
+
+9
+00:00:22,074 --> 00:00:24,577
+erstelle ich ein neues Verzeichnis namens commands. Und dann darin
+
+10
+00:00:24,617 --> 00:00:27,539
+erstelle ich eine neue Datei namens audit.md.
+
+11
+00:00:28,263 --> 00:00:30,850
+Der Name der Datei, die wir erstellen, in diesem Fall audit,
+
+12
+00:00:30,870 --> 00:00:33,398
+wird der Name des Befehls sein, den wir schließlich ausführen. Das
+
+13
+00:00:33,438 --> 00:00:36,445
+Ziel dieses Befehls wird es sein, alle verschiedenen Abhängigkeiten zu prüfen,
+
+14
+00:00:36,466 --> 00:00:38,973
+die in dieses Projekt installiert wurden, sie zu aktualisieren,
+
+15
+00:00:39,033 --> 00:00:41,740
+falls es Schwachstellen gibt, und dann Tests auszuführen,
+
+16
+00:00:41,801 --> 00:00:44,767
+um sicherzustellen, dass nichts beschädigt wurde. Sobald
+
+17
+00:00:44,786 --> 00:00:47,491
+Sie die Befehlsdatei erstellt haben, starten Sie Claude
+
+18
+00:00:47,551 --> 00:00:50,356
+Code neu. Vergessen Sie nicht, ihn neu zu starten. Wenn Sie Claude
+
+19
+00:00:50,396 --> 00:00:52,920
+Code wieder öffnen, geben Sie /audit ein. Dies
+
+20
+00:00:52,960 --> 00:00:55,505
+zeigt dann den Befehl an, den Sie gerade erstellt haben. Sie können ihn dann
+
+21
+00:00:55,564 --> 00:00:58,249
+ausführen, und in diesem Fall wird er genau das tun, was wir von Claude
+
+22
+00:00:58,289 --> 00:01:01,054
+verlangen. Er wird einen Befehl ausführen, prüfen, ob es anfällige
+
+23
+00:01:01,094 --> 00:01:03,758
+Pakete gibt, diese gegebenenfalls beheben und dann Tests ausführen.
+
+24
+00:01:03,817 --> 00:01:06,683
+Befehle können auch Argumente empfangen. Lassen
+
+25
+00:01:06,703 --> 00:01:09,447
+Sie mich ein Beispiel zeigen. Ich werde einen weiteren Befehl namens write
+
+26
+00:01:09,608 --> 00:01:12,334
+test erstellen. Jedes Mal, wenn ich diesen Befehl ausführe, möchte ich
+
+27
+00:01:12,373 --> 00:01:14,998
+einige Tests für eine ganz bestimmte Datei in meinem Projekt erstellen.
+
+28
+00:01:15,018 --> 00:01:17,623
+Im Text des Befehls füge ich einen Platzhalter namens $arguments ein. Jedes Mal, wenn
+
+29
+00:01:17,643 --> 00:01:20,948
+ich den Befehl ausführe, wenn ich einen Pfad zu einer Datei übergib, wird
+
+30
+00:01:20,968 --> 00:01:23,694
+dieser Pfad an der Stelle $arguments eingefügt.
+
+31
+00:01:23,793 --> 00:01:26,939
+Ich kann also jetzt Claude Code erneut starten und dann den
+
+32
+00:01:27,088 --> 00:01:29,593
+Befehl write test ausführen. Um es klarzustellen,
+
+33
+00:01:29,632 --> 00:01:32,137
+die Argumente, die wir übergeben, müssen kein Dateipfad
+
+34
+00:01:32,277 --> 00:01:34,840
+sein. Es kann jede Zeichenkette sein, die wir übergeben möchten.
+
+35
+00:01:34,861 --> 00:01:37,745
+Ich könnte also beiläufig Tests für eine Datei in einem bestimmten
+
+36
+00:01:37,825 --> 00:01:40,689
+Ordner anfordern und Claude damit eine kleine Richtung geben,
+
+37
+00:01:40,730 --> 00:01:43,254
+wohin er schauen soll.
+
+38
+00:01:43,313 --> 00:01:44,034
+wohin er schauen soll.

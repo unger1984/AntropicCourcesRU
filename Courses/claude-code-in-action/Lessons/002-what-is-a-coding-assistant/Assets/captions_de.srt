@@ -1,0 +1,459 @@
+1
+00:00:00,031 --> 00:00:02,694
+In diesem Video werden wir ein besseres Verständnis dafür entwickeln,
+
+2
+00:00:02,734 --> 00:00:05,256
+was ein Coding Assistant ist. Ja,
+
+3
+00:00:05,538 --> 00:00:08,180
+ein Coding Assistant ist ein Werkzeug, das Code schreibt, aber ich möchte
+
+4
+00:00:08,201 --> 00:00:11,025
+Ihnen ein tieferes Verständnis dafür vermitteln, was hinter den Kulissen passiert.
+
+5
+00:00:11,705 --> 00:00:14,269
+Denn wenn Sie verstehen, was ein Coding Assistant wirklich
+
+6
+00:00:14,308 --> 00:00:17,371
+tut und wie er funktioniert, werden Sie eine größere Wertschätzung dafür haben,
+
+7
+00:00:17,713 --> 00:00:20,216
+was einen wirklich erstaunlichen Assistenten ausmacht, der Ihr Team
+
+8
+00:00:20,275 --> 00:00:22,838
+ergänzt. Hier ist eine Möglichkeit, wie Sie sich vorstellen können,
+
+9
+00:00:22,859 --> 00:00:25,763
+was ein Coding Assistant tut. Ein Assistent
+
+10
+00:00:25,864 --> 00:00:28,588
+erhält zunächst eine Aufgabe. In diesem Fall muss der Assistent
+
+11
+00:00:28,667 --> 00:00:31,411
+vielleicht einen Fehler beheben, basierend auf einer Fehlermeldung.
+
+12
+00:00:32,112 --> 00:00:35,017
+Diese Aufgabe wird intern an ein Sprachmodell weitergeleitet, das
+
+13
+00:00:35,057 --> 00:00:37,661
+herausfinden muss, wie das Problem gelöst werden kann. Nun, verschiedene
+
+14
+00:00:37,701 --> 00:00:40,526
+Sprachmodelle lösen Probleme in sehr unterschiedlichen Stilen, je
+
+15
+00:00:40,545 --> 00:00:43,369
+nach Komplexität der Aufgabe. Aber in vielen Fällen arbeiten sie
+
+16
+00:00:43,429 --> 00:00:46,088
+sehr ähnlich wie ein Mensch. Es
+
+17
+00:00:46,148 --> 00:00:48,712
+muss möglicherweise zuerst Kontext sammeln, indem es versteht, worauf sich der Fehler
+
+18
+00:00:48,731 --> 00:00:51,335
+bezieht, welcher Bereich der Codebasis den Fehler auslöst
+
+19
+00:00:51,496 --> 00:00:54,179
+und welche Dateien relevant zu sein scheinen. Sobald
+
+20
+00:00:54,200 --> 00:00:56,783
+es diese Informationen gesammelt hat, muss es einen Plan formulieren,
+
+21
+00:00:56,843 --> 00:00:59,987
+wie es die Aufgabe tatsächlich erfüllen wird.
+
+22
+00:01:00,008 --> 00:01:02,712
+In diesem Fall könnte es entscheiden, etwas Code zu ändern und dann
+
+23
+00:01:02,911 --> 00:01:05,435
+einen Test auszuführen oder zu schreiben, um zu überprüfen, ob das Problem tatsächlich
+
+24
+00:01:05,515 --> 00:01:08,159
+behoben ist. Schließlich wird es eine Aktion ausführen. In
+
+25
+00:01:08,179 --> 00:01:10,683
+diesem Fall könnte dies das Aktualisieren einer Datei und das Ausführen
+
+26
+00:01:10,722 --> 00:01:13,769
+des Tests sein. Nun möchte ich Ihnen weitere Informationen
+
+27
+00:01:13,909 --> 00:01:16,414
+zu diesem gesamten Prozess geben. Insbesondere möchte ich Sie bitten,
+
+28
+00:01:16,453 --> 00:01:18,957
+zu bemerken, dass die ersten und letzten Schritte hier
+
+29
+00:01:19,317 --> 00:01:21,962
+vom Coding Assistant verlangen, tatsächlich etwas zu tun.
+
+30
+00:01:22,343 --> 00:01:25,007
+Mit anderen Worten, tatsächlich Informationen aus der Außenwelt zu sammeln
+
+31
+00:01:25,447 --> 00:01:28,191
+oder die Außenwelt in irgendeiner Weise zu beeinflussen. Zum
+
+32
+00:01:28,251 --> 00:01:30,896
+Beispiel muss der Assistent, um Kontext zu sammeln, vielleicht
+
+33
+00:01:30,936 --> 00:01:34,281
+eine Datei lesen oder Online-Dokumentation abrufen.
+
+34
+00:01:34,260 --> 00:01:37,087
+Und um eine Aktion auszuführen, muss der Assistent möglicherweise tatsächlich
+
+35
+00:01:37,126 --> 00:01:40,093
+einen Befehl ausführen oder eine Datei bearbeiten. Nun,
+
+36
+00:01:40,153 --> 00:01:42,757
+dass ein Sprachmodell tatsächlich diese Dinge tut,
+
+37
+00:01:42,778 --> 00:01:45,283
+ist ein wenig kniffliger, als es tatsächlich klingt.
+
+38
+00:01:45,983 --> 00:01:48,810
+Lassen Sie mich Ihnen helfen zu verstehen, warum das so ist. Stellen
+
+39
+00:01:48,849 --> 00:01:51,575
+wir uns vor, wir interagieren direkt mit einem Sprachmodell,
+
+40
+00:01:51,915 --> 00:01:54,662
+sodass es nicht innerhalb eines Coding Assistants oder Ähnlichem läuft.
+
+41
+00:01:54,861 --> 00:01:57,385
+Stellen wir uns dann vor, wir fragen dieses
+
+42
+00:01:57,447 --> 00:02:00,311
+Sprachmodell direkt, welcher Code in der Datei main.go steht.
+
+43
+00:02:00,350 --> 00:02:03,135
+Sprachmodelle, die außerhalb des Kontexts eines Coding
+
+44
+00:02:03,176 --> 00:02:05,780
+Assistants oder eines ähnlichen Tools laufen, haben nicht von Natur aus
+
+45
+00:02:05,879 --> 00:02:08,524
+die Fähigkeit, eine Datei zu lesen oder einen
+
+46
+00:02:08,645 --> 00:02:11,329
+Befehl auszuführen oder Ähnliches. Sprach-
+
+47
+00:02:11,348 --> 00:02:13,893
+modelle nehmen Inhalte wie Text auf und geben
+
+48
+00:02:13,932 --> 00:02:16,837
+Text zurück. Das ist alles. Das ist der gesamte Umfang
+
+49
+00:02:16,877 --> 00:02:19,382
+ihrer Fähigkeiten. Und das gilt für alle Sprach-
+
+50
+00:02:19,521 --> 00:02:22,145
+modelle. Wenn Sie also Text in ein einfaches Sprachmodell senden und es bitten, eine Datei zu lesen,
+
+51
+00:02:22,186 --> 00:02:24,810
+würde es höchstwahrscheinlich antworten, dass es nicht die
+
+52
+00:02:24,931 --> 00:02:27,534
+Fähigkeit hat, Dateien zu lesen. Lassen Sie mich Ihnen also zeigen,
+
+53
+00:02:27,895 --> 00:02:30,479
+was Coding Assistants und viele, viele andere Tools
+
+54
+00:02:30,519 --> 00:02:33,103
+tun, um einem Sprachmodell das Lesen einer Datei zu ermöglichen. Hier ist also, was passiert.
+
+55
+00:02:33,143 --> 00:02:35,747
+Wenn Sie eine Anfrage an Ihren Coding Assistant senden,
+
+56
+00:02:35,806 --> 00:02:38,371
+hängt der Coding Assistant im Hintergrund automatisch
+
+57
+00:02:38,391 --> 00:02:41,054
+viele Texte an Ihre Anfrage an.
+
+58
+00:02:41,074 --> 00:02:43,678
+In diesem speziellen Fall können wir uns vorstellen, dass der Coding Assistant
+
+59
+00:02:43,757 --> 00:02:46,441
+einen Text hinzufügt, der sagt: Wenn Sie,
+
+60
+00:02:46,602 --> 00:02:49,185
+Sprachmodell, eine Datei lesen wollen, antworten Sie mit
+
+61
+00:02:49,225 --> 00:02:51,808
+dieser sehr sorgfältig formatierten Nachricht. Zum
+
+62
+00:02:51,869 --> 00:02:54,453
+Beispiel, vielleicht etwas wie: Datei lesen:,
+
+63
+00:02:54,634 --> 00:02:57,217
+und dann der Name der zu lesenden Datei. In diesem
+
+64
+00:02:57,337 --> 00:03:00,061
+Fall würde das Sprachmodell hoffentlich erkennen, dass es zum
+
+65
+00:03:00,100 --> 00:03:02,963
+Beantworten unserer Frage diese Datei lesen muss. Es könnte also antworten mit: Datei lesen:
+
+66
+00:03:03,145 --> 00:03:05,828
+main.go. Nun wäre der Coding
+
+67
+00:03:05,868 --> 00:03:08,712
+Assistant dafür verantwortlich, diese sehr sorgfältig
+
+68
+00:03:08,791 --> 00:03:11,715
+formatierte Nachricht zu empfangen und zu erkennen, dass das Sprachmodell
+
+69
+00:03:11,755 --> 00:03:14,640
+eine Aktion ausführen möchte, indem es eine Datei liest. Der
+
+70
+00:03:14,679 --> 00:03:17,362
+Coding Assistant wäre also dann dafür verantwortlich, die Datei tatsächlich zu lesen
+
+71
+00:03:17,402 --> 00:03:19,946
+und den Inhalt dieser Datei zurück an das Sprachmodell zu senden. Nun, da das Sprach-
+
+72
+00:03:20,066 --> 00:03:22,809
+modell den tatsächlichen Inhalt dieser Datei erhalten hat,
+
+73
+00:03:22,849 --> 00:03:25,733
+kann es eine endgültige Antwort schreiben, die an uns zurückgesendet wird,
+
+74
+00:03:25,872 --> 00:03:28,417
+in der es vielleicht sagt: Nun, ich habe diese Datei gelesen und sie
+
+75
+00:03:28,437 --> 00:03:31,040
+enthält eine bestimmte Menge an Code, was auch immer darin steht. Dieses gesamte System, einem
+
+76
+00:03:31,060 --> 00:03:33,705
+Sprachmodell diese zusätzlichen kleinen Anweisungen zu geben,
+
+77
+00:03:33,925 --> 00:03:36,629
+es zu bitten, auf eine gut formatierte oder sorgfältig
+
+78
+00:03:36,669 --> 00:03:39,412
+formatierte Weise zu antworten, wird als Tool-Nutzung bezeichnet.
+
+79
+00:03:39,412 --> 00:03:42,317
+Tools werden also verwendet, um Modellen zusätzliche Fähigkeiten zu verleihen.
+
+80
+00:03:42,778 --> 00:03:45,321
+Das Modell ist dafür verantwortlich, auf eine ganz bestimmte
+
+81
+00:03:45,361 --> 00:03:48,204
+Art und Weise zu antworten, und dann wäre etwas wie unser Coding Assistant dafür verantwortlich,
+
+82
+00:03:48,245 --> 00:03:51,030
+tatsächlich das zu tun, was versprochen wurde. Also
+
+83
+00:03:51,110 --> 00:03:53,894
+tatsächlich eine Datei lesen, eine Datei schreiben oder was auch immer.
+
+84
+00:03:54,178 --> 00:03:56,843
+Nochmals, so funktioniert jedes einzelne Sprachmodell. Sie alle arbeiten mit dieser Idee der Tool-Nutzung.
+
+85
+00:03:57,684 --> 00:04:00,449
+Nun, hier ist der entscheidende Punkt. Die Claude-Reihe
+
+86
+00:04:00,488 --> 00:04:03,032
+von Modellen, also Opus, Sonnet und Haiku,
+
+87
+00:04:03,393 --> 00:04:06,076
+sind besonders gut darin, zu verstehen, was
+
+88
+00:04:06,137 --> 00:04:08,740
+Tools tun, wann sie aufgerufen werden und sie tatsächlich
+
+89
+00:04:08,781 --> 00:04:11,524
+zu nutzen, um Aufgaben effektiv zu erledigen und sie
+
+90
+00:04:11,705 --> 00:04:14,368
+in wirklich interessanten Kombinationen zu nutzen, um
+
+91
+00:04:14,389 --> 00:04:17,012
+komplexere Aufgaben zu bewältigen.
+
+92
+00:04:17,012 --> 00:04:19,717
+Claudes starke Tool-Nutzung ist die absolute Kernstärke
+
+93
+00:04:19,757 --> 00:04:22,320
+von Claude Code als Coding Assistant. Hier ist der Grund.
+
+94
+00:04:22,359 --> 00:04:25,085
+Erstens, wie ich gerade erwähnt habe, kann Claude mit besserer Tool-Nutzung
+
+95
+00:04:25,246 --> 00:04:28,070
+komplexere Aufgaben bewältigen.
+
+96
+00:04:28,091 --> 00:04:30,834
+Zweitens ist Claude Code selbst erweiterbar, sodass
+
+97
+00:04:30,875 --> 00:04:33,840
+es wirklich einfach ist, neue Tools zu Claude hinzuzufügen. Und
+
+98
+00:04:33,900 --> 00:04:36,805
+Claude wird diese Tools gerne nutzen.
+
+99
+00:04:36,785 --> 00:04:39,370
+Dies ist besonders wichtig für die anhaltende Relevanz,
+
+100
+00:04:39,730 --> 00:04:42,555
+angesichts der schnellen Veränderungen, die wir in der Welt der Entwicklung erleben.
+
+101
+00:04:42,575 --> 00:04:45,480
+Mit anderen Worten, Claude Code ist ein Assistent, der
+
+102
+00:04:45,501 --> 00:04:48,145
+sich mit Ihnen in den kommenden Jahren verändern wird. Und
+
+103
+00:04:48,185 --> 00:04:50,849
+schließlich erhalten Sie mit verbesserter Tool-Nutzung oft eine bessere
+
+104
+00:04:50,889 --> 00:04:53,512
+Sicherheit, da Claude Ihre Codebasis effektiv durchsuchen kann, um relevante Codes zu finden, ohne auf
+
+105
+00:04:53,532 --> 00:04:56,216
+Indizierung angewiesen zu sein, bei der oft Ihre gesamte Codebasis
+
+106
+00:04:56,235 --> 00:04:58,879
+an externe Server gesendet werden muss.
+
+107
+00:04:58,879 --> 00:05:01,503
+Machen wir eine kurze Wiederholung dessen, was wir in diesem Video über das Wesen eines Coding Assistants gelernt haben. Denken Sie also daran,
+
+108
+00:05:01,523 --> 00:05:04,206
+Coding Assistants verwenden intern Sprachmodelle, um
+
+109
+00:05:04,266 --> 00:05:07,031
+verschiedene Aufgaben zu erledigen. Diese Sprachmodelle müssen
+
+110
+00:05:07,051 --> 00:05:09,674
+wissen, wie sie Tools nutzen, um die
+
+111
+00:05:09,734 --> 00:05:12,779
+überwiegende Mehrheit der ihnen übertragenen Aufgaben zu bearbeiten. Tools werden verwendet, um
+
+112
+00:05:12,839 --> 00:05:15,783
+Dateien zu lesen, Dateien zu schreiben, Befehle auszuführen und im Wesentlichen alles
+
+113
+00:05:15,923 --> 00:05:18,546
+andere, das nicht nur die Generierung von Text beinhaltet.
+
+114
+00:05:18,527 --> 00:05:21,292
+Nicht alle Sprachmodelle nutzen Tools auf demselben Niveau, und dies hat große Auswirkungen auf die
+
+115
+00:05:21,312 --> 00:05:23,935
+Gesamteffizienz eines Coding Assistants.
