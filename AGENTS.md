@@ -72,6 +72,12 @@ The required end state is:
 - `Courses/<slug>/Lessons/<lesson>/Assets/video_ru.mp4` is the preferred per-lesson Russian dubbed video when available.
 - `Courses/<slug>/Lessons/<lesson>/Assets/video_1080p.mp4` remains the original lesson video and must be preserved.
 - `Scripts/build_ru_dub.py` generates Russian dubbing from `captions_ru.srt` and muxes `video_ru.mp4`.
+- After a course has been fully built and verified in `docs/`, duplicate publishable media binaries may be pruned from `Courses/` to avoid storing the same large files twice.
+- Media pruning must never remove source-of-truth inputs such as:
+  - `Source/lesson-page.html`
+  - `Source/summary_ru.html`
+  - `Assets/captions_ru.srt`
+  - `lesson.json`
 - If a lesson has Russian dubbing, the final local page must expose both:
   - Russian dubbed media;
   - original English media.
@@ -208,6 +214,14 @@ Required outputs for a fully localized lesson video:
 - original `Assets/video_1080p.mp4`
 
 Optional intermediate artifacts may exist temporarily, but the final lesson should rely on the outputs above.
+
+After the course is fully translated, built, and verified in `docs/`, it is allowed to prune duplicated binary media from `Courses/` if and only if:
+- the corresponding published file already exists in `docs/`;
+- the file being removed is a duplicated binary publish artifact such as:
+  - `video_1080p.mp4`
+  - `video_ru.mp4`
+  - `poster_image.jpg`
+- non-duplicated translation/source inputs remain in `Courses/`.
 
 ## Definition of "lesson finished"
 

@@ -1,0 +1,50 @@
+<p>Кроме hooks <code>PreToolUse</code> и <code>PostToolUse</code>, которые обсуждались в этом курсе, есть и другие:</p>
+<ul>
+<li><code>Notification</code> — запускается, когда Claude Code отправляет уведомление: например, когда Claude нужно разрешение на использование инструмента или когда Claude Code бездействовал 60 секунд</li>
+<li><code>Stop</code> — запускается, когда Claude Code завершил ответ</li>
+<li><code>SubagentStop</code> — запускается, когда завершился сабагент (в интерфейсе он отображается как «Task»)</li>
+<li><code>PreCompact</code> — запускается перед операцией compact, ручной или автоматической</li>
+<li><code>UserPromptSubmit</code> — запускается, когда пользователь отправляет промпт, до того как Claude начнёт его обрабатывать</li>
+<li><code>SessionStart</code> — запускается при старте или возобновлении сессии</li>
+<li><code>SessionEnd</code> — запускается при завершении сессии</li>
+</ul>
+<p><strong>И вот в чём сложность:</strong></p>
+<ol>
+<li>Вход через stdin для вашей команды меняется в зависимости от типа выполняемого hook (<code>PreToolUse</code>, <code>PostToolUse</code>, <code>Notification</code> и т.д.)</li>
+<li>Поле <code>tool_input</code> внутри этого ввода тоже меняется в зависимости от инструмента, который был вызван (в случае hooks <code>PreToolUse</code> и <code>PostToolUse</code>)</li>
+</ol>
+<p>Например, вот пример stdin для hook, где hook был <code>PostToolUse</code> и отслеживал использование инструмента <code>TodoWrite</code>. Для справки: это тот инструмент, который Claude использует для ведения списка задач.</p>
+<pre class="language-javascript"><code>{
+  "session_id": "9ecf22fa-edf8-4332-ae85-b6d5456eda64",
+  "transcript_path": "&lt;path_to_transcript&gt;",
+  "hook_event_name": "PostToolUse",
+  "tool_name": "TodoWrite",
+  "tool_input": {
+    "todos": [{ "content": "write a readme", "status": "pending", "priority": "medium", "id": "1" }]
+  },
+  "tool_response": {
+    "oldTodos": [],
+    "newTodos": [{ "content": "write a readme", "status": "pending", "priority": "medium", "id": "1" }]
+  }
+}</code></pre>
+<p>А для сравнения вот пример ввода для hook <code>Stop</code>:</p>
+<pre class="language-javascript"><code>{
+  "session_id": "af9f50b6-f042-4773-b3e2-c3a4814765ce",
+  "transcript_path": "&lt;path_to_transcript&gt;",
+  "hook_event_name": "Stop",
+  "stop_hook_active": false
+}</code></pre>
+<p><span style="font-size: 14pt;"><strong>Как видите, stdin для вашей команды может сильно отличаться в зависимости от самого hook (<code>PreToolUse</code>, <code>PostToolUse</code>, <code>Stop</code> и т.д.) <em>и</em> от matcher-а (в случае <code>PreToolUse</code> и <code>PostToolUse</code>). Из-за этого писать hooks бывает сложно: вы можете просто не знать точную структуру входных данных для своей команды.</strong></span></p>
+<p>Чтобы справиться с этой проблемой, можно сделать вспомогательный hook примерно так:</p>
+<pre class="language-javascript"><code>"PostToolUse": [ // Или "PreToolUse" или "Stop" и т.д.
+  {
+    "matcher": "*",
+    "hooks": [
+      {
+        "type": "command",
+        "command": "jq . &gt; post-log.json"
+      }
+    ]
+  },
+]</code></pre>
+<p>Обратите внимание на команду. Она записывает входные данные этого hook в файл <code>post-log.json</code>, чтобы вы могли посмотреть, что именно было передано вашей команде. <strong>Так гораздо проще понять, какие данные ваша команда должна анализировать.</strong></p>
