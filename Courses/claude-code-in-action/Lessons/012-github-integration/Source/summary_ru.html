@@ -1,0 +1,70 @@
+<p>Claude Code предлагает официальную интеграцию с GitHub, которая позволяет Claude работать внутри GitHub Actions. У этой интеграции два основных сценария: поддержка упоминаний в issues и pull request, а также автоматические обзоры pull request.</p>
+<h2>Настройка интеграции</h2>
+<p>Чтобы начать, запустите в Claude команду <code>/install-github-app</code>. Она проведет вас через несколько шагов:</p>
+<ul>
+<li>Установить приложение Claude Code в GitHub</li>
+<li>Добавить API-ключ</li>
+<li>Автоматически создать pull request с файлами workflow</li>
+</ul>
+<p>Созданный pull request добавляет в репозиторий два GitHub Actions. После слияния файлы workflow окажутся в каталоге <code>.github/workflows</code>.</p>
+<h2>Стандартные действия GitHub</h2>
+<p>Интеграция предлагает два основных workflow:</p>
+<h3>Действие упоминания</h3>
+<p>В любом issue или pull request можно упомянуть Claude с помощью <code>@claude</code>. После упоминания Claude:</p>
+<ul>
+<li>Проанализирует запрос и составит план задачи</li>
+<li>Выполнит задачу с полным доступом к вашей кодовой базе</li>
+<li>Ответит с результатом прямо в issue или pull request</li>
+</ul>
+<h3>Действие pull request</h3>
+<p>Когда вы создаете pull request, Claude автоматически:</p>
+<ul>
+<li>Проверяет предложенные изменения</li>
+<li>Анализирует влияние модификаций</li>
+<li>Публикует подробный отчет в pull request</li>
+</ul>
+<h2>Настройка workflow</h2>
+<p>После слияния первоначального pull request вы можете настроить файлы workflow под нужды своего проекта. Вот как можно расширить workflow для упоминаний:</p>
+<h3>Добавление настройки проекта</h3>
+<p>Перед запуском Claude можно добавить шаги подготовки окружения:</p>
+<pre><code>- name: Project Setup
+  run: |
+    npm run setup
+    npm run dev:daemon</code></pre>
+<h3>Пользовательские инструкции</h3>
+<p>Передайте Claude контекст о настройке проекта:</p>
+<pre><code>custom_instructions: |
+  The project is already set up with all dependencies installed.
+  The server is already running at localhost:3000. Logs from it
+  are being written to logs.txt. If needed, you can query the
+  db with the 'sqlite3' cli. If needed, use the mcp__playwright
+  set of tools to launch a browser and interact with the app.</code></pre>
+<h3>Конфигурация MCP-сервера</h3>
+<p>Можно настроить MCP-серверы, чтобы дать Claude дополнительные возможности:</p>
+<pre><code>mcp_config: |
+  {
+    "mcpServers": {
+      "playwright": {
+        "command": "npx",
+        "args": [
+          "@playwright/mcp@latest",
+          "--allowed-origins",
+          "localhost:3000;cdn.tailwindcss.com;esm.sh"
+        ]
+      }
+    }
+  }</code></pre>
+<h2>Права доступа к инструментам</h2>
+<p>При запуске Claude в GitHub Actions нужно явно перечислить все разрешенные инструменты. Это особенно важно при использовании MCP-серверов.</p>
+<pre><code>allowed_tools: "Bash(npm:*),Bash(sqlite3:*),mcp__playwright__browser_snapshot,mcp__playwright__browser_click,..."<br /><br /></code></pre>
+<p>В отличие от локальной разработки, в GitHub Actions нет короткого пути для прав доступа. Каждый инструмент из каждого MCP-сервера нужно перечислять отдельно.</p>
+<h2>Лучшие практики</h2>
+<p>При настройке GitHub-интеграции Claude:</p>
+<ul>
+<li>Начинайте со стандартных workflow и настраивайте их постепенно</li>
+<li>Используйте пользовательские инструкции, чтобы передать контекст проекта</li>
+<li>Явно указывайте права доступа к инструментам при использовании MCP-серверов</li>
+<li>Проверяйте workflow на простых задачах до перехода к сложным</li>
+<li>Учитывайте конкретные потребности проекта при добавлении дополнительных шагов</li>
+</ul>
+<p>GitHub-интеграция превращает Claude из помощника разработчика в автоматического члена команды, который может выполнять задачи, проверять код и давать рекомендации прямо внутри вашего GitHub-процесса.</p>

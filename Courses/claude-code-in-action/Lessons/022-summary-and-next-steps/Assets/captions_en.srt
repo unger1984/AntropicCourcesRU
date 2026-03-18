@@ -1,0 +1,75 @@
+1
+00:00:00,031 --> 00:00:02,556
+I hope you've enjoyed this overview of Claude
+
+2
+00:00:02,597 --> 00:00:05,203
+Code. Before we finish up, I want to give you some advice on
+
+3
+00:00:05,224 --> 00:00:07,730
+where to go from here. First, keep in mind that
+
+4
+00:00:07,790 --> 00:00:10,476
+Claude Code is constantly changing and in active
+
+5
+00:00:10,496 --> 00:00:13,182
+development. So keep an eye on the homepage of Claude
+
+6
+00:00:13,223 --> 00:00:16,070
+Code. I've got the address to it right there. And watch for new features
+
+7
+00:00:16,250 --> 00:00:19,056
+and techniques to come out. Secondly, I really recommend
+
+8
+00:00:19,096 --> 00:00:21,920
+you experiment. There's a lot of different ways to customize
+
+9
+00:00:21,981 --> 00:00:24,545
+Claude Code and really tailor it to your particular use case.
+
+10
+00:00:25,187 --> 00:00:28,111
+Try to author some custom commands or put extra instructions
+
+11
+00:00:28,211 --> 00:00:30,937
+in your Claude MD file. And also try out a couple
+
+12
+00:00:30,977 --> 00:00:33,540
+of different MCP servers beyond the ones we looked at inside
+
+13
+00:00:33,581 --> 00:00:36,365
+this course. Finally, automate.
+
+14
+00:00:36,548 --> 00:00:39,155
+Take a look at the GitHub integration, and think of some
+
+15
+00:00:39,195 --> 00:00:41,801
+different common tasks that you go through all the time, and think
+
+16
+00:00:41,841 --> 00:00:44,649
+of some ways you can delegate those to Claude automatically based
+
+17
+00:00:44,710 --> 00:00:47,438
+upon events that occur inside of your GitHub repository.
+
+18
+00:00:48,320 --> 00:00:50,926
+Well, again, I hope you enjoyed this course, and enjoy
+
+19
+00:00:50,947 --> 00:00:52,430
+your time working with Claude Code.

@@ -1,0 +1,13 @@
+#EXTM3U
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=170000,RESOLUTION=480x270,CODECS="mp4a.40.2,avc1.42c015",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69bb13a3_1e3820d41efcec0115e9af8f8d489dc524d949b9/sites/Lc4Rn1s0/media/WpOJxKsp/versions/WpOJxKsp/manifest.ism/manifest-audio_0_V6DvV1cL_SqrjOTv9=112009-video_0_V6DvV1cL_7CBwUOpI=45206.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=390000,RESOLUTION=1920x1080,CODECS="mp4a.40.2,avc1.640028",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69bb13a3_1e3820d41efcec0115e9af8f8d489dc524d949b9/sites/Lc4Rn1s0/media/WpOJxKsp/versions/WpOJxKsp/manifest.ism/manifest-audio_0_V6DvV1cL_SqrjOTv9=112009-video_0_V6DvV1cL_7CBwUOpI=259259.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=280000,RESOLUTION=1280x720,CODECS="mp4a.40.2,avc1.4d401f",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69bb13a3_1e3820d41efcec0115e9af8f8d489dc524d949b9/sites/Lc4Rn1s0/media/WpOJxKsp/versions/WpOJxKsp/manifest.ism/manifest-audio_0_V6DvV1cL_SqrjOTv9=112009-video_0_V6DvV1cL_7CBwUOpI=155745.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=200000,RESOLUTION=720x406,CODECS="mp4a.40.2,avc1.4d401e",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69bb13a3_1e3820d41efcec0115e9af8f8d489dc524d949b9/sites/Lc4Rn1s0/media/WpOJxKsp/versions/WpOJxKsp/manifest.ism/manifest-audio_0_V6DvV1cL_SqrjOTv9=112009-video_0_V6DvV1cL_7CBwUOpI=73811.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=150000,RESOLUTION=320x180,CODECS="mp4a.40.2,avc1.42c00d",FRAME-RATE=30.0,CLOSED-CAPTIONS=NONE
+https://videos-cloudfront-usp.jwpsrv.com/69bb13a3_1e3820d41efcec0115e9af8f8d489dc524d949b9/sites/Lc4Rn1s0/media/WpOJxKsp/versions/WpOJxKsp/manifest.ism/manifest-audio_0_V6DvV1cL_SqrjOTv9=112009-video_0_V6DvV1cL_7CBwUOpI=26128.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=120000,CODECS="mp4a.40.2"
+https://videos-cloudfront-usp.jwpsrv.com/69bb13a3_1e3820d41efcec0115e9af8f8d489dc524d949b9/sites/Lc4Rn1s0/media/WpOJxKsp/versions/WpOJxKsp/manifest.ism/manifest-audio_0_V6DvV1cL_SqrjOTv9=112009.m3u8

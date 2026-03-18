@@ -1,0 +1,323 @@
+1
+00:00:00,031 --> 00:00:02,577
+Para ter uma ideia melhor de como os hooks funcionam, vamos
+
+2
+00:00:02,597 --> 00:00:05,283
+dar uma olhada em um novo projeto de amostra. Anexe esta
+
+3
+00:00:05,323 --> 00:00:07,891
+aula como um arquivo chamado Query.zip. Eu
+
+4
+00:00:07,931 --> 00:00:10,737
+encorajaria você a baixar este projeto e abrir seu editor de código
+
+5
+00:00:10,778 --> 00:00:13,365
+nele. Assim que tiver seu editor aberto, no
+
+6
+00:00:13,404 --> 00:00:16,672
+seu terminal, execute NPM Run Setup.
+
+7
+00:00:16,652 --> 00:00:19,236
+Isso vai instalar algumas dependências e preparar alguns
+
+8
+00:00:19,335 --> 00:00:21,899
+hooks para uso. Para entender melhor os
+
+9
+00:00:21,940 --> 00:00:24,623
+hooks, vamos criar os nossos dentro deste projeto. Então,
+
+10
+00:00:24,682 --> 00:00:27,286
+é o que eu quero que nosso hook faça. Dentro do
+
+11
+00:00:27,306 --> 00:00:30,451
+diretório raiz do nosso projeto, há um arquivo chamado .env.
+
+12
+00:00:31,152 --> 00:00:34,055
+Este arquivo contém algumas informações sensíveis. E,
+
+13
+00:00:34,155 --> 00:00:36,978
+por precaução, quero impedir completamente
+
+14
+00:00:37,039 --> 00:00:39,743
+que Claude leia este arquivo diretamente.
+
+15
+00:00:40,182 --> 00:00:42,847
+Deixe-me mostrar alguns diagramas para ajudá-lo a entender como
+
+16
+00:00:42,866 --> 00:00:45,409
+vamos montar este hook. O passo um é
+
+17
+00:00:45,469 --> 00:00:48,014
+decidir se precisamos de um hook de pré-uso de ferramenta ou um
+
+18
+00:00:48,154 --> 00:00:50,716
+de pós-uso de ferramenta. Neste cenário,
+
+19
+00:00:50,756 --> 00:00:53,441
+queremos impedir que Claude leia um arquivo específico.
+
+20
+00:00:53,921 --> 00:00:56,445
+Se criarmos um bloco de pós-uso de ferramenta, então teremos
+
+21
+00:00:56,484 --> 00:00:59,569
+executado nosso hook ou rodado nosso comando após
+
+22
+00:00:59,689 --> 00:01:02,273
+Claude já ter lido o arquivo. Então, neste caso,
+
+23
+00:01:02,332 --> 00:01:04,956
+precisamos definitivamente de um hook de pré-uso de ferramenta para
+
+24
+00:01:04,995 --> 00:01:07,719
+garantir que possamos impedir que a operação de leitura ocorra.
+
+25
+00:01:07,700 --> 00:01:10,325
+A próxima coisa que precisamos fazer é decidir exatamente que
+
+26
+00:01:10,444 --> 00:01:13,030
+tipo de chamadas de ferramenta queremos monitorar. Tenho
+
+27
+00:01:13,049 --> 00:01:15,554
+uma lista de todos os diferentes nomes de ferramentas atuais no lado
+
+28
+00:01:15,575 --> 00:01:18,239
+direito deste diagrama. Agora, memorizar todos
+
+29
+00:01:18,280 --> 00:01:20,963
+os diferentes nomes de ferramentas incluídos no Claude
+
+30
+00:01:21,025 --> 00:01:23,668
+Code pode ser muito desafiador, especialmente porque você pode
+
+31
+00:01:23,810 --> 00:01:26,534
+adicionar suas próprias ferramentas personalizadas através do uso de
+
+32
+00:01:26,575 --> 00:01:29,180
+servidores MCP. Então, deixe-me mostrar um pequeno truque que você pode usar
+
+33
+00:01:29,239 --> 00:01:32,054
+aqui. Se eu voltar e abrir o Claude
+
+34
+00:01:32,153 --> 00:01:34,918
+Code, posso pedir diretamente ao Claude uma lista com marcadores
+
+35
+00:01:34,938 --> 00:01:37,783
+de todos os diferentes nomes de ferramentas que ele tem acesso
+
+36
+00:01:37,802 --> 00:01:40,346
+no momento. De todas essas ferramentas diferentes, existem
+
+37
+00:01:40,387 --> 00:01:42,891
+duas que podem ser usadas para ler o conteúdo de um
+
+38
+00:01:42,930 --> 00:01:45,575
+arquivo muito facilmente. Primeiro, há o retool, e depois é
+
+39
+00:01:45,674 --> 00:01:48,218
+fácil de perder, mas este também pode ler o conteúdo de um arquivo,
+
+40
+00:01:48,259 --> 00:01:50,783
+a ferramenta GREP. GREP pode pesquisar o
+
+41
+00:01:50,843 --> 00:01:53,427
+conteúdo de um arquivo. Então, realmente queremos monitorar
+
+42
+00:01:53,628 --> 00:01:56,212
+as chamadas de ferramenta para o retool e a ferramenta GREP.
+
+43
+00:01:56,292 --> 00:01:58,933
+Em seguida, precisamos escrever um comando
+
+44
+00:01:59,034 --> 00:02:01,618
+que receberá algumas informações sobre a chamada de ferramenta que
+
+45
+00:02:01,638 --> 00:02:04,685
+Claude deseja fazer. Veja como essa parte funciona. Vamos
+
+46
+00:02:04,704 --> 00:02:07,609
+escrever um comando, Claude o executará automaticamente
+
+47
+00:02:07,650 --> 00:02:10,575
+e, em seguida, no standard input desse processo,
+
+48
+00:02:10,955 --> 00:02:13,681
+Claude fornecerá alguns dados de chamada de ferramenta como
+
+49
+00:02:13,721 --> 00:02:16,346
+JSON. Tenho um exemplo de dados de chamada de ferramenta
+
+50
+00:02:16,406 --> 00:02:19,111
+no canto superior direito. Então, será um objeto JSON grande
+
+51
+00:02:19,231 --> 00:02:21,959
+com algumas informações sobre o nome da ferramenta e
+
+52
+00:02:21,998 --> 00:02:24,504
+a entrada para essa ferramenta. Neste caso, o nome da ferramenta
+
+53
+00:02:24,566 --> 00:02:27,592
+é read, então Claude está tentando chamar a ferramenta read e
+
+54
+00:02:27,612 --> 00:02:30,681
+pode estar tentando ler especificamente um caminho de arquivo apontando
+
+55
+00:02:30,741 --> 00:02:33,247
+para o arquivo .env. E, novamente, esse é o
+
+56
+00:02:33,287 --> 00:02:36,213
+arquivo para o qual queremos impedir uma operação de leitura. Então,
+
+57
+00:02:36,274 --> 00:02:38,836
+dentro do nosso programa ou comando, precisamos
+
+58
+00:02:38,877 --> 00:02:41,620
+receber essas informações via standard input, analisar
+
+59
+00:02:41,639 --> 00:02:44,302
+esse JSON e, em seguida, ler o nome da ferramenta, os
+
+60
+00:02:44,362 --> 00:02:46,906
+argumentos de entrada da ferramenta, e assim por diante, e decidir o que
+
+61
+00:02:46,945 --> 00:02:49,468
+queremos fazer com essa chamada de ferramenta. Então,
+
+62
+00:02:49,628 --> 00:02:52,132
+passamos para o passo quatro. No passo quatro, após nosso
+
+63
+00:02:52,171 --> 00:02:54,995
+comando receber esses dados propostos de chamada de ferramenta, nós
+
+64
+00:02:55,014 --> 00:02:57,538
+então sairemos. E nosso código de saída
+
+65
+00:02:57,578 --> 00:03:00,420
+fornecerá um sinal de volta para o Claude Code. Um
+
+66
+00:03:00,540 --> 00:03:03,044
+código de saída zero significa que tudo está OK e
+
+67
+00:03:03,084 --> 00:03:05,706
+queremos permitir que essa chamada de ferramenta ocorra. Um
+
+68
+00:03:05,806 --> 00:03:08,310
+código de saída dois, no entanto, é um sinal para o Claude
+
+69
+00:03:08,349 --> 00:03:11,233
+Code de que queremos bloquear essa chamada de ferramenta. E
+
+70
+00:03:11,252 --> 00:03:13,915
+isso se aplica especificamente apenas aos hooks de pré-uso de ferramenta,
+
+71
+00:03:13,955 --> 00:03:16,459
+porque lembre-se, apenas em um hook de pré-uso de ferramenta
+
+72
+00:03:16,579 --> 00:03:19,181
+podemos realmente bloquear uma chamada de ferramenta. Se sairmos
+
+73
+00:03:19,222 --> 00:03:21,824
+com um código dois, então quaisquer logs de erro padrão
+
+74
+00:03:21,905 --> 00:03:24,888
+que geramos dentro do nosso comando durante esse tempo também
+
+75
+00:03:24,927 --> 00:03:27,450
+serão enviados como feedback para o Claude. Assim, podemos
+
+76
+00:03:27,491 --> 00:03:30,313
+tanto negar a chamada de ferramenta quanto dar um motivo ao Claude
+
+77
+00:03:30,433 --> 00:03:33,290
+ao mesmo tempo. Então, esse é todo o
+
+78
+00:03:33,350 --> 00:03:36,004
+processo. E sei que, mais uma vez, há muita coisa
+
+79
+00:03:36,025 --> 00:03:38,698
+acontecendo aqui. Então, vamos passar por todo esse processo
+
+80
+00:03:38,818 --> 00:03:41,352
+de conectar tudo o que é necessário para este hook dentro do
+
+81
+00:03:41,391 --> 00:03:44,387
+nosso projeto para entender como todos esses passos se juntam.

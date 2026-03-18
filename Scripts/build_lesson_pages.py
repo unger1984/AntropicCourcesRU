@@ -339,7 +339,7 @@ def ensure_intro_ru_assets(course_dir: Path, lesson_dir: Path) -> None:
         if course_ru_srt.exists():
             copy_asset(course_ru_srt, ru_srt)
         else:
-            vtt = ROOT / "Site" / "courses" / "claude-code-in-action" / "assets" / "captions_ru.vtt"
+            vtt = ROOT / "docs" / "courses" / "claude-code-in-action" / "assets" / "captions_ru.vtt"
             if vtt.exists():
                 write_srt(ru_srt, parse_vtt(vtt))
 
@@ -355,7 +355,7 @@ def prepare_media_assets(course_dir: Path, lesson: dict, site_assets_dir: Path) 
     audio_sources = ["assets/video_1080p.mp4"]
     if lesson["slug"] == "001-introduction":
         ensure_intro_ru_assets(course_dir, lesson_dir)
-        site_course_assets = ROOT / "Site" / "courses" / "claude-code-in-action" / "assets"
+        site_course_assets = ROOT / "docs" / "courses" / "claude-code-in-action" / "assets"
         intro_ru = site_course_assets / "video_ru_v2.mp4"
         if not intro_ru.exists():
             intro_ru = site_course_assets / "video_ru.mp4"
@@ -396,7 +396,7 @@ def replace_modular_lesson_html(source: str, summary_html: str) -> str:
 
 def build_page(course_dir: Path, lesson: dict, lessons: list[dict], translations: dict) -> str:
     lesson_dir = lesson["dir"]
-    site_lesson_dir = ROOT / "Site" / "courses" / course_dir.name / "lessons" / lesson["slug"]
+    site_lesson_dir = ROOT / "docs" / "courses" / course_dir.name / "lessons" / lesson["slug"]
     site_assets_dir = site_lesson_dir / "assets"
     assets_prefix = "../../../../assets"
 
@@ -459,7 +459,7 @@ def build_course(course_slug: str) -> int:
         raise SystemExit(f"No lesson.json files found in {course_dir / 'Lessons'}")
 
     for lesson in lessons:
-        site_lesson_dir = ROOT / "Site" / "courses" / course_slug / "lessons" / lesson["slug"]
+        site_lesson_dir = ROOT / "docs" / "courses" / course_slug / "lessons" / lesson["slug"]
         site_lesson_dir.mkdir(parents=True, exist_ok=True)
         page_html = build_page(course_dir, lesson, lessons, translations)
         (site_lesson_dir / "index.html").write_text(page_html, encoding="utf-8")

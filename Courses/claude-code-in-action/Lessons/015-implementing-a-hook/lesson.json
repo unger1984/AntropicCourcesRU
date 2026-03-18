@@ -1,0 +1,209 @@
+{
+  "title": "Implementing a hook",
+  "url": "https://anthropic.skilljar.com/claude-code-in-action/312003",
+  "nav_lessons": [
+    {
+      "title": "Lessons",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312003"
+    },
+    {
+      "title": "Introduction",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303233"
+    },
+    {
+      "title": "What is a coding assistant?",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303235"
+    },
+    {
+      "title": "Claude Code in action",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303242"
+    },
+    {
+      "title": "Claude Code setup",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/301614"
+    },
+    {
+      "title": "Project setup",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/301615"
+    },
+    {
+      "title": "Adding context",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303241"
+    },
+    {
+      "title": "Making changes",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303236"
+    },
+    {
+      "title": "Course satisfaction survey",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303701"
+    },
+    {
+      "title": "Controlling context",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303237"
+    },
+    {
+      "title": "Custom commands",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303234"
+    },
+    {
+      "title": "MCP servers with Claude Code",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303239"
+    },
+    {
+      "title": "Github integration",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303240"
+    },
+    {
+      "title": "Introducing hooks",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312000"
+    },
+    {
+      "title": "Defining hooks",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312002"
+    },
+    {
+      "title": "Gotchas around hooks",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312423"
+    },
+    {
+      "title": "Useful hooks!",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312004"
+    },
+    {
+      "title": "Another useful hook",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312427"
+    },
+    {
+      "title": "The Claude Code SDK",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/312001"
+    },
+    {
+      "title": "Quiz on Claude Code",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/308391"
+    },
+    {
+      "title": "Summary and next steps",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action/303238"
+    }
+  ],
+  "notes_key": "claudecode",
+  "notes_length": 18666,
+  "source_html_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Source/lesson-page.html",
+  "source_dir": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Source",
+  "assets": {
+    "jwplayer_script": {
+      "url": "https://content.jwplatform.com/players/WpOJxKsp-Akyo8gQO.js",
+      "status": "downloaded",
+      "kind": "player_script",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Assets/jwplayer_script.js"
+    },
+    "playback_json": {
+      "url": "https://cdn.jwplayer.com/v2/sites/Lc4Rn1s0/media/WpOJxKsp/playback.json?recommendations_playlist_id=Xk7xK52v&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNvbW1lbmRhdGlvbnNfcGxheWxpc3RfaWQiOiJYazd4SzUydiIsInJlc291cmNlIjoiL3YyL3NpdGVzL0xjNFJuMXMwL21lZGlhL1dwT0p4S3NwL3BsYXliYWNrLmpzb24iLCJleHAiOjE3NzM4MzU2ODB9.whcAalaPpSXZdNUimQzll1XQkivrxBiwGEcM9GL6uDU",
+      "status": "downloaded",
+      "kind": "metadata",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Assets/playback_json.json"
+    },
+    "manifest_hls": {
+      "url": "https://cdn.jwplayer.com/manifests/WpOJxKsp.m3u8?exp=1773835680&sig=46df84920dd3144651e1478172ce20f3",
+      "status": "downloaded",
+      "kind": "video_manifest",
+      "label": "application/vnd.apple.mpegurl",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Assets/manifest_hls.m3u8"
+    },
+    "video_180p": {
+      "url": "https://cdn.jwplayer.com/videos/WpOJxKsp-B9NwIVRu.mp4?exp=1773835680&sig=756ce6626c3b4cc0f1c4e7902481ebf8",
+      "status": "discovered",
+      "kind": "video",
+      "label": "180p"
+    },
+    "video_270p": {
+      "url": "https://cdn.jwplayer.com/videos/WpOJxKsp-muagBOKI.mp4?exp=1773835680&sig=a62c10d100d042b0210823782c3c9704",
+      "status": "discovered",
+      "kind": "video",
+      "label": "270p"
+    },
+    "video_406p": {
+      "url": "https://cdn.jwplayer.com/videos/WpOJxKsp-4Xe8IV8X.mp4?exp=1773835680&sig=e8228dde21904d71607d5d562585da4e",
+      "status": "discovered",
+      "kind": "video",
+      "label": "406p"
+    },
+    "video_720p": {
+      "url": "https://cdn.jwplayer.com/videos/WpOJxKsp-m7ew0xq8.mp4?exp=1773835680&sig=9823a7d4d6c01f74dd25a4bad85c7bcd",
+      "status": "discovered",
+      "kind": "video",
+      "label": "720p"
+    },
+    "audio_audio": {
+      "url": "https://cdn.jwplayer.com/videos/WpOJxKsp-eNgUZBQ2.m4a?exp=1773835680&sig=a01446172250cb32103c4936b92148f4",
+      "status": "downloaded",
+      "kind": "audio",
+      "label": "Audio",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Assets/audio_audio.m4a"
+    },
+    "video_1080p": {
+      "url": "https://cdn.jwplayer.com/videos/WpOJxKsp-hFUVmOoC.mp4?exp=1773835680&sig=db4b3d1d901ceffd1f820e3de5c9504a",
+      "status": "downloaded",
+      "kind": "video",
+      "label": "1080p",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Assets/video_1080p.mp4"
+    },
+    "captions_en": {
+      "url": "https://cdn.jwplayer.com/tracks/n9q06v7c.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Assets/captions_en.srt"
+    },
+    "captions_fr": {
+      "url": "https://cdn.jwplayer.com/tracks/aMBHXo0H.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Assets/captions_fr.srt"
+    },
+    "captions_de": {
+      "url": "https://cdn.jwplayer.com/tracks/vt6dslpK.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Assets/captions_de.srt"
+    },
+    "captions_ja": {
+      "url": "https://cdn.jwplayer.com/tracks/tmaKaQfL.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Assets/captions_ja.srt"
+    },
+    "captions_ko": {
+      "url": "https://cdn.jwplayer.com/tracks/tlE5bmon.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Assets/captions_ko.srt"
+    },
+    "captions_pt": {
+      "url": "https://cdn.jwplayer.com/tracks/1N7sUorx.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Assets/captions_pt.srt"
+    },
+    "captions_es": {
+      "url": "https://cdn.jwplayer.com/tracks/490aaaSH.srt",
+      "status": "downloaded",
+      "kind": "captions",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Assets/captions_es.srt"
+    },
+    "thumbnails_vtt": {
+      "url": "https://cdn.jwplayer.com/strips/WpOJxKsp-120.vtt",
+      "status": "downloaded",
+      "kind": "thumbnails",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Assets/thumbnails_vtt.vtt"
+    },
+    "poster_image": {
+      "url": "https://cdn.jwplayer.com/v2/media/WpOJxKsp/poster.jpg?width=720",
+      "status": "downloaded",
+      "kind": "image",
+      "local_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Assets/poster_image.jpg"
+    }
+  },
+  "status": "downloaded",
+  "notes_path": "/Users/cobalt/dev/ws/AntropicCource/Courses/claude-code-in-action/Lessons/015-implementing-a-hook/Source/notes.xml"
+}

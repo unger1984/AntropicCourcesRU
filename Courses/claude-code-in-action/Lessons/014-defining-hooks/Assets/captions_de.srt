@@ -1,0 +1,295 @@
+1
+00:00:00,031 --> 00:00:02,577
+Um einen besseren Eindruck davon zu bekommen, wie Hooks funktionieren,
+
+2
+00:00:02,597 --> 00:00:05,283
+werden wir uns ein neues Beispielprojekt ansehen. Hängen Sie diese
+
+3
+00:00:05,323 --> 00:00:07,891
+Vorlesung als Datei namens Query.zip an. Ich würde
+
+4
+00:00:07,931 --> 00:00:10,737
+Sie ermutigen, dieses Projekt herunterzuladen und Ihren Code-Editor
+
+5
+00:00:10,778 --> 00:00:13,365
+darin zu öffnen. Sobald Sie Ihren Editor geöffnet haben, in
+
+6
+00:00:13,404 --> 00:00:16,672
+Ihrem Terminal, führen Sie NPM Run Setup aus.
+
+7
+00:00:16,652 --> 00:00:19,236
+Dadurch werden ein paar Abhängigkeiten installiert und ein paar
+
+8
+00:00:19,335 --> 00:00:21,899
+Hooks zur Verwendung vorbereitet. Um Hooks besser zu verstehen,
+
+9
+00:00:21,940 --> 00:00:24,623
+werden wir unsere eigenen Hooks in diesem Projekt erstellen. Also
+
+10
+00:00:24,682 --> 00:00:27,286
+hier ist, was unser Hook tun soll. Im
+
+11
+00:00:27,306 --> 00:00:30,451
+Stammverzeichnis unseres Projekts befindet sich eine Datei namens .env.
+
+12
+00:00:31,152 --> 00:00:34,055
+Diese Datei enthält einige sensible Informationen. Und
+
+13
+00:00:34,155 --> 00:00:36,978
+aus übermäßiger Vorsicht möchte ich verhindern, dass Claude
+
+14
+00:00:37,039 --> 00:00:39,743
+diese Datei jemals direkt liest.
+
+15
+00:00:40,182 --> 00:00:42,847
+Ich zeige Ihnen ein paar Diagramme, die Ihnen helfen zu verstehen, wie
+
+16
+00:00:42,866 --> 00:00:45,409
+wir diesen Hook zusammenstellen werden. Schritt eins ist,
+
+17
+00:00:45,469 --> 00:00:48,014
+zu entscheiden, ob wir einen Pre-Tool-Use- oder einen
+
+18
+00:00:48,154 --> 00:00:50,716
+Post-Tool-Use-Hook benötigen. In diesem Szenario
+
+19
+00:00:50,756 --> 00:00:53,441
+möchten wir verhindern, dass Claude jemals eine bestimmte Datei liest.
+
+20
+00:00:53,921 --> 00:00:56,445
+Wenn wir einen Post-Tool-Use-Block erstellen, dann haben wir
+
+21
+00:00:56,484 --> 00:00:59,569
+unseren Hook ausgeführt oder unseren Befehl ausgeführt, nachdem
+
+22
+00:00:59,689 --> 00:01:02,273
+Claude die Datei bereits gelesen hat. In diesem Fall
+
+23
+00:01:02,332 --> 00:01:04,956
+benötigen wir definitiv einen Pre-Tool-Use-Hook, um sicherzustellen,
+
+24
+00:01:04,995 --> 00:01:07,719
+dass wir den Lesevorgang verhindern können.
+
+25
+00:01:07,700 --> 00:01:10,325
+Als Nächstes müssen wir entscheiden, genau für welche
+
+26
+00:01:10,444 --> 00:01:13,030
+Art von Tool-Aufrufen wir aufpassen wollen. Ich habe
+
+27
+00:01:13,049 --> 00:01:15,554
+eine Liste aller verschiedenen aktuellen Tool-Namen auf der rechten
+
+28
+00:01:15,575 --> 00:01:18,239
+Seite dieses Diagramms. Das Auswendiglernen all
+
+29
+00:01:18,280 --> 00:01:20,963
+der verschiedenen Tool-Namen, die in Claude
+
+30
+00:01:21,025 --> 00:01:23,668
+Code enthalten sind, kann sehr schwierig sein, besonders da Sie
+
+31
+00:01:23,810 --> 00:01:26,534
+Ihre eigenen benutzerdefinierten Tools über MCP
+
+32
+00:01:26,575 --> 00:01:29,180
+Server hinzufügen können. Lassen Sie mich Ihnen einen kleinen Trick zeigen, den Sie
+
+33
+00:01:29,239 --> 00:01:32,054
+hier verwenden können. Wenn ich zurückgehe und Claude
+
+34
+00:01:32,153 --> 00:01:34,918
+Code öffne, kann ich Claude direkt nach einer Aufzählung
+
+35
+00:01:34,938 --> 00:01:37,783
+aller verschiedenen Tool-Namen fragen, auf die es gerade Zugriff
+
+36
+00:01:37,802 --> 00:01:40,346
+hat. Von all diesen verschiedenen Tools gibt es zwei,
+
+37
+00:01:40,387 --> 00:01:42,891
+die sehr einfach den Inhalt einer Datei lesen können. Erstens, das
+
+38
+00:01:42,930 --> 00:01:45,575
+Retool, und dann ist es leicht zu übersehen, aber dieses kann tatsächlich auch den Inhalt einer Datei lesen,
+
+39
+00:01:45,674 --> 00:01:48,218
+das GREP-Tool. GREP kann den Inhalt einer Datei durchsuchen.
+
+40
+00:01:48,259 --> 00:01:50,783
+Wir wollen also wirklich nach Tool-Aufrufen für
+
+41
+00:01:50,843 --> 00:01:53,427
+das Retool und das GREP-Tool aufpassen. Als Nächstes
+
+42
+00:01:53,628 --> 00:01:56,212
+müssen wir einen Befehl schreiben, der einige Informationen über den
+
+43
+00:01:56,292 --> 00:01:58,933
+Tool-Aufruf erhält, den Claude machen möchte. So funktioniert dieser Teil.
+
+44
+00:01:59,034 --> 00:02:01,618
+Wir werden einen Befehl schreiben, Claude wird ihn automatisch ausführen,
+
+45
+00:02:01,638 --> 00:02:04,685
+und dann wird Claude über Standard-Input in diesen Prozess
+
+46
+00:02:04,704 --> 00:02:07,609
+Tool-Aufrufdaten als JSON einspeisen. Ich habe ein Beispiel für Tool-Aufrufdaten
+
+47
+00:02:07,650 --> 00:02:10,575
+oben rechts. Es wird also ein großes JSON-Objekt sein, das einige Informationen über den Tool-Namen
+
+48
+00:02:10,955 --> 00:02:13,681
+und die Eingabe für dieses Tool enthält. In diesem Fall ist der Tool-Name
+
+49
+00:02:13,721 --> 00:02:16,346
+'read', also versucht Claude, das Lese-Tool aufzurufen, und
+
+50
+00:02:16,406 --> 00:02:19,111
+es versucht möglicherweise, speziell einen Dateipfad zu lesen, der auf
+
+51
+00:02:19,231 --> 00:02:21,959
+diese .env-Datei verweist. Und das ist wieder die
+
+52
+00:02:21,998 --> 00:02:24,504
+Datei, für die wir einen Lese-Vorgang verhindern wollen. Also
+
+53
+00:02:24,566 --> 00:02:27,592
+müssen wir dann innerhalb unseres Programms oder unseres Befehls diese Informationen über Standard-Input empfangen,
+
+54
+00:02:27,612 --> 00:02:30,681
+dieses JSON parsen und dann den Tool-Namen, die Tool-Eingabeargumente
+
+55
+00:02:30,741 --> 00:02:33,247
+und so weiter lesen und entscheiden, was
+
+56
+00:02:33,287 --> 00:02:36,213
+wir mit diesem Tool-Aufruf machen wollen. Dann
+
+57
+00:02:36,274 --> 00:02:38,836
+weiter zu Schritt Vier. In Schritt Vier, nachdem unser
+
+58
+00:02:38,877 --> 00:02:41,620
+Befehl diese vorgeschlagenen Tool-Aufrufdaten erhalten hat, werden
+
+59
+00:02:41,639 --> 00:02:44,302
+wir dann beendet. Und unser Exit-Code wird
+
+60
+00:02:44,362 --> 00:02:46,906
+ein Signal zurück an Claude Code senden. Ein
+
+61
+00:02:46,945 --> 00:02:49,468
+Exit-Code von Null bedeutet, alles ist in Ordnung, und
+
+62
+00:02:49,628 --> 00:02:52,132
+wir möchten, dass dieser Tool-Aufruf stattfindet. Ein
+
+63
+00:02:52,171 --> 00:02:54,995
+Exit-Code von Zwei hingegen ist ein Zeichen für Claude Code, dass wir
+
+64
+00:02:55,014 --> 00:02:57,538
+diesen Tool-Aufruf blockieren möchten. Und
+
+65
+00:02:57,578 --> 00:03:00,420
+das gilt speziell nur für die Pre-Tool-Use-Hooks. Denn
+
+66
+00:03:00,540 --> 00:03:03,044
+denken Sie daran, nur in einem Pre-Tool-Use-Hook
+
+67
+00:03:03,084 --> 00:03:05,706
+können wir einen Tool-Aufruf tatsächlich blockieren. Wenn wir
+
+68
+00:03:05,806 --> 00:03:08,310
+mit dem Code Zwei beenden, dann werden alle Standard-Fehlerprotokolle,
+
+69
+00:03:08,349 --> 00:03:11,233
+die wir während dieser Zeit in unserem Befehl generiert haben,
+
+70
+00:03:11,252 --> 00:03:13,915
+ebenfalls als Feedback an Claude gesendet. Wir
+
+71
+00:03:13,955 --> 00:03:16,459
+können also sowohl den Tool-Aufruf ablehnen als auch Claude gleichzeitig einen Grund geben. Das
+
+72
+00:03:16,579 --> 00:03:19,181
+ist also der gesamte Prozess. Und ich weiß, wieder ist da viel los,
+
+73
+00:03:19,222 --> 00:03:21,824
+also gehen wir diesen gesamten Prozess des Verdrahtens alles Notwendigen für diesen Hook
+
+74
+00:03:21,905 --> 00:03:24,888
+in unserem Projekt durch, um zu verstehen, wie all diese Schritte zusammenpassen.

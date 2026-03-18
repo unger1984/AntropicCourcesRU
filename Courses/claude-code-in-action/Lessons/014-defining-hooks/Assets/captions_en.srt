@@ -1,0 +1,323 @@
+1
+00:00:00,031 --> 00:00:02,577
+To get a better idea of how hooks work, we're
+
+2
+00:00:02,597 --> 00:00:05,283
+going to take a look at a new sample project. Attach this
+
+3
+00:00:05,323 --> 00:00:07,891
+lecture as a file called Query.zip. I'd
+
+4
+00:00:07,931 --> 00:00:10,737
+encourage you to download this project and open your code editor
+
+5
+00:00:10,778 --> 00:00:13,365
+inside of it. Once you've got your editor open, at
+
+6
+00:00:13,404 --> 00:00:16,672
+your terminal, Run, NPM, Run, Setup.
+
+7
+00:00:16,652 --> 00:00:19,236
+This is going to install a couple of dependencies and get a
+
+8
+00:00:19,335 --> 00:00:21,899
+couple of hooks ready for use. To better understand
+
+9
+00:00:21,940 --> 00:00:24,623
+hooks, we're going to make our own inside of this project. So
+
+10
+00:00:24,682 --> 00:00:27,286
+here's what I want our hook to do. Inside the
+
+11
+00:00:27,306 --> 00:00:30,451
+root directory of our project is a file called .env.
+
+12
+00:00:31,152 --> 00:00:34,055
+This file contains some sensitive information. And
+
+13
+00:00:34,155 --> 00:00:36,978
+out of an abundance of caution, I want to completely
+
+14
+00:00:37,039 --> 00:00:39,743
+prevent Claude from ever reading this file directly.
+
+15
+00:00:40,182 --> 00:00:42,847
+Let me show you a couple of diagrams to help you understand how
+
+16
+00:00:42,866 --> 00:00:45,409
+we're going to put this hook together. Step one is to
+
+17
+00:00:45,469 --> 00:00:48,014
+decide on whether we need a pre-tool use or a
+
+18
+00:00:48,154 --> 00:00:50,716
+post-tool use hook. In this scenario, we
+
+19
+00:00:50,756 --> 00:00:53,441
+want to prevent Claude from ever reading a particular file.
+
+20
+00:00:53,921 --> 00:00:56,445
+If we make a post-tool use block, then we will
+
+21
+00:00:56,484 --> 00:00:59,569
+have executed our hook or ran our command after
+
+22
+00:00:59,689 --> 00:01:02,273
+Claude already read the file. So in this case, we
+
+23
+00:01:02,332 --> 00:01:04,956
+definitely need a pre-tool use hook to make
+
+24
+00:01:04,995 --> 00:01:07,719
+sure that we can prevent the read operation from occurring.
+
+25
+00:01:07,700 --> 00:01:10,325
+The next thing we need to do is decide exactly which
+
+26
+00:01:10,444 --> 00:01:13,030
+kind of tool calls we want to watch for. I've
+
+27
+00:01:13,049 --> 00:01:15,554
+got a list of all the different current tool names on the right
+
+28
+00:01:15,575 --> 00:01:18,239
+hand side of this diagram. Now, memorizing all
+
+29
+00:01:18,280 --> 00:01:20,963
+the different tool names that are included inside of Claude
+
+30
+00:01:21,025 --> 00:01:23,668
+Code can be really challenging, especially since you can
+
+31
+00:01:23,810 --> 00:01:26,534
+add your own custom tools through the use of MCP
+
+32
+00:01:26,575 --> 00:01:29,180
+servers. So let me show you a little trick you can use
+
+33
+00:01:29,239 --> 00:01:32,054
+here. If I go back over and open up Claude
+
+34
+00:01:32,153 --> 00:01:34,918
+Code, I can directly ask Claude for a bullet
+
+35
+00:01:34,938 --> 00:01:37,783
+point list of all the different tool names that it has access
+
+36
+00:01:37,802 --> 00:01:40,346
+to right now. Out of all these different tools, there
+
+37
+00:01:40,387 --> 00:01:42,891
+are two that can be used to very easily read the contents of a
+
+38
+00:01:42,930 --> 00:01:45,575
+file. First, there's the retool, and then it's
+
+39
+00:01:45,674 --> 00:01:48,218
+easy to miss, but this one can actually read the contents of a file
+
+40
+00:01:48,259 --> 00:01:50,783
+as well, the GREP tool. GREP can search the
+
+41
+00:01:50,843 --> 00:01:53,427
+contents of a file. So we really want to watch
+
+42
+00:01:53,628 --> 00:01:56,212
+for tool calls for the retool and the GREP
+
+43
+00:01:56,292 --> 00:01:58,933
+tool. Next up, we need to write out a command
+
+44
+00:01:59,034 --> 00:02:01,618
+that is going to receive some information about the tool called
+
+45
+00:02:01,638 --> 00:02:04,685
+that Claude wants to make. Here's how that part works. We're
+
+46
+00:02:04,704 --> 00:02:07,609
+going to write out a command, Claude is going to automatically execute
+
+47
+00:02:07,650 --> 00:02:10,575
+it. And then on standard in to that process,
+
+48
+00:02:10,955 --> 00:02:13,681
+Claude is going to feed in some tool called data as
+
+49
+00:02:13,721 --> 00:02:16,346
+JSON. I've got an example of some tool called data
+
+50
+00:02:16,406 --> 00:02:19,111
+on the top right hand side. So it's going to be a big JSON
+
+51
+00:02:19,231 --> 00:02:21,959
+object that has some information about the tool name and
+
+52
+00:02:21,998 --> 00:02:24,504
+the input to that tool. In this case, the tool name
+
+53
+00:02:24,566 --> 00:02:27,592
+is read, so Claude is trying to call the read tool, and
+
+54
+00:02:27,612 --> 00:02:30,681
+it might be trying to read specifically a file path pointing
+
+55
+00:02:30,741 --> 00:02:33,247
+to that .e and v file. And again, that's the
+
+56
+00:02:33,287 --> 00:02:36,213
+file that we want to prevent a read operation for. So
+
+57
+00:02:36,274 --> 00:02:38,836
+then inside of our program or our command, we need
+
+58
+00:02:38,877 --> 00:02:41,620
+to receive this information through standard in, parse
+
+59
+00:02:41,639 --> 00:02:44,302
+that JSON, and then read the tool name, the
+
+60
+00:02:44,362 --> 00:02:46,906
+tool input arguments, and so on, and decide what
+
+61
+00:02:46,945 --> 00:02:49,468
+we want to do with this tool call. Then
+
+62
+00:02:49,628 --> 00:02:52,132
+onto step four. In step four, after our
+
+63
+00:02:52,171 --> 00:02:54,995
+command receives that proposed tool called data, we're
+
+64
+00:02:55,014 --> 00:02:57,538
+then going to exit. And our exit code is
+
+65
+00:02:57,578 --> 00:03:00,420
+going to provide a signal back to Claude Code. An
+
+66
+00:03:00,540 --> 00:03:03,044
+exit code of zero means everything is OK, and
+
+67
+00:03:03,084 --> 00:03:05,706
+we want to allow this tool call to occur. An
+
+68
+00:03:05,806 --> 00:03:08,310
+exit code of two, however, is a sign-to-Claude
+
+69
+00:03:08,349 --> 00:03:11,233
+Code that we want to block this tool call. And
+
+70
+00:03:11,252 --> 00:03:13,915
+that specifically only applies for the pre-tool use
+
+71
+00:03:13,955 --> 00:03:16,459
+hooks. Because remember, only in a pre-tool use hook
+
+72
+00:03:16,579 --> 00:03:19,181
+can we actually block a tool call. If we exit
+
+73
+00:03:19,222 --> 00:03:21,824
+with a code of two, then any standard air
+
+74
+00:03:21,905 --> 00:03:24,888
+logs that we generated inside of our command during that time will
+
+75
+00:03:24,927 --> 00:03:27,450
+also be sent as feedback to Claude. So we
+
+76
+00:03:27,491 --> 00:03:30,313
+can both deny the tool call and give Claude a reason
+
+77
+00:03:30,433 --> 00:03:33,290
+at the same time as well. So that's the entire
+
+78
+00:03:33,350 --> 00:03:36,004
+process. And I know once again, there's a lot of stuff
+
+79
+00:03:36,025 --> 00:03:38,698
+going on here. So let's go through this entire process
+
+80
+00:03:38,818 --> 00:03:41,352
+of wiring everything up needed for this hook inside of
+
+81
+00:03:41,391 --> 00:03:44,387
+our project to understand how all these steps come together.

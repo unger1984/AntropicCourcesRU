@@ -62,7 +62,7 @@ The required end state is:
 
 ## Current implementation facts
 
-- `Site/` contains the publishable static site.
+- `docs/` contains the publishable static site.
 - `Courses/<slug>/Lessons/<lesson>/Source/lesson-page.html` is the local source of truth for lesson structure.
 - `Scripts/build_lesson_pages.py` must transform the original Skilljar `lesson-page.html` into the local page.
 - The builder must preserve the original Skilljar DOM structure for the lesson page instead of rendering a custom shell.
@@ -96,7 +96,7 @@ The lesson builder must do all of the following:
 
 ## Local lesson CSS contract
 
-`Site/assets/lesson-local.css` is allowed only for narrowly scoped local overrides that keep the page visually aligned with the original Skilljar lesson layout while supporting offline playback and localization.
+`docs/assets/lesson-local.css` is allowed only for narrowly scoped local overrides that keep the page visually aligned with the original Skilljar lesson layout while supporting offline playback and localization.
 
 It may be used for:
 - the local video/audio/subtitle switcher overlay inside the original lesson video area;

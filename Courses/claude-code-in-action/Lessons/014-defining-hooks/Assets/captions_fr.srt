@@ -1,0 +1,323 @@
+1
+00:00:00,031 --> 00:00:02,577
+Pour avoir une meilleure idée du fonctionnement des hooks, nous
+
+2
+00:00:02,597 --> 00:00:05,283
+allons examiner un nouveau projet d'exemple. Attachez ce
+
+3
+00:00:05,323 --> 00:00:07,891
+cours comme fichier nommé Query.zip. Je vous
+
+4
+00:00:07,931 --> 00:00:10,737
+encourage à télécharger ce projet et à ouvrir votre éditeur de code
+
+5
+00:00:10,778 --> 00:00:13,365
+à l'intérieur. Une fois votre éditeur ouvert, dans
+
+6
+00:00:13,404 --> 00:00:16,672
+votre terminal, exécutez NPM Run Setup.
+
+7
+00:00:16,652 --> 00:00:19,236
+Cela va installer quelques dépendances et préparer
+
+8
+00:00:19,335 --> 00:00:21,899
+quelques hooks à être utilisés. Pour mieux comprendre
+
+9
+00:00:21,940 --> 00:00:24,623
+les hooks, nous allons créer le nôtre dans ce projet. Donc,
+
+10
+00:00:24,682 --> 00:00:27,286
+voici ce que nous voulons que notre hook fasse. Dans le
+
+11
+00:00:27,306 --> 00:00:30,451
+répertoire racine de notre projet se trouve un fichier nommé .env.
+
+12
+00:00:31,152 --> 00:00:34,055
+Ce fichier contient des informations sensibles. Et
+
+13
+00:00:34,155 --> 00:00:36,978
+par mesure de précaution, je veux empêcher complètement
+
+14
+00:00:37,039 --> 00:00:39,743
+Claude de lire directement ce fichier.
+
+15
+00:00:40,182 --> 00:00:42,847
+Laissez-moi vous montrer quelques diagrammes pour vous aider à comprendre comment
+
+16
+00:00:42,866 --> 00:00:45,409
+nous allons assembler ce hook. La première étape consiste à
+
+17
+00:00:45,469 --> 00:00:48,014
+décider si nous avons besoin d'un hook de pré-utilisation d'outil ou
+
+18
+00:00:48,154 --> 00:00:50,716
+d'un hook de post-utilisation d'outil. Dans ce scénario, nous
+
+19
+00:00:50,756 --> 00:00:53,441
+voulons empêcher Claude de lire un fichier particulier.
+
+20
+00:00:53,921 --> 00:00:56,445
+Si nous créons un bloc de post-utilisation d'outil, alors nous aurons
+
+21
+00:00:56,484 --> 00:00:59,569
+exécuté notre hook ou lancé notre commande après que
+
+22
+00:00:59,689 --> 00:01:02,273
+Claude ait déjà lu le fichier. Donc, dans ce cas, nous
+
+23
+00:01:02,332 --> 00:01:04,956
+avons absolument besoin d'un hook de pré-utilisation d'outil pour nous
+
+24
+00:01:04,995 --> 00:01:07,719
+assurer que nous pouvons empêcher l'opération de lecture de se produire.
+
+25
+00:01:07,700 --> 00:01:10,325
+La prochaine chose que nous devons faire est de décider exactement quel
+
+26
+00:01:10,444 --> 00:01:13,030
+type d'appels d'outils nous voulons surveiller. J'ai
+
+27
+00:01:13,049 --> 00:01:15,554
+une liste de tous les différents noms d'outils actuels sur le côté droit
+
+28
+00:01:15,575 --> 00:01:18,239
+de ce diagramme. Maintenant, mémoriser tous
+
+29
+00:01:18,280 --> 00:01:20,963
+les différents noms d'outils inclus dans Claude
+
+30
+00:01:21,025 --> 00:01:23,668
+Code peut être très difficile, d'autant plus que vous pouvez
+
+31
+00:01:23,810 --> 00:01:26,534
+ajouter vos propres outils personnalisés grâce à l'utilisation de serveurs
+
+32
+00:01:26,575 --> 00:01:29,180
+MCP. Alors laissez-moi vous montrer une petite astuce que vous pouvez utiliser
+
+33
+00:01:29,239 --> 00:01:32,054
+ici. Si je retourne ouvrir Claude
+
+34
+00:01:32,153 --> 00:01:34,918
+Code, je peux demander directement à Claude une liste à
+
+35
+00:01:34,938 --> 00:01:37,783
+puces de tous les différents noms d'outils auxquels il a accès
+
+36
+00:01:37,802 --> 00:01:40,346
+actuellement. Parmi tous ces différents outils, il y a
+
+37
+00:01:40,387 --> 00:01:42,891
+deux qui peuvent être utilisés pour lire très facilement le contenu d'un
+
+38
+00:01:42,930 --> 00:01:45,575
+fichier. Premièrement, il y a l'outil retool, et ensuite il y a
+
+39
+00:01:45,674 --> 00:01:48,218
+l'outil grep, qui est facile à manquer, mais celui-ci peut effectivement lire le contenu d'un fichier
+
+40
+00:01:48,259 --> 00:01:50,783
+également. GREP peut rechercher le
+
+41
+00:01:50,843 --> 00:01:53,427
+contenu d'un fichier. Nous voulons donc vraiment surveiller
+
+42
+00:01:53,628 --> 00:01:56,212
+les appels d'outils pour retool et grep
+
+43
+00:01:56,292 --> 00:01:58,933
+tool. Ensuite, nous devons écrire une commande
+
+44
+00:01:59,034 --> 00:02:01,618
+qui recevra des informations sur l'appel d'outil que
+
+45
+00:02:01,638 --> 00:02:04,685
+Claude souhaite effectuer. Voici comment cette partie fonctionne. Nous allons
+
+46
+00:02:04,704 --> 00:02:07,609
+écrire une commande que Claude exécutera automatiquement.
+
+47
+00:02:07,650 --> 00:02:10,575
+Et ensuite, sur l'entrée standard de ce processus,
+
+48
+00:02:10,955 --> 00:02:13,681
+Claude va fournir des données d'appel d'outil au format
+
+49
+00:02:13,721 --> 00:02:16,346
+JSON. J'ai un exemple de données d'appel d'outil
+
+50
+00:02:16,406 --> 00:02:19,111
+en haut à droite. Ce sera donc un grand objet JSON
+
+51
+00:02:19,231 --> 00:02:21,959
+contenant des informations sur le nom de l'outil et
+
+52
+00:02:21,998 --> 00:02:24,504
+l'entrée de cet outil. Dans ce cas, le nom de l'outil
+
+53
+00:02:24,566 --> 00:02:27,592
+est read, donc Claude essaie d'appeler l'outil read, et
+
+54
+00:02:27,612 --> 00:02:30,681
+il essaie peut-être de lire spécifiquement un chemin de fichier pointant
+
+55
+00:02:30,741 --> 00:02:33,247
+vers ce fichier .env. Et encore une fois, c'est le
+
+56
+00:02:33,287 --> 00:02:36,213
+fichier pour lequel nous voulons empêcher une opération de lecture. Donc,
+
+57
+00:02:36,274 --> 00:02:38,836
+ensuite, à l'intérieur de notre programme ou de notre commande, nous devons
+
+58
+00:02:38,877 --> 00:02:41,620
+recevoir ces informations via l'entrée standard, analyser
+
+59
+00:02:41,639 --> 00:02:44,302
+ce JSON, puis lire le nom de l'outil, les
+
+60
+00:02:44,362 --> 00:02:46,906
+arguments d'entrée de l'outil, etc., et décider de ce
+
+61
+00:02:46,945 --> 00:02:49,468
+que nous voulons faire avec cet appel d'outil. Ensuite,
+
+62
+00:02:49,628 --> 00:02:52,132
+passons à l'étape quatre. Dans l'étape quatre, après que notre
+
+63
+00:02:52,171 --> 00:02:54,995
+commande a reçu ces données d'appel d'outil proposées, nous
+
+64
+00:02:55,014 --> 00:02:57,538
+allons sortir. Et notre code de sortie
+
+65
+00:02:57,578 --> 00:03:00,420
+fournira un signal à Claude Code. Un
+
+66
+00:03:00,540 --> 00:03:03,044
+code de sortie zéro signifie que tout va bien, et
+
+67
+00:03:03,084 --> 00:03:05,706
+nous voulons autoriser cet appel d'outil. Un
+
+68
+00:03:05,806 --> 00:03:08,310
+code de sortie deux, cependant, est un signal à Claude
+
+69
+00:03:08,349 --> 00:03:11,233
+Code que nous voulons bloquer cet appel d'outil. Et
+
+70
+00:03:11,252 --> 00:03:13,915
+cela s'applique spécifiquement uniquement aux hooks de pré-utilisation d'outil
+
+71
+00:03:13,955 --> 00:03:16,459
+car rappelez-vous, seulement dans un hook de pré-utilisation d'outil
+
+72
+00:03:16,579 --> 00:03:19,181
+pouvons-nous réellement bloquer un appel d'outil. Si nous sortons
+
+73
+00:03:19,222 --> 00:03:21,824
+avec un code de deux, alors tous les journaux d'erreur standard
+
+74
+00:03:21,905 --> 00:03:24,888
+que nous avons générés dans notre commande à ce moment-là seront
+
+75
+00:03:24,927 --> 00:03:27,450
+également envoyés comme retour à Claude. Nous pouvons donc
+
+76
+00:03:27,491 --> 00:03:30,313
+à la fois refuser l'appel d'outil et donner une raison à Claude
+
+77
+00:03:30,433 --> 00:03:33,290
+en même temps. C'est donc tout le processus.
+
+78
+00:03:33,350 --> 00:03:36,004
+Et je sais qu'encore une fois, il y a beaucoup de choses
+
+79
+00:03:36,025 --> 00:03:38,698
+qui se passent ici. Alors, parcourons tout ce processus
+
+80
+00:03:38,818 --> 00:03:41,352
+pour tout câbler nécessaire pour ce hook dans
+
+81
+00:03:41,391 --> 00:03:44,387
+notre projet afin de comprendre comment toutes ces étapes s'assemblent.

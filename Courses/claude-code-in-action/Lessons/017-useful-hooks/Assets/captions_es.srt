@@ -1,0 +1,979 @@
+1
+00:00:00,031 --> 00:00:02,794
+En este video, me gustaría mostrarte algunos ganchos (hooks) muy útiles
+
+2
+00:00:02,855 --> 00:00:05,799
+que podrías querer usar en tus propios proyectos. Estos
+
+3
+00:00:05,839 --> 00:00:08,403
+ganchos están destinados a abordar algunos puntos débiles comunes
+
+4
+00:00:08,542 --> 00:00:11,086
+en Claude Code. Para ayudarte a entender cómo funciona el primero,
+
+5
+00:00:11,147 --> 00:00:13,929
+déjame darte una rápida demostración de un problema
+
+6
+00:00:13,970 --> 00:00:16,594
+con el que Claude Code a veces se encuentra, especialmente
+
+7
+00:00:16,713 --> 00:00:19,237
+en proyectos más grandes. Así que dentro del directorio
+
+8
+00:00:19,277 --> 00:00:22,242
+SRC, voy a encontrar schema.ts.
+
+9
+00:00:22,222 --> 00:00:24,948
+Dentro de aquí, solo hay una única función llamada create
+
+10
+00:00:24,968 --> 00:00:28,394
+schema. Esta función se llama desde el archivo main.ts,
+
+11
+00:00:28,414 --> 00:00:31,059
+específicamente aquí. Ahora,
+
+12
+00:00:31,120 --> 00:00:33,744
+voy a volver al archivo schema.ts y voy a actualizar
+
+13
+00:00:33,765 --> 00:00:36,331
+la definición de la función. Voy a decir que si alguna vez
+
+14
+00:00:36,371 --> 00:00:39,036
+quieres llamar a esta función, también debes pasar
+
+15
+00:00:39,136 --> 00:00:41,661
+un argumento verbose que debe ser de
+
+16
+00:00:41,722 --> 00:00:44,567
+tipo Boolean. Ahora, tan pronto como añada este cambio,
+
+17
+00:00:44,847 --> 00:00:47,393
+si vuelvo al archivo main.ts, obtendré un
+
+18
+00:00:47,493 --> 00:00:49,999
+tipo de error porque acabo de actualizar la definición de
+
+19
+00:00:50,039 --> 00:00:52,543
+esta función, pero en realidad no he añadido
+
+20
+00:00:52,564 --> 00:00:55,189
+un valor para verbose. Así que el error
+
+21
+00:00:55,229 --> 00:00:57,774
+aquí dice específicamente "argumento para verbose
+
+22
+00:00:57,875 --> 00:01:00,661
+no fue proporcionado". Ahora,
+
+23
+00:01:00,682 --> 00:01:03,268
+voy a deshacer este cambio muy rápidamente. Voy a
+
+24
+00:01:03,287 --> 00:01:06,332
+cerrar el archivo main.ts. Luego abriré
+
+25
+00:01:06,393 --> 00:01:09,197
+Claude Code y le pediré que haga exactamente el mismo
+
+26
+00:01:09,278 --> 00:01:11,822
+cambio. Ahora, si ejecuto esto, Claude Code
+
+27
+00:01:11,841 --> 00:01:15,007
+no tendrá ningún problema en hacer esta edición en absoluto. Pero
+
+28
+00:01:15,027 --> 00:01:18,093
+actualizará este archivo y luego, desafortunadamente, después de
+
+29
+00:01:18,132 --> 00:01:20,677
+hacer ese cambio, ahí está el nuevo verbose true
+
+30
+00:01:20,716 --> 00:01:23,503
+ahí. Desafortunadamente, Claude no buscará por el proyecto
+
+31
+00:01:23,623 --> 00:01:26,228
+y tratará de encontrar dónde se llama esa función y tratar de
+
+32
+00:01:26,388 --> 00:01:29,075
+actualizar cualquiera de los diferentes puntos de llamada. Así que si ahora abro
+
+33
+00:01:29,114 --> 00:01:31,640
+main.ts, veremos que sí tenemos, de hecho,
+
+34
+00:01:31,680 --> 00:01:34,186
+un error aquí. Y Claude no lo captó realmente,
+
+35
+00:01:34,325 --> 00:01:36,831
+desafortunadamente. Así que el primer gancho que quiero mostrarte
+
+36
+00:01:36,871 --> 00:01:39,697
+solucionará esta solución súper fácilmente.
+
+37
+00:01:39,677 --> 00:01:42,222
+En caso de que no estés familiarizado con TypeScript, y si no lo estás, está totalmente
+
+38
+00:01:42,263 --> 00:01:44,807
+bien. Si salgo de Claude Code y ejecuto el
+
+39
+00:01:44,908 --> 00:01:47,653
+comando, TSC-dash-noemit,
+
+40
+00:01:48,453 --> 00:01:51,659
+eso ejecutará una comprobación de tipos en todo mi proyecto. Y
+
+41
+00:01:51,840 --> 00:01:54,344
+en esta comprobación de tipos, podemos ver que el error es muy
+
+42
+00:01:54,405 --> 00:01:56,950
+evidente aquí. Así que se queja de nuestra llamada
+
+43
+00:01:56,989 --> 00:01:59,694
+a create schema desde ese archivo main.ts.
+
+44
+00:01:59,674 --> 00:02:02,477
+Así que mi idea para un gancho es realmente simple.
+
+45
+00:02:02,518 --> 00:02:05,260
+Creo que cada vez que editemos un archivo TypeScript,
+
+46
+00:02:05,600 --> 00:02:08,143
+deberíamos ejecutar el verificador de tipos de TypeScript y ver
+
+47
+00:02:08,182 --> 00:02:10,725
+si hay algún error distinto. Si los hay,
+
+48
+00:02:10,765 --> 00:02:13,328
+deberíamos intentar alimentar estos errores de vuelta a Claude
+
+49
+00:02:13,448 --> 00:02:16,531
+inmediatamente dentro de un hook post-tool use (después de usar la herramienta).
+
+50
+00:02:16,551 --> 00:02:19,274
+Y con suerte, esto le dará a Claude una señal y le dirá que hay
+
+51
+00:02:19,294 --> 00:02:21,836
+un error de tipo que acaba de introducir, que
+
+52
+00:02:21,877 --> 00:02:25,259
+probablemente necesite corregir en otro lugar de nuestro proyecto.
+
+53
+00:02:25,509 --> 00:02:28,013
+Ahora, afortunadamente, ya he preparado este gancho para nosotros,
+
+54
+00:02:28,032 --> 00:02:30,694
+para ahorrarnos un poco de tiempo en el archivo hooks,
+
+55
+00:02:30,715 --> 00:02:33,337
+TSC.js. Así que dentro de este archivo,
+
+56
+00:02:33,377 --> 00:02:36,200
+tengo mucha lógica preparada para ejecutar el verificador de tipos de TypeScript,
+
+57
+00:02:36,580 --> 00:02:39,304
+tomar cualquier error que encuentre y pasárselo de vuelta a
+
+58
+00:02:39,364 --> 00:02:41,907
+Claude. Actualmente, he deshabilitado
+
+59
+00:02:41,947 --> 00:02:45,110
+este gancho para poder darte esa demostración que acabas de ver. Así que
+
+60
+00:02:45,150 --> 00:02:47,832
+lo deshabilité añadiendo el process exit 0 ahí.
+
+61
+00:02:47,932 --> 00:02:50,915
+Voy a borrar eso. Y ahora este gancho debería funcionar perfectamente.
+
+62
+00:02:51,635 --> 00:02:54,258
+Así que si ahora vuelvo al archivo schema.ts,
+
+63
+00:02:54,278 --> 00:02:58,731
+elimino la bandera verbose, reinicio
+
+64
+00:02:58,771 --> 00:03:01,280
+Claude Code y le pido que haga
+
+65
+00:03:01,319 --> 00:03:04,662
+el mismo cambio una vez más.
+
+66
+00:03:04,701 --> 00:03:07,526
+Hará el cambio. Y luego, con suerte, esta vez, recibirá inmediatamente
+
+67
+00:03:07,566 --> 00:03:10,188
+esa retroalimentación del verificador de tipos de TypeScript diciendo,
+
+68
+00:03:10,229 --> 00:03:13,272
+oye, tienes un error en alguna parte del proyecto que acabas de introducir.
+
+69
+00:03:13,612 --> 00:03:16,137
+Y con suerte, Claude lo corregirá. Así que podemos
+
+70
+00:03:16,176 --> 00:03:18,680
+ver aquí, ahí está la edición que se hizo. Recibimos
+
+71
+00:03:18,719 --> 00:03:21,362
+retroalimentación de operación de edición del gancho que preparamos.
+
+72
+00:03:21,824 --> 00:03:24,467
+Así que encontró un problema dentro de uno de nuestros archivos.
+
+73
+00:03:25,087 --> 00:03:27,811
+Y Claude ahora dice, OK, entiendo. Introduje
+
+74
+00:03:27,871 --> 00:03:30,555
+un error. Necesito corregir la llamada a create
+
+75
+00:03:30,574 --> 00:03:33,098
+schema dentro de main.ts.
+
+76
+00:03:33,078 --> 00:03:35,713
+Y luego la próxima actualización que haga intentará ir a
+
+77
+00:03:35,754 --> 00:03:38,270
+ese archivo y actualizar esa llamada de función para
+
+78
+00:03:38,390 --> 00:03:40,895
+añadir ese argumento faltante. Así que este es
+
+79
+00:03:40,975 --> 00:03:43,737
+un gancho que podrías querer intentar implementar en tus propios proyectos.
+
+80
+00:03:43,798 --> 00:03:46,320
+Ahora, aunque este gancho se implementó
+
+81
+00:03:46,341 --> 00:03:48,843
+específicamente para TypeScript, todavía funciona para cualquier
+
+82
+00:03:48,943 --> 00:03:51,545
+otro tipo de lenguaje tipado donde puedas ejecutar un verificador de tipos
+
+83
+00:03:51,566 --> 00:03:54,288
+muy fácilmente. Incluso si usas un lenguaje no tipado,
+
+84
+00:03:54,348 --> 00:03:57,252
+podrías incluso implementar la misma idea de funcionalidad
+
+85
+00:03:57,633 --> 00:04:00,536
+usando pruebas en lugar de ejecutar un verificador de tipos. Así que
+
+86
+00:04:00,556 --> 00:04:03,157
+cada vez que se realiza una edición, podrías ejecutar tus pruebas para asegurarte
+
+87
+00:04:03,177 --> 00:04:05,748
+de que la edición está bien. Ahora, el próximo
+
+88
+00:04:05,769 --> 00:04:08,353
+gancho que me gustaría mostrarte es un poco más desafiante
+
+89
+00:04:08,393 --> 00:04:10,997
+de explicar, pero una vez que entiendas la idea detrás, creo
+
+90
+00:04:11,037 --> 00:04:13,681
+que definitivamente encontrarás este próximo realmente
+
+91
+00:04:13,721 --> 00:04:16,444
+útil, particularmente en proyectos más grandes. Para
+
+92
+00:04:16,485 --> 00:04:19,209
+ayudarte a entender este otro gancho, quiero darte un poco de contexto
+
+93
+00:04:19,249 --> 00:04:21,932
+sobre este proyecto. Dentro del directorio
+
+94
+00:04:21,952 --> 00:04:24,637
+SRC query, hay muchos archivos diferentes. Cada
+
+95
+00:04:24,656 --> 00:04:27,401
+uno de estos archivos diferentes contiene muchas consultas SQL diferentes
+
+96
+00:04:27,721 --> 00:04:30,245
+escritas dentro de diferentes funciones. Dentro
+
+97
+00:04:30,264 --> 00:04:32,869
+del archivo orderqueries.ts en particular,
+
+98
+00:04:32,848 --> 00:04:35,495
+quiero señalar que hay una función aquí llamada
+
+99
+00:04:35,514 --> 00:04:38,120
+get pending orders. Esta consulta recorre
+
+100
+00:04:38,141 --> 00:04:40,706
+una base de datos que contiene datos relacionados con comercio electrónico.
+
+101
+00:04:40,766 --> 00:04:43,372
+Y en teoría, va a encontrar todos los pedidos diferentes
+
+102
+00:04:43,492 --> 00:04:46,077
+que se han creado y que están en estado pendiente.
+
+103
+00:04:46,598 --> 00:04:49,757
+Así que ten en cuenta esa función por un momento. OK,
+
+104
+00:04:49,937 --> 00:04:52,821
+así que te voy a mostrar un par de buenos diagramas muy rápidamente para ayudarte a entender
+
+105
+00:04:52,841 --> 00:04:55,685
+un problema común que comienza a surgir en proyectos más grandes.
+
+106
+00:04:55,745 --> 00:04:58,427
+Así que en este diagrama, tengo mi
+
+107
+00:04:58,649 --> 00:05:01,331
+lista de diferentes archivos de consulta en el lado izquierdo, y como vimos,
+
+108
+00:05:01,451 --> 00:05:03,975
+cada uno de esos archivos de consulta contiene muchas consultas diferentes.
+
+109
+00:05:04,935 --> 00:05:07,560
+Dentro de ese archivo order queries en particular está la
+
+110
+00:05:07,639 --> 00:05:10,202
+función get pending orders. Así que ya tenemos
+
+111
+00:05:10,283 --> 00:05:12,826
+una consulta preparada que intentará encontrar
+
+112
+00:05:12,987 --> 00:05:15,512
+diferentes pedidos pendientes. Ahora, si voy
+
+113
+00:05:15,552 --> 00:05:18,235
+a Claude y le pido que actualice el archivo main.ts
+
+114
+00:05:18,254 --> 00:05:20,778
+para imprimir todos los pedidos que han estado
+
+115
+00:05:20,838 --> 00:05:23,461
+pendientes durante más de tres días, en
+
+116
+00:05:23,581 --> 00:05:26,264
+un mundo perfecto, Claude encontraría el archivo
+
+117
+00:05:26,303 --> 00:05:29,047
+order queries.ts. Encontraría esa consulta existente
+
+118
+00:05:29,247 --> 00:05:31,810
+y la usaría, en lugar de escribir
+
+119
+00:05:31,930 --> 00:05:34,673
+una nueva consulta. Así que eso es lo que queremos.
+
+120
+00:05:35,394 --> 00:05:38,117
+Y veremos que si usamos Claude ahora mismo y le pedimos
+
+121
+00:05:38,156 --> 00:05:40,714
+que haga exactamente eso, obtendremos
+
+122
+00:05:40,995 --> 00:05:43,920
+exactamente el resultado que queremos. Así que le pido a Claude en el archivo main.ts
+
+123
+00:05:43,939 --> 00:05:46,524
+que imprima los pedidos que han estado pendientes. Ahora,
+
+124
+00:05:46,704 --> 00:05:49,249
+para ser justos con Claude, va a echar un vistazo a los
+
+125
+00:05:49,288 --> 00:05:52,014
+diferentes archivos de consulta que existen. Va a encontrar el archivo order queries
+
+126
+00:05:52,053 --> 00:05:54,677
+y luego dentro de él, reconocerá que ya
+
+127
+00:05:54,697 --> 00:05:57,423
+existe una consulta llamada get pending orders. Y
+
+128
+00:05:57,463 --> 00:06:00,047
+intentará usar esa función en lugar de
+
+129
+00:06:00,086 --> 00:06:02,591
+crear una nueva consulta. No queríamos una nueva
+
+130
+00:06:02,612 --> 00:06:05,137
+consulta, queríamos que Claude usara la existente
+
+131
+00:06:05,218 --> 00:06:07,744
+función. Así que cuando le dimos a Claude una tarea muy enfocada
+
+132
+00:06:07,884 --> 00:06:10,389
+y dirigida, pudo entender que,
+
+133
+00:06:10,509 --> 00:06:13,096
+sí, probablemente no debería escribir una nueva consulta. Debería al menos
+
+134
+00:06:13,156 --> 00:06:15,942
+echar un vistazo a algunas de las que ya existen. Y eso fue definitivamente
+
+135
+00:06:15,982 --> 00:06:18,560
+bueno. Ahora voy a darle a Claude un pequeño
+
+136
+00:06:18,660 --> 00:06:21,444
+revés. Voy a hacer intencionalmente esta tarea
+
+137
+00:06:21,545 --> 00:06:24,329
+un poco más difícil. Primero, voy a ejecutar /
+
+138
+00:06:24,389 --> 00:06:27,175
+clear para borrar todo el contexto que hemos ganado. Luego,
+
+139
+00:06:27,334 --> 00:06:30,139
+me gustaría que echaras un vistazo al archivo task.md.
+
+140
+00:06:30,862 --> 00:06:33,386
+Dentro de este archivo, preparé un prompt que todavía va a
+
+141
+00:06:33,466 --> 00:06:35,990
+pedirle a Claude que encuentre pedidos que han estado pendientes durante un tiempo,
+
+142
+00:06:36,370 --> 00:06:38,975
+pero también lo he envuelto en un proyecto más grande.
+
+143
+00:06:38,956 --> 00:06:42,062
+Le estoy pidiendo a Claude que escriba una integración de Slack
+
+144
+00:06:42,362 --> 00:06:44,947
+que enviará un mensaje a un canal específico una vez
+
+145
+00:06:45,009 --> 00:06:47,954
+al día con todos los pedidos que han estado pendientes durante demasiado
+
+146
+00:06:47,975 --> 00:06:50,699
+tiempo. Así que en este escenario, todavía queremos encontrar pedidos
+
+147
+00:06:50,759 --> 00:06:53,286
+que han estado pendientes durante demasiado tiempo, pero ahora lo he envuelto dentro de
+
+148
+00:06:53,326 --> 00:06:55,848
+esta tarea más grande. Y si tomo esta
+
+149
+00:06:55,887 --> 00:06:58,692
+tarea y luego la introduzco en Claude,
+
+150
+00:06:59,233 --> 00:07:01,877
+de nuevo, después de hacer esa operación de /clear, vamos
+
+151
+00:07:01,896 --> 00:07:04,521
+a ver que esta vez, desafortunadamente, no se mantendrá
+
+152
+00:07:04,560 --> 00:07:07,125
+tan enfocada, y terminará
+
+153
+00:07:07,165 --> 00:07:09,928
+intentando escribir una nueva consulta Git pending
+
+154
+00:07:10,028 --> 00:07:12,552
+orders, que es, de nuevo, no lo que queremos,
+
+155
+00:07:12,632 --> 00:07:15,137
+porque eso sería duplicar código en todo nuestro proyecto.
+
+156
+00:07:16,098 --> 00:07:18,901
+Si dejo que esto se ejecute un poco, eventualmente veré que sí,
+
+157
+00:07:18,961 --> 00:07:21,485
+de hecho, crea una nueva consulta llamada get
+
+158
+00:07:21,565 --> 00:07:24,137
+orders pending too long. Así que este es
+
+159
+00:07:24,178 --> 00:07:26,781
+un ejemplo de dónde Claude perdió el enfoque y
+
+160
+00:07:26,821 --> 00:07:29,483
+decidió escribir una nueva consulta en lugar de reutilizar
+
+161
+00:07:29,644 --> 00:07:32,245
+una existente. De nuevo, tenemos código duplicado
+
+162
+00:07:32,286 --> 00:07:35,028
+aquí, que probablemente no es lo que queremos. En
+
+163
+00:07:35,069 --> 00:07:37,732
+adición, no solo creó la nueva consulta, sino que también
+
+164
+00:07:37,752 --> 00:07:40,355
+creó un archivo completamente nuevo, que también es algo que probablemente no queremos.
+
+165
+00:07:40,415 --> 00:07:43,096
+Probablemente querríamos que esta consulta relacionada con pedidos
+
+166
+00:07:43,137 --> 00:07:45,920
+se añadiera al archivo order queries. Así que
+
+167
+00:07:45,939 --> 00:07:48,903
+ahora que entendemos el problema aquí, déjame mostrarte cómo podríamos solucionar esto potencialmente
+
+168
+00:07:48,942 --> 00:07:51,853
+utilizando un gancho. De acuerdo, así que
+
+169
+00:07:51,892 --> 00:07:54,476
+cada vez que Claude intenta escribir, editar o
+
+170
+00:07:54,576 --> 00:07:57,380
+usar la herramienta de multi-edición para modificar algo dentro
+
+171
+00:07:57,440 --> 00:07:59,963
+del directorio queries específicamente, voy a
+
+172
+00:08:00,024 --> 00:08:02,867
+ejecutar el siguiente gancho. Primero, dentro de este gancho, voy a
+
+173
+00:08:02,887 --> 00:08:05,451
+lanzar una copia separada y nueva de
+
+174
+00:08:05,531 --> 00:08:08,035
+Claude Code. Le pediré a esta nueva copia
+
+175
+00:08:08,355 --> 00:08:10,899
+que revise el cambio que se acaba de hacer y revise
+
+176
+00:08:10,939 --> 00:08:13,843
+algo del código existente dentro del directorio queries y
+
+177
+00:08:13,903 --> 00:08:16,547
+vea si ya existe una consulta similar.
+
+178
+00:08:16,526 --> 00:08:19,088
+Luego, si existe una consulta,
+
+179
+00:08:19,129 --> 00:08:21,771
+tomaré esa retroalimentación y la enviaré de vuelta a la copia original
+
+180
+00:08:21,851 --> 00:08:24,454
+de Claude y le pediré a Claude que tal vez
+
+181
+00:08:24,514 --> 00:08:27,197
+decida arreglar la situación. Así que elimina la consulta añadida
+
+182
+00:08:27,276 --> 00:08:30,259
+y utiliza la que ya existe. Así que
+
+183
+00:08:30,300 --> 00:08:33,361
+esto nos permitirá asegurarnos de que la carpeta queries en general
+
+184
+00:08:33,402 --> 00:08:36,144
+se mantenga limpia y no tenga código duplicado
+
+185
+00:08:36,184 --> 00:08:38,746
+dentro de ella. Así que déjame mostrarte cómo funcionaría esto
+
+186
+00:08:38,846 --> 00:08:41,509
+en acción. Primero, voy a volver aquí.
+
+187
+00:08:42,049 --> 00:08:45,133
+Voy a borrar el nuevo archivo order alerts.
+
+188
+00:08:45,113 --> 00:08:47,657
+queries.ts que se creó y
+
+189
+00:08:47,697 --> 00:08:52,124
+el archivo slack.ts que también se creó. Luego
+
+190
+00:08:52,163 --> 00:08:54,706
+encontraré dentro del directorio hooks el archivo query hook.
+
+191
+00:08:54,847 --> 00:08:57,892
+Así que ya preparé este gancho para nosotros. Ahora mismo
+
+192
+00:08:57,932 --> 00:09:00,556
+está actualmente deshabilitado porque tengo un process.exit
+
+193
+00:09:00,615 --> 00:09:03,208
+en la parte superior. Así que repasemos este gancho
+
+194
+00:09:03,288 --> 00:09:05,793
+muy rápidamente. Primero, le diré a esto que
+
+195
+00:09:05,812 --> 00:09:08,355
+solo revisará los cambios en el directorio
+
+196
+00:09:08,395 --> 00:09:11,019
+SRC queries. Luego, un poco más abajo, revisaré
+
+197
+00:09:11,039 --> 00:09:13,783
+y veré si el cambio que se acaba de hacer se hizo en el directorio de
+
+198
+00:09:13,803 --> 00:09:16,346
+queries. Después de eso, tengo un largo
+
+199
+00:09:16,427 --> 00:09:19,130
+prompt aquí que le pide a Claude que haga una revisión
+
+200
+00:09:19,171 --> 00:09:21,914
+del cambio que se acaba de hacer. Y luego, después de eso es
+
+201
+00:09:21,975 --> 00:09:25,399
+donde estoy lanzando Claude Code programáticamente. Específicamente,
+
+202
+00:09:25,438 --> 00:09:28,043
+estas líneas. Esto utiliza el SDK de TypeScript de Claude Code.
+
+203
+00:09:28,123 --> 00:09:30,726
+Puedo darte mucha más información sobre él en un momento. Por ahora,
+
+204
+00:09:30,746 --> 00:09:33,269
+simplemente entiende que esto aquí es esencialmente lo mismo
+
+205
+00:09:33,309 --> 00:09:36,053
+que usar Claude Code en la terminal.
+
+206
+00:09:36,254 --> 00:09:38,857
+Una vez que Claude Code se ejecute, y obtenga una respuesta,
+
+207
+00:09:39,619 --> 00:09:42,523
+verifico y veo si Claude decide que sí, los cambios se ven
+
+208
+00:09:42,562 --> 00:09:45,147
+bien, o tal vez tenemos una consulta duplicada. Y
+
+209
+00:09:45,226 --> 00:09:47,870
+si es así, entonces saldremos anticipadamente con un código de salida
+
+210
+00:09:47,890 --> 00:09:50,434
+de dos, lo que devolverá esta retroalimentación
+
+211
+00:09:50,534 --> 00:09:53,077
+a Claude y, con suerte, le dirá que necesita hacer un cambio.
+
+212
+00:09:53,118 --> 00:09:55,721
+Así que ahora que tengo este gancho adicional preparado
+
+213
+00:09:59,511 --> 00:10:02,015
+y habilitado eliminando ese process exit zero en la parte
+
+214
+00:10:02,076 --> 00:10:07,384
+superior, reiniciaré Claude Code y
+
+215
+00:10:07,404 --> 00:10:10,009
+ejecutaré la misma consulta nuevamente. Y con suerte,
+
+216
+00:10:10,029 --> 00:10:12,533
+esta vez podría introducir inicialmente
+
+217
+00:10:12,573 --> 00:10:15,097
+esa consulta duplicada, pero luego nuestro gancho se ejecutará
+
+218
+00:10:15,138 --> 00:10:17,883
+y, con suerte, le dirá, oye, no queremos ese código duplicado.
+
+219
+00:10:18,323 --> 00:10:20,908
+Deberías usar alguna consulta ya existente para
+
+220
+00:10:20,967 --> 00:10:23,625
+implementar esta funcionalidad. Ahora, Claude Code
+
+221
+00:10:23,745 --> 00:10:26,549
+volverá a intentar crear un archivo de consulta completamente nuevo y separado,
+
+222
+00:10:26,610 --> 00:10:29,192
+sin utilizar la consulta antigua
+
+223
+00:10:29,253 --> 00:10:31,836
+que ya existía. Cuando intente crear ese
+
+224
+00:10:31,876 --> 00:10:34,480
+archivo, sin embargo, nuestro gancho se ejecutará.
+
+225
+00:10:34,519 --> 00:10:37,124
+Lanzará esa copia separada de Claude Code, que realizará
+
+226
+00:10:37,163 --> 00:10:40,047
+alguna investigación y encontrará que existe, de hecho, una consulta existente
+
+227
+00:10:40,107 --> 00:10:42,770
+que se puede reutilizar. Proporcionará
+
+228
+00:10:42,870 --> 00:10:45,395
+algún consejo y dirá, oye, probablemente podrías ir y modificar esta
+
+229
+00:10:45,515 --> 00:10:48,139
+otra consulta existente para adaptarla perfectamente a tus necesidades.
+
+230
+00:10:48,541 --> 00:10:51,125
+Y veremos retroalimentación de Claude, nuestra instancia principal
+
+231
+00:10:51,144 --> 00:10:53,769
+con la que estamos interactuando, diciendo, ah, sí, existe
+
+232
+00:10:53,830 --> 00:10:56,333
+esta consulta existente. Simplemente modifiquemos
+
+233
+00:10:56,354 --> 00:10:58,857
+esa consulta existente en lugar de intentar
+
+234
+00:10:58,918 --> 00:11:01,643
+escribir una nueva. Ahora, la desventaja
+
+235
+00:11:01,663 --> 00:11:04,164
+de este gancho es que llevará tiempo y costo adicional ejecutarlo cada vez que quiera editar algo
+
+236
+00:11:04,225 --> 00:11:06,927
+dentro del directorio de queries. Pero la ventaja es que
+
+237
+00:11:09,630 --> 00:11:12,594
+tendré menos código duplicado dentro
+
+238
+00:11:12,614 --> 00:11:15,517
+de mi directorio de queries. Así que realmente se reduce a un conjunto de compensaciones
+
+239
+00:11:15,937 --> 00:11:18,460
+para que decidas si quieres implementar algo así en tu propio proyecto.
+
+240
+00:11:18,519 --> 00:11:21,283
+Si lo haces, recomendaría al menos
+
+241
+00:11:21,524 --> 00:11:24,687
+hacer lo que mostré dentro del gancho de query.
+
+242
+00:11:24,667 --> 00:11:27,506
+Así que este de aquí, y solo supervisar quizás un puñado
+
+243
+00:11:27,547 --> 00:11:30,386
+de directorios, como carpetas realmente importantes dentro de tu proyecto,
+
+244
+00:11:30,808 --> 00:11:33,488
+solo para minimizar la cantidad de trabajo adicional que se está
+
+245
+00:11:33,548 --> 00:11:33,951
+haciendo.

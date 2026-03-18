@@ -1,0 +1,979 @@
+1
+00:00:00,031 --> 00:00:02,794
+Dans cette vidéo, j'aimerais vous montrer quelques hooks vraiment utiles
+
+2
+00:00:02,855 --> 00:00:05,799
+que vous pourriez vouloir utiliser sur vos propres projets. Ces
+
+3
+00:00:05,839 --> 00:00:08,403
+hooks sont destinés à remédier à certains points faibles courants
+
+4
+00:00:08,542 --> 00:00:11,086
+dans Claude Code. Pour vous aider à comprendre comment le premier
+
+5
+00:00:11,147 --> 00:00:13,929
+fonctionne, laissez-moi vous donner une rapide démonstration d'un problème
+
+6
+00:00:13,970 --> 00:00:16,594
+que Claude Code rencontre parfois, surtout
+
+7
+00:00:16,713 --> 00:00:19,237
+sur les projets plus importants. Donc, à l'intérieur du répertoire SRC,
+
+8
+00:00:19,277 --> 00:00:22,242
+je vais trouver schema.ts.
+
+9
+00:00:22,222 --> 00:00:24,948
+À l'intérieur, il n'y a qu'une seule fonction appelée create
+
+10
+00:00:24,968 --> 00:00:28,394
+schema. Cette fonction est appelée depuis le fichier main.ts
+
+11
+00:00:28,414 --> 00:00:31,059
+, spécifiquement ici. Maintenant,
+
+12
+00:00:31,120 --> 00:00:33,744
+je vais retourner au fichier schema.ts et je vais mettre à jour
+
+13
+00:00:33,765 --> 00:00:36,331
+la définition de la fonction. Je vais dire que si vous
+
+14
+00:00:36,371 --> 00:00:39,036
+voulez appeler cette fonction, vous devez également passer
+
+15
+00:00:39,136 --> 00:00:41,661
+un argument verbose qui doit être de
+
+16
+00:00:41,722 --> 00:00:44,567
+type Boolean. Maintenant, dès que j'ajoute ce changement,
+
+17
+00:00:44,847 --> 00:00:47,393
+si je retourne au fichier main.ts, je vais obtenir une
+
+18
+00:00:47,493 --> 00:00:49,999
+erreur de type car j'ai mis à jour la définition de
+
+19
+00:00:50,039 --> 00:00:52,543
+cette fonction, mais je n'ai pas encore ajouté
+
+20
+00:00:52,564 --> 00:00:55,189
+une valeur pour verbose. Donc l'erreur
+
+21
+00:00:55,229 --> 00:00:57,774
+ici dit spécifiquement que l'argument pour verbose
+
+22
+00:00:57,875 --> 00:01:00,661
+n'a pas été fourni. Maintenant, je vais
+
+23
+00:01:00,682 --> 00:01:03,268
+annuler ce changement très rapidement. Je vais
+
+24
+00:01:03,287 --> 00:01:06,332
+fermer le fichier main.ts. Je vais ensuite ouvrir
+
+25
+00:01:06,393 --> 00:01:09,197
+Claude Code et lui demander de faire exactement le même
+
+26
+00:01:09,278 --> 00:01:11,822
+changement. Maintenant, si j'exécute cela, Claude Code
+
+27
+00:01:11,841 --> 00:01:15,007
+n'aura absolument aucun problème à effectuer cette modification. Mais
+
+28
+00:01:15,027 --> 00:01:18,093
+il mettra à jour ce fichier et malheureusement après
+
+29
+00:01:18,132 --> 00:01:20,677
+avoir fait ce changement, donc voici le nouveau verbose true
+
+30
+00:01:20,716 --> 00:01:23,503
+. Malheureusement, Claude ne parcourra pas le projet
+
+31
+00:01:23,623 --> 00:01:26,228
+et n'essaiera pas de trouver où cette fonction est réellement appelée et d'essayer de
+
+32
+00:01:26,388 --> 00:01:29,075
+mettre à jour les différents points d'appel. Donc, si j'ouvre maintenant
+
+33
+00:01:29,114 --> 00:01:31,640
+main.ts, nous verrons que nous avons bien un
+
+34
+00:01:31,680 --> 00:01:34,186
+erreur ici. Et Claude n'a pas vraiment rattrapé cela,
+
+35
+00:01:34,325 --> 00:01:36,831
+malheureusement. Donc le premier hook que je veux vous montrer
+
+36
+00:01:36,871 --> 00:01:39,697
+résoudra cette solution très facilement.
+
+37
+00:01:39,677 --> 00:01:42,222
+Au cas où vous ne connaîtriez pas TypeScript, et si ce n'est pas le cas, ce n'est pas grave.
+
+38
+00:01:42,263 --> 00:01:44,807
+Si je ferme Claude Code et exécute la commande
+
+39
+00:01:44,908 --> 00:01:47,653
+, TSC-dash-noemit,
+
+40
+00:01:48,453 --> 00:01:51,659
+cela exécutera une vérification de type sur tout mon projet. Et
+
+41
+00:01:51,840 --> 00:01:54,344
+dans cette vérification de type, nous pouvons voir que l'erreur est très
+
+42
+00:01:54,405 --> 00:01:56,950
+évidente ici. Elle se plaint donc de notre appel
+
+43
+00:01:56,989 --> 00:01:59,694
+à create schema depuis ce fichier main.ts.
+
+44
+00:01:59,674 --> 00:02:02,477
+Donc mon idée pour un hook est vraiment simple. Je
+
+45
+00:02:02,518 --> 00:02:05,260
+pense que chaque fois que nous modifions un fichier TypeScript,
+
+46
+00:02:05,600 --> 00:02:08,143
+nous devrions exécuter le vérificateur de type TypeScript et voir
+
+47
+00:02:08,182 --> 00:02:10,725
+s'il y a des erreurs distinctes. S'il y en a,
+
+48
+00:02:10,765 --> 00:02:13,328
+nous devrions tenter de réinjecter ces erreurs dans Claude
+
+49
+00:02:13,448 --> 00:02:16,531
+immédiatement dans un hook post-utilisation d'outil.
+
+50
+00:02:16,551 --> 00:02:19,274
+Et j'espère que cela donnera à Claude un signal et lui indiquera qu'il y a
+
+51
+00:02:19,294 --> 00:02:21,836
+une erreur de type qu'elle vient d'introduire, que
+
+52
+00:02:21,877 --> 00:02:25,259
+elle doit probablement aller corriger quelque part ailleurs dans notre projet.
+
+53
+00:02:25,509 --> 00:02:28,013
+Maintenant, j'ai déjà assemblé ce hook pour nous, heureusement, juste
+
+54
+00:02:28,032 --> 00:02:30,694
+pour nous faire gagner un peu de temps dans le fichier hooks,
+
+55
+00:02:30,715 --> 00:02:33,337
+TSC.js. Donc dans ce fichier,
+
+56
+00:02:33,377 --> 00:02:36,200
+j'ai rassemblé beaucoup de logique pour exécuter le vérificateur de type TypeScript,
+
+57
+00:02:36,580 --> 00:02:39,304
+prendre les erreurs trouvées et les renvoyer à
+
+58
+00:02:39,364 --> 00:02:41,907
+Claude. Actuellement, j'ai désactivé
+
+59
+00:02:41,947 --> 00:02:45,110
+ce hook juste pour pouvoir vous donner la démonstration que vous venez de voir. Donc
+
+60
+00:02:45,150 --> 00:02:47,832
+je l'ai désactivé en ajoutant le process exit 0 juste là.
+
+61
+00:02:47,932 --> 00:02:50,915
+Je vais supprimer cela. Et maintenant, ce hook devrait fonctionner AOK.
+
+62
+00:02:51,635 --> 00:02:54,258
+Donc, si je retourne maintenant au fichier schema.ts,
+
+63
+00:02:54,278 --> 00:02:58,731
+supprimez le flag verbose, redémarrez
+
+64
+00:02:58,771 --> 00:03:01,280
+Claude Code, et demandez-lui de faire
+
+65
+00:03:01,319 --> 00:03:04,662
+le même changement une fois de plus. Il
+
+66
+00:03:04,701 --> 00:03:07,526
+fera le changement. Et puis, j'espère que cette fois, il recevra immédiatement
+
+67
+00:03:07,566 --> 00:03:10,188
+ce retour du vérificateur de type TypeScript disant,
+
+68
+00:03:10,229 --> 00:03:13,272
+hey, il y a une erreur quelque part ailleurs dans le projet que tu viens d'introduire.
+
+69
+00:03:13,612 --> 00:03:16,137
+Et j'espère que Claude ira la corriger. Nous pouvons donc
+
+70
+00:03:16,176 --> 00:03:18,680
+voir ici, il y a la modification qui a été faite. Nous avons
+
+71
+00:03:18,719 --> 00:03:21,362
+reçu un retour d'opération de modification du hook que nous avons assemblé.
+
+72
+00:03:21,824 --> 00:03:24,467
+Il a donc trouvé un problème dans l'un de nos fichiers.
+
+73
+00:03:25,087 --> 00:03:27,811
+Et Claude dit maintenant, OK, je comprends, j'ai introduit
+
+74
+00:03:27,871 --> 00:03:30,555
+une erreur. Je dois corriger l'appel à create
+
+75
+00:03:30,574 --> 00:03:33,098
+schema dans main.ts.
+
+76
+00:03:33,078 --> 00:03:35,713
+Et ensuite, la prochaine modification qu'il apportera sera de tenter d'aller dans
+
+77
+00:03:35,754 --> 00:03:38,270
+ce fichier et de mettre à jour cet appel de fonction pour
+
+78
+00:03:38,390 --> 00:03:40,895
+ajouter cet argument manquant. Donc, c'est
+
+79
+00:03:40,975 --> 00:03:43,737
+un hook que vous pourriez vouloir essayer d'implémenter sur vos propres
+
+80
+00:03:43,798 --> 00:03:46,320
+projets. Maintenant, même si ce hook a été implémenté
+
+81
+00:03:46,341 --> 00:03:48,843
+spécifiquement pour TypeScript, il fonctionne toujours pour n'importe quel
+
+82
+00:03:48,943 --> 00:03:51,545
+autre langage typé où vous pouvez exécuter un vérificateur
+
+83
+00:03:51,566 --> 00:03:54,288
+de type très facilement. Même si vous utilisez un langage non typé,
+
+84
+00:03:54,348 --> 00:03:57,252
+vous pourriez même implémenter la même idée de fonctionnalité
+
+85
+00:03:57,633 --> 00:04:00,536
+en utilisant des tests au lieu d'exécuter un vérificateur de type. Donc
+
+86
+00:04:00,556 --> 00:04:03,157
+chaque fois qu'une modification est apportée, vous pourriez exécuter vos tests pour vous
+
+87
+00:04:03,177 --> 00:04:05,748
+assurer que la modification est correcte. Maintenant, le prochain
+
+88
+00:04:05,769 --> 00:04:08,353
+hook que j'aimerais vous montrer est un peu plus difficile
+
+89
+00:04:08,393 --> 00:04:10,997
+à expliquer, mais une fois que vous aurez compris l'idée, je pense
+
+90
+00:04:11,037 --> 00:04:13,681
+que vous trouverez certainement celui-ci très
+
+91
+00:04:13,721 --> 00:04:16,444
+utile, particulièrement sur les projets plus grands. Pour
+
+92
+00:04:16,485 --> 00:04:19,209
+vous aider à comprendre cet autre hook, je veux vous donner un peu de contexte
+
+93
+00:04:19,249 --> 00:04:21,932
+sur ce projet. À l'intérieur du répertoire SRC query,
+
+94
+00:04:21,952 --> 00:04:24,637
+il y a de nombreux fichiers différents. Chacun
+
+95
+00:04:24,656 --> 00:04:27,401
+de ces différents fichiers contient de nombreuses requêtes SQL différentes
+
+96
+00:04:27,721 --> 00:04:30,245
+écrites dans différentes fonctions. À l'intérieur
+
+97
+00:04:30,264 --> 00:04:32,869
+du fichier orderqueries.ts en particulier,
+
+98
+00:04:32,848 --> 00:04:35,495
+je tiens à souligner qu'il y a une fonction ici appelée
+
+99
+00:04:35,514 --> 00:04:38,120
+get pending orders. Cette requête parcourt
+
+100
+00:04:38,141 --> 00:04:40,706
+une base de données contenant des données liées au commerce électronique
+
+101
+00:04:40,766 --> 00:04:43,372
+. Et en théorie, elle trouvera toutes les commandes
+
+102
+00:04:43,492 --> 00:04:46,077
+qui ont été créées et qui sont en attente.
+
+103
+00:04:46,598 --> 00:04:49,757
+Donc, gardez cette fonction à l'esprit un instant. OK,
+
+104
+00:04:49,937 --> 00:04:52,821
+je vais vous montrer quelques bons diagrammes très rapidement pour vous aider à comprendre
+
+105
+00:04:52,841 --> 00:04:55,685
+un problème courant qui commence à apparaître dans les projets
+
+106
+00:04:55,745 --> 00:04:58,427
+plus importants. Donc, dans ce diagramme, j'ai
+
+107
+00:04:58,649 --> 00:05:01,331
+ma liste de différents fichiers de requêtes sur le côté gauche, et comme nous l'avons vu,
+
+108
+00:05:01,451 --> 00:05:03,975
+chacun de ces différents fichiers de requêtes contient de nombreuses requêtes différentes.
+
+109
+00:05:04,935 --> 00:05:07,560
+Dans ce fichier order queries en particulier se trouve
+
+110
+00:05:07,639 --> 00:05:10,202
+la fonction get pending orders. Nous avons donc déjà
+
+111
+00:05:10,283 --> 00:05:12,826
+une requête préparée qui tentera de trouver
+
+112
+00:05:12,987 --> 00:05:15,512
+des commandes en attente. Maintenant, si je vais
+
+113
+00:05:15,552 --> 00:05:18,235
+voir Claude et lui demande de modifier le fichier main.ts
+
+114
+00:05:18,254 --> 00:05:20,778
+pour afficher toutes les commandes qui sont
+
+115
+00:05:20,838 --> 00:05:23,461
+en attente depuis plus de trois jours, dans
+
+116
+00:05:23,581 --> 00:05:26,264
+un monde parfait, Claude trouverait le fichier
+
+117
+00:05:26,303 --> 00:05:29,047
+order queries.ts. Il trouverait la requête existante
+
+118
+00:05:29,247 --> 00:05:31,810
+et l'utiliserait plutôt que d'écrire
+
+119
+00:05:31,930 --> 00:05:34,673
+une nouvelle requête. C'est donc ce que nous voulons.
+
+120
+00:05:35,394 --> 00:05:38,117
+Et nous verrons que si nous utilisons Claude maintenant et lui demandons
+
+121
+00:05:38,156 --> 00:05:40,714
+de faire exactement cela, nous obtiendrons
+
+122
+00:05:40,995 --> 00:05:43,920
+exactement le résultat souhaité. Je vais donc demander à Claude dans le fichier main.ts
+
+123
+00:05:43,939 --> 00:05:46,524
+d'afficher les commandes en attente. Maintenant,
+
+124
+00:05:46,704 --> 00:05:49,249
+pour être juste envers Claude, il va regarder les
+
+125
+00:05:49,288 --> 00:05:52,014
+différents fichiers de requêtes existants. Il va trouver le fichier order queries
+
+126
+00:05:52,053 --> 00:05:54,677
+. Et puis, il reconnaîtra qu'il y a
+
+127
+00:05:54,697 --> 00:05:57,423
+déjà une requête appelée get pending orders. Et
+
+128
+00:05:57,463 --> 00:06:00,047
+il essaiera d'utiliser cette fonction plutôt que de
+
+129
+00:06:00,086 --> 00:06:02,591
+créer une nouvelle requête. Nous ne voulions pas une nouvelle
+
+130
+00:06:02,612 --> 00:06:05,137
+requête. Nous voulions que Claude utilise la
+
+131
+00:06:05,218 --> 00:06:07,744
+fonction existante. Donc, lorsque nous avons donné à Claude une tâche très ciblée
+
+132
+00:06:07,884 --> 00:06:10,389
+et dirigée, il a été capable de comprendre que,
+
+133
+00:06:10,509 --> 00:06:13,096
+oui, je ne devrais probablement pas écrire une nouvelle requête. Il devrait au moins
+
+134
+00:06:13,156 --> 00:06:15,942
+regarder celles qui existent déjà. Et c'était certainement
+
+135
+00:06:15,982 --> 00:06:18,560
+bien. Maintenant, je vais donner à Claude un petit
+
+136
+00:06:18,660 --> 00:06:21,444
+détournement. Je vais délibérément rendre cette tâche
+
+137
+00:06:21,545 --> 00:06:24,329
+un peu plus difficile. D'abord, je vais exécuter /
+
+138
+00:06:24,389 --> 00:06:27,175
+clear pour effacer tout le contexte que nous avons acquis. Ensuite,
+
+139
+00:06:27,334 --> 00:06:30,139
+j'aimerais que vous regardiez le fichier task.md.
+
+140
+00:06:30,862 --> 00:06:33,386
+Dans ce fichier, j'ai préparé un prompt qui va toujours
+
+141
+00:06:33,466 --> 00:06:35,990
+demander à Claude de trouver les commandes qui sont en attente depuis un certain temps,
+
+142
+00:06:36,370 --> 00:06:38,975
+mais je l'ai aussi encapsulé dans un projet plus large.
+
+143
+00:06:38,956 --> 00:06:42,062
+Je demande à Claude d'écrire une intégration Slack
+
+144
+00:06:42,362 --> 00:06:44,947
+qui enverra un message à un canal spécifique une fois
+
+145
+00:06:45,009 --> 00:06:47,954
+par jour avec toutes les commandes qui sont en attente depuis trop
+
+146
+00:06:47,975 --> 00:06:50,699
+longtemps. Donc, dans ce scénario, nous voulons toujours trouver les commandes
+
+147
+00:06:50,759 --> 00:06:53,286
+en attente depuis trop longtemps, mais maintenant je l'ai encapsulé dans
+
+148
+00:06:53,326 --> 00:06:55,848
+cette tâche plus large. Et si je prends cette
+
+149
+00:06:55,887 --> 00:06:58,692
+tâche et que je la donne à Claude,
+
+150
+00:06:59,233 --> 00:07:01,877
+encore une fois, après avoir effectué cette opération / clear, nous allons
+
+151
+00:07:01,896 --> 00:07:04,521
+voir que cette fois, malheureusement, il ne
+
+152
+00:07:04,560 --> 00:07:07,125
+restera pas aussi concentré, et il finira
+
+153
+00:07:07,165 --> 00:07:09,928
+par essayer d'écrire une nouvelle requête Git pending
+
+154
+00:07:10,028 --> 00:07:12,552
+orders, ce qui, encore une fois, n'est pas ce que nous voulons,
+
+155
+00:07:12,632 --> 00:07:15,137
+car cela dupliquerait du code dans notre projet.
+
+156
+00:07:16,098 --> 00:07:18,901
+Si je laisse cela s'exécuter un moment, je verrai finalement que, oui,
+
+157
+00:07:18,961 --> 00:07:21,485
+il crée effectivement une nouvelle requête appelée Git
+
+158
+00:07:21,565 --> 00:07:24,137
+orders pending too long. Donc c'est
+
+159
+00:07:24,178 --> 00:07:26,781
+un exemple où Claude a perdu sa concentration et
+
+160
+00:07:26,821 --> 00:07:29,483
+a décidé d'écrire une nouvelle requête au lieu de réutiliser
+
+161
+00:07:29,644 --> 00:07:32,245
+une requête existante. Encore une fois, nous avons du code dupliqué
+
+162
+00:07:32,286 --> 00:07:35,028
+ici, ce qui n'est probablement pas ce que nous voulons.
+
+163
+00:07:35,069 --> 00:07:37,732
+En outre, il n'a pas seulement créé la nouvelle requête, il a également
+
+164
+00:07:37,752 --> 00:07:40,355
+créé un nouveau fichier, ce qui est également probablement quelque chose que nous ne voulons
+
+165
+00:07:40,415 --> 00:07:43,096
+pas. Nous aimerions probablement que cette requête liée aux commandes soit
+
+166
+00:07:43,137 --> 00:07:45,920
+ajoutée au fichier order queries. Donc
+
+167
+00:07:45,939 --> 00:07:48,903
+maintenant que nous comprenons le problème ici, laissez-moi vous montrer comment nous pourrions potentiellement le résoudre
+
+168
+00:07:48,942 --> 00:07:51,853
+en utilisant un hook. D'accord, donc
+
+169
+00:07:51,892 --> 00:07:54,476
+chaque fois que Claude tente d'écrire, de modifier ou
+
+170
+00:07:54,576 --> 00:07:57,380
+d'utiliser l'outil multi-édition pour modifier quelque chose dans
+
+171
+00:07:57,440 --> 00:07:59,963
+le répertoire queries spécifiquement, je vais
+
+172
+00:08:00,024 --> 00:08:02,867
+exécuter le hook suivant. Premièrement, dans ce hook, je vais
+
+173
+00:08:02,887 --> 00:08:05,451
+lancer une nouvelle copie séparée de
+
+174
+00:08:05,531 --> 00:08:08,035
+Claude Code. Je vais demander à cette nouvelle copie
+
+175
+00:08:08,355 --> 00:08:10,899
+de regarder le changement qui vient d'être effectué et de regarder
+
+176
+00:08:10,939 --> 00:08:13,843
+le code existant dans le répertoire queries et
+
+177
+00:08:13,903 --> 00:08:16,547
+de voir si une requête similaire existe déjà.
+
+178
+00:08:16,526 --> 00:08:19,088
+Ensuite, s'il existe une requête,
+
+179
+00:08:19,129 --> 00:08:21,771
+je vais prendre ce retour et le renvoyer à la copie
+
+180
+00:08:21,851 --> 00:08:24,454
+originale de Claude et je vais demander à Claude de peut-être
+
+181
+00:08:24,514 --> 00:08:27,197
+décider de résoudre la situation. Donc supprimer la requête ajoutée
+
+182
+00:08:27,276 --> 00:08:30,259
+et utiliser celle qui existe déjà. Donc
+
+183
+00:08:30,300 --> 00:08:33,361
+cela nous permettra de nous assurer que le dossier queries reste généralement
+
+184
+00:08:33,402 --> 00:08:36,144
+propre et ne contient pas de code dupliqué
+
+185
+00:08:36,184 --> 00:08:38,746
+à l'intérieur. Laissez-moi donc vous montrer comment cela fonctionnerait
+
+186
+00:08:38,846 --> 00:08:41,509
+en action. D'abord, je vais revenir ici.
+
+187
+00:08:42,049 --> 00:08:45,133
+Je vais supprimer le tout nouveau fichier order alerts.
+
+188
+00:08:45,113 --> 00:08:47,657
+queries.ts qui a été créé et
+
+189
+00:08:47,697 --> 00:08:52,124
+le fichier slack.ts qui a également été créé. Ensuite,
+
+190
+00:08:52,163 --> 00:08:54,706
+je vais trouver dans le répertoire des hooks le fichier query hook.
+
+191
+00:08:54,847 --> 00:08:57,892
+Donc, j'ai déjà assemblé ce hook pour nous. Actuellement, il
+
+192
+00:08:57,932 --> 00:09:00,556
+est désactivé car j'ai un process.exit
+
+193
+00:09:00,615 --> 00:09:03,208
+tout en haut. Passons donc en revue ce hook rapidement.
+
+194
+00:09:03,288 --> 00:09:05,793
+Premièrement, je vais dire à cette chose qu'elle ne va examiner que les changements apportés au répertoire
+
+195
+00:09:05,812 --> 00:09:08,355
+SRC queries. Ensuite, un peu plus bas, je vais vérifier
+
+196
+00:09:11,039 --> 00:09:13,783
+si le changement qui vient d'être effectué a été apporté au répertoire
+
+197
+00:09:13,803 --> 00:09:16,346
+queries. Après cela, j'ai un long
+
+198
+00:09:16,427 --> 00:09:19,130
+prompt qui demande à Claude de faire une revue
+
+199
+00:09:19,171 --> 00:09:21,914
+du changement qui vient d'être effectué. Et puis après cela, c'est
+
+200
+00:09:21,975 --> 00:09:25,399
+là que je lance Claude Code par programmation. Spécifiquement,
+
+201
+00:09:25,438 --> 00:09:28,043
+ces lignes ici. Cela utilise
+
+202
+00:09:28,123 --> 00:09:30,726
+le SDK Claude Code TypeScript. Je peux
+
+203
+00:09:30,746 --> 00:09:33,269
+vous donner plus d'informations à ce sujet dans un petit moment. Pour l'instant,
+
+204
+00:09:33,309 --> 00:09:36,053
+comprenez simplement que ceci est essentiellement la même chose
+
+205
+00:09:36,254 --> 00:09:38,857
+que nous utiliserions Claude Code dans le terminal.
+
+206
+00:09:39,619 --> 00:09:42,523
+Une fois que Claude Code s'exécute et que je reçois une réponse, je
+
+207
+00:09:42,562 --> 00:09:45,147
+vérifie si Claude décide que, oui, les changements semblent
+
+208
+00:09:45,226 --> 00:09:47,870
+corrects, ou peut-être que nous avons une requête en double. Et
+
+209
+00:09:47,890 --> 00:09:50,434
+si c'est le cas, alors nous allons quitter tôt avec un code de sortie
+
+210
+00:09:50,534 --> 00:09:53,077
+de deux, ce qui renverra ce retour
+
+211
+00:09:53,118 --> 00:09:55,721
+à Claude et lui dira, espérons-le, qu'il doit apporter un changement.
+
+212
+00:09:56,647 --> 00:09:59,371
+Donc, maintenant que j'ai ce hook supplémentaire mis en place
+
+213
+00:09:59,511 --> 00:10:02,015
+et activé en supprimant ce process exit zero en haut,
+
+214
+00:10:02,076 --> 00:10:07,384
+je vais encore redémarrer Claude Code et
+
+215
+00:10:07,404 --> 00:10:10,009
+puis exécuter à nouveau la même requête. Et j'espère
+
+216
+00:10:10,029 --> 00:10:12,533
+que cette fois, il pourrait initialement insérer
+
+217
+00:10:12,573 --> 00:10:15,097
+cette requête en double, mais alors notre hook ici va
+
+218
+00:10:15,138 --> 00:10:17,883
+s'exécuter et lui dire, j'espère, hey, nous ne voulons pas ce code dupliqué.
+
+219
+00:10:18,323 --> 00:10:20,908
+Vous devriez utiliser une requête déjà existante pour
+
+220
+00:10:20,967 --> 00:10:23,625
+implémenter cette fonctionnalité. Maintenant, Claude Code
+
+221
+00:10:23,745 --> 00:10:26,549
+va encore tenter de créer une nouvelle requête complètement
+
+222
+00:10:26,610 --> 00:10:29,192
+séparée, sans utiliser l'ancienne
+
+223
+00:10:29,253 --> 00:10:31,836
+requête qui existait déjà. Quand il essaie de créer ce
+
+224
+00:10:31,876 --> 00:10:34,480
+fichier, cependant, notre hook va s'exécuter. Il
+
+225
+00:10:34,519 --> 00:10:37,124
+va lancer cette copie séparée de Claude Code, qui va faire
+
+226
+00:10:37,163 --> 00:10:40,047
+des recherches et trouver qu'il existe bien une requête
+
+227
+00:10:40,107 --> 00:10:42,770
+qui peut être réutilisée. Il va fournir
+
+228
+00:10:42,870 --> 00:10:45,395
+des conseils et dire, hey, vous pourriez probablement aller modifier
+
+229
+00:10:45,515 --> 00:10:48,139
+cette autre requête existante pour répondre parfaitement à vos besoins.
+
+230
+00:10:48,541 --> 00:10:51,125
+Et nous verrons un retour de Claude, notre instance principale avec laquelle
+
+231
+00:10:51,144 --> 00:10:53,769
+nous interagissons, disant, ah oui, il y a
+
+232
+00:10:53,830 --> 00:10:56,333
+cette requête existante. Modifions simplement
+
+233
+00:10:56,354 --> 00:10:58,857
+cette requête existante plutôt que d'essayer de
+
+234
+00:10:58,918 --> 00:11:01,643
+créer une nouvelle. Le seul inconvénient
+
+235
+00:11:01,663 --> 00:11:04,164
+de ce hook est qu'il prendra du temps et de l'argent supplémentaires pour s'exécuter
+
+236
+00:11:04,225 --> 00:11:06,927
+chaque fois que je voudrai modifier quelque chose
+
+237
+00:11:06,967 --> 00:11:09,571
+dans le répertoire queries. Mais l'avantage est que
+
+238
+00:11:09,630 --> 00:11:12,594
+j'aurai beaucoup moins de code dupliqué dans
+
+239
+00:11:12,614 --> 00:11:15,517
+mon répertoire queries. Cela dépend donc vraiment de vos choix
+
+240
+00:11:15,937 --> 00:11:18,460
+pour décider si vous souhaitez implémenter quelque chose comme cela dans
+
+241
+00:11:18,519 --> 00:11:21,283
+votre propre projet. Si c'est le cas, je recommanderais au moins
+
+242
+00:11:21,524 --> 00:11:24,687
+de faire ce que j'ai montré dans le hook de requête.
+
+243
+00:11:24,667 --> 00:11:27,506
+Donc celui-ci, et ne surveiller que quelques
+
+244
+00:11:27,547 --> 00:11:30,386
+répertoires comme des dossiers vraiment importants dans votre projet,
+
+245
+00:11:30,808 --> 00:11:33,488
+juste pour minimiser la quantité de travail supplémentaire qui est effectuée.

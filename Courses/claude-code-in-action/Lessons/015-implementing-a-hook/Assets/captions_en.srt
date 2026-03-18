@@ -1,0 +1,351 @@
+1
+00:00:01,397 --> 00:00:03,962
+Let's put together our custom hook. Remember, the entire
+
+2
+00:00:04,001 --> 00:00:06,605
+goal here is to prevent Claude from ever reading the contents
+
+3
+00:00:06,686 --> 00:00:09,210
+of the .env file. In the last video, we
+
+4
+00:00:09,250 --> 00:00:11,753
+discussed many of the different configuration options we'll need to
+
+5
+00:00:11,773 --> 00:00:14,839
+set, so in this video, we'll be mostly focused on the implementation.
+
+6
+00:00:15,519 --> 00:00:18,125
+To get started, inside the . Claude directory, I'm
+
+7
+00:00:18,144 --> 00:00:21,550
+going to open up the settings.local.json file.
+
+8
+00:00:21,530 --> 00:00:24,253
+Remember, inside of here, we have a list of pre-tool
+
+9
+00:00:24,312 --> 00:00:26,936
+use hooks and post-tool use hooks.
+
+10
+00:00:26,955 --> 00:00:30,018
+As we discussed a moment ago, we want to make a pre-tool
+
+11
+00:00:30,099 --> 00:00:32,741
+use hook so that we can prevent Claude from ever reading the contents
+
+12
+00:00:32,822 --> 00:00:35,424
+of that particular file. I already added in
+
+13
+00:00:35,445 --> 00:00:37,948
+a little configuration section right here for us, just to
+
+14
+00:00:38,008 --> 00:00:40,570
+save us a little bit of typing. All we need to do is
+
+15
+00:00:40,609 --> 00:00:43,112
+fill in the matcher and the command. First
+
+16
+00:00:43,232 --> 00:00:45,915
+is the matcher. So the matcher is going to be the tools
+
+17
+00:00:45,936 --> 00:00:48,759
+that we want to watch for. In our case, as
+
+18
+00:00:48,798 --> 00:00:51,383
+we discussed, we want to watch for calls to the read
+
+19
+00:00:51,923 --> 00:00:54,545
+and the grep tools. I'm
+
+20
+00:00:54,567 --> 00:00:57,189
+going to separate those two tool names with a pipe symbol.
+
+21
+00:00:57,390 --> 00:00:59,912
+So that's not an L or a capital I. It is
+
+22
+00:00:59,932 --> 00:01:03,698
+a symbol right above the return key on your keyboard. Then,
+
+23
+00:01:03,737 --> 00:01:06,600
+next up, we need to provide a command to run whenever
+
+24
+00:01:06,620 --> 00:01:09,578
+Claude attempts to call those two tools. We
+
+25
+00:01:09,597 --> 00:01:12,263
+could put in here any command you want, so it can be a CLI,
+
+26
+00:01:12,362 --> 00:01:15,007
+it can be a call to a shell script, absolutely anything.
+
+27
+00:01:15,808 --> 00:01:18,373
+To follow the pattern that I've already established inside the rest
+
+28
+00:01:18,513 --> 00:01:21,257
+of this file, I'm going to call a node.js
+
+29
+00:01:21,278 --> 00:01:24,143
+script that I placed ahead of time inside the hooks directory
+
+30
+00:01:24,242 --> 00:01:27,067
+of this project. So inside the hooks directory, I
+
+31
+00:01:27,087 --> 00:01:29,731
+put together for us a read_hook.js
+
+32
+00:01:29,792 --> 00:01:32,677
+file. This is the file that I want to run whenever
+
+33
+00:01:32,837 --> 00:01:35,462
+Claude attempts to call one of those two tools.
+
+34
+00:01:35,441 --> 00:01:38,129
+So to call that, I'm going to replace the true right here, which
+
+35
+00:01:38,168 --> 00:01:40,876
+is just a placeholder for right now, with node
+
+36
+00:01:40,915 --> 00:01:43,423
+./hooks/
+
+37
+00:01:43,944 --> 00:01:46,850
+read_hook.js. I'm
+
+38
+00:01:46,971 --> 00:01:49,498
+going to save this file and that's all we have to do inside
+
+39
+00:01:49,518 --> 00:01:52,185
+of here. Next up, we need to actually implement
+
+40
+00:01:52,204 --> 00:01:54,707
+the command that's going to run anytime Claude tries to call the
+
+41
+00:01:54,868 --> 00:01:58,132
+read or the grep tools. So that's going to be the read_hook.js
+
+42
+00:01:58,173 --> 00:02:00,676
+file. At the top of this file, I've got some code
+
+43
+00:02:00,715 --> 00:02:03,480
+that's going to read from standard in and parse that data
+
+44
+00:02:03,599 --> 00:02:06,123
+as JSON. So this tool args
+
+45
+00:02:06,323 --> 00:02:09,168
+object right here, that's going to be the big JSON object I showed
+
+46
+00:02:09,207 --> 00:02:11,811
+you in this diagram back over here. So it's going to have properties
+
+47
+00:02:11,871 --> 00:02:14,454
+like session ID, the tool name, the tool input,
+
+48
+00:02:14,534 --> 00:02:17,098
+and so on. So all we really need to do is
+
+49
+00:02:17,138 --> 00:02:19,721
+take a look at that file path right there and decide whether
+
+50
+00:02:19,800 --> 00:02:22,705
+or not it is trying to read the .env file. If
+
+51
+00:02:22,745 --> 00:02:25,348
+it is, then we want to make sure that we exit from
+
+52
+00:02:25,508 --> 00:02:28,051
+our program or our command here with an exit code
+
+53
+00:02:28,171 --> 00:02:30,735
+of two. And hopefully also log some information
+
+54
+00:02:30,775 --> 00:02:33,337
+out to Claude that says, sorry, but you can't read that file.
+
+55
+00:02:34,079 --> 00:02:36,641
+So you'll notice that back over here, I've already got some code that's going to read that
+
+56
+00:02:36,741 --> 00:02:39,305
+file path. You'll also notice that there is a
+
+57
+00:02:39,406 --> 00:02:41,948
+fallback of looking at toolInput.path
+
+58
+00:02:42,008 --> 00:02:44,691
+right here. I'll tell you why that's added in in just
+
+59
+00:02:44,730 --> 00:02:47,413
+a moment. So now let's implement the to-do
+
+60
+00:02:47,454 --> 00:02:52,599
+statement. We'll say if readPath includes '.env',
+
+61
+00:02:53,621 --> 00:02:56,324
+that means that Claude must be trying to read the .env
+
+62
+00:02:56,383 --> 00:02:58,926
+file. And if that's the case, then I want to make
+
+63
+00:02:58,967 --> 00:03:01,789
+sure that we block that operation and provide some logging
+
+64
+00:03:01,830 --> 00:03:04,514
+feedback to Claude. So I'm going to first add in a
+
+65
+00:03:04,594 --> 00:03:07,382
+console.error, specifically a console.error,
+
+66
+00:03:07,703 --> 00:03:10,209
+because we want to log to standard error. Remember, that's
+
+67
+00:03:10,250 --> 00:03:13,076
+how we provide some feedback to Claude. And I'll say something
+
+68
+00:03:13,176 --> 00:03:15,824
+like, "You cannot read the .env
+
+69
+00:03:17,007 --> 00:03:20,536
+file." And then I'll do a process.exit(2).
+
+70
+00:03:21,236 --> 00:03:23,962
+So now to test this out, I'm going to save the file. I'm
+
+71
+00:03:23,983 --> 00:03:26,528
+going to open up Claude Code. If you already have it
+
+72
+00:03:26,628 --> 00:03:29,215
+open, make sure you restart Claude Code. You
+
+73
+00:03:29,235 --> 00:03:31,841
+have to restart it to have any changes to your hooks take effect.
+
+74
+00:03:32,562 --> 00:03:35,449
+I'm going to ask Claude to read the .env
+
+75
+00:03:36,651 --> 00:03:39,312
+file. And it's probably going to attempt
+
+76
+00:03:39,353 --> 00:03:41,877
+to, but as it attempts to read it, we're going to
+
+77
+00:03:41,897 --> 00:03:44,502
+send back an error that says "You cannot read the .env file."
+
+78
+00:03:45,024 --> 00:03:47,549
+And Claude is hopefully going to realize that, sorry, you can't
+
+79
+00:03:47,650 --> 00:03:50,335
+actually read this. As a matter of fact, it's even able to recognize
+
+80
+00:03:50,395 --> 00:03:53,200
+that it was prevented by a read hook. Now,
+
+81
+00:03:53,320 --> 00:03:55,906
+our hook should also be working on grep operations as
+
+82
+00:03:55,966 --> 00:03:58,550
+well. So if I ask Claude to try the
+
+83
+00:03:58,752 --> 00:04:01,680
+grep tool, This should also
+
+84
+00:04:01,719 --> 00:04:04,330
+hopefully be forbidden as well. So let's see how it
+
+85
+00:04:04,349 --> 00:04:06,979
+does. And yep, same thing, it is now forbidden.
+
+86
+00:04:07,762 --> 00:04:10,412
+So that is a working hook that we have put together. Now
+
+87
+00:04:10,451 --> 00:04:13,001
+this hook is not terribly useful, and I'm going to show you
+
+88
+00:04:13,141 --> 00:04:14,948
+a much more useful hook in just a moment.

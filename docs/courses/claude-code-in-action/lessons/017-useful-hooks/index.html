@@ -1,0 +1,6772 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="ru">
+<!--<![endif]-->
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# skilljar: http://ogp.me/ns/fb/skilljar#" >
+    
+    <meta charset="utf-8"/>
+
+    <link rel="search" type="application/opensearchdescription+xml" href="/domain/open-search" title="Skilljar">
+    
+    
+        <link rel="shortcut icon" href="https://cc.sj-cdn.net/instructor/4hdejjwplbrm-anthropic/themes/3gufixqhei80k/favicon.1749519148.ico"/>
+    
+
+    
+    
+        <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+        <meta name="global-title" content="Anthropic Courses"/>
+    
+    
+    
+    
+
+    <title>Полезные hooks! | Claude Code в действии</title>
+
+    
+    
+        
+        
+            <!-- Google tag (gtag.js) -->
+
+    <!-- sj-build: 0375208-dirty @ 2026-03-15T17:22:40.806Z -->
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anthropic.skilljar.com/">
+<meta property="og:title" content="Anthropic Courses">
+<meta property="og:description" content="Learn to build with Claude through Anthropic's comprehensive courses and training programs.">
+<meta property="og:image" content="https://cdn.sanity.io/images/4zrzovbb/website/c4bd33e7c8e809a2f9a9a5896ee13961e2a738ec-2400x1260.png">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta property="og:site_name" content="Anthropic Courses">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://anthropic.skilljar.com/">
+<meta name="twitter:title" content="Anthropic Courses">
+<meta name="twitter:description" content="Learn to build with Claude AI through Anthropic's comprehensive courses and training programs.">
+<meta name="twitter:image" content="https://cdn.sanity.io/images/4zrzovbb/website/c4bd33e7c8e809a2f9a9a5896ee13961e2a738ec-2400x1260.png">
+
+<style>
+@charset "UTF-8";
+/* Font imports */
+@font-face {
+  font-family: "Styrene A";
+  src: url("https://assets.anthropic.com/m/1230f9b0f8df18e5/original/StyreneALC-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  font-feature-settings: "pnum" on, "lnum" on, "liga" on;
+}
+@font-face {
+  font-family: "Styrene B";
+  src: url("https://assets.anthropic.com/m/78f19c4a1fe4b2b6/original/StyreneBLC-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "tnum" on, "lnum" on;
+}
+@font-face {
+  font-family: "Styrene B";
+  src: url("https://assets.anthropic.com/m/615ef9f8465bfb6f/original/StyreneBLC-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "tnum" on, "lnum" on;
+}
+@font-face {
+  font-family: "Copernicus";
+  src: url("https://assets.anthropic.com/m/5a8c34e711888067/original/Copernicus-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "tnum" on, "lnum" on;
+}
+@font-face {
+  font-family: "Copernicus";
+  src: url("https://assets.anthropic.com/m/531ea702ef721982/original/Copernicus-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "tnum" on, "lnum" on;
+}
+@font-face {
+  font-family: "Tiempos";
+  src: url("https://assets.anthropic.com/m/758199899f64927d/original/TiemposText-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "tnum" on, "lnum" on;
+}
+@font-face {
+  font-family: "Tiempos";
+  src: url("https://assets.anthropic.com/m/557ce81381fd50f4/original/TiemposText-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "tnum" on, "lnum" on;
+}
+#catalog-courses {
+  gap: 16px;
+}
+
+.sj-ribbon-wrapper,
+.sj-course-ribbon-wrapper {
+  overflow: visible !important;
+  position: relative;
+  top: -16px;
+  right: 32px;
+}
+
+body.sj-page-catalog .catalog-header h1 {
+  letter-spacing: -1.92px;
+  font-size: 74px !important;
+  margin-top: 80px;
+}
+
+a.coursebox-container.course.theme-color-border-hover.theme-no-hover {
+  padding: 32px;
+  border-radius: 16px;
+  border: none;
+  position: relative;
+}
+a.coursebox-container.course.theme-color-border-hover.theme-no-hover:hover {
+  background-color: #F0EEE6;
+}
+a.coursebox-container.course.theme-color-border-hover.theme-no-hover .sj-ribbon-wrapper:not(.hide) {
+  overflow: visible !important;
+  float: right;
+  margin-left: 16px;
+}
+@media (max-width: 768px) {
+  a.coursebox-container.course.theme-color-border-hover.theme-no-hover .sj-ribbon-wrapper:not(.hide) {
+    float: none;
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    height: unset;
+    width: unset;
+  }
+}
+a.coursebox-container.course.theme-color-border-hover.theme-no-hover .sj-ribbon-wrapper:not(.hide) .sj-ribbon {
+  display: block;
+  height: 24px;
+  padding: 3px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12.5px;
+  border: 1px solid var(--border-border-strong, #141413);
+  background: transparent;
+  transform: none;
+  text-align: center;
+}
+a.coursebox-container.course.theme-color-border-hover.theme-no-hover .sj-ribbon-wrapper:not(.hide) .sj-ribbon .sj-ribbon-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-text-color, #141413);
+  transform: none;
+  white-space: nowrap;
+}
+
+.coursebox-text {
+  color: var(--text-text-color, #141413);
+  font-variant-numeric: lining-nums proportional-nums;
+  /* display-serif/s-500 */
+  font-family: var(--typography-display-serif, Copernicus);
+  font-size: 24px !important;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  /* 28.8px */
+  letter-spacing: -0.54px;
+  margin-bottom: 4px;
+}
+
+.list-view a.course .coursebox-text {
+  margin: 0;
+  display: inline;
+}
+@media (max-width: 768px) {
+  .list-view a.course .coursebox-text {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+}
+
+.list-view a.course .coursebox-text-description {
+  font-family: "tiempos", serif;
+  font-size: 20px;
+  line-height: 1.4 !important;
+  margin: 0;
+  padding: 0;
+}
+
+a.coursebox-container.course .coursebox-image {
+  background: transparent;
+  width: 124px;
+  height: 124px;
+  margin-right: 24px !important;
+}
+@media (max-width: 768px) {
+  a.coursebox-container.course .coursebox-image {
+    margin-bottom: 24px;
+    display: flex;
+    margin-right: 0 !important;
+    width: 100%;
+  }
+}
+a.coursebox-container.course .coursebox-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.alert-box.warning {
+  font-size: 1.35rem !important;
+  line-height: 1.4;
+}
+
+.alert-box .close {
+  top: 28px;
+}
+
+.clp__container {
+  font-family: "Styrene B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #faf9f6;
+  color: #2c2b25;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.clp__hero {
+  padding: 4rem 2rem;
+}
+@media (max-width: 640px) {
+  .clp__hero {
+    padding: 2rem 1rem;
+  }
+}
+
+.clp__hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+@media (max-width: 968px) {
+  .clp__hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.clp__breadcrumb {
+  font-size: 0.875rem;
+  color: #7c7968;
+  letter-spacing: 0.3px;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 640px) {
+  .clp__breadcrumb {
+    margin-bottom: 1rem;
+  }
+}
+
+.clp__breadcrumb-link {
+  color: #7c7968;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.clp__breadcrumb-link:hover {
+  color: #2c2b25;
+  text-decoration: underline;
+}
+
+.clp__breadcrumb-separator {
+  color: #9a9788;
+}
+
+.clp__title {
+  font-family: "Copernicus", Georgia, serif;
+  font-size: 3rem;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  color: #2c2b25;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 968px) {
+  .clp__title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 640px) {
+  .clp__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.clp__subtitle {
+  font-size: 1.125rem;
+  color: #5e5b4e;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+@media (max-width: 640px) {
+  .clp__subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.clp__hero-actions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+@media (max-width: 640px) {
+  .clp__hero-actions {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.clp__enroll-btn {
+  background: #2c2b25;
+  color: white;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1;
+}
+.clp__enroll-btn:hover {
+  opacity: 0.85;
+  color: white;
+  text-decoration: none;
+}
+
+.clp__free-tag {
+  display: inline-block;
+  background: rgba(44, 43, 37, 0.08);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  margin-left: 1rem;
+  color: #7c7968;
+  font-weight: 400;
+}
+
+.clp__signin-text {
+  color: #7c7968;
+  font-size: 0.95rem;
+}
+
+.clp__signin-link {
+  color: #2c2b25;
+  text-decoration: none;
+  font-weight: 500;
+}
+.clp__signin-link:hover {
+  text-decoration: underline;
+}
+
+.clp__hero-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.clp__hero-content .clp__video-wrapper .dp-promo-image-wrapper.columns {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  width: 100% !important;
+}
+.clp__hero-content .clp__video-wrapper .dp-promo-image-wrapper.columns .video-max {
+  max-width: 100% !important;
+}
+
+.clp__video-container {
+  background: #2c2b25;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.clp__video-title {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.clp__video-placeholder {
+  width: 100%;
+  min-height: 350px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clp__play-button {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.clp__play-button:hover {
+  transform: scale(1.05);
+}
+.clp__play-button::after {
+  content: "▶";
+  font-size: 24px;
+  color: #2c2b25;
+  margin-left: 4px;
+}
+
+.clp__main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem 0 2rem;
+}
+@media (max-width: 640px) {
+  .clp__main-content {
+    padding: 2rem 1rem;
+  }
+}
+
+.clp__topics-section {
+  margin-bottom: 3rem;
+}
+
+.clp__section-title {
+  font-family: "Copernicus", Georgia, serif;
+  font-size: 2.25rem;
+  margin: 3.5rem 0 2rem;
+  color: #2c2b25;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 640px) {
+  .clp__section-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.clp__topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+@media (max-width: 968px) {
+  .clp__topics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.clp__topic-card {
+  background: #f0eee6;
+  border: 1px solid #e5e2d9;
+  border-radius: 8px;
+  padding: 2rem;
+  transition: box-shadow 0.2s ease;
+}
+@media (max-width: 640px) {
+  .clp__topic-card {
+    padding: 1.5rem;
+  }
+}
+.clp__topic-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.clp__topic-card:nth-child(1) {
+  border-top: 3px solid #b4c6d4;
+}
+.clp__topic-card:nth-child(2) {
+  border-top: 3px solid #c5bfd9;
+}
+.clp__topic-card:nth-child(3) {
+  border-top: 3px solid #b5c5c0;
+}
+
+.clp__topic-title {
+  font-family: "Styrene A", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: #2c2b25;
+  font-weight: 500;
+}
+
+.clp__topic-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.clp__topic-item {
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  position: relative;
+  color: #5e5b4e;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.clp__topic-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #9a9788;
+}
+
+.clp__sections-container {
+  margin-bottom: 3rem;
+}
+
+.clp__section-block {
+  background: #f0eee6;
+  border-radius: 8px;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 640px) {
+  .clp__section-block {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.clp__section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+@media (max-width: 640px) {
+  .clp__section-header {
+    margin-bottom: 1rem;
+  }
+}
+
+.clp__section-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #2c2b25;
+  font-weight: 600;
+}
+@media (max-width: 640px) {
+  .clp__section-name {
+    font-size: 1.25rem;
+  }
+}
+
+.clp__lesson-count {
+  color: #7c7968;
+  font-size: 0.9375rem;
+}
+
+.clp__section-description {
+  color: #5e5b4e;
+  margin-bottom: 2.5rem;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+@media (max-width: 640px) {
+  .clp__section-description {
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+  }
+}
+
+.clp__preview-label {
+  display: block;
+  font-size: 0.8125rem;
+  color: #9a9788;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.clp__image-placeholders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  place-items: center;
+  gap: 1.25rem;
+  margin-top: 0;
+}
+@media (max-width: 640px) {
+  .clp__image-placeholders {
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+}
+
+.clp__screenshot-wrapper {
+  max-height: 188px;
+  aspect-ratio: 16/9;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.clp__screenshot-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-font-smoothing: antialiased;
+}
+
+.clp__screenshot-clickable {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.clp__screenshot-clickable:hover {
+  opacity: 0.8;
+}
+
+.clp__image-placeholder {
+  aspect-ratio: 16/9;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9a9788;
+  font-size: 0.875rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.clp__two-column-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 5rem;
+  margin-bottom: 6rem;
+}
+@media (max-width: 968px) {
+  .clp__two-column-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.clp__course-details {
+  background: #f0eee6;
+  border-radius: 8px;
+  padding: 3.5rem;
+}
+@media (max-width: 640px) {
+  .clp__course-details {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.clp__details-title {
+  font-family: "Copernicus", Georgia, serif;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #2c2b25;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 640px) {
+  .clp__details-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.clp__details-subtitle {
+  font-size: 1.25rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  color: #2c2b25;
+  font-weight: 600;
+}
+@media (max-width: 640px) {
+  .clp__details-subtitle {
+    font-size: 1.125rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.clp__course-details .clp__details-text {
+  color: #5e5b4e;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+.clp__course-details .clp__details-list {
+  margin-left: 1.5rem;
+  color: #5e5b4e;
+  line-height: 1.8;
+}
+.clp__course-details .clp__details-list > li {
+  color: #5e5b4e;
+}
+
+.clp__curriculum-sidebar {
+  background: #f0eee6;
+  border-radius: 8px;
+  padding: 2.5rem;
+  height: fit-content;
+  border: 1px solid #e5e2d9;
+}
+
+.clp__curriculum-title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #2c2b25;
+  font-weight: 600;
+}
+
+.clp__module {
+  margin-bottom: 2rem;
+}
+
+.clp__module-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.625rem;
+  color: #2c2b25;
+}
+
+.clp__lesson {
+  margin-left: 1rem;
+  padding: 0.375rem 0;
+  color: #7c7968;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.clp__stats-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e2d9;
+  justify-content: center;
+}
+@media (max-width: 640px) {
+  .clp__stats-container {
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+}
+
+.clp__stat-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+}
+
+.clp__stat-value {
+  font-weight: 600;
+  color: #2c2b25;
+  font-size: 0.875rem;
+}
+
+.clp__stat-label {
+  color: #7c7968;
+  font-weight: 400;
+  font-size: 0.8125rem;
+}
+
+.clp__share-buttons-inline {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+@media (max-width: 640px) {
+  .clp__share-buttons-inline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.clp__share-btn-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #5e5b4e;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+.clp__share-btn-inline span {
+  font-weight: 400;
+}
+.clp__share-btn-inline:hover {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #2c2b25;
+}
+
+.clp__share-icon-inline {
+  width: 16px;
+  height: 16px;
+}
+
+.clp__instructors-container {
+  margin-bottom: 3rem;
+}
+
+.clp__instructors-title {
+  font-family: "Copernicus", Georgia, serif;
+  font-size: 2.25rem;
+  margin: 3.5rem 0 2rem;
+  color: #2c2b25;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 640px) {
+  .clp__instructors-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.clp__instructors-card {
+  background: #f0eee6;
+  border-radius: 8px;
+  padding: 2.5rem;
+}
+@media (max-width: 640px) {
+  .clp__instructors-card {
+    padding: 1.5rem;
+  }
+}
+
+.clp__instructors-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+@media (max-width: 640px) {
+  .clp__instructors-grid {
+    gap: 2rem;
+  }
+}
+
+.clp__instructor-item {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+@media (max-width: 640px) {
+  .clp__instructor-item {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}
+
+.clp__instructor-avatar {
+  width: 168px;
+  height: 168px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+  padding-top: 15px;
+}
+@media (max-width: 640px) {
+  .clp__instructor-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    padding-top: 0;
+  }
+}
+
+.clp__instructor-info {
+  flex: 1;
+  padding-top: 0.5rem;
+}
+
+.clp__instructor-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c2b25;
+  margin-bottom: 0.75rem;
+}
+@media (max-width: 640px) {
+  .clp__instructor-name {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.clp__instructor-description {
+  color: #5e5b4e;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+@media (max-width: 640px) {
+  .clp__instructor-description {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+}
+
+.clp__extra-container {
+  margin-bottom: 3rem;
+}
+
+.clp__extra-title {
+  font-family: "Copernicus", Georgia, serif;
+  font-size: 2.25rem;
+  margin: 3.5rem 0 2rem;
+  color: #2c2b25;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 640px) {
+  .clp__extra-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.clp__extra-card {
+  background: #f0eee6;
+  border-radius: 8px;
+  padding: 2.5rem;
+}
+@media (max-width: 640px) {
+  .clp__extra-card {
+    padding: 1.5rem;
+  }
+}
+
+.clp__extra-content {
+  color: #5e5b4e;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+@media (max-width: 640px) {
+  .clp__extra-content {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+}
+.clp__extra-content p {
+  margin-bottom: 1.25rem;
+}
+.clp__extra-content p:last-child {
+  margin-bottom: 0;
+}
+.clp__extra-content ul {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+.clp__extra-content ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+}
+
+.clp__modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.clp__modal-content {
+  background: white;
+  border-radius: 12px;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.clp__modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.2s ease;
+  color: black;
+  line-height: 1;
+}
+.clp__modal-close:focus {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: unset;
+  color: black;
+  outline: none !important;
+}
+.clp__modal-close:focus:before {
+  outline: none !important;
+  box-shadow: none !important;
+  border: unset !important;
+}
+.clp__modal-close:hover {
+  color: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: unset;
+}
+
+.clp__modal-header {
+  padding: 2rem 2rem 0.5rem;
+  border-bottom: 1px solid #e5e2d9;
+}
+.clp__modal-header .clp__preview-label {
+  margin-top: 1rem;
+}
+
+.clp__modal-title {
+  font-family: "Copernicus", Georgia, serif;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+  color: #2c2b25;
+  font-weight: 600;
+}
+
+.clp__modal-description {
+  color: #5e5b4e;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.clp__modal-body {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+  overflow: auto;
+}
+@media (max-width: 640px) {
+  .clp__modal-body {
+    min-height: auto;
+  }
+}
+
+.clp__modal-image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.clp__modal-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.clp__modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+  color: white;
+  line-height: 1;
+  min-width: 40px;
+  min-height: 40px;
+  padding: 0;
+}
+.clp__modal-nav span {
+  display: block;
+  line-height: 1;
+  transform: translateY(-3px);
+}
+.clp__modal-nav:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.05);
+  color: white;
+  border-color: unset;
+  outline: none !important;
+}
+.clp__modal-nav.clp__modal-prev {
+  left: 1rem;
+}
+.clp__modal-nav.clp__modal-next {
+  right: 1rem;
+}
+.clp__modal-nav:focus {
+  background: rgba(0, 0, 0, 0.5);
+}
+.clp__modal-nav:focus:before {
+  outline: none !important;
+  box-shadow: none !important;
+  border: unset !important;
+}
+
+.clp__modal-footer {
+  padding: 1rem 2rem;
+  border-top: 1px solid #e5e2d9;
+  background: #faf9f6;
+}
+
+.clp__modal-footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+@media (max-width: 640px) {
+  .clp__modal-footer-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+.clp__modal-enroll {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width: 640px) {
+  .clp__modal-enroll {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.clp__modal-enroll-text {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #7c7968;
+  font-weight: 500;
+}
+
+.clp__modal-enroll-btn {
+  background: #2c2b25;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1;
+}
+.clp__modal-enroll-btn:hover {
+  opacity: 0.85;
+  color: white;
+  text-decoration: none;
+}
+
+.clp__modal-counter {
+  font-size: 0.875rem;
+  color: #7c7968;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .clp__modal-content {
+    width: 95vw;
+    max-height: 95vh;
+  }
+  .clp__modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+  .clp__modal-title {
+    font-size: 1.25rem;
+  }
+  .clp__modal-description {
+    font-size: 0.9rem;
+  }
+  .clp__modal-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  .clp__modal-footer {
+    padding: 0.75rem 1.5rem;
+  }
+}
+#lesson-main .lesson-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: visible;
+}
+#lesson-main .lesson-top h2 {
+  margin: 0;
+}
+#lesson-main .lp__chat-combo {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+}
+#lesson-main .lp__chat-button-main {
+  border-radius: 0.75rem 0 0 0.75rem;
+  padding: 0 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-right: 0;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.3);
+  color: #5e5b4e;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+#lesson-main .lp__chat-button-main:hover {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #2c2b25;
+}
+#lesson-main .lp__chat-button-main:focus {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.16);
+  color: #2c2b25;
+  outline: none !important;
+}
+#lesson-main .lp__chat-button-main:focus:before {
+  outline: none !important;
+  box-shadow: none !important;
+  border: unset !important;
+}
+#lesson-main .lp__chat-button-main .lp__chat-button-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+#lesson-main .lp__chat-button-main .lp__chat-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+#lesson-main .lp__chat-button-dropdown {
+  border-radius: 0 0.75rem 0.75rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.19rem 0.5rem;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+}
+#lesson-main .lp__chat-button-dropdown:hover {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+#lesson-main .lp__chat-button-dropdown:focus {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.16);
+  outline: none !important;
+}
+#lesson-main .lp__chat-button-dropdown:focus:before {
+  outline: none !important;
+  box-shadow: none !important;
+  border: unset !important;
+}
+#lesson-main .lp__chat-button-dropdown .lp__dropdown-arrow {
+  color: #9a9788;
+  transition: transform 0.2s ease, color 0.1s ease;
+  transform: rotate(90deg);
+}
+#lesson-main .lp__chat-button-dropdown:hover .lp__dropdown-arrow {
+  color: #7c7968;
+}
+#lesson-main .lp__chat-button-dropdown.lp__dropdown-open .lp__dropdown-arrow {
+  transform: rotate(270deg);
+}
+#lesson-main .lp__chat-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #faf9f6;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: all 0.15s ease;
+  margin-top: 0.25rem;
+  min-width: max-content;
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  max-height: 420px;
+  overflow-y: auto;
+}
+#lesson-main .lp__chat-dropdown-menu.lp__chat-dropdown-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#lesson-main .lp__chat-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.375rem;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  transition: background-color 0.1s ease;
+}
+#lesson-main .lp__chat-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+#lesson-main .lp__chat-dropdown-item .lp__chat-icon-container {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  padding: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.3);
+}
+#lesson-main .lp__chat-dropdown-item .lp__chat-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  color: #5e5b4e;
+}
+#lesson-main .lp__chat-dropdown-item .lp__chat-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.25rem;
+}
+#lesson-main .lp__chat-dropdown-item .lp__chat-title {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #2c2b25;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  line-height: 1.2;
+}
+#lesson-main .lp__chat-dropdown-item .lp__chat-subtitle {
+  font-size: 0.75rem;
+  color: #7c7968;
+  line-height: 1.3;
+}
+#lesson-main .lp__chat-dropdown-item .lp__external-link {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: #7c7968;
+  flex-shrink: 0;
+}
+
+#skilljar-content:has(#login-content) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.quiz .question .next-prev {
+  margin-top: 10px;
+}
+.quiz .question .question-text,
+.quiz .question .form-answers {
+  width: 100%;
+}
+.quiz .question #id_answer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+.quiz .question #id_answer > div {
+  position: relative;
+}
+.quiz .question #id_answer label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "Tiempos", serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  margin: 0;
+}
+.quiz .question #id_answer label:hover {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+.quiz .question #id_answer input[type=radio] {
+  position: static;
+  margin: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 18px;
+  min-width: 18px;
+  height: 18px;
+  min-height: 18px;
+}
+.quiz .question #id_answer input[type=radio]:checked + label,
+.quiz .question #id_answer label:has(input[type=radio]:checked) {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.eap__container {
+  font-family: "Styrene B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #2c2b25;
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-x: hidden;
+  width: 100%;
+}
+.eap__container * {
+  box-sizing: border-box;
+}
+
+.eap__section {
+  padding: 4rem 2rem;
+}
+@media (max-width: 640px) {
+  .eap__section {
+    padding: 2.5rem 1rem;
+  }
+}
+
+.eap__section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.eap__section--ivory {
+  background: #faf9f6;
+}
+
+.eap__section--white {
+  background: #fff;
+}
+
+.eap__section--dark {
+  background: #141413;
+  color: #fff;
+}
+
+.eap__section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+@media (max-width: 640px) {
+  .eap__section-header {
+    margin-bottom: 2rem;
+  }
+}
+
+.eap__section-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.eap__section-title {
+  font-family: "Copernicus", Georgia, serif;
+  font-size: 2.25rem !important;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  color: #2c2b25;
+}
+@media (max-width: 640px) {
+  .eap__section-title {
+    font-size: 1.75rem !important;
+  }
+}
+
+.eap__section-subtitle {
+  font-size: 1.0625rem !important;
+  color: #5e5b4e;
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media (max-width: 640px) {
+  .eap__section-subtitle {
+    font-size: 0.9375rem !important;
+  }
+}
+
+.eap__hero {
+  padding: 4rem 2rem 2rem;
+}
+@media (max-width: 640px) {
+  .eap__hero {
+    padding: 2rem 1rem 1rem;
+  }
+}
+
+.eap__hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 4rem;
+  align-items: center;
+}
+@media (max-width: 968px) {
+  .eap__hero-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+.eap__hero-text,
+.eap__hero-right {
+  min-width: 0;
+}
+
+.eap__hero-title {
+  font-family: "Copernicus", Georgia, serif;
+  font-size: 3rem !important;
+  line-height: 1.15;
+  margin-bottom: 1.25rem !important;
+  color: #2c2b25;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 968px) {
+  .eap__hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 640px) {
+  .eap__hero-title {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+.eap__hero-subtitle {
+  font-size: 1.125rem !important;
+  color: #5e5b4e;
+  margin-bottom: 2rem !important;
+  line-height: 1.6;
+}
+@media (max-width: 640px) {
+  .eap__hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+.eap__partner-note {
+  margin: 1.25rem 0 0 !important;
+  font-size: 0.9375rem !important;
+  color: #7c7968;
+}
+.eap__partner-note a {
+  color: #2c2b25;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+.eap__partner-note a:hover {
+  color: #5e5b4e;
+}
+
+.eap__domain-warning {
+  margin: 1.25rem 0 0 !important;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem !important;
+  color: #5e5b4e;
+  background: rgba(212, 148, 30, 0.08);
+  border-left: 3px solid #d4941e;
+  border-radius: 4px;
+}
+
+.eap__video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+.eap__video-wrapper iframe {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+}
+
+.eap__btn-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 640px) {
+  .eap__btn-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .eap__btn-row a {
+    text-align: center;
+  }
+}
+
+.eap__btn {
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1;
+  transition: all 0.2s ease;
+  margin: 0;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  background: #2c2b25;
+  color: white;
+  border: none;
+}
+.eap__btn:hover {
+  opacity: 0.85;
+  color: white;
+  text-decoration: none;
+}
+.eap__btn:focus {
+  background: #5e5b4e;
+  border-color: unset;
+  color: white;
+  outline: none !important;
+}
+.eap__btn:focus:before {
+  outline: none !important;
+  box-shadow: none !important;
+  border: unset !important;
+}
+
+.eap__btn--outline {
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1;
+  transition: all 0.2s ease;
+  margin: 0;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.3);
+  color: #5e5b4e;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.eap__btn--outline:hover {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #2c2b25;
+  text-decoration: none;
+}
+.eap__btn--outline:focus {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.16);
+  color: #2c2b25;
+  outline: none !important;
+}
+.eap__btn--outline:focus:before {
+  outline: none !important;
+  box-shadow: none !important;
+  border: unset !important;
+}
+
+.eap__btn--light {
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1;
+  transition: all 0.2s ease;
+  margin: 0;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  background: #2c2b25;
+  color: white;
+  border: none;
+  background: #fff;
+  color: #141413;
+}
+.eap__btn--light:hover {
+  opacity: 0.85;
+  color: white;
+  text-decoration: none;
+}
+.eap__btn--light:focus {
+  background: #5e5b4e;
+  border-color: unset;
+  color: white;
+  outline: none !important;
+}
+.eap__btn--light:focus:before {
+  outline: none !important;
+  box-shadow: none !important;
+  border: unset !important;
+}
+.eap__btn--light:hover {
+  background: #fff;
+  color: #141413;
+  opacity: 0.85;
+}
+.eap__btn--light:focus {
+  background: #f0f0f0;
+  color: #141413;
+}
+
+.eap__btn--dark-outline {
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1;
+  transition: all 0.2s ease;
+  margin: 0;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.3);
+  color: #5e5b4e;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.eap__btn--dark-outline:hover {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #2c2b25;
+  text-decoration: none;
+}
+.eap__btn--dark-outline:focus {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.16);
+  color: #2c2b25;
+  outline: none !important;
+}
+.eap__btn--dark-outline:focus:before {
+  outline: none !important;
+  box-shadow: none !important;
+  border: unset !important;
+}
+.eap__btn--dark-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+.eap__btn--dark-outline:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+.eap__btn--disabled {
+  background: #d1cfc5 !important;
+  color: #7c7968 !important;
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.eap__btn-icon {
+  display: inline-block;
+  margin-left: 0.375rem;
+  vertical-align: -0.1em;
+}
+
+.eap__stats {
+  padding: 1rem 2rem 4rem;
+}
+@media (max-width: 640px) {
+  .eap__stats {
+    padding: 0.5rem 1rem 2.5rem;
+  }
+}
+
+.eap__stats-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+}
+@media (max-width: 968px) {
+  .eap__stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .eap__stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.eap__stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.eap__stat-icon {
+  width: 28px;
+  height: 28px;
+  opacity: 0.7;
+}
+
+.eap__stat-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c2b25;
+  margin: 0.25rem 0;
+}
+
+.eap__stat-description {
+  font-size: 0.875rem;
+  color: #5e5b4e;
+  line-height: 1.5;
+}
+
+.eap__competencies-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.eap__competency-row {
+  display: grid;
+  grid-template-columns: auto 1fr 1.2fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e5e2d9;
+  align-items: start;
+}
+.eap__competency-row:last-child {
+  border-bottom: none;
+}
+@media (max-width: 768px) {
+  .eap__competency-row {
+    grid-template-columns: auto 1fr;
+    gap: 0.75rem 1rem;
+  }
+}
+
+.eap__competency-bullet {
+  font-size: 0.625rem;
+  color: #2c2b25;
+  line-height: 1.8rem;
+}
+
+.eap__competency-title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #2c2b25;
+  line-height: 1.5;
+}
+@media (max-width: 640px) {
+  .eap__competency-title {
+    font-size: 1rem;
+  }
+}
+
+.eap__competency-weight {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #7c7968;
+  margin-left: 0.5rem;
+}
+
+.eap__competency-description {
+  font-size: 0.9375rem;
+  color: #5e5b4e;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .eap__competency-description {
+    grid-column: 2/-1;
+  }
+}
+@media (max-width: 640px) {
+  .eap__competency-description {
+    font-size: 0.875rem;
+  }
+}
+
+.eap__scenarios-carousel {
+  margin: 0 -2rem 1.5rem;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+@media (max-width: 640px) {
+  .eap__scenarios-carousel {
+    margin: 0 -1rem 1.5rem;
+    padding: 0 1rem;
+  }
+}
+
+.eap__scenarios-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 2rem;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #d1cfc5 transparent;
+}
+.eap__scenarios-track::-webkit-scrollbar {
+  height: 6px;
+}
+.eap__scenarios-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+.eap__scenarios-track::-webkit-scrollbar-thumb {
+  background: #d1cfc5;
+  border-radius: 3px;
+}
+@media (max-width: 640px) {
+  .eap__scenarios-track {
+    scroll-padding-left: 1rem;
+  }
+}
+
+.eap__scenario-card {
+  flex: 0 0 auto;
+  width: 420px;
+  scroll-snap-align: start;
+  background: #fff;
+  border: 1px solid #e5e2d9;
+  border-radius: 12px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease;
+}
+.eap__scenario-card:hover {
+  border-color: #d1cfc5;
+}
+@media (max-width: 640px) {
+  .eap__scenario-card {
+    width: 85vw;
+    padding: 1.25rem;
+  }
+}
+
+.eap__scenario-number {
+  font-family: "Styrene B", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #9a9788;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.eap__scenario-title {
+  font-family: "Styrene A", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.0625rem !important;
+  font-weight: 500;
+  color: #2c2b25;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.eap__scenario-description {
+  font-size: 0.9375rem !important;
+  color: #5e5b4e;
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+  flex-grow: 1;
+}
+
+.eap__scenario-domains {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-top: auto;
+}
+
+.eap__scenario-domain {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: #7c7968;
+  background: #f0eee6;
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.eap__scenarios-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+@media (max-width: 640px) {
+  .eap__scenarios-footer {
+    flex-direction: column;
+  }
+}
+
+.eap__scenarios-hint {
+  font-size: 0.8125rem;
+  color: #9a9788;
+}
+@media (max-width: 640px) {
+  .eap__scenarios-hint {
+    display: none;
+  }
+}
+
+.eap__courses-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+@media (max-width: 968px) {
+  .eap__courses-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .eap__courses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eap__course-card {
+  display: block;
+  text-decoration: none;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5e2d9;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.eap__course-card:hover {
+  text-decoration: none;
+  transform: translateY(-4px);
+}
+
+.eap__course-card-top {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+@media (max-width: 640px) {
+  .eap__course-card-top {
+    height: 160px;
+  }
+}
+
+.eap__course-card--blue .eap__course-card-top {
+  background: #b4c6d4;
+}
+
+.eap__course-card--purple .eap__course-card-top {
+  background: #c5bfd9;
+}
+
+.eap__course-card--sage .eap__course-card-top {
+  background: #b5c5c0;
+}
+
+.eap__course-card--pink .eap__course-card-top {
+  background: #e0c5ce;
+}
+
+.eap__course-card-icon {
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+}
+
+.eap__course-card-bottom {
+  padding: 1.25rem;
+  background: #fff;
+}
+
+.eap__course-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c2b25;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.eap__course-card-label {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  color: #7c7968;
+}
+
+.eap__course-card-label-icon {
+  width: 14px;
+  height: 14px;
+  opacity: 0.6;
+}
+
+.eap__faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.eap__faq-list .faq-title {
+  font-family: "Styrene B", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: #2c2b25;
+}
+.eap__faq-list .faq-post p {
+  font-family: "Styrene B", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #5e5b4e;
+}
+
+.eap__cta-footer {
+  text-align: center;
+}
+.eap__cta-footer .eap__section-icon {
+  filter: brightness(0) invert(1);
+}
+.eap__cta-footer .eap__section-title {
+  color: #fff;
+}
+.eap__cta-footer .eap__section-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+}
+.eap__cta-footer .eap__btn-row {
+  justify-content: center;
+}
+
+.footer_contain {
+  background-color: #141413;
+  color: #fff;
+  padding: 120px 0 60px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  font-family: "Styrene B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.u-container-full {
+  width: 100%;
+  margin: 0 auto;
+  padding: 5rem 60px 0 60px;
+}
+
+.footer_grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 100px;
+  margin-bottom: 80px;
+}
+
+.footer_grid_logo {
+  color: #fff;
+}
+
+.footer_grid_logo svg {
+  width: 48px;
+  height: auto;
+}
+
+.footer_grid_content {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 50px;
+}
+
+.footer_group_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer_group_block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer_group_title {
+  color: #f0eee6;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 20px;
+  font-family: "Styrene B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.footer_group_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.w-list-unstyled {
+  list-style: none;
+}
+
+.footer_group_item {
+  margin: 0;
+}
+
+.footer_link_wrap {
+  display: inline-block;
+  text-decoration: none;
+  color: #b0aea5;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.w-inline-block {
+  display: inline-block;
+}
+
+.footer_link_text {
+  font-size: 16px;
+  line-height: 1.5;
+  transition: color 0.2s ease;
+  font-family: "Styrene B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.footer_link_wrap:hover .footer_link_text {
+  color: #fff;
+}
+
+.u-mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.footer_bottom_wrap {
+  border-top: 1px solid #3d3d3a;
+  padding-top: 32px;
+}
+
+.footer_bottom_contain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer_bottom_text {
+  color: #87867f;
+  font-size: 14px;
+}
+
+.footer_bottom_list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 16px;
+}
+
+.footer_bottom_item {
+  margin: 0;
+}
+
+.footer_bottom_link_wrap {
+  display: inline-block;
+  color: #87867f;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer_bottom_link_wrap:hover {
+  color: #fff;
+}
+
+.u-icon-32 {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.u-icon-32 svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+@media (max-width: 1200px) {
+  .u-container-full {
+    padding: 5rem 32px 0 32px;
+  }
+  .footer_grid_content {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .footer_grid {
+    gap: 60px;
+  }
+}
+@media (max-width: 768px) {
+  .footer_contain {
+    padding: 60px 0 32px;
+  }
+  .b-faq-list h2.h3 {
+    margin: 0px 0 24px 0;
+  }
+  .block-content {
+    margin-top: 24px !important;
+  }
+  .u-container-full {
+    padding: 5rem 24px 0 24px;
+  }
+  .footer_grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .footer_grid_content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .footer_bottom_contain {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .footer_grid_content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .footer_group_wrap {
+    gap: 16px;
+  }
+}
+/* ========== ORIGINAL FAQ STYLES BELOW ========== */
+/* Typography */
+.h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.64px;
+  margin: 0 0 48px 0;
+  font-family: "Styrene A", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.h4 {
+  font-size: var(--type-scales-display-s, 24px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 115%; /* 27.6px */
+  letter-spacing: -0.48px;
+  margin: 0;
+  font-family: "Styrene A", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.text-b2 {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+  font-family: "Styrene A", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.text-b2 p {
+  font-size: 20px !important;
+  line-height: 1.5;
+}
+
+/* FAQ Component Styles */
+.b-faq-list {
+  padding-bottom: 96px;
+  padding-top: 48px;
+  position: relative;
+}
+
+.b-faq-list .page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.block-content {
+  margin-top: 48px;
+}
+
+.faq-container {
+  border-top: 1px solid #b0aea5;
+  position: relative;
+  width: 100%;
+}
+
+.faq-container + .faq-container {
+  margin-top: 12px;
+}
+
+.faq-input {
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  margin: 0;
+}
+
+.faq-label {
+  display: flex;
+  padding: 12px 0px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.faq-title {
+  flex: 1;
+}
+
+.faq-icon {
+  color: #141413;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.icon-more {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+.icon-less {
+  display: none;
+  width: 24px;
+  height: 24px;
+}
+
+.faq-container input[type=checkbox] + span + label {
+  transition: color 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.faq-container input[type=checkbox] + span + label svg path {
+  transition: fill 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.faq-container input[type=checkbox]:hover + span + label,
+.faq-container input[type=checkbox]:focus-visible + span + label {
+  color: #87867f;
+}
+
+.faq-container input[type=checkbox]:hover + span + label svg path,
+.faq-container input[type=checkbox]:focus-visible + span + label svg path {
+  fill: #87867f;
+}
+
+.faq-container input[type=checkbox] + span + label + article {
+  display: grid;
+  max-height: 0;
+  overflow: hidden;
+  transition: padding 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s, height 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), max-height 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.faq-container input[type=checkbox]:checked + span + label + article {
+  max-height: 10000px;
+  padding-bottom: 24px;
+  padding-top: 24px;
+  transition: padding 0.2s cubic-bezier(1, 0, 0, 1), height 1s cubic-bezier(1, 0, 0, 1), max-height 1s cubic-bezier(1, 0, 0, 1);
+}
+
+.faq-post {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.faq-container input[type=checkbox]:checked + span + label + article .faq-post {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-delay: 0.2s;
+}
+
+.faq-container input[type=checkbox]:checked + span + label .icon-more {
+  display: none;
+}
+
+.faq-container input[type=checkbox]:checked + span + label .icon-less {
+  display: inline-block;
+}
+
+.faq-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 699px) {
+  .faq-label {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: none;
+    gap: 0;
+  }
+  .faq-title {
+    padding-right: 16px;
+    grid-column: unset;
+    flex: 1;
+  }
+  .faq-icon {
+    width: auto;
+    grid-column: unset;
+    flex-shrink: 0;
+    justify-content: flex-end;
+  }
+  .s\:grid-12 {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+}
+/* Tablet and larger breakpoints */
+@media (min-width: 768px) {
+  .b-faq-list .page-wrapper {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  .h3 {
+    font-size: 36px;
+    margin: 0 0 64px 0;
+  }
+  .text-b2 {
+    font-size: 20px;
+  }
+  .block-content {
+    margin-top: 64px;
+  }
+  .b-faq-list {
+    padding-bottom: 128px;
+    padding-top: 64px;
+  }
+  .faq-container + .faq-container {
+    margin-top: 16px;
+  }
+  .faq-container input[type=checkbox]:checked + span + label + article {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .b-faq-list .page-wrapper {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  .h3 {
+    font-size: 48px;
+    margin: 0 0 24px 0;
+  }
+  .block-content {
+    margin-top: 24px;
+  }
+  .b-faq-list {
+    padding-bottom: 160px;
+    padding-top: 80px;
+  }
+}
+#details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+#details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__wrapper {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.3rem;
+  border-radius: 12px;
+  gap: 2rem;
+  transition: all 0.2s ease;
+  max-width: 800px;
+}
+#details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__image {
+  flex-shrink: 0;
+  width: 33%;
+  max-width: 230px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__image img {
+  width: 100%;
+  height: 100%;
+  max-width: 210px;
+  max-height: 210px;
+  object-fit: contain;
+}
+#details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1rem;
+  padding-top: 10px;
+}
+#details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__text_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__header {
+  font-family: "Styrene A", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+  color: rgb(20, 20, 19);
+  line-height: 1.3;
+}
+#details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__text {
+  font-family: "Tiempos", Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  margin: 0;
+  color: rgb(20, 20, 19);
+  line-height: 1.5;
+}
+#details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__link {
+  flex-shrink: 0;
+  font-family: "Styrene B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  background: rgba(25, 25, 25, 0.1);
+  color: rgb(20, 20, 19);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+#details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__link span {
+  color: rgb(20, 20, 19);
+  text-decoration: none;
+  font-weight: 400;
+}
+#details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__link:hover {
+  background: rgba(25, 25, 25, 0.2);
+  text-decoration: none;
+}
+#details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__link:focus {
+  outline: none;
+  text-decoration: none;
+}
+@media (max-width: 1024px) {
+  #details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+  #details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__image {
+    width: 100%;
+    max-width: 200px;
+    align-self: center;
+  }
+  #details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__content {
+    width: 100%;
+  }
+  #details-pane-inner #details-pane-content #details-pane-summary-content.content .resource__link {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+h4.sj-text-details-pane-summary {
+  display: none !important;
+}
+
+.lesson-fullscreen .lesson-top {
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+}
+
+#lesson-main #lesson-main-inner .lesson-top {
+  display: none !important;
+}
+
+#details-pane-summary-content,
+.course-text-content:not(:has(#tutorial-container)):not(:has(.start-quiz)) {
+  max-width: 720px;
+  margin: auto;
+}
+
+#details-pane #details-pane-summary-content .lesson-description-content,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content {
+  margin-top: 32px;
+}
+#details-pane #details-pane-summary-content .lesson-description-content iframe,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content iframe {
+  width: min(960px, 100vw - 40px) !important;
+  aspect-ratio: 16/9;
+  height: auto !important;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 1200px) {
+  #details-pane #details-pane-summary-content .lesson-description-content iframe,
+  #lesson-main #lesson-main-inner #lesson-main-content .course-text-content iframe {
+    width: 100% !important;
+    left: 0;
+    transform: none;
+  }
+}
+@media (max-width: 1200px) {
+  .lesson-fullscreen #details-pane #details-pane-summary-content .lesson-description-content iframe,
+  .lesson-fullscreen #lesson-main #lesson-main-inner #lesson-main-content .course-text-content iframe {
+    width: min(960px, 100vw - 40px) !important;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+#details-pane #details-pane-summary-content .lesson-description-content img,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content img {
+  margin-bottom: 10px;
+}
+#details-pane #details-pane-summary-content .lesson-description-content h2,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content h2 {
+  font-family: "Styrene A", sans-serif;
+  font-size: 32px;
+  font-weight: 500 !important;
+  line-height: 115%;
+  letter-spacing: -0.88px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-top: 64px;
+  margin-bottom: 32px;
+  text-decoration: none;
+  text-align: start;
+  text-wrap: pretty;
+}
+#details-pane #details-pane-summary-content .lesson-description-content > p:first-child,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content > p:first-child {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+#details-pane #details-pane-summary-content .lesson-description-content h2#what-youll-learn,
+#details-pane #details-pane-summary-content .lesson-description-content h2#what-youll-learn > span, #details-pane #details-pane-summary-content .lesson-description-content > p:first-child > span,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content h2#what-youll-learn,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content h2#what-youll-learn > span,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content > p:first-child > span {
+  font-family: "Styrene A", sans-serif;
+  font-feature-settings: "pnum" on, "lnum" on, "liga" on;
+  font-size: 32px !important;
+  font-weight: 500;
+  line-height: 115%;
+  letter-spacing: -0.88px;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-wrap: pretty;
+}
+#details-pane #details-pane-summary-content .lesson-description-content h3,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content h3 {
+  font-family: "Styrene A", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 27.6px;
+  letter-spacing: -0.48px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  text-align: start;
+}
+#details-pane #details-pane-summary-content .lesson-description-content h4,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content h4 {
+  font-family: "Styrene A", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: -0.4px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  text-align: start;
+}
+#details-pane #details-pane-summary-content .lesson-description-content p,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content p {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-bottom: 16px;
+  text-decoration: none;
+  text-align: start;
+}
+#details-pane #details-pane-summary-content .lesson-description-content a,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content a {
+  font-family: "Styrene B", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.08px;
+  color: rgb(20, 20, 19);
+  background-color: rgba(25, 25, 25, 0.1);
+  text-decoration: none;
+  text-align: start;
+}
+#details-pane #details-pane-summary-content .lesson-description-content strong,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content strong {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  text-decoration: none;
+  text-align: left;
+}
+#details-pane #details-pane-summary-content .lesson-description-content em,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content em {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 31px;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  text-decoration: none;
+  text-align: start;
+}
+#details-pane #details-pane-summary-content .lesson-description-content ul,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content ul {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 155%;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-bottom: 16px;
+  margin-left: 38px;
+  list-style-type: disc;
+  list-style-position: outside;
+}
+#details-pane #details-pane-summary-content .lesson-description-content ol,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content ol {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 155%;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-bottom: 16px;
+  margin-left: 38px;
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+#details-pane #details-pane-summary-content .lesson-description-content li,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content li {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-bottom: 4px;
+  display: list-item;
+}
+#details-pane #details-pane-summary-content .lesson-description-content ul > li,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content ul > li {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-bottom: 4px;
+  display: list-item;
+}
+#details-pane #details-pane-summary-content .lesson-description-content ol > li,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content ol > li {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-bottom: 4px;
+  display: list-item;
+}
+#details-pane #details-pane-summary-content .lesson-description-content ul ul,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content ul ul {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 155%;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-top: 0;
+  margin-bottom: 16px;
+  margin-left: 0;
+  padding-left: 32px;
+  padding-bottom: 0;
+  list-style-type: circle;
+}
+#details-pane #details-pane-summary-content .lesson-description-content ol ul,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content ol ul {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 155%;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-top: 0;
+  margin-bottom: 16px;
+  margin-left: 0;
+  padding-left: 32px;
+  padding-bottom: 0;
+  list-style-type: circle;
+}
+#details-pane #details-pane-summary-content .lesson-description-content ol ol,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content ol ol {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 155%;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-top: 0;
+  margin-bottom: 16px;
+  margin-left: 0;
+  padding-left: 32px;
+  padding-bottom: 0;
+  list-style-type: lower-alpha;
+}
+#details-pane #details-pane-summary-content .lesson-description-content ul ol,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content ul ol {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 155%;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-top: 0;
+  margin-bottom: 16px;
+  margin-left: 0;
+  padding-left: 32px;
+  padding-bottom: 0;
+  list-style-type: decimal;
+}
+#details-pane #details-pane-summary-content .lesson-description-content ul ul > li,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content ul ul > li {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-bottom: 4px;
+}
+#details-pane #details-pane-summary-content .lesson-description-content ol ul > li,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content ol ul > li {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.1px;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  margin-bottom: 4px;
+}
+#details-pane #details-pane-summary-content .lesson-description-content pre,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content pre {
+  background-color: #f0eee6;
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  line-height: 1.5 !important;
+}
+#details-pane #details-pane-summary-content .lesson-description-content pre code,
+#lesson-main #lesson-main-inner #lesson-main-content .course-text-content pre code {
+  font-family: "SF Mono", "Monaco", "Menlo", monospace;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5 !important;
+  letter-spacing: normal;
+  color: rgb(20, 20, 19);
+  background-color: transparent;
+  white-space: pre;
+  display: block;
+}
+
+/* PROD_STYLES. Don't remove this comment */
+/* Base Overrides */
+#skilljar-content.reveal {
+  opacity: 100 !important;
+}
+
+#skilljar-content {
+  opacity: 0 !important;
+}
+
+.cp-certificate {
+  font-size: 26px;
+  text-align: left;
+}
+
+#header .header-center-img {
+  max-height: 16px;
+  max-width: 100%;
+}
+
+a.header-link.focus-link-v2 {
+  font-family: "Styrene B";
+}
+
+.lp-left-nav .course-title {
+  font-size: 24px !important;
+}
+
+#details-pane {
+  background: #faf9f5 !important;
+}
+@media only screen and (max-width: 767px) {
+  #details-pane {
+    margin-top: 0 !important;
+  }
+}
+
+.course-text-content {
+  background: transparent;
+  font-family: "Tiempos", serif;
+}
+
+#lesson-main-content .course-text-content code {
+  padding: 2px 4px;
+  font-weight: normal;
+  color: #a10d0d;
+  font-size: 0.9em;
+}
+
+/* Base Overrides */
+#cp-content #curriculum-list .lesson-row .title {
+  overflow: visible;
+  left: 44px;
+  margin-top: 7px;
+}
+
+#cp-content #curriculum-list .lesson-row .bullet {
+  top: 7px;
+}
+
+.row .row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.lp-left-nav .section-title:first-of-type {
+  padding-top: 16px;
+}
+
+.v1.sj-page-detail.sj-page-detail-course #skilljar-content {
+  padding-top: 120px;
+}
+
+.v1.sj-page-login #skilljar-content {
+  padding-top: 80px;
+}
+
+.v1.sj-page-curriculum #skilljar-content {
+  padding-top: 80px;
+}
+
+body {
+  display: flex;
+  padding: 0, var(--spacing-system-module-stack-landing, 160px) var(--widths-page-margin, 80px);
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-system-stack-gap-l, 48px);
+  align-self: stretch;
+  background-color: #faf9f5 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout Components */
+.dp-row-flex-v2 {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Course Curriculum Page Specific Styles */
+.v1.sj-page-curriculum {
+  /* Layout Components - Create a CSS Grid */
+  /* Make containers transparent to layout */
+  /* Position elements using grid areas */
+  /* Breadcrumb text before the grid */
+  /* Course description styling */
+}
+.v1.sj-page-curriculum .dp-row-flex-v2 {
+  display: grid !important;
+  grid-template-columns: 1fr 300px !important;
+  grid-template-areas: "title image" "description lessons" "description progress" "description button" ". ." !important;
+  column-gap: 80px !important;
+  row-gap: 0 !important;
+  align-items: start !important;
+}
+.v1.sj-page-curriculum .large-8.push-4.columns.sj-summary.cp-summary-wrapper,
+.v1.sj-page-curriculum .large-4.pull-8.columns.cp-promo-image-wrapper {
+  display: contents !important;
+}
+.v1.sj-page-curriculum .dp-row-flex-v2 h1.break-word {
+  grid-area: title !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+.v1.sj-page-curriculum .large-10.large-centered.columns.text-center.cp-summary-row-v2::before {
+  content: "Anthropic Academy  /  Courses" !important;
+  display: block !important;
+  color: var(--text-text-color, #141413) !important;
+  font-variant-numeric: lining-nums proportional-nums;
+  /* detail/m */
+  font-family: var(--typography-detail, "Styrene B LC") !important;
+  font-size: var(--type-scales-detail-m, 16px) !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 125% !important;
+  /* 20px */
+  letter-spacing: -0.08px !important;
+  margin-top: 100px !important;
+  margin-bottom: 40px !important;
+  text-align: left !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin-left: 0;
+  margin-right: auto !important;
+}
+.v1.sj-page-curriculum .course-description {
+  grid-area: description !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Tiempos", serif;
+  font-size: 24px;
+  line-height: 1.5;
+  max-width: 700px;
+  text-align: left !important;
+}
+.v1.sj-page-curriculum .dp-row-flex-v2 .cp-promo-image {
+  grid-area: image !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+  width: 97px !important;
+  height: 96px !important;
+}
+.v1.sj-page-curriculum .dp-row-flex-v2 .cp-promo-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+.v1.sj-page-curriculum .dp-row-flex-v2 .cp-lessons {
+  grid-area: lessons !important;
+  text-align: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.v1.sj-page-curriculum .dp-row-flex-v2 .progress-bar {
+  grid-area: progress !important;
+  margin: 0 !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--text-text-agate, #B0AEA5) !important;
+  background: var(--background-secondary-background, #F0EEE6) !important;
+  max-width: 300px;
+}
+.v1.sj-page-curriculum .dp-row-flex-v2 #resume-button {
+  grid-area: button !important;
+  display: flex !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.columns.text-center.push-3.large-6.dp-summary-wrapper {
+  margin-left: 0 !important;
+  width: 60% !important;
+  max-width: none !important;
+  text-align: left !important;
+  float: none !important;
+  padding: 0 !important;
+  flex: 0 0 60% !important;
+}
+
+.columns.large-6.dp-promo-image-wrapper {
+  width: 40% !important;
+  flex: 0 0 40% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Desktop order (768px and up) */
+@media only screen and (min-width: 768px) {
+  .v1.sj-page-detail.sj-page-detail-course .columns.text-center.push-3.large-6.dp-summary-wrapper {
+    order: 1 !important;
+  }
+  .v1.sj-page-detail.sj-page-detail-course .columns.large-6.dp-promo-image-wrapper {
+    order: 2 !important;
+  }
+}
+.push-3,
+.large-7 {
+  all: unset;
+}
+
+.large-7 {
+  display: flex;
+  width: 802px;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+}
+
+/* Typography */
+.main-container,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.v1.sj-page-curriculum,
+.v1.sj-page-lesson {
+  font-family: "Copernicus", serif;
+}
+
+.header-links-container a {
+  font-size: 16px;
+}
+
+#header .header-links-container {
+  padding-right: 0px;
+}
+
+#header .header-links-container .header-link {
+  margin-right: 26px;
+}
+
+.main-container,
+p,
+ul,
+li,
+.v1.sj-page-curriculum,
+.v1.sj-page-lesson {
+  font-family: "Tiempos", serif;
+  font-size: 20px;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #141413;
+  letter-spacing: -0.015em;
+}
+
+.main-container strong,
+p strong,
+ul strong,
+li strong,
+.v1.sj-page-curriculum strong,
+.v1.sj-page-lesson strong {
+  font-weight: 500;
+}
+
+.sj-course-info-wrapper h2 {
+  font-family: "Tiempos" !important;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.columns h2,
+.columns h3,
+.columns h2 span,
+.columns h3 span,
+.columns h4 span {
+  color: #141413;
+  font-family: "Copernicus";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.025em;
+  margin-top: 2em;
+}
+
+.lp-color-scheme-light .lp-left-nav .course-title {
+  color: #141413;
+  font-family: "Copernicus";
+  font-size: 26px !important;
+  font-style: normal;
+  font-weight: 600 !important;
+  line-height: 140%;
+  letter-spacing: -0.025em;
+  margin-top: 2em;
+}
+
+.columns h3:first-of-type {
+  margin-top: 0px;
+}
+
+h1.break-word {
+  letter-spacing: -1.92px;
+  font-family: "Copernicus", serif;
+  font-weight: 500;
+  line-height: 110%;
+  margin-bottom: var(--spacer-02);
+  font-size: 72px !important;
+}
+
+/* Curriculum page specific h1 override */
+.v1.sj-page-curriculum h1.break-word {
+  align-self: stretch;
+  color: var(--text-text-color, #141413);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: var(--typography-display-serif, Copernicus);
+  font-size: 54px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 64.8px */
+  letter-spacing: -1.62px;
+  margin-bottom: 0;
+}
+
+/* Buttons */
+.purchase-button-wrapper {
+  display: flex;
+  width: 180px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 0;
+}
+
+#purchase-button {
+  display: flex;
+  width: 180px;
+  margin: 0;
+  top: 15px;
+  height: var(--spacing-system-button-height, 48px);
+  padding: 0px var(--spacing-system-button-padding, 32px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacers-spacer-01, 4px);
+  border-radius: 12px;
+  background: var(--button-button-color, #141413);
+}
+
+#resume-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button.resume-button {
+  display: flex;
+  height: 40px;
+  padding: 0px var(--spacing-system-button-padding, 32px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacers-spacer-01, 4px);
+  border-radius: var(--border-radius-border-radius-small, 12px);
+  background: var(--button-button-color, #141413);
+  border: none;
+  width: auto;
+}
+
+/* Progress Bar */
+.progress-bar {
+  height: 12px !important;
+  width: 100%;
+  max-width: 436px !important;
+  border-radius: 12px;
+  border: 1px solid var(--text-text-agate, #B0AEA5);
+  background: var(--background-secondary-background, #F0EEE6);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-inner {
+  height: 100% !important;
+  background: #B0AEA5 !important;
+  border-radius: 12px;
+  transition: width 0.3s ease;
+}
+
+.sj-page-curriculum #resume-button.row a {
+  margin: 24px;
+  font-family: "Styrene B";
+  font-size: 16px;
+  letter-spacing: 0.015em;
+  padding: 16px 24px 18px;
+}
+
+#cp-content h2,
+#cp-content .h2-style,
+#cp-content h3,
+#cp-content .h3-style {
+  font-size: 24px;
+}
+
+/* Lesson Counter */
+.cp-lessons {
+  color: #000;
+  text-align: left;
+  font-variant-numeric: lining-nums proportional-nums;
+  /* detail/s */
+  font-family: var(--typography-detail, "Styrene B LC");
+  font-size: var(--type-scales-detail-s, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+  /* 17.5px */
+  letter-spacing: -0.07px;
+  margin: 0 !important;
+  height: auto !important;
+}
+
+/* Lesson completion text */
+.sj-text-x-of-y-lessons-completed span {
+  color: #000 !important;
+  text-align: center !important;
+  font-variant-numeric: lining-nums proportional-nums !important;
+  /* detail/s */
+  font-family: var(--typography-detail, "Styrene B LC") !important;
+  font-size: var(--type-scales-detail-s, 14px) !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 125% !important;
+  /* 17.5px */
+  letter-spacing: -0.07px !important;
+}
+
+/* Curriculum Section */
+.sj-curriculum-wrapper {
+  display: flex;
+  width: 40% !important;
+  padding: var(--spacing-system-card-padding, 32px);
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: var(--border-radius-border-radius, 16px);
+  background: var(--background-secondary-background, #f0eee6);
+  margin-left: 0 !important;
+  flex: 0 0 40% !important;
+  align-self: flex-start !important;
+}
+
+.sj-curriculum-wrapper h3 {
+  font-family: "Styrene A", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 20px !important;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #141413;
+  margin-bottom: 16px;
+  padding-left: 0;
+}
+
+#curriculum-list .lesson-modular,
+#curriculum-list .lesson-video,
+#curriculum-list .lesson-quiz,
+#curriculum-list .lesson-pdf {
+  height: 44px;
+  padding: 5px 0px 10px 7px;
+  border-bottom: 1px solid var(--border-border-subtle, #d1cfc5);
+}
+
+.section-container.tabs > section > .title a,
+.section-container.tabs > .section > .title a {
+  font-family: "Styrene B";
+  font-size: 16px;
+  letter-spacing: 0.015em;
+}
+
+.section-container.tabs section.active > .title a,
+.section-container.tabs .section.active > .title a {
+  font-weight: 500;
+}
+
+/* Course Info */
+.sj-course-info-wrapper {
+  margin: 0 !important;
+  background: transparent !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+}
+
+.sj-course-info-wrapper h2 {
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #141413 !important;
+  margin: 32px 0 24px 0 !important;
+  background-color: transparent !important;
+  max-width: 100% !important;
+}
+
+/* Header and Navigation */
+#header,
+.header-link,
+.header-left .left-nav-toggle {
+  color: black !important;
+}
+
+#header-left .fa-times {
+  margin-top: 27px;
+}
+
+#dp-details {
+  display: flex;
+  padding-bottom: var(--spacers-spacer-12, 160px);
+  margin: 40px auto !important;
+  max-width: 1200px !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  gap: 48px !important;
+}
+
+.top-row-white-v2 {
+  color: #141413 !important;
+  padding-bottom: 24px;
+}
+
+/* Lessons */
+.lesson-modular,
+.lesson-video,
+.lesson-quiz,
+.lesson-pdf {
+  display: flex;
+  align-items: center;
+  padding: 7px 12px;
+  height: 44px;
+  border-bottom: 1px solid var(--border-border-subtle, #d1cfc5);
+}
+
+#lp-left-nav .lesson {
+  color: #141413 !important;
+}
+
+.lp-left-nav .lesson-row {
+  padding: 0;
+  width: 100%;
+}
+
+.lp-left-nav .lesson {
+  padding: 16px;
+  color: #141413;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: "Tiempos Text";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+#lp-left-nav .lesson:hover {
+  background: #DEDCD1;
+}
+
+#lp-left-nav .lesson:active {
+  background: #DEDCD1;
+}
+
+.lesson-top h2 {
+  font-weight: 600;
+}
+
+.lp-color-scheme-light #lp-wrapper #lesson-body h2 {
+  font-weight: 600;
+}
+
+.fa-circle-o.unviewed,
+.lp-left-nav .lesson-row:hover .unviewed {
+  color: #5a697c;
+}
+
+.fa-check-circle:before {
+  content: "\f058";
+  color: #141413;
+}
+
+#lp-left-nav .lesson-active,
+#lp-left-nav .current-item,
+.lp-color-scheme-light .lp-left-nav .lesson-row.lesson-active {
+  background: none;
+  width: 100%;
+}
+#lp-left-nav .lesson-active .title,
+#lp-left-nav .current-item .title,
+.lp-color-scheme-light .lp-left-nav .lesson-row.lesson-active .title {
+  font-weight: 500;
+}
+.lesson #lp-left-nav .lesson-active,
+.lesson #lp-left-nav .current-item,
+.lesson .lp-color-scheme-light .lp-left-nav .lesson-row.lesson-active {
+  background: #DEDCD1;
+}
+
+.lp-left-nav .lesson-row .title {
+  max-width: 90%;
+  font-family: "Tiempos", serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #141413;
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#curriculum-list-2 a {
+  display: flex;
+  height: 44px;
+}
+
+/* LESSON PAGES */
+#cp-content #curriculum-list .lesson-section h3,
+#cp-content #curriculum-list .lesson-section .h3-style,
+h3.section-title {
+  font-family: "Styrene B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #141413;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+#cp-content #curriculum-list .lesson-row .bullet i {
+  font-size: 1em;
+}
+
+/* Video Content Page */
+#cp-content-2 .lesson-modular {
+  height: 44px;
+  padding: 11px 12px 7px 12px;
+  gap: 6px;
+  border-bottom: 1px solid var(--border-border-subtle, #d1cfc5) !important;
+}
+
+#returnToOverview {
+  padding-bottom: 20px;
+  font-size: 18px;
+  text-decoration: underline;
+  font-family: "Styrene B";
+  color: #615f5b !important;
+}
+
+#lp-wrapper #lp-content #details-pane.columns #details-pane-inner #details-pane-summary-content {
+  display: flex !important;
+  flex-direction: column-reverse;
+}
+
+/* Background Color Overrides */
+#lesson-main,
+#lp-left-nav,
+.white-bg,
+.top-row-white-v2,
+#skilljar-content,
+#header,
+.header,
+.section-container.tabs > section.active > .title,
+.section-container.tabs > .section.active > .title,
+.section-container.tabs > section > .content,
+.section-container.tabs > .section > .content,
+.section-title {
+  background-color: #faf9f5 !important;
+}
+
+#skilljar-content {
+  min-height: 75% !important;
+  margin-bottom: 0px !important;
+}
+
+.lp-color-scheme-light.lp-left-nav.section-title,
+.lp-color-scheme-light .lp-left-nav .section-title {
+  background: none !important;
+}
+
+body.cbp-spmenu-fixed.sj-page-lesson:not(.lesson-fullscreen) #lp-left-nav {
+  width: 420px;
+}
+
+.cbp-spmenu-open #lp-wrapper,
+body.cbp-spmenu-fixed.sj-page-lesson:not(.lesson-fullscreen) #lp-wrapper {
+  margin-left: 420px;
+}
+
+#lp-left-nav,
+.lp-color-scheme-light #lp-wrapper,
+#dp-details [class*=curriculum],
+#dp-details [id*=curriculum],
+.course-outline,
+.course-content,
+.lessons-list {
+  background-color: #f0eee6 !important;
+}
+
+.lp-color-scheme-light.lp-left-nav.section-title,
+.lp-color-scheme-light .lp-left-nav .section-title {
+  background: none !important;
+  border-bottom: none;
+  padding: 32px 16px 0px 16px;
+}
+
+/* Tooltips */
+.tooltips {
+  border-bottom: 1px solid var(--border-border-subtle, #d1cfc5);
+  display: flex;
+  padding: var(--spacers-spacer-04, 16px) var(--spacers-spacer-03, 12px) var(--spacers-spacer-04, 16px) 0px;
+  align-items: center;
+  align-self: stretch;
+}
+
+/* Utility Classes */
+* {
+  box-shadow: none !important;
+}
+
+.focus-link-v2 {
+  color: black !important;
+}
+
+/* Sign-in Section */
+.signin {
+  color: #666 !important;
+  font-size: 14px !important;
+  margin-top: 10px !important;
+  background-color: transparent !important;
+  text-align: right !important;
+}
+
+.signin a {
+  color: #000 !important;
+  text-decoration: underline !important;
+  font-weight: 400 !important;
+}
+
+/* Login form styles */
+#login-content {
+  max-width: 810px !important;
+  padding-bottom: 48px !important;
+}
+
+/* FAQ section spacing on login page */
+.v1.sj-page-login .b-faq-list {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Replace video icon with custom SVG */
+.lesson-modular .type-icon sjwc-icon,
+.lesson-video .type-icon sjwc-icon {
+  display: none !important;
+}
+
+.lp-left-nav .lesson-row .type-icon {
+  display: none !important;
+}
+
+.lesson-modular .type-icon,
+.lesson-video .type-icon {
+  width: 15px;
+  height: 12px;
+  margin-bottom: 2px;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12" fill="none"%3E%3Cpath d="M9.6252 5.14956C10.2571 5.54045 10.2571 6.45955 9.6252 6.85044L2.02607 11.5512C1.35987 11.9633 0.5 11.4841 0.5 10.7007L0.500001 1.29926C0.500001 0.5159 1.35987 0.0367168 2.02607 0.448822L9.6252 5.14956Z" fill="%23D1CFC5"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Standardize icon container size for quiz and PDF */
+.lesson-quiz .type-icon,
+.lesson-pdf .type-icon {
+  width: 15px !important;
+  height: 12px !important;
+  margin-bottom: 2px;
+  display: inline-block !important;
+  flex-shrink: 0;
+}
+
+.lesson-quiz .type-icon sjwc-icon,
+.lesson-pdf .type-icon sjwc-icon {
+  display: none !important;
+  width: 15px !important;
+  height: 12px !important;
+}
+
+.lesson-quiz .type-icon i,
+.lesson-pdf .type-icon i {
+  font-size: 14px !important;
+  line-height: 12px !important;
+  display: none !important;
+}
+
+ul.dp-curriculum .lesson-quiz .type-icon i,
+ul.dp-curriculum .lesson-pdf .type-icon i {
+  position: relative;
+  top: -7px;
+  left: -8px;
+  display: none !important;
+}
+
+.lesson-modular .lesson-wrapper,
+.lesson-video .lesson-wrapper,
+.lesson-quiz .lesson-wrapper,
+.lesson-pdf .lesson-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.lesson-modular .lesson-wrapper > div,
+.lesson-video .lesson-wrapper > div,
+.lesson-quiz .lesson-wrapper > div,
+.lesson-pdf .lesson-wrapper > div {
+  display: flex;
+  align-items: center;
+}
+
+#cp-content #curriculum-list .lesson-row .type-icon {
+  margin-top: 0px;
+  display: none !important;
+}
+
+/* Hide Elements */
+.social-media-wrapper {
+  display: none !important;
+}
+
+.ep-footer,
+#ep-footer {
+  display: none;
+}
+
+.columns.sj-curriculum-wrapper.large-4 {
+  vertical-align: top !important;
+  margin-top: 0 !important;
+  box-sizing: border-box;
+  padding: 32px;
+}
+
+.columns.sj-curriculum-wrapper.large-4 h3 {
+  font-family: "Styrene A", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #141413;
+  margin-bottom: 16px;
+  padding-left: 0;
+  padding-top: 0px;
+  margin-top: 0;
+}
+
+.section.tooltips {
+  margin-bottom: 5px;
+  padding-bottom: 0;
+}
+
+/* Equal height columns with scrolling - best practices approach */
+.row.hide-for-small.padded-side-bottom {
+  display: flex !important;
+  min-height: 100vh !important;
+  /* Minimum height but can expand */
+  align-items: flex-start !important;
+  /* Align items to the top */
+}
+
+/* Left column - About this course */
+.row.hide-for-small.padded-side-bottom > .large-7.columns {
+  flex: 1 1 60% !important;
+  overflow: visible !important;
+  /* No scrolling */
+  background-color: #faf9f5 !important;
+  padding: 20px !important;
+  padding-top: 0 !important;
+  /* Align with right column */
+  float: none !important;
+  /* Remove float */
+  margin-top: 0 !important;
+  /* Ensure no top margin */
+  margin-right: 48px;
+}
+
+/* Right column - Curriculum */
+.row.hide-for-small.padded-side-bottom > .columns.sj-curriculum-wrapper.large-4 {
+  flex: 0 0 auto !important;
+  width: 469px !important;
+  /* Limit height to viewport */
+  overflow-y: auto !important;
+  /* Enable vertical scrolling */
+  overflow-x: hidden !important;
+  float: none !important;
+  /* Remove float */
+  margin-left: 20px !important;
+  margin-top: 0 !important;
+  /* Ensure no top margin */
+  align-self: flex-start !important;
+  /* Align to top, don't stretch */
+}
+
+/* Curriculum navigation styling */
+ul.dp-curriculum {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+ul.dp-curriculum li.section {
+  padding-left: 0;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Styrene B";
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+  color: #141413;
+}
+
+ul.dp-curriculum li.lesson-modular,
+ul.dp-curriculum li.lesson-video,
+ul.dp-curriculum li.lesson-quiz,
+ul.dp-curriculum li.lesson-pdf {
+  padding-left: 0;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Tiempos";
+  color: #333333;
+  display: flex;
+  align-items: center;
+}
+
+li.section.tooltips {
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Styrene B";
+}
+
+/* Lesson page specific layout */
+.lesson-page {
+  display: flex !important;
+  height: 100vh !important;
+}
+
+/* Left navigation on lesson pages - make it scrollable */
+.lesson-page #lp-left-nav {
+  flex: 0 0 300px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  background-color: #f0eee6 !important;
+}
+
+/* Right content area on lesson pages - full height no scroll */
+.lesson-page #lp-wrapper {
+  flex: 1 !important;
+  height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: auto !important;
+}
+
+.lesson-page #lesson-body {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.lesson-page #lesson-main {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.lesson-page #lesson-main-inner {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.lesson-page #lesson-main-content {
+  flex: 1 !important;
+}
+
+/* Video container should fit within available space */
+.lesson-page .course-fixed-content-video {
+  aspect-ratio: 16/9;
+  width: 100%;
+  max-height: calc(100vh - 60px - 49px) !important;
+}
+@media (max-width: 640px) {
+  .lesson-page .course-fixed-content-video {
+    max-height: 100%;
+  }
+}
+
+.lesson-page .video-max {
+  align-items: center !important;
+}
+.lesson-page .video-max .flex-video.widescreen {
+  padding-bottom: 40px;
+  margin-top: 0px !important;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.lesson-fullscreen #lp-wrapper #lesson-body #details-pane.columns {
+  display: block !important;
+}
+
+/* Footer should stay at bottom */
+.lesson-page #lp-footer {
+  flex: 0 0 auto !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lesson-page #lp-footer:not(:has(.left)) {
+  justify-content: flex-end;
+}
+.lesson-page #lp-footer .lesson-title-footer {
+  font-weight: 500;
+}
+.lesson-page #lp-footer .button.next-lesson-link {
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1;
+  transition: all 0.2s ease;
+  margin: 0;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+  background: #2c2b25;
+  color: white;
+  border: none;
+}
+.lesson-page #lp-footer .button.next-lesson-link:hover {
+  opacity: 0.85;
+  color: white;
+  text-decoration: none;
+}
+.lesson-page #lp-footer .button.next-lesson-link:focus {
+  background: #5e5b4e;
+  border-color: unset;
+  color: white;
+  outline: none !important;
+}
+.lesson-page #lp-footer .button.next-lesson-link:focus:before {
+  outline: none !important;
+  box-shadow: none !important;
+  border: unset !important;
+}
+
+/********* MOBILE STYLES **********/
+@media only screen and (min-width: 768px) {
+  #lp-wrapper #lp-content {
+    height: unset;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .lesson-page #lesson-body {
+    padding: 0;
+  }
+  body.sj-page-catalog .catalog-header h1.break-word,
+  body.sj-page-catalog .catalog-header h1,
+  .sj-page-catalog .catalog-header h1.break-word,
+  .sj-page-catalog .catalog-header h1 {
+    font-size: 64px !important;
+  }
+  /* Fix body spacing for mobile */
+  body {
+    padding: 16px !important;
+    gap: 24px !important;
+  }
+  /* Fix main container layout */
+  .dp-row-flex-v2 {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  /* Fix course info wrapper */
+  .sj-course-info-wrapper {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+  .sj-course-info-wrapper h2 {
+    font-size: 20px !important;
+    width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+  button,
+  .button {
+    font-family: "Styrene B";
+    font-size: 16px;
+    letter-spacing: 0.015em;
+  }
+  /* Fix purchase button wrapper */
+  .purchase-button-wrapper {
+    width: 100% !important;
+    align-items: flex-start !important;
+    margin-bottom: 16px !important;
+  }
+  #purchase-button {
+    width: 100% !important;
+    top: 0 !important;
+  }
+  /* Fix already registered text */
+  .signin {
+    width: 100% !important;
+    text-align: left !important;
+    margin-top: 8px !important;
+  }
+  .main-container,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .v1.sj-page-curriculum,
+  .v1.sj-page-lesson {
+    font-size: 22px !important;
+  }
+  .main-container,
+  p,
+  ul,
+  li,
+  .v1.sj-page-curriculum,
+  .v1.sj-page-lesson {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  /* Fix curriculum wrapper */
+  .sj-curriculum-wrapper {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-top: 24px !important;
+    padding: 24px !important;
+    box-sizing: border-box !important;
+  }
+  /* Fix row layout for mobile */
+  .row.hide-for-small.padded-side-bottom {
+    flex-direction: column !important;
+    min-height: auto !important;
+  }
+  .row.hide-for-small.padded-side-bottom > .large-7.columns {
+    flex: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin-bottom: 24px !important;
+  }
+  .row.hide-for-small.padded-side-bottom > .columns.sj-curriculum-wrapper.large-4 {
+    flex: none !important;
+    width: 100% !important;
+    max-height: none !important;
+    margin-left: 0 !important;
+    box-sizing: border-box !important;
+    padding: 24px !important;
+  }
+  /* Fix columns layout */
+  .columns,
+  .column {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+  .large-7 {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  #dp-details {
+    display: block !important;
+  }
+  .row.show-for-small {
+    display: none !important;
+  }
+  /* Course page mobile adjustments */
+  .v1.sj-page-detail.sj-page-detail-course {
+    /* Main page mobile adjustments */
+  }
+  .v1.sj-page-detail.sj-page-detail-course .row.dp-row-flex-v2 {
+    flex-direction: column !important;
+    display: flex !important;
+  }
+  .v1.sj-page-detail.sj-page-detail-course .columns.text-center.push-3.large-6.dp-summary-wrapper {
+    order: 10 !important;
+    width: 100% !important;
+    flex: none !important;
+    margin-bottom: 24px !important;
+  }
+  .v1.sj-page-detail.sj-page-detail-course .columns.large-6.dp-promo-image-wrapper {
+    order: -1 !important;
+    width: 100% !important;
+    flex: none !important;
+    margin-bottom: 24px !important;
+  }
+  .v1.sj-page-detail.sj-page-detail-course .dp-promo-image img {
+    max-width: 200px !important;
+    height: auto !important;
+  }
+  .v1.sj-page-detail.sj-page-detail-course .sj-course-info-wrapper h2 {
+    margin: 16px 0 16px 0 !important;
+    font-size: 18px !important;
+  }
+  .v1.sj-page-detail.sj-page-detail-course h1.break-word {
+    font-size: 36px !important;
+  }
+  .v1.sj-page-detail.sj-page-detail-course #skilljar-content {
+    padding-top: 60px !important;
+  }
+  .v1.sj-page-detail.sj-page-detail-course h1.break-word {
+    font-size: 48px !important;
+  }
+  /* Lesson row title - mobile only */
+  #cp-content #curriculum-list .lesson-row .title {
+    overflow: visible;
+    left: 38px;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .lp-left-nav .lesson-row .title {
+    max-width: 90%;
+    font-family: "Tiempos", serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #141413;
+    letter-spacing: -0.015em;
+    line-height: 1.4;
+  }
+  /* Mobile layout for the curriculum page grid */
+  .v1.sj-page-curriculum .dp-row-flex-v2 {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    grid-template-areas: none !important;
+    align-items: center !important;
+    gap: 24px !important;
+  }
+  .v1.sj-page-curriculum .dp-row-flex-v2 h1.break-word {
+    order: 1 !important;
+    text-align: center !important;
+  }
+  .v1.sj-page-curriculum .course-description {
+    order: 2 !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 20px !important;
+  }
+  .v1.sj-page-curriculum .dp-row-flex-v2 .cp-promo-image {
+    order: 3 !important;
+  }
+  .v1.sj-page-curriculum .dp-row-flex-v2 .cp-lessons {
+    order: 4 !important;
+  }
+  .v1.sj-page-curriculum .dp-row-flex-v2 .progress-bar {
+    order: 5 !important;
+    width: 100% !important;
+  }
+  .v1.sj-page-curriculum span.progress-bar-inner.button-background {
+    background: #DEDCD1 !important;
+  }
+  .v1.sj-page-curriculum .dp-row-flex-v2 #resume-button {
+    order: 6 !important;
+  }
+}
+.dp-summary-wrapper,
+.cp-summary-wrapper {
+  border: none;
+}
+
+/* Breadcrumb for catalog page */
+.catalog-center-width.one-col-full::before {
+  content: "Anthropic Academy  /  Courses" !important;
+  display: block !important;
+  color: var(--text-text-color, #141413) !important;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: var(--typography-detail, "Styrene B LC") !important;
+  font-size: var(--type-scales-detail-m, 16px) !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 125% !important;
+  letter-spacing: -0.08px !important;
+}
+@media (min-width: 1025px) {
+  .catalog-center-width.one-col-full::before {
+    margin-top: 100px !important;
+    text-align: left !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* Catalog header h1 spacing */
+.catalog-header h1 {
+  margin-top: 48px !important;
+}
+
+/* Remove padding on catalog header */
+.catalog-center-width .catalog-header {
+  padding-left: 0 !important;
+}
+
+/* FAQ Data and Privacy heading */
+.b-faq-list h2.h3 {
+  font-size: 32px !important;
+  line-height: 1.2 !important;
+}
+
+/* FAQ question titles */
+.faqs-container .faq-title.h4 {
+  font-size: 20px !important;
+  line-height: 1.3 !important;
+}
+
+/* Mobile adjustments for FAQ */
+@media only screen and (max-width: 767px) {
+  .b-faq-list h2.h3 {
+    font-size: 24px !important;
+  }
+  .faqs-container .faq-title.h4 {
+    font-size: 18px !important;
+  }
+  .cbp-spmenu-open #lp-wrapper,
+  body.cbp-spmenu-fixed.sj-page-lesson:not(.lesson-fullscreen) #lp-wrapper {
+    margin-left: 0px;
+  }
+  #left-nav-button {
+    font-size: 14px;
+  }
+  body.cbp-spmenu-fixed.sj-page-lesson:not(.lesson-fullscreen) #lp-left-nav {
+    width: 300px;
+  }
+  #toggle-header-mobile-dropdown {
+    font-size: 16px;
+  }
+  .flex-video.widescreen {
+    padding-bottom: 11.25%;
+  }
+}
+/* Breadcrumb for course detail page */
+.v1.sj-page-detail.sj-page-detail-course h1.break-word::before {
+  content: "Anthropic Academy  /  Courses" !important;
+  display: block !important;
+  color: var(--text-text-color, #141413) !important;
+  font-variant-numeric: lining-nums proportional-nums;
+  /* detail/m */
+  font-family: var(--typography-detail, "Styrene B LC") !important;
+  font-size: var(--type-scales-detail-m, 16px) !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 125% !important;
+  /* 20px */
+  letter-spacing: -0.08px !important;
+  margin-bottom: 48px !important;
+  text-align: left !important;
+}
+
+/* Ensure h1 alignment matches breadcrumb */
+.v1.sj-page-detail.sj-page-detail-course .dp-summary-wrapper h1.break-word {
+  text-align: left !important;
+}
+
+@media (min-width: 1200px) {
+  .v1.sj-page-login .b-faq-list,
+  .v1.sj-page-register .b-faq-list {
+    padding-top: 0px !important;
+  }
+}
+.sj-text-downloads span {
+  font-family: "Styrene A" !important;
+  font-weight: normal !important;
+}
+
+h1,
+.h1-style,
+h2,
+.h2-style,
+h3,
+.h3-style,
+h4,
+.h4-style,
+h5,
+h6 {
+  margin-bottom: 0.25em;
+}
+
+#song-wrapper {
+  position: relative;
+}
+#song-wrapper #song {
+  position: absolute;
+  top: -15px;
+  right: 0px;
+  font-size: 5px;
+  cursor: pointer;
+}
+
+#karaoke-lyrics {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 900px;
+  width: 90%;
+  transition: opacity 0.3s ease;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+#karaoke-lyrics.karaoke-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.karaoke-line {
+  margin: 15px 0;
+  transition: all 0.3s ease;
+}
+
+.karaoke-line.karaoke-upcoming {
+  color: #999;
+  font-size: 28px;
+}
+
+.karaoke-line.karaoke-current {
+  color: #d97959;
+  font-weight: bold;
+  font-size: 42px;
+}
+
+.karaoke-line.karaoke-past {
+  color: #bbb;
+  font-size: 28px;
+}
+
+</style>
+    
+
+    
+    
+        <link rel="stylesheet" href="../../../../assets/sj_course_platform_v2.css"/>
+    <link rel="stylesheet" href="../../../../assets/prism.css"/>
+    <link rel="stylesheet" href="../../../../assets/anthropic-theme.css"/>
+    <link rel="stylesheet" href="../../../../assets/lesson-local.css"/>
+</head>
+<body  class="v1 sj-page-lesson lp-color-scheme-light details-pane-bottom cbp-spmenu-fixed  sj-nested-header-links sj-nested-footer-links ">
+<div id="main-container" 
+     class="lesson-page" 
+        data-course="claude-code-in-action"
+        data-tags=""
+    >
+    
+    
+
+    
+        
+        
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+  <header id="header">
+    <div id="header-left" class="header-left">
+      
+
+
+  <a id="left-nav-button" class="burger header-link focus-link-v2 show-search" tabindex="0" role="button">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+    <i class="fa fa-search" aria-label="Search"></i>
+    <i class="fa fa-times" aria-label="Close"></i>
+    
+      <span class="burger-text sj-text-lessons">
+        
+          Lessons
+        
+      </span>
+    
+  </a>
+
+
+      
+
+
+
+
+      <a href="https://anthropic.com" class="header-logo-link focus-link-v2">
+        
+          <img class="header-center-img  "
+              src="https://cc.sj-cdn.net/instructor/4hdejjwplbrm-anthropic/themes/3gufixqhei80k/header-logo.1749494808.png"
+              alt="Go home"
+          />
+        
+      </a>
+    </div>
+    <div id="header-right">
+      
+        <div class="header-links-container headerheight align-vertical" aria-labelledby="header-links-navigation">
+          <h2 id="header-links-navigation" class="hide">Навигация</h2>
+          
+            
+
+
+  
+    <a href="https://www.anthropic.com/learn" target="_self" class="header-link header-link--base focus-link-v2">
+      Академия Anthropic
+    </a>
+  
+
+  
+    <a href="/" target="_self" class="header-link header-link--base focus-link-v2">
+      Курсы
+    </a>
+  
+
+
+</div>
+        <div class="headerheight align-vertical">
+          <a id="toggle-header-mobile-dropdown" class="header-link focus-link-v2" tabindex="0" aria-label="Open menu">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </a>
+        </div>
+      
+
+      
+
+      
+
+
+
+<div class="account-nav headerheight align-vertical hide-mobile">
+  
+    
+      <a href="#" data-dropdown="header-drop"
+         class="header-dropdown-button-v2 header-dropdown-button focus-link-v2"
+         aria-label="User settings menu"
+         role="button"
+         aria-expanded="false"
+      >
+        <img src="https://www.gravatar.com/avatar/dfc814aba44bf3c65bc0829a21d44371/?s=32&amp;d=mm" width="32" height="" alt="Unger Andrey's Avatar" />
+
+      </a>
+    
+  
+</div>
+
+    </div>
+    
+
+
+
+
+
+
+
+
+<ul id="header-drop" data-dropdown-content class="f-dropdown right profile-dropdown-v2 hide-mobile">
+  
+  
+  
+    <li>
+      <a href="/accounts/profile/?next=/claude-code-in-action/312004"
+         class="sj-text-my-profile focus-link-v2"
+         tabindex="-1"><span>Профиль</span></a>
+    </li>
+    
+  
+
+  
+  
+
+  <li>
+    <a href="/auth/logout?next=https%3A%2F%2Fanthropic.skilljar.com%2Fclaude-code-in-action" class="signout-link sj-text-sign-out focus-link-v2"
+       tabindex="-1"><span>Выйти</span></a>
+  </li>
+
+  
+</ul>
+
+
+  </header>
+  
+
+
+
+
+
+
+
+  <div id="header-mobile-dropdown">
+    
+      
+
+
+  
+    <a
+      class="header-link focus-link-v2"
+      href="https://www.anthropic.com/learn"
+      target="_self"
+    >
+      Академия Anthropic
+    </a>
+  
+
+  
+    <a
+      class="header-link focus-link-v2"
+      href="/"
+      target="_self"
+    >
+      Курсы
+    </a>
+  
+
+
+<a href="/accounts/profile/?next=/claude-code-in-action/312004"
+           class="header-link sj-text-my-profile focus-link-v2">
+          <span>Профиль</span>
+        </a>
+        
+      
+
+      
+      
+
+      <a href="/auth/logout?next=https%3A%2F%2Fanthropic.skilljar.com%2Fclaude-code-in-action" class="header-link signout-link sj-text-sign-out focus-link-v2">
+        <span>Выйти</span>
+      </a>
+    
+  </div>
+
+  <nav id="lp-left-nav" class="lp-left-nav cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
+        
+
+
+    <h1 class="course-title break-word">
+        Claude Code в действии <span class="sj-course-time"></span>
+    </h1>
+
+    <a id="returnToOverview" href="../../index.html" class="left-nav-return animated-button-pair focus-link-v2"
+       data-track-click="Lesson,Left Nav,Return To Overview,0">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i><span id="left-nav-return-text"
+                                                                 class="left-nav-return-text">Обзор курса</span>
+    </a>
+
+    
+        <div id="cp-content-2" class="row">
+            
+            <div id="curriculum-list-2" class="lessons-wrapper">
+                
+                    
+                        <h3 class="section-title">Что такое Claude Code?</h3>
+                    
+                    
+                
+                    
+                        <a href="../001-introduction/index.html" class="lesson lesson-video lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Введение">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Введение <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../002-what-is-a-coding-assistant/index.html" class="lesson lesson-video lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Что такое ассистент для программирования?">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Что такое ассистент для программирования? <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../003-claude-code-in-action/index.html" class="lesson lesson-video lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Claude Code в действии">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Claude Code в действии <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <h3 class="section-title">Практика</h3>
+                    
+                    
+                
+                    
+                        <a href="../004-claude-code-setup/index.html" class="lesson lesson-modular lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Настройка Claude Code">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-text" title="Text Lesson" role="img" aria-label="Text Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Настройка Claude Code <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../005-project-setup/index.html" class="lesson lesson-modular lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Настройка проекта">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-text" title="Text Lesson" role="img" aria-label="Text Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Настройка проекта <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../006-adding-context/index.html" class="lesson lesson-video lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Добавление контекста">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Добавление контекста <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../007-making-changes/index.html" class="lesson lesson-video lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Внесение изменений">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Внесение изменений <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../008-course-satisfaction-survey/index.html" class="lesson lesson-quiz lesson-incomplete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Опрос по курсу">
+
+                                <div class="bullet"><i class="fa fa-circle-o unviewed " aria-label="This lesson has not been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="fa fa-check-square-o" title="Quiz Lesson" role="img" aria-label="Quiz Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Опрос по курсу <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../009-controlling-context/index.html" class="lesson lesson-video lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Управление контекстом">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Управление контекстом <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../010-custom-commands/index.html" class="lesson lesson-video lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Пользовательские команды">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Пользовательские команды <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../011-mcp-servers-with-claude-code/index.html" class="lesson lesson-video lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="MCP-серверы в Claude Code">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    MCP-серверы в Claude Code <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../012-github-integration/index.html" class="lesson lesson-video lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Интеграция с GitHub">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Интеграция с GitHub <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <h3 class="section-title">Hooks и SDK</h3>
+                    
+                    
+                
+                    
+                        <a href="../013-introducing-hooks/index.html" class="lesson lesson-video lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Введение в hooks">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Введение в hooks <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../014-defining-hooks/index.html" class="lesson lesson-video lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Определение hooks">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Определение hooks <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../015-implementing-a-hook/index.html" class="lesson lesson-video lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Реализация hook">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Реализация hook <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../016-gotchas-around-hooks/index.html" class="lesson lesson-modular lesson-complete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Подводные камни hooks">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-text" title="Text Lesson" role="img" aria-label="Text Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Подводные камни hooks <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="index.html" class="lesson lesson-video lesson-complete focus-link-v2 display-block-v2" aria-current="page"">
+                            <div class="lesson-row lesson-active theme-color-bg"
+                                 title="Полезные hooks!">
+
+                                <div class="bullet"><i class="fa fa-check-circle " aria-label="This lesson has been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Полезные hooks! <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../018-another-useful-hook/index.html" class="lesson lesson-modular lesson-incomplete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Ещё один полезный hook">
+
+                                <div class="bullet"><i class="fa fa-circle-o unviewed " aria-label="This lesson has not been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-text" title="Text Lesson" role="img" aria-label="Text Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Ещё один полезный hook <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../019-the-claude-code-sdk/index.html" class="lesson lesson-video lesson-incomplete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="SDK Claude Code">
+
+                                <div class="bullet"><i class="fa fa-circle-o unviewed " aria-label="This lesson has not been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    SDK Claude Code <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <h3 class="section-title">Завершение</h3>
+                    
+                    
+                
+                    
+                        <a href="../020-quiz-on-claude-code/index.html" class="lesson lesson-quiz lesson-incomplete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Викторина по Claude Code">
+
+                                <div class="bullet"><i class="fa fa-circle-o unviewed " aria-label="This lesson has not been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="fa fa-check-square-o" title="Quiz Lesson" role="img" aria-label="Quiz Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Викторина по Claude Code <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+                    
+                        <a href="../021-summary-and-next-steps/index.html" class="lesson lesson-video lesson-incomplete focus-link-v2 display-block-v2" ">
+                            <div class="lesson-row "
+                                 title="Итоги и следующие шаги">
+
+                                <div class="bullet"><i class="fa fa-circle-o unviewed " aria-label="This lesson has not been completed."></i></div>
+
+                                <div class="type-icon">
+                                    <sjwc-icon name="icon-video" title="Video Lesson" role="img" aria-label="Video Lesson: "></sjwc-icon>
+                                </div>
+                                <div class="title">
+                                    Итоги и следующие шаги <span class="sj-lesson-time"></span>
+                                </div>
+                            </div>
+                        </a>
+                    
+                    
+                
+            </div>
+        </div>
+    
+
+    </nav>
+    <div id="lp-wrapper">
+        <div id="lp-content">
+            <div class="row">
+    <div id="messages" class="small-11 small-centered columns">
+        
+    </div>
+</div>
+
+            
+    <div id="lesson-body" class="row details-pane-bottom
+        
+            details-pane-closed
+        
+        ">
+        <input type="hidden" name="csrfmiddlewaretoken" value="5IzrkczYLlUJGeSh2nXjoshz9GvqLkABUwLS6c70NXJqXe4l25LDN2mF9uwYAghj">
+        <div id="lesson-main" class="columns fullheight">
+            
+                <div id="open-details-pane-button">
+                    <div class="details-pane-button">
+                        <a href="#" class="focus-link-v2">
+                            <div class="details-pane-arrow-wrapper">
+                                <i class="details-pane-arrow" aria-hidden="true"></i>
+                            </div>
+
+                            <p class="details-pane-button-text sj-text-details">
+                                <span>детали</span>
+                            </p>
+
+                            
+                        </a>
+                    </div>
+                </div>
+            
+            <div id="lesson-main-inner"
+                    >
+                
+                
+                <div class="lesson-top">
+                    <h2>Полезные hooks!</h2>
+                    
+                </div>
+                <div id="lesson-main-content" >
+                    
+                        
+                            
+                                <div class="course-fixed-content-video">
+    <div class="video-max">
+        <div class="video-player flex-video widescreen">
+            <div class="media-player skilljar-local-player" data-player-root data-default-audio="original" data-default-subtitle="off">
+                <video controls preload="metadata" playsinline poster="assets/poster_image.jpg">
+                    <source src="assets/video_1080p.mp4" type="video/mp4" data-audio="original">
+                </video>
+                <script type="application/json" data-subtitles-json>
+{
+  "en": {
+    "label": "English",
+    "cues": [
+      {
+        "start": 0.031,
+        "end": 2.794,
+        "text": "In this video, I'd like to show you some really useful"
+      },
+      {
+        "start": 2.855,
+        "end": 5.799,
+        "text": "hooks that you might want to use on your own projects. These"
+      },
+      {
+        "start": 5.839,
+        "end": 8.403,
+        "text": "hooks are intended to address some common weak points"
+      },
+      {
+        "start": 8.542,
+        "end": 11.086,
+        "text": "in Claude Code. To help you understand how the first one"
+      },
+      {
+        "start": 11.147,
+        "end": 13.929,
+        "text": "works, let me give you a quick demonstration of a problem"
+      },
+      {
+        "start": 13.97,
+        "end": 16.594,
+        "text": "that Claude Code sometimes runs into, especially"
+      },
+      {
+        "start": 16.713,
+        "end": 19.237,
+        "text": "on larger projects. So inside the SRC"
+      },
+      {
+        "start": 19.277,
+        "end": 22.242,
+        "text": "directory, I'm going to find schema.ts."
+      },
+      {
+        "start": 22.222,
+        "end": 24.948,
+        "text": "Inside of here, there's just one single function called create"
+      },
+      {
+        "start": 24.968,
+        "end": 28.394,
+        "text": "schema. This function is called from the main.ts"
+      },
+      {
+        "start": 28.414,
+        "end": 31.059,
+        "text": "file, specifically right here. Now,"
+      },
+      {
+        "start": 31.12,
+        "end": 33.744,
+        "text": "I'm going to go back to the schema.ts file and I'm going to update"
+      },
+      {
+        "start": 33.765,
+        "end": 36.331,
+        "text": "the function definition. I'm going to say that if you"
+      },
+      {
+        "start": 36.371,
+        "end": 39.036,
+        "text": "ever want to call this function, you must also pass"
+      },
+      {
+        "start": 39.136,
+        "end": 41.661,
+        "text": "in a verbose argument that must be of"
+      },
+      {
+        "start": 41.722,
+        "end": 44.567,
+        "text": "type Boolean. Now, as soon as I add in this change,"
+      },
+      {
+        "start": 44.847,
+        "end": 47.393,
+        "text": "if I go back to the main.ts file, I'm going to get a"
+      },
+      {
+        "start": 47.493,
+        "end": 49.999,
+        "text": "type of error because I just updated the definition of"
+      },
+      {
+        "start": 50.039,
+        "end": 52.543,
+        "text": "this function, but I have not actually added in"
+      },
+      {
+        "start": 52.564,
+        "end": 55.189,
+        "text": "a value for verbose. So the error"
+      },
+      {
+        "start": 55.229,
+        "end": 57.774,
+        "text": "right here says specifically argument for verbose"
+      },
+      {
+        "start": 57.875,
+        "end": 60.661,
+        "text": "was not provided. Now, I'm"
+      },
+      {
+        "start": 60.682,
+        "end": 63.268,
+        "text": "going to undo that change very quickly. I'm going to"
+      },
+      {
+        "start": 63.287,
+        "end": 66.332,
+        "text": "close the main.ts file. I'm then going to open"
+      },
+      {
+        "start": 66.393,
+        "end": 69.197,
+        "text": "up Claude Code and ask it to make the exact same"
+      },
+      {
+        "start": 69.278,
+        "end": 71.822,
+        "text": "change. Now if I run this, Claude Code is"
+      },
+      {
+        "start": 71.841,
+        "end": 75.007,
+        "text": "going to have absolutely no issue making this edit whatsoever. But"
+      },
+      {
+        "start": 75.027,
+        "end": 78.093,
+        "text": "it's going to update this file and then unfortunately after"
+      },
+      {
+        "start": 78.132,
+        "end": 80.677,
+        "text": "making that change, so there's the new verbose true right"
+      },
+      {
+        "start": 80.716,
+        "end": 83.503,
+        "text": "there. Unfortunately, Claude won't go around the project"
+      },
+      {
+        "start": 83.623,
+        "end": 86.228,
+        "text": "and try to find where that function is actually called and try to"
+      },
+      {
+        "start": 86.388,
+        "end": 89.075,
+        "text": "update any of the different call sites. So if I now open"
+      },
+      {
+        "start": 89.114,
+        "end": 91.64,
+        "text": "up main.ts, we'll see that we do, in fact, have"
+      },
+      {
+        "start": 91.68,
+        "end": 94.186,
+        "text": "an error over here. And Claude didn't really catch this,"
+      },
+      {
+        "start": 94.325,
+        "end": 96.831,
+        "text": "unfortunately. So the first hook that I want to show you"
+      },
+      {
+        "start": 96.871,
+        "end": 99.697,
+        "text": "will fix this solution super easily."
+      },
+      {
+        "start": 99.677,
+        "end": 102.222,
+        "text": "In case you're not familiar with TypeScript, and if you're not, that's totally"
+      },
+      {
+        "start": 102.263,
+        "end": 104.807,
+        "text": "fine. If I close out of Claude Code and run the"
+      },
+      {
+        "start": 104.908,
+        "end": 107.653,
+        "text": "command, TSC-dash-noemit,"
+      },
+      {
+        "start": 108.453,
+        "end": 111.659,
+        "text": "that's going to run a type check on my entire project. And"
+      },
+      {
+        "start": 111.84,
+        "end": 114.344,
+        "text": "in this type check, we can see that the error is very"
+      },
+      {
+        "start": 114.405,
+        "end": 116.95,
+        "text": "evident right here. So it's complaining about our call"
+      },
+      {
+        "start": 116.989,
+        "end": 119.694,
+        "text": "to create schema from that main.ts file."
+      },
+      {
+        "start": 119.674,
+        "end": 122.477,
+        "text": "So my idea for a hook is really simple. I"
+      },
+      {
+        "start": 122.518,
+        "end": 125.26,
+        "text": "think that any time that we edit a TypeScript file,"
+      },
+      {
+        "start": 125.6,
+        "end": 128.143,
+        "text": "we should run the TypeScript type checker and see"
+      },
+      {
+        "start": 128.182,
+        "end": 130.725,
+        "text": "if there are any distinct errors. If there are,"
+      },
+      {
+        "start": 130.765,
+        "end": 133.328,
+        "text": "we should attempt to feed these errors back into Claude"
+      },
+      {
+        "start": 133.448,
+        "end": 136.531,
+        "text": "immediately inside of a post-tool use hook."
+      },
+      {
+        "start": 136.551,
+        "end": 139.274,
+        "text": "And hopefully, this will give Claude a signal and tell it that there"
+      },
+      {
+        "start": 139.294,
+        "end": 141.836,
+        "text": "is a type error that it just introduced, that"
+      },
+      {
+        "start": 141.877,
+        "end": 145.259,
+        "text": "it probably needs to go and fix somewhere else inside of our project."
+      },
+      {
+        "start": 145.509,
+        "end": 148.013,
+        "text": "Now, I already put this hook together for us, fortunately, just"
+      },
+      {
+        "start": 148.032,
+        "end": 150.694,
+        "text": "to save us a little bit of time inside the hooks,"
+      },
+      {
+        "start": 150.715,
+        "end": 153.337,
+        "text": "TSC.js file. So inside this file,"
+      },
+      {
+        "start": 153.377,
+        "end": 156.2,
+        "text": "I've got a bunch of logic put together to run the TypeScript type checker,"
+      },
+      {
+        "start": 156.58,
+        "end": 159.304,
+        "text": "take any errors that found, and pass them back into"
+      },
+      {
+        "start": 159.364,
+        "end": 161.907,
+        "text": "Claude. At present, I disabled"
+      },
+      {
+        "start": 161.947,
+        "end": 165.11,
+        "text": "this hook just so I can give you that demonstration you just saw. So"
+      },
+      {
+        "start": 165.15,
+        "end": 167.832,
+        "text": "I disabled it by adding the process exit 0 right there."
+      },
+      {
+        "start": 167.932,
+        "end": 170.915,
+        "text": "I'm going to delete that. And now this hook should be working AOK."
+      },
+      {
+        "start": 171.635,
+        "end": 174.258,
+        "text": "So if I now go back to the schema.ts"
+      },
+      {
+        "start": 174.278,
+        "end": 178.731,
+        "text": "file, Remove that verbose flag, restart"
+      },
+      {
+        "start": 178.771,
+        "end": 181.28,
+        "text": "Claude Code, and ask it to make"
+      },
+      {
+        "start": 181.319,
+        "end": 184.662,
+        "text": "the same change once again. It"
+      },
+      {
+        "start": 184.701,
+        "end": 187.526,
+        "text": "will make the change. And then hopefully this time, it will immediately"
+      },
+      {
+        "start": 187.566,
+        "end": 190.188,
+        "text": "get that feedback from the TypeScript type checker saying,"
+      },
+      {
+        "start": 190.229,
+        "end": 193.272,
+        "text": "hey, you've got an error somewhere else in the project that you've just introduced."
+      },
+      {
+        "start": 193.612,
+        "end": 196.137,
+        "text": "And hopefully, Claude will go and fix it. So we can"
+      },
+      {
+        "start": 196.176,
+        "end": 198.68,
+        "text": "see right here, there's the edit that was made. We got"
+      },
+      {
+        "start": 198.719,
+        "end": 201.362,
+        "text": "some edit operation feedback from the hook that we put together."
+      },
+      {
+        "start": 201.824,
+        "end": 204.467,
+        "text": "So it found an issue inside of one of our different files."
+      },
+      {
+        "start": 205.087,
+        "end": 207.811,
+        "text": "And Claude is now saying, OK, I understand. I introduced"
+      },
+      {
+        "start": 207.871,
+        "end": 210.555,
+        "text": "an error. I need to fix the call to create"
+      },
+      {
+        "start": 210.574,
+        "end": 213.098,
+        "text": "schema inside of main.ts."
+      },
+      {
+        "start": 213.078,
+        "end": 215.713,
+        "text": "And then the next update it makes is going to attempt to go into"
+      },
+      {
+        "start": 215.754,
+        "end": 218.27,
+        "text": "that file and update that function call to"
+      },
+      {
+        "start": 218.39,
+        "end": 220.895,
+        "text": "add in that missing argument. So this is"
+      },
+      {
+        "start": 220.975,
+        "end": 223.737,
+        "text": "a hook that you might want to try implementing on your own personal"
+      },
+      {
+        "start": 223.798,
+        "end": 226.32,
+        "text": "projects. Now, even though this hook was implemented"
+      },
+      {
+        "start": 226.341,
+        "end": 228.843,
+        "text": "specifically for TypeScript, it still works for any"
+      },
+      {
+        "start": 228.943,
+        "end": 231.545,
+        "text": "other kind of typed language where you can run a type"
+      },
+      {
+        "start": 231.566,
+        "end": 234.288,
+        "text": "checker very easily. Even if you're using an untyped"
+      },
+      {
+        "start": 234.348,
+        "end": 237.252,
+        "text": "language, you might even implement the same idea of functionality"
+      },
+      {
+        "start": 237.633,
+        "end": 240.536,
+        "text": "using tests instead of running a type checker. So"
+      },
+      {
+        "start": 240.556,
+        "end": 243.157,
+        "text": "every time an edit is made, you could run your test to make"
+      },
+      {
+        "start": 243.177,
+        "end": 245.748,
+        "text": "sure that the edit is OK. Now, the next"
+      },
+      {
+        "start": 245.769,
+        "end": 248.353,
+        "text": "hook that I would like to show you is a little bit more challenging"
+      },
+      {
+        "start": 248.393,
+        "end": 250.997,
+        "text": "to explain, but once you get the idea behind it, I think"
+      },
+      {
+        "start": 251.037,
+        "end": 253.681,
+        "text": "that you will definitely find this next one really"
+      },
+      {
+        "start": 253.721,
+        "end": 256.444,
+        "text": "helpful, particularly in larger projects. To"
+      },
+      {
+        "start": 256.485,
+        "end": 259.209,
+        "text": "help you understand this other hook, I want to give you a little bit of background"
+      },
+      {
+        "start": 259.249,
+        "end": 261.932,
+        "text": "on this project. Inside of the SRC query"
+      },
+      {
+        "start": 261.952,
+        "end": 264.637,
+        "text": "directory, there are many different files. Each"
+      },
+      {
+        "start": 264.656,
+        "end": 267.401,
+        "text": "of these different files contains many different SQL queries"
+      },
+      {
+        "start": 267.721,
+        "end": 270.245,
+        "text": "written inside of different functions. Inside"
+      },
+      {
+        "start": 270.264,
+        "end": 272.869,
+        "text": "of the orderqueries.ts file in particular,"
+      },
+      {
+        "start": 272.848,
+        "end": 275.495,
+        "text": "I want to point out that there is a function inside of here called"
+      },
+      {
+        "start": 275.514,
+        "end": 278.12,
+        "text": "git pending orders. This query goes through"
+      },
+      {
+        "start": 278.141,
+        "end": 280.706,
+        "text": "a database that contains some e-commerce related"
+      },
+      {
+        "start": 280.766,
+        "end": 283.372,
+        "text": "data. And in theory, it's going to find all the different"
+      },
+      {
+        "start": 283.492,
+        "end": 286.077,
+        "text": "orders that have been created that are in a pending state."
+      },
+      {
+        "start": 286.598,
+        "end": 289.757,
+        "text": "So just keep that function in mind for a moment. Okay,"
+      },
+      {
+        "start": 289.937,
+        "end": 292.821,
+        "text": "so I'm going to show you a couple of good diagrams really quickly to help you understand"
+      },
+      {
+        "start": 292.841,
+        "end": 295.685,
+        "text": "a common problem that starts to arise inside of larger"
+      },
+      {
+        "start": 295.745,
+        "end": 298.427,
+        "text": "projects. So in this diagram, I've got my"
+      },
+      {
+        "start": 298.649,
+        "end": 301.331,
+        "text": "list of different query files on the left-hand side, and as we saw,"
+      },
+      {
+        "start": 301.451,
+        "end": 303.975,
+        "text": "each of those different query files contains many different queries."
+      },
+      {
+        "start": 304.935,
+        "end": 307.56,
+        "text": "Inside of that order queries file in particular is the"
+      },
+      {
+        "start": 307.639,
+        "end": 310.202,
+        "text": "git pending orders function. So we've already got"
+      },
+      {
+        "start": 310.283,
+        "end": 312.826,
+        "text": "a query put together that will attempt to find some"
+      },
+      {
+        "start": 312.987,
+        "end": 315.512,
+        "text": "different pending orders. Now, if I go"
+      },
+      {
+        "start": 315.552,
+        "end": 318.235,
+        "text": "to Claude and ask it to update the main.ts"
+      },
+      {
+        "start": 318.254,
+        "end": 320.778,
+        "text": "file to print out all the different orders that have been"
+      },
+      {
+        "start": 320.838,
+        "end": 323.461,
+        "text": "in a pending state for longer than three days, in"
+      },
+      {
+        "start": 323.581,
+        "end": 326.264,
+        "text": "a perfect world, Claude would find the order"
+      },
+      {
+        "start": 326.303,
+        "end": 329.047,
+        "text": "queries.ts file. It would find that existing query"
+      },
+      {
+        "start": 329.247,
+        "end": 331.81,
+        "text": "and it would make use of it as opposed to writing"
+      },
+      {
+        "start": 331.93,
+        "end": 334.673,
+        "text": "out a brand new query. So that's what we want."
+      },
+      {
+        "start": 335.394,
+        "end": 338.117,
+        "text": "And we'll see that if we make use of Claude right now and ask"
+      },
+      {
+        "start": 338.156,
+        "end": 340.714,
+        "text": "it to do exactly that, We're going to get"
+      },
+      {
+        "start": 340.995,
+        "end": 343.92,
+        "text": "exactly the result we want. So I'm going to ask Claude in the main.ts"
+      },
+      {
+        "start": 343.939,
+        "end": 346.524,
+        "text": "file, print out orders that have been pending. Now,"
+      },
+      {
+        "start": 346.704,
+        "end": 349.249,
+        "text": "to Claude's credit, it is going to take a look at the"
+      },
+      {
+        "start": 349.288,
+        "end": 352.014,
+        "text": "different query files that exist. It's going to find the order queries"
+      },
+      {
+        "start": 352.053,
+        "end": 354.677,
+        "text": "file. And then inside there, it's going to recognize that there"
+      },
+      {
+        "start": 354.697,
+        "end": 357.423,
+        "text": "is already a query called get pending orders. And"
+      },
+      {
+        "start": 357.463,
+        "end": 360.047,
+        "text": "it's going to attempt to use that function as opposed"
+      },
+      {
+        "start": 360.086,
+        "end": 362.591,
+        "text": "to creating a new query. We didn't want a new"
+      },
+      {
+        "start": 362.612,
+        "end": 365.137,
+        "text": "query. We wanted Claude to use the existing"
+      },
+      {
+        "start": 365.218,
+        "end": 367.744,
+        "text": "function. So when we gave Claude a very focused"
+      },
+      {
+        "start": 367.884,
+        "end": 370.389,
+        "text": "and directed task, it was able to understand that,"
+      },
+      {
+        "start": 370.509,
+        "end": 373.096,
+        "text": "yeah, I probably shouldn't write a new query. It should at least"
+      },
+      {
+        "start": 373.156,
+        "end": 375.942,
+        "text": "take a look at some of the ones that already exist. And that was definitely"
+      },
+      {
+        "start": 375.982,
+        "end": 378.56,
+        "text": "good. Now I'm going to give Claude a little bit"
+      },
+      {
+        "start": 378.66,
+        "end": 381.444,
+        "text": "of a curve ball. I'm going to purposefully make this task"
+      },
+      {
+        "start": 381.545,
+        "end": 384.329,
+        "text": "a little bit more difficult. First, I'm going to run slash"
+      },
+      {
+        "start": 384.389,
+        "end": 387.175,
+        "text": "clear to clear out all the context that we've gained. Then,"
+      },
+      {
+        "start": 387.334,
+        "end": 390.139,
+        "text": "I'd like you to take a look at the task.md file."
+      },
+      {
+        "start": 390.862,
+        "end": 393.386,
+        "text": "Inside this file, I put together a prompt that is still going to"
+      },
+      {
+        "start": 393.466,
+        "end": 395.99,
+        "text": "ask Claude to find orders that have been pending for a while,"
+      },
+      {
+        "start": 396.37,
+        "end": 398.975,
+        "text": "but I've also wrapped it up in some larger project."
+      },
+      {
+        "start": 398.956,
+        "end": 402.062,
+        "text": "I'm asking Claude to write out a Slack integration"
+      },
+      {
+        "start": 402.362,
+        "end": 404.947,
+        "text": "that's going to message a specific channel once"
+      },
+      {
+        "start": 405.009,
+        "end": 407.954,
+        "text": "a day with all the different orders that have been pending for too"
+      },
+      {
+        "start": 407.975,
+        "end": 410.699,
+        "text": "long. So in this scenario, we still want to find orders"
+      },
+      {
+        "start": 410.759,
+        "end": 413.286,
+        "text": "of been pending for too long, but now I've wrapped it inside"
+      },
+      {
+        "start": 413.326,
+        "end": 415.848,
+        "text": "this larger task. And if I take this"
+      },
+      {
+        "start": 415.887,
+        "end": 418.692,
+        "text": "task and then feed it into Claude,"
+      },
+      {
+        "start": 419.233,
+        "end": 421.877,
+        "text": "again, after doing that slash clear operation, we're"
+      },
+      {
+        "start": 421.896,
+        "end": 424.521,
+        "text": "going to see that this time around, unfortunately, it's"
+      },
+      {
+        "start": 424.56,
+        "end": 427.125,
+        "text": "not going to stay quite as focused, and it's going to end up"
+      },
+      {
+        "start": 427.165,
+        "end": 429.928,
+        "text": "trying to write out a brand new Git pending"
+      },
+      {
+        "start": 430.028,
+        "end": 432.552,
+        "text": "orders query, which is, again, not what we want,"
+      },
+      {
+        "start": 432.632,
+        "end": 435.137,
+        "text": "because that would be a duplicating code throughout our project."
+      },
+      {
+        "start": 436.098,
+        "end": 438.901,
+        "text": "If I let this run for a bit, I will eventually see that, yes,"
+      },
+      {
+        "start": 438.961,
+        "end": 441.485,
+        "text": "it does, in fact, make a brand new query called Git"
+      },
+      {
+        "start": 441.565,
+        "end": 444.137,
+        "text": "orders pending too long. So this is"
+      },
+      {
+        "start": 444.178,
+        "end": 446.781,
+        "text": "an example of where a Claude kind of lost focus and"
+      },
+      {
+        "start": 446.821,
+        "end": 449.483,
+        "text": "decided to write a brand new query as opposed to reusing"
+      },
+      {
+        "start": 449.644,
+        "end": 452.245,
+        "text": "an existing one. Again, we've got some duplicate code"
+      },
+      {
+        "start": 452.286,
+        "end": 455.028,
+        "text": "here, which is probably not what we want. In"
+      },
+      {
+        "start": 455.069,
+        "end": 457.732,
+        "text": "addition, it didn't only create the new query, it also"
+      },
+      {
+        "start": 457.752,
+        "end": 460.355,
+        "text": "created a brand new file, which is also probably something we don't"
+      },
+      {
+        "start": 460.415,
+        "end": 463.096,
+        "text": "want. We'd probably want this order-related query to"
+      },
+      {
+        "start": 463.137,
+        "end": 465.92,
+        "text": "be added to the order queries file. So"
+      },
+      {
+        "start": 465.939,
+        "end": 468.903,
+        "text": "now that we understand the issue here, let me show you how we could fix this potentially"
+      },
+      {
+        "start": 468.942,
+        "end": 471.853,
+        "text": "by making use of a hook. All right, so"
+      },
+      {
+        "start": 471.892,
+        "end": 474.476,
+        "text": "whenever Claude attempts to write, edit, or"
+      },
+      {
+        "start": 474.576,
+        "end": 477.38,
+        "text": "use the multi-edit tool to modify something inside"
+      },
+      {
+        "start": 477.44,
+        "end": 479.963,
+        "text": "the queries directory specifically, I'm going to"
+      },
+      {
+        "start": 480.024,
+        "end": 482.867,
+        "text": "run the following hook. First, inside this hook, I'm"
+      },
+      {
+        "start": 482.887,
+        "end": 485.451,
+        "text": "going to launch a brand new separate copy of"
+      },
+      {
+        "start": 485.531,
+        "end": 488.035,
+        "text": "Claude Code. I'm going to ask this new copy"
+      },
+      {
+        "start": 488.355,
+        "end": 490.899,
+        "text": "to take a look at the change that was just made and take"
+      },
+      {
+        "start": 490.939,
+        "end": 493.843,
+        "text": "a look at some of the existing code inside the queries directory and"
+      },
+      {
+        "start": 493.903,
+        "end": 496.547,
+        "text": "see if a similar query is already inside there."
+      },
+      {
+        "start": 496.526,
+        "end": 499.088,
+        "text": "Then if there is an existing query, then"
+      },
+      {
+        "start": 499.129,
+        "end": 501.771,
+        "text": "I'm going to take that feedback and send it back to the original"
+      },
+      {
+        "start": 501.851,
+        "end": 504.454,
+        "text": "copy of Claude and I'm going to ask Claude to maybe"
+      },
+      {
+        "start": 504.514,
+        "end": 507.197,
+        "text": "decide to fix the situation. So remove the added"
+      },
+      {
+        "start": 507.276,
+        "end": 510.259,
+        "text": "query and make use of the one that already exists. So"
+      },
+      {
+        "start": 510.3,
+        "end": 513.361,
+        "text": "this is going to allow us to make sure that the queries folder generally"
+      },
+      {
+        "start": 513.402,
+        "end": 516.144,
+        "text": "stays clean and doesn't have a bunch of duplicate code"
+      },
+      {
+        "start": 516.184,
+        "end": 518.746,
+        "text": "inside of it. So let me show you how this would work"
+      },
+      {
+        "start": 518.846,
+        "end": 521.509,
+        "text": "in action. First, I'm going to flip back over here."
+      },
+      {
+        "start": 522.049,
+        "end": 525.133,
+        "text": "I'm going to delete the brand new order alerts."
+      },
+      {
+        "start": 525.113,
+        "end": 527.657,
+        "text": "queries.ts file that was made and"
+      },
+      {
+        "start": 527.697,
+        "end": 532.124,
+        "text": "the slack.ts file that was made as well. Then"
+      },
+      {
+        "start": 532.163,
+        "end": 534.706,
+        "text": "I'm going to find inside the hooks directory the query hook"
+      },
+      {
+        "start": 534.847,
+        "end": 537.892,
+        "text": "file. So I already put this hook together for us. Right"
+      },
+      {
+        "start": 537.932,
+        "end": 540.556,
+        "text": "now it is currently disabled because I got a process.exit"
+      },
+      {
+        "start": 540.615,
+        "end": 543.208,
+        "text": "at the very top. So let's walk through this hook"
+      },
+      {
+        "start": 543.288,
+        "end": 545.793,
+        "text": "really quickly. First, I'm going to tell this thing that"
+      },
+      {
+        "start": 545.812,
+        "end": 548.355,
+        "text": "it's only going to review changes to the SRC queries"
+      },
+      {
+        "start": 548.395,
+        "end": 551.019,
+        "text": "directory. Then, a little bit lower, I'm going to check"
+      },
+      {
+        "start": 551.039,
+        "end": 553.783,
+        "text": "and see if the change that was just made was made to the queries"
+      },
+      {
+        "start": 553.803,
+        "end": 556.346,
+        "text": "directory. After that, I've then got a long"
+      },
+      {
+        "start": 556.427,
+        "end": 559.13,
+        "text": "prompt here that is asking Claude to do a review"
+      },
+      {
+        "start": 559.171,
+        "end": 561.914,
+        "text": "on the change that was just made. And then after that is"
+      },
+      {
+        "start": 561.975,
+        "end": 565.399,
+        "text": "where I'm launching Claude Code programmatically. Specifically,"
+      },
+      {
+        "start": 565.438,
+        "end": 568.043,
+        "text": "these lines right here. This is making"
+      },
+      {
+        "start": 568.123,
+        "end": 570.726,
+        "text": "use of the Claude Code TypeScript SDK. I can"
+      },
+      {
+        "start": 570.746,
+        "end": 573.269,
+        "text": "give you a lot more information on it in just a little bit. For right"
+      },
+      {
+        "start": 573.309,
+        "end": 576.053,
+        "text": "now, just understand that this right here is essentially the same"
+      },
+      {
+        "start": 576.254,
+        "end": 578.857,
+        "text": "as us making use of Claude Code at the terminal."
+      },
+      {
+        "start": 579.619,
+        "end": 582.523,
+        "text": "Once Claude Code runs, and I get a response back out of it, I"
+      },
+      {
+        "start": 582.562,
+        "end": 585.147,
+        "text": "check and see if Claude decides that, yeah, the changes look"
+      },
+      {
+        "start": 585.226,
+        "end": 587.87,
+        "text": "okay, or maybe we've got a duplicate query. And"
+      },
+      {
+        "start": 587.89,
+        "end": 590.434,
+        "text": "if we do, then we're going to exit early with an exit code"
+      },
+      {
+        "start": 590.534,
+        "end": 593.077,
+        "text": "of two, which is going to give this feedback back"
+      },
+      {
+        "start": 593.118,
+        "end": 595.721,
+        "text": "to Claude and hopefully tell it that it needs to make a change."
+      },
+      {
+        "start": 596.647,
+        "end": 599.371,
+        "text": "So now that I've got this additional hook put together"
+      },
+      {
+        "start": 599.511,
+        "end": 602.015,
+        "text": "and enabled by removing that process exit zero at the"
+      },
+      {
+        "start": 602.076,
+        "end": 607.384,
+        "text": "top, I'm going to again restart Claude Code and"
+      },
+      {
+        "start": 607.404,
+        "end": 610.009,
+        "text": "then run the same query again. And hopefully"
+      },
+      {
+        "start": 610.029,
+        "end": 612.533,
+        "text": "this time it might initially put in"
+      },
+      {
+        "start": 612.573,
+        "end": 615.097,
+        "text": "that duplicate query, but then our hook right here is going to"
+      },
+      {
+        "start": 615.138,
+        "end": 617.883,
+        "text": "run and hopefully tell it, hey, we don't want that duplicate code."
+      },
+      {
+        "start": 618.323,
+        "end": 620.908,
+        "text": "You should make use of some already existing query to"
+      },
+      {
+        "start": 620.967,
+        "end": 623.625,
+        "text": "implement this functionality. Now, Claude Code"
+      },
+      {
+        "start": 623.745,
+        "end": 626.549,
+        "text": "is once again going to attempt to create a brand new, completely"
+      },
+      {
+        "start": 626.61,
+        "end": 629.192,
+        "text": "separate query file, not making use of the old"
+      },
+      {
+        "start": 629.253,
+        "end": 631.836,
+        "text": "query that already existed. When it tries to create that"
+      },
+      {
+        "start": 631.876,
+        "end": 634.48,
+        "text": "file, however, our hook is going to run. It's"
+      },
+      {
+        "start": 634.519,
+        "end": 637.124,
+        "text": "going to launch that separate copy of Claude Code, which is going to do"
+      },
+      {
+        "start": 637.163,
+        "end": 640.047,
+        "text": "some research and find that there is, in fact, an existing"
+      },
+      {
+        "start": 640.107,
+        "end": 642.77,
+        "text": "query that can be reused. It's going to provide"
+      },
+      {
+        "start": 642.87,
+        "end": 645.395,
+        "text": "some advice and say, hey, you could probably go and update this"
+      },
+      {
+        "start": 645.515,
+        "end": 648.139,
+        "text": "other existing query to suit your purposes perfectly."
+      },
+      {
+        "start": 648.541,
+        "end": 651.125,
+        "text": "And we'll see some feedback from Claude, our primary instance that"
+      },
+      {
+        "start": 651.144,
+        "end": 653.769,
+        "text": "we are interacting with saying, ah, yes, there is"
+      },
+      {
+        "start": 653.83,
+        "end": 656.333,
+        "text": "this existing query. Let's just modify"
+      },
+      {
+        "start": 656.354,
+        "end": 658.857,
+        "text": "that existing query rather than attempting to"
+      },
+      {
+        "start": 658.918,
+        "end": 661.643,
+        "text": "write out a brand new one. Now the downside"
+      },
+      {
+        "start": 661.663,
+        "end": 664.164,
+        "text": "to this hook is that it's going to take some additional time and"
+      },
+      {
+        "start": 664.225,
+        "end": 666.927,
+        "text": "expense to run every single time that I want to edit something"
+      },
+      {
+        "start": 666.967,
+        "end": 669.571,
+        "text": "inside the queries directory. But the upside is that"
+      },
+      {
+        "start": 669.63,
+        "end": 672.594,
+        "text": "I'm going to end up with a lot less duplicate code inside"
+      },
+      {
+        "start": 672.614,
+        "end": 675.517,
+        "text": "of my queries directory. So it really comes down to a set of trade-offs"
+      },
+      {
+        "start": 675.937,
+        "end": 678.46,
+        "text": "for you deciding whether or not you want to implement something like this in your"
+      },
+      {
+        "start": 678.519,
+        "end": 681.283,
+        "text": "own project. If you do, I would at least recommend"
+      },
+      {
+        "start": 681.524,
+        "end": 684.687,
+        "text": "doing what I showed you inside of the query hook."
+      },
+      {
+        "start": 684.667,
+        "end": 687.506,
+        "text": "So this one right here, and only watching maybe a handful"
+      },
+      {
+        "start": 687.547,
+        "end": 690.386,
+        "text": "of directories like really important folders inside of your project,"
+      },
+      {
+        "start": 690.808,
+        "end": 693.488,
+        "text": "just to minimize the amount of extra work that is being"
+      },
+      {
+        "start": 693.548,
+        "end": 693.951,
+        "text": "done."
+      }
+    ]
+  }
+}
+                </script>
+            </div>
+        </div>
+        <div class="media-toolbar">
+            <div class="media-group">
+                <div class="media-menu">
+                    <span class="media-label">Аудио</span>
+                      <button type="button" class="media-option" data-audio-option="original">EN</button>
+                </div>
+            </div>
+            <div class="media-group">
+                <div class="media-menu">
+                    <span class="media-label">CC</span>
+                      <button type="button" class="media-option" data-subtitle="en">EN</button>
+                      <button type="button" class="media-option" data-subtitle="off">Off</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                            
+                        
+                    
+                </div>
+            </div>
+        </div>
+        
+            
+
+
+
+
+
+<div id="details-pane" class="columns fullheight right-bar">
+    <div id="details-pane-inner">
+        <div id="details-pane-top">
+            <div id="close-details-pane-button">
+                <div class="details-pane-button">
+                    <a href="#" class="focus-link-v2">
+                        <div class="details-pane-arrow-wrapper">
+                            <i class="details-pane-arrow" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="details-pane-tabs">
+                
+                    <div id="details-pane-summary-tab" class="tab first button-background-shade3 active sj-text-details-pane-summary"><span>Конспект</span></div>
+                
+
+                
+
+
+            </div>
+        </div>
+
+        <div id="details-pane-content">
+            
+                <div id="details-pane-summary-content" class="content">
+                    
+                        <div>
+                            <h4 class="sj-text-details-pane-summary"><span>Конспект</span></h4>
+
+                            <div class="lesson-description-content">
+                                <p>Claude Code hooks can help address common weaknesses in AI-assisted development, particularly on larger projects. These hooks run automatically when Claude makes changes to your code, providing immediate feedback and preventing common issues.</p>
+<h2>TypeScript Type Checking Hook</h2>
+<p>One of the most useful hooks addresses a fundamental problem: when Claude modifies a function signature, it often doesn't update all the places where that function is called throughout your project.</p>
+<p>For example, if you ask Claude to add a <code>verbose</code> parameter to a function in <code>schema.ts</code>, it will successfully update the function definition but miss the call site in <code>main.ts</code>. This creates type errors that Claude doesn't immediately catch.</p>
+<p>The solution is a post-tool-use hook that runs the TypeScript compiler after every file edit:</p>
+<ul>
+<li>Runs <code>tsc --noEmit</code> to check for type errors</li>
+<li>Captures any errors found</li>
+<li>Feeds the errors back to Claude immediately</li>
+<li>Prompts Claude to fix the issues in other files</li>
+</ul>
+<p>This hook works for any typed language where you can run a type checker. For untyped languages, you could implement similar functionality using automated tests instead.</p>
+<h2>Query Duplication Prevention Hook</h2>
+<p>In larger projects with many database queries, Claude sometimes creates duplicate functionality instead of reusing existing code. This is especially problematic when you give Claude complex, multi-step tasks that include database operations as just one component.</p>
+<p>&nbsp;</p>
+<p>Consider a project structure with multiple query files, each containing many SQL functions. When you ask Claude to "create a Slack integration that alerts about orders pending longer than 3 days," it might write a new query instead of using the existing <code>getPendingOrders()</code> function.</p>
+<p><img src="https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2Fa46l9irobhg0f5webscixp0bs%2Fpublic%2F1752618172%2F013_-_Useful_Hooks%21_09.1752618172075.png" /></p>
+<p>The query duplication hook addresses this by implementing a review process:</p>
+<p><img src="https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2Fa46l9irobhg0f5webscixp0bs%2Fpublic%2F1752618172%2F013_-_Useful_Hooks%21_14.1752618172611.png" /></p>
+<p>Here's how it works:</p>
+<ul>
+<li>Triggers when Claude modifies files in the <code>./queries</code> directory</li>
+<li>Launches a separate instance of Claude Code programmatically</li>
+<li>Asks the second instance to review the changes and check for similar existing queries</li>
+<li>If duplicates are found, provides feedback to the original Claude instance</li>
+<li>Prompts Claude to remove the duplicate and use the existing functionality</li>
+</ul>
+<h2>Implementation Considerations</h2>
+<p>Both hooks use the pre-tool-use or post-tool-use hook system. The TypeScript hook is relatively lightweight and runs quickly. The query duplication hook requires more resources since it launches a separate Claude instance for each review.</p>
+<p>For the query hook, consider these trade-offs:</p>
+<ul>
+<li><strong>Benefits:</strong> Cleaner codebase with less duplication</li>
+<li><strong>Costs:</strong> Additional time and API usage for each query directory edit</li>
+<li><strong>Recommendation:</strong> Only monitor critical directories to minimize overhead</li>
+</ul>
+<p>The hooks use Claude's TypeScript SDK to programmatically interact with the AI. This allows you to create sophisticated workflows where one Claude instance can review and provide feedback on another's work.</p>
+<h2>Extending These Concepts</h2>
+<p>These hooks demonstrate broader principles you can apply to your own projects:</p>
+<ul>
+<li>Use compiler/linter output to provide immediate feedback</li>
+<li>Implement code review processes using separate AI instances</li>
+<li>Focus monitoring on high-value directories where consistency matters most</li>
+<li>Balance automation benefits against performance costs</li>
+</ul>
+<p>The key is identifying the specific pain points in your development workflow and creating targeted hooks that address those issues automatically.</p>
+                            </div>
+                        </div>
+                    
+
+                    
+                </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+        
+
+    </div>
+
+        </div>
+    </div>
+
+    
+    
+    <footer id="lp-footer">
+        
+
+    
+        <div class="left">
+            <a href="../016-gotchas-around-hooks/index.html" class="prev-lesson-button align-vertical focus-link-v2"
+               aria-label="Предыдущий — Подводные камни hooks"
+               data-track-click="Lesson,Prev,Подводные камни hooks,0" title="Подводные камни hooks">
+                <div class="button-content">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i><span class="button-prev-title"><span>Предыдущий</span></span>
+                    <span class="lesson-title-label">- Подводные камни hooks</span>
+                </div>
+            </a>
+        </div>
+    
+
+    <span class="lesson-title-footer">Полезные hooks!</span>
+
+    <div class="right">
+        <div class="full-footer-height-wrapper align-vertical">
+            
+                <div class="next-lesson-button">
+                    <span>
+                    
+                        <span class="lesson-title-label">Ещё один полезный hook</span>
+                        
+                            <a 
+                               
+                               href="../018-another-useful-hook/index.html" class="small button next-lesson-link"
+                               tabindex="0"
+                               data-track-click="Lesson,Next,Ещё один полезный hook,0"
+                               title="Ещё один полезный hook" role="button"><span>Следующий</span></a>
+                        
+                    
+                    </span>
+                </div>
+            
+
+            <div class="complete-lesson-button hide disabled">
+                <a href="#" class="small button complete-lesson-link sj-text-complete"><span>Завершить</span></a>
+            </div>
+
+           
+                <div class="toggle-fullscreen focus-link-v2" tabindex="0" role="button" aria-pressed="false" aria-label="Toggle fullscreen">
+                    <sjwc-icon name="fa fa-arrows-alt" aria-hidden="true"></sjwc-icon>
+                </div>
+            
+
+
+        </div>
+    </div>
+
+    </footer>
+    <div id="lpLeftNavBackground"></div>
+
+
+    
+        
+            <div id="course_completion_code">
+            
+        </div>
+    
+
+    
+        </div>
+
+    <script src="../../../../assets/site.js"></script>
+</body>
+
+
+
+</html>

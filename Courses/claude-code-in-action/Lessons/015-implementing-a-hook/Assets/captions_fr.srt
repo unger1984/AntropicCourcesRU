@@ -1,0 +1,347 @@
+1
+00:00:01,397 --> 00:00:03,962
+Mettons en place notre hook personnalisé. Rappelez-vous, l'objectif
+
+2
+00:00:04,001 --> 00:00:06,605
+ici est d'empêcher Claude de lire le contenu
+
+3
+00:00:06,686 --> 00:00:09,210
+du fichier .env. Dans la dernière vidéo, nous avons
+
+4
+00:00:09,250 --> 00:00:11,753
+discuté de nombreuses options de configuration différentes que nous devrons
+
+5
+00:00:11,773 --> 00:00:14,839
+définir, donc dans cette vidéo, nous nous concentrerons principalement sur l'implémentation.
+
+6
+00:00:15,519 --> 00:00:18,125
+Pour commencer, dans le répertoire . Claude, je vais
+
+7
+00:00:18,144 --> 00:00:21,550
+ouvrir le fichier settings.local.json.
+
+8
+00:00:21,530 --> 00:00:24,253
+Souvenez-vous, à l'intérieur, nous avons une liste de hooks
+
+9
+00:00:24,312 --> 00:00:26,936
+pré-outil et post-outil.
+
+10
+00:00:26,955 --> 00:00:30,018
+Comme nous l'avons discuté il y a un instant, nous voulons créer un hook
+
+11
+00:00:30,099 --> 00:00:32,741
+pré-outil afin de pouvoir empêcher Claude de lire le contenu
+
+12
+00:00:32,822 --> 00:00:35,424
+de ce fichier particulier. J'ai déjà ajouté
+
+13
+00:00:35,445 --> 00:00:37,948
+une petite section de configuration ici pour nous, juste pour
+
+14
+00:00:38,008 --> 00:00:40,570
+nous faire gagner un peu de frappe. Tout ce que nous avons à faire, c'est
+
+15
+00:00:40,609 --> 00:00:43,112
+remplir le matcher et la commande. La première
+
+16
+00:00:43,232 --> 00:00:45,915
+est le matcher. Le matcher sera les outils
+
+17
+00:00:45,936 --> 00:00:48,759
+que nous voulons surveiller. Dans notre cas, comme
+
+18
+00:00:48,798 --> 00:00:51,383
+nous l'avons discuté, nous voulons surveiller les appels aux outils
+
+19
+00:00:51,923 --> 00:00:54,545
+read et grep. Je vais
+
+20
+00:00:54,567 --> 00:00:57,189
+séparer ces deux noms d'outils avec un symbole pipe.
+
+21
+00:00:57,390 --> 00:00:59,912
+Donc, ce n'est pas un L ou un I majuscule. C'est
+
+22
+00:00:59,932 --> 00:01:03,698
+un symbole juste au-dessus de la touche retour de votre clavier. Ensuite,
+
+23
+00:01:03,737 --> 00:01:06,600
+nous devons fournir une commande à exécuter chaque fois
+
+24
+00:01:06,620 --> 00:01:09,578
+que Claude tente d'appeler ces deux outils. Nous
+
+25
+00:01:09,597 --> 00:01:12,263
+pouvons y mettre n'importe quelle commande que vous voulez, donc cela peut être un CLI,
+
+26
+00:01:12,362 --> 00:01:15,007
+cela peut être un appel à un script shell, absolument n'importe quoi.
+
+27
+00:01:15,808 --> 00:01:18,373
+Pour suivre le modèle que j'ai déjà établi dans le reste
+
+28
+00:01:18,513 --> 00:01:21,257
+de ce fichier, je vais appeler un script node.js
+
+29
+00:01:21,278 --> 00:01:24,143
+que j'ai placé à l'avance dans le répertoire hooks
+
+30
+00:01:24,242 --> 00:01:27,067
+de ce projet. Donc, dans le répertoire hooks, j'ai
+
+31
+00:01:27,087 --> 00:01:29,731
+mis en place pour nous un fichier read_hook.js.
+
+32
+00:01:29,792 --> 00:01:32,677
+C'est le fichier que je veux exécuter chaque fois que
+
+33
+00:01:32,837 --> 00:01:35,462
+Claude tente d'appeler l'un de ces deux outils.
+
+34
+00:01:35,441 --> 00:01:38,129
+Pour l'appeler, je vais remplacer le "true" ici, qui
+
+35
+00:01:38,168 --> 00:01:40,876
+est juste un espace réservé pour l'instant, par node
+
+36
+00:01:40,915 --> 00:01:43,423
+./hooks/
+
+37
+00:01:43,944 --> 00:01:46,850
+read_hook.js. Je vais
+
+38
+00:01:46,971 --> 00:01:49,498
+sauvegarder ce fichier et c'est tout ce que nous avons à faire ici. Ensuite,
+
+39
+00:01:49,518 --> 00:01:52,185
+nous devons réellement implémenter la commande qui va s'exécuter chaque fois que Claude tente d'appeler
+
+40
+00:01:52,204 --> 00:01:54,707
+les outils read ou grep. Donc, ce sera le fichier read_hook.js.
+
+41
+00:01:54,868 --> 00:01:58,132
+Au début de ce fichier, j'ai mis du code
+
+42
+00:01:58,173 --> 00:02:00,676
+qui va lire depuis l'entrée standard et analyser ces données
+
+43
+00:02:00,715 --> 00:02:03,480
+en JSON. Donc, cet objet tool args
+
+44
+00:02:03,599 --> 00:02:06,123
+ici, ce sera le gros objet JSON que je vous ai montré
+
+45
+00:02:06,323 --> 00:02:09,168
+dans ce schéma ici. Il aura donc des propriétés
+
+46
+00:02:09,207 --> 00:02:11,811
+comme l'ID de session, le nom de l'outil, l'entrée de l'outil,
+
+47
+00:02:11,871 --> 00:02:14,454
+et ainsi de suite. Donc, tout ce que nous avons vraiment à faire, c'est
+
+48
+00:02:14,534 --> 00:02:17,098
+de regarder ce chemin de fichier là et de décider si
+
+49
+00:02:17,138 --> 00:02:19,721
+oui ou non, il essaie de lire le fichier .env. Si
+
+50
+00:02:19,800 --> 00:02:22,705
+c'est le cas, alors nous voulons nous assurer que nous sortons de
+
+51
+00:02:22,745 --> 00:02:25,348
+notre programme ou notre commande ici avec un code de sortie
+
+52
+00:02:25,508 --> 00:02:28,051
+de 2. Et idéalement, aussi enregistrer des informations
+
+53
+00:02:28,171 --> 00:02:30,735
+pour Claude disant, désolé, mais vous ne pouvez pas lire ce fichier.
+
+54
+00:02:30,775 --> 00:02:33,337
+Vous remarquerez donc qu'ici, j'ai déjà mis du code qui va lire ce
+
+55
+00:02:33,377 --> 00:02:36,684
+chemin de fichier. Vous remarquerez également qu'il y a une
+
+56
+00:02:36,741 --> 00:02:39,305
+solution de repli consistant à regarder toolInput.path
+
+57
+00:02:39,406 --> 00:02:41,948
+ici. Je vous expliquerai pourquoi c'est ajouté
+
+58
+00:02:42,008 --> 00:02:44,691
+dans un instant. Alors maintenant, implémentons l'instruction
+
+59
+00:02:44,730 --> 00:02:47,413
+to-do. Nous dirons si readPath inclut '.env',
+
+60
+00:02:47,454 --> 00:02:52,599
+cela signifie que Claude doit essayer de lire le fichier .env.
+
+61
+00:02:53,621 --> 00:02:56,324
+Et si c'est le cas, alors je veux m'assurer
+
+62
+00:02:56,383 --> 00:02:58,926
+que nous bloquons cette opération et fournissons des commentaires
+
+63
+00:02:58,967 --> 00:03:01,789
+à Claude. Je vais donc d'abord ajouter une
+
+64
+00:03:01,830 --> 00:03:04,514
+console.error, spécifiquement une console.error,
+
+65
+00:03:04,594 --> 00:03:07,382
+parce que nous voulons enregistrer sur l'erreur standard. Rappelez-vous, c'est
+
+66
+00:03:07,703 --> 00:03:10,209
+ainsi que nous fournissons un retour à Claude. Et je vais dire quelque chose
+
+67
+00:03:10,250 --> 00:03:13,076
+comme, "Vous ne pouvez pas lire le fichier .env."
+
+68
+00:03:13,176 --> 00:03:15,824
+Et ensuite, je ferai un process.exit(2).
+
+69
+00:03:17,007 --> 00:03:20,536
+Pour tester cela, je vais enregistrer le fichier. Je vais
+
+70
+00:03:20,556 --> 00:03:23,962
+ouvrir Claude Code. Si vous l'avez déjà
+
+71
+00:03:23,983 --> 00:03:26,528
+ouvert, assurez-vous de redémarrer Claude Code. Vous
+
+72
+00:03:26,628 --> 00:03:29,215
+devez le redémarrer pour que les modifications apportées à vos hooks prennent effet.
+
+73
+00:03:29,235 --> 00:03:31,841
+Je vais demander à Claude de lire le fichier .env.
+
+74
+00:03:32,562 --> 00:03:35,449
+Et il va probablement tenter
+
+75
+00:03:35,489 --> 00:03:38,012
+de le faire, mais pendant qu'il tente de le lire, nous allons
+
+76
+00:03:38,032 --> 00:03:41,877
+renvoyer une erreur disant "Vous ne pouvez pas lire le fichier .env."
+
+77
+00:03:41,897 --> 00:03:44,502
+Et Claude réalisera, espérons-le, que désolé, vous ne pouvez pas
+
+78
+00:03:44,542 --> 00:03:47,650
+lire cela. En fait, il est même capable de reconnaître
+
+79
+00:03:47,650 --> 00:03:50,335
+qu'il a été bloqué par un hook de lecture. Maintenant,
+
+80
+00:03:50,395 --> 00:03:53,200
+notre hook devrait également fonctionner sur les opérations grep.
+
+81
+00:03:53,320 --> 00:03:55,906
+Donc, si je demande à Claude d'essayer
+
+82
+00:03:55,966 --> 00:03:58,550
+l'outil grep, cela devrait également
+
+83
+00:03:58,752 --> 00:04:01,680
+être interdit aussi, espérons-le. Alors voyons
+
+84
+00:04:01,719 --> 00:04:04,330
+comment il s'en sort. Et oui, même chose, c'est maintenant interdit.
+
+85
+00:04:07,762 --> 00:04:10,412
+Donc, c'est un hook fonctionnel que nous avons mis en place. Maintenant,
+
+86
+00:04:10,451 --> 00:04:13,001
+ce hook n'est pas terriblement utile, et je vais vous montrer
+
+87
+00:04:13,141 --> 00:04:14,948
+un hook beaucoup plus utile dans un moment.

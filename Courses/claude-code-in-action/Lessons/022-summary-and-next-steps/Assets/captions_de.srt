@@ -1,0 +1,75 @@
+1
+00:00:00,031 --> 00:00:02,556
+Ich hoffe, Sie hatten Freude an dieser Übersicht über Claude
+
+2
+00:00:02,597 --> 00:00:05,203
+Code. Bevor wir zum Ende kommen, möchte ich Ihnen einige Ratschläge geben,
+
+3
+00:00:05,224 --> 00:00:07,730
+wohin Sie von hier aus gehen können. Erstens, bedenken Sie, dass
+
+4
+00:00:07,790 --> 00:00:10,476
+Claude Code ständig verändert und in aktiver
+
+5
+00:00:10,496 --> 00:00:13,182
+Entwicklung ist. Behalten Sie also die Homepage von Claude
+
+6
+00:00:13,223 --> 00:00:16,070
+Code im Auge. Ich habe die Adresse direkt hier. Und achten Sie auf neue Funktionen
+
+7
+00:00:16,250 --> 00:00:19,056
+und Techniken, die herauskommen. Zweitens, ich empfehle wirklich,
+
+8
+00:00:19,096 --> 00:00:21,920
+dass Sie experimentieren. Es gibt viele verschiedene Möglichkeiten, Claude
+
+9
+00:00:21,981 --> 00:00:24,545
+Code anzupassen und ihn wirklich auf Ihren spezifischen Anwendungsfall zuzuschneiden.
+
+10
+00:00:25,187 --> 00:00:28,111
+Versuchen Sie, benutzerdefinierte Befehle zu erstellen oder zusätzliche Anweisungen
+
+11
+00:00:28,211 --> 00:00:30,937
+in Ihre Claude MD-Datei einzufügen. Und probieren Sie auch ein paar
+
+12
+00:00:30,977 --> 00:00:33,540
+verschiedene MCP-Server aus, abgesehen von denen, die wir uns in diesem Kurs
+
+13
+00:00:33,581 --> 00:00:36,365
+angeschaut haben. Schließlich, automatisieren.
+
+14
+00:00:36,548 --> 00:00:39,155
+Werfen Sie einen Blick auf die GitHub-Integration und denken Sie über einige
+
+15
+00:00:39,195 --> 00:00:41,801
+verschiedene übliche Aufgaben nach, die Sie ständig durchlaufen, und denken Sie
+
+16
+00:00:41,841 --> 00:00:44,649
+über einige Wege nach, wie Sie diese basierend auf Ereignissen, die in Ihrem
+
+17
+00:00:44,710 --> 00:00:47,438
+GitHub-Repository auftreten, automatisch an Claude delegieren können.
+
+18
+00:00:48,320 --> 00:00:50,926
+Nun, nochmals, ich hoffe, Sie hatten Freude an diesem Kurs und genießen
+
+19
+00:00:50,947 --> 00:00:52,430
+Ihre Zeit mit Claude Code.

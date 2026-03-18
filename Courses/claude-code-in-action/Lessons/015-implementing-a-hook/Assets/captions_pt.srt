@@ -1,0 +1,343 @@
+1
+00:00:01,397 --> 00:00:03,962
+Vamos montar nosso hook personalizado. Lembre-se, todo o
+
+2
+00:00:04,001 --> 00:00:06,605
+objetivo aqui é impedir que o Claude leia o conteúdo
+
+3
+00:00:06,686 --> 00:00:09,210
+do arquivo .env. No último vídeo, nós
+
+4
+00:00:09,250 --> 00:00:11,753
+discutimos várias opções de configuração que precisaremos
+
+5
+00:00:11,773 --> 00:00:14,839
+definir, então neste vídeo, vamos focar principalmente na implementação.
+
+6
+00:00:15,519 --> 00:00:18,125
+Para começar, dentro do diretório .Claude, eu vou
+
+7
+00:00:18,144 --> 00:00:21,550
+abrir o arquivo settings.local.json.
+
+8
+00:00:21,530 --> 00:00:24,253
+Lembre-se, aqui dentro, temos uma lista de hooks pré-uso
+
+9
+00:00:24,312 --> 00:00:26,936
+e hooks pós-uso.
+
+10
+00:00:26,955 --> 00:00:30,018
+Como discutimos há pouco, queremos criar um hook pré-uso
+
+11
+00:00:30,099 --> 00:00:32,741
+para que possamos impedir que o Claude leia o conteúdo
+
+12
+00:00:32,822 --> 00:00:35,424
+desse arquivo em particular. Eu já adicionei aqui
+
+13
+00:00:35,445 --> 00:00:37,948
+uma pequena seção de configuração aqui para nós, apenas para
+
+14
+00:00:38,008 --> 00:00:40,570
+nos poupar um pouco de digitação. Tudo que precisamos fazer é
+
+15
+00:00:40,609 --> 00:00:43,112
+preencher o matcher e o comando. Primeiro
+
+16
+00:00:43,232 --> 00:00:45,915
+é o matcher. Então o matcher serão as ferramentas
+
+17
+00:00:45,936 --> 00:00:48,759
+que queremos monitorar. No nosso caso, como
+
+18
+00:00:48,798 --> 00:00:51,383
+discutimos, queremos monitorar chamadas para as ferramentas
+
+19
+00:00:51,923 --> 00:00:54,545
+de read e grep. Eu
+
+20
+00:00:54,567 --> 00:00:57,189
+vou separar esses dois nomes de ferramentas com um símbolo de pipe.
+
+21
+00:00:57,390 --> 00:00:59,912
+Então, não é um L ou um I maiúsculo. É
+
+22
+00:00:59,932 --> 00:01:03,698
+um símbolo acima da tecla Enter no seu teclado. Então,
+
+23
+00:01:03,737 --> 00:01:06,600
+em seguida, precisamos fornecer um comando para executar sempre que
+
+24
+00:01:06,620 --> 00:01:09,578
+o Claude tentar chamar essas duas ferramentas. Nós
+
+25
+00:01:09,597 --> 00:01:12,263
+podemos colocar aqui qualquer comando que você quiser, pode ser um CLI,
+
+26
+00:01:12,362 --> 00:01:15,007
+pode ser uma chamada para um script de shell, absolutamente qualquer coisa.
+
+27
+00:01:15,808 --> 00:01:18,373
+Para seguir o padrão que já estabeleci no restante
+
+28
+00:01:18,513 --> 00:01:21,257
+deste arquivo, vou chamar um script node.js
+
+29
+00:01:21,278 --> 00:01:24,143
+que coloquei antecipadamente no diretório hooks
+
+30
+00:01:24,242 --> 00:01:27,067
+deste projeto. Então, dentro do diretório hooks, eu
+
+31
+00:01:27,087 --> 00:01:29,731
+monte para nós um arquivo read_hook.js
+
+32
+00:01:29,792 --> 00:01:32,677
+. Este é o arquivo que quero executar sempre que
+
+33
+00:01:32,837 --> 00:01:35,462
+o Claude tentar chamar uma dessas duas ferramentas.
+
+34
+00:01:35,441 --> 00:01:38,129
+Então, para chamar isso, vou substituir o true aqui, que
+
+35
+00:01:38,168 --> 00:01:40,876
+é apenas um placeholder por enquanto, por node
+
+36
+00:01:40,915 --> 00:01:43,423
+./hooks/
+
+37
+00:01:43,944 --> 00:01:46,850
+read_hook.js. Vou
+
+38
+00:01:46,971 --> 00:01:49,498
+salvar este arquivo e é tudo o que temos a fazer aqui dentro. Em seguida,
+
+39
+00:01:49,518 --> 00:01:52,185
+precisamos implementar o comando que será executado sempre que o Claude tentar chamar o
+
+40
+00:01:52,204 --> 00:01:54,707
+read ou as ferramentas grep. Então, esse será o arquivo read_hook.js.
+
+41
+00:01:54,868 --> 00:01:58,132
+read_hook.js. No topo deste arquivo, tenho algum código
+
+42
+00:01:58,173 --> 00:02:00,676
+que vai ler do standard input e analisar esses dados
+
+43
+00:02:00,715 --> 00:02:03,480
+como JSON. Então, este objeto toolArgs
+
+44
+00:02:03,599 --> 00:02:06,123
+aqui, esse será o grande objeto JSON que mostrei
+
+45
+00:02:06,123 --> 00:02:09,168
+para você neste diagrama aqui. Então, ele terá propriedades
+
+46
+00:02:09,207 --> 00:02:11,811
+como session ID, o nome da ferramenta, a entrada da ferramenta,
+
+47
+00:02:11,871 --> 00:02:14,454
+e assim por diante. Então, tudo o que realmente precisamos fazer é
+
+48
+00:02:14,534 --> 00:02:17,098
+olhar para aquele caminho de arquivo ali e decidir se
+
+49
+00:02:17,138 --> 00:02:19,721
+está tentando ler o arquivo .env ou não. Se
+
+50
+00:02:19,800 --> 00:02:22,705
+for, então queremos garantir que saímos do
+
+51
+00:02:22,745 --> 00:02:25,348
+nosso programa ou nosso comando aqui com um código de saída
+
+52
+00:02:25,508 --> 00:02:28,051
+de dois. E esperamos também registrar alguma informação
+
+53
+00:02:28,171 --> 00:02:30,735
+para o Claude dizendo, desculpe, mas você não pode ler este arquivo.
+
+54
+00:02:30,775 --> 00:02:33,337
+Então, você notará que aqui, eu já tenho algum código que lê esse
+
+55
+00:02:33,376 --> 00:02:36,019
+caminho de arquivo. Você também notará que há uma
+
+56
+00:02:36,058 --> 00:02:39,305
+alternativa de olhar para toolInput.path
+
+57
+00:02:39,406 --> 00:02:41,948
+aqui. Vou explicar por que isso foi adicionado em breve.
+
+58
+00:02:41,987 --> 00:02:44,670
+Então, agora vamos implementar a declaração to-do.
+
+59
+00:02:44,690 --> 00:02:47,413
+Diremos if readPath includes '.env',
+
+60
+00:02:47,514 --> 00:02:50,324
+isso significa que o Claude deve estar tentando ler o arquivo .env.
+
+61
+00:02:50,383 --> 00:02:52,966
+E se for o caso, então eu quero garantir
+
+62
+00:02:52,987 --> 00:02:55,709
+que bloqueamos essa operação e fornecemos algum feedback de log
+
+63
+00:02:55,750 --> 00:02:58,434
+ao Claude. Então, primeiro vou adicionar um
+
+64
+00:02:58,514 --> 00:03:01,299
+console.error, especificamente um console.error,
+
+65
+00:03:01,599 --> 00:03:04,104
+porque queremos registrar no standard error. Lembre-se, é assim
+
+66
+00:03:04,144 --> 00:03:06,969
+que fornecemos feedback ao Claude. E direi algo
+
+67
+00:03:07,049 --> 00:03:09,534
+como: "Você não pode ler o arquivo .env."
+
+68
+00:03:10,836 --> 00:03:13,302
+E então farei um process.exit(2).
+
+69
+00:03:14,124 --> 00:03:16,948
+Então, para testar isso, vou salvar o arquivo. Vou
+
+70
+00:03:16,969 --> 00:03:19,512
+abrir o Claude Code. Se você já o tem
+
+71
+00:03:19,592 --> 00:03:22,198
+aberto, certifique-se de reiniciar o Claude Code. Você
+
+72
+00:03:22,217 --> 00:03:24,823
+tem que reiniciá-lo para que quaisquer alterações em seus hooks tenham efeito.
+
+73
+00:03:25,543 --> 00:03:28,430
+Vou pedir ao Claude para ler o arquivo .env.
+
+74
+00:03:29,572 --> 00:03:32,178
+E provavelmente ele vai tentar, mas enquanto ele tenta ler, nós vamos
+
+75
+00:03:32,197 --> 00:03:34,803
+enviar de volta um erro dizendo "Você não pode ler o arquivo .env."
+
+76
+00:03:35,324 --> 00:03:37,948
+E o Claude, esperançosamente, vai perceber que, desculpe, você não pode
+
+77
+00:03:37,987 --> 00:03:40,671
+realmente ler isso. Na verdade, ele é capaz até de reconhecer
+
+78
+00:03:40,730 --> 00:03:43,596
+que foi impedido por um hook de leitura. Agora,
+
+79
+00:03:43,615 --> 00:03:46,259
+nosso hook também deve funcionar em operações de grep.
+
+80
+00:03:46,298 --> 00:03:48,883
+Então, se eu pedir ao Claude para tentar o
+
+81
+00:03:48,963 --> 00:03:51,888
+ferramenta grep, isso também
+
+82
+00:03:51,927 --> 00:03:54,539
+deve ser proibido também. Então vamos ver como ele
+
+83
+00:03:54,558 --> 00:03:57,190
+se sai. E sim, a mesma coisa, agora está proibido.
+
+84
+00:03:57,972 --> 00:04:00,622
+Então, esse é um hook funcional que montamos. Agora
+
+85
+00:04:00,661 --> 00:04:03,251
+este hook não é muito útil, e vou mostrar a você
+
+86
+00:04:03,391 --> 00:04:05,198
+um hook muito mais útil em um momento.

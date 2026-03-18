@@ -1,0 +1,235 @@
+1
+00:00:00,031 --> 00:00:02,734
+Alors que nous examinons le hook de révision des requêtes,
+
+2
+00:00:02,835 --> 00:00:05,918
+il y a un instant, nous avons eu un bref aperçu du SDK Claude Code.
+
+3
+00:00:06,359 --> 00:00:09,163
+Le SDK vous permet d'utiliser Claude Code par programmation.
+
+4
+00:00:09,663 --> 00:00:12,526
+Vous pouvez utiliser le SDK via la CLI, une bibliothèque TypeScript
+
+5
+00:00:12,547 --> 00:00:15,351
+ou une bibliothèque Python. C'est exactement
+
+6
+00:00:15,410 --> 00:00:18,314
+le même Claude Code que vous utiliseriez déjà dans le terminal. Il
+
+7
+00:00:18,333 --> 00:00:20,957
+dispose de tous les mêmes outils et les utilisera pour accomplir une tâche
+
+8
+00:00:21,018 --> 00:00:23,562
+donnée. Le SDK est le plus utile
+
+9
+00:00:23,702 --> 00:00:26,449
+dans le cadre d'un pipeline ou d'un outil plus large, comme nous l'avons vu
+
+10
+00:00:26,489 --> 00:00:29,335
+dans ce hook il y a un instant. Vous pouvez facilement intégrer
+
+11
+00:00:29,394 --> 00:00:31,940
+Claude Code dans le cadre d'un processus plus large pour ajouter
+
+12
+00:00:31,960 --> 00:00:35,167
+une intelligence considérable à un workflow donné. J'aimerais
+
+13
+00:00:35,207 --> 00:00:37,813
+vous faire une rapide démonstration du SDK TypeScript
+
+14
+00:00:37,993 --> 00:00:40,840
+en particulier en l'ajoutant à notre projet existant.
+
+15
+00:00:40,920 --> 00:00:43,423
+De retour dans mon éditeur, je vais trouver
+
+16
+00:00:43,444 --> 00:00:46,289
+le fichier SDK.ts à la racine du répertoire du projet.
+
+17
+00:00:46,350 --> 00:00:48,994
+À l'intérieur, j'ai mis un peu de code pour commencer avec le SDK. Je
+
+18
+00:00:49,054 --> 00:00:51,659
+vais mettre à jour le prompt en haut et demander à Claude de
+
+19
+00:00:51,679 --> 00:00:54,284
+rechercher les requêtes dupliquées dans le répertoire
+
+20
+00:00:54,325 --> 00:00:56,869
+SRC queries. Ensuite, je vais sauvegarder ce fichier et
+
+21
+00:00:56,929 --> 00:00:59,594
+pour l'exécuter, j'ouvrirai mon terminal et j'exécuterai NPMRun
+
+22
+00:00:59,634 --> 00:01:02,600
+SDK. Or, il ne s'agit pas d'une commande intégrée
+
+23
+00:01:02,881 --> 00:01:05,605
+ou quoi que ce soit du genre, juste pour que vous le sachiez, mais dans les coulisses, cela exécute
+
+24
+00:01:05,646 --> 00:01:08,570
+simplement ce fichier en tant que fichier TypeScript normal. J'ai juste mis
+
+25
+00:01:08,671 --> 00:01:11,195
+en place ce petit raccourci pour nous permettre de lancer un fichier TypeScript
+
+26
+00:01:11,215 --> 00:01:13,739
+un peu plus facilement. Lorsque nous exécuterons cela, nous verrons la conversation
+
+27
+00:01:13,760 --> 00:01:16,484
+brute entre notre copie locale de Claude Code et
+
+28
+00:01:16,545 --> 00:01:19,129
+le modèle linguistique Claude, message par message. Finalement,
+
+29
+00:01:19,150 --> 00:01:22,194
+nous serons renvoyés à la ligne de commande. Le dernier message
+
+30
+00:01:22,234 --> 00:01:24,900
+affiché contiendra la réponse finale de Claude.
+
+31
+00:01:24,939 --> 00:01:28,105
+Il y a une petite subtilité avec le SDK.
+
+32
+00:01:28,084 --> 00:01:30,748
+Et c'est que par défaut, il n'a que des capacités de lecture.
+
+33
+00:01:30,930 --> 00:01:33,894
+Donc, en d'autres termes, il peut seulement lire des fichiers, des répertoires,
+
+34
+00:01:34,314 --> 00:01:37,200
+effectuer des opérations grep, et ainsi de suite. Il n'a pas
+
+35
+00:01:37,600 --> 00:01:40,284
+la capacité d'écrire, de modifier ou de créer des fichiers,
+
+36
+00:01:40,325 --> 00:01:42,930
+et ainsi de suite. Pour lui donner des permissions d'écriture,
+
+37
+00:01:42,969 --> 00:01:45,554
+vous pouvez soit ajouter manuellement des permissions d'écriture à l'appel de requête
+
+38
+00:01:45,713 --> 00:01:48,397
+ici, soit, alternativement, vous pouvez ajouter
+
+39
+00:01:48,436 --> 00:01:51,161
+des paramètres de configuration à votre fichier de paramètres
+
+40
+00:01:51,240 --> 00:01:53,944
+dans votre répertoire .Claude. Laissez-moi vous montrer comment
+
+41
+00:01:54,004 --> 00:01:56,507
+nous pouvons autoriser le SDK à utiliser l'outil d'édition
+
+42
+00:01:56,548 --> 00:01:59,072
+dans ce projet. Je vais trouver l'argument du prompt
+
+43
+00:01:59,152 --> 00:02:01,956
+ici. Juste après, j'ajouterai des options, mettrai
+
+44
+00:02:01,995 --> 00:02:05,120
+un objet, allow tools, ce sera
+
+45
+00:02:05,180 --> 00:02:08,144
+un tableau, et j'ajouterai edit. Je
+
+46
+00:02:08,163 --> 00:02:10,813
+vais mettre à jour le prompt en haut et je vais lui demander d'ajouter
+
+47
+00:02:10,894 --> 00:02:13,578
+une description au fichier package.json.
+
+48
+00:02:13,899 --> 00:02:17,663
+Maintenant, je vais sauvegarder cela et
+
+49
+00:02:17,704 --> 00:02:20,587
+exécuter npmrunsdk une fois de plus. Et
+
+50
+00:02:20,627 --> 00:02:23,431
+ensuite, une fois que ce sera terminé, je pourrai ouvrir le
+
+51
+00:02:23,491 --> 00:02:26,056
+fichier package.json et je verrai qu'il a bien
+
+52
+00:02:26,096 --> 00:02:28,800
+ajouté une description. Il a donc maintenant clairement la capacité
+
+53
+00:02:28,960 --> 00:02:31,483
+de modifier des fichiers. Comme je l'ai mentionné précédemment,
+
+54
+00:02:31,522 --> 00:02:34,334
+le SDK Claude Code est le plus utile dans le cadre
+
+55
+00:02:34,373 --> 00:02:36,961
+d'autres outils. Je vous encourage donc à penser
+
+56
+00:02:37,001 --> 00:02:39,688
+à des opportunités de l'utiliser dans des commandes d'aide, des scripts,
+
+57
+00:02:39,729 --> 00:02:42,477
+ou probablement le plus notablement, dans des hooks dans vos
+
+58
+00:02:42,979 --> 00:02:45,526
+propres projets.
+
+59
+00:02:45,586 --> 00:02:46,489
+projets.
